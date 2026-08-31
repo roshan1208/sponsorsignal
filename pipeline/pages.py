@@ -22,6 +22,10 @@ from urllib.parse import urlencode
 
 SITE = "https://roshan1208.github.io/sponsorsignal"
 
+# Must match the tag at the bottom of index.html. These pages are the whole
+# SEO channel, so leaving them untracked would hide the traffic that matters.
+GOATCOUNTER = "https://sponsorsignal.goatcounter.com/count"
+
 TOP_INDUSTRIES = 8
 TOP_TOWNS = 12
 EXAMPLES_PER_PAGE = 25
@@ -198,6 +202,7 @@ def render_page(page, updated=""):
      not affiliated with the Home Office and is not immigration advice.</p>
   <p><a href="../">Back to search</a></p>
 </div></footer>
+<script data-goatcounter="{GOATCOUNTER}" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
 """

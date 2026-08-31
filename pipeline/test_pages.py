@@ -146,6 +146,12 @@ class RenderPageTests(unittest.TestCase):
                       "tech &amp; software</h1>", out)
         self.assertNotIn("in tech & software", out)
 
+    def test_includes_analytics_tag(self):
+        # The landing pages are the SEO channel; untracked they are invisible.
+        out = pages.render_page(self.page())
+        self.assertIn(f'data-goatcounter="{pages.GOATCOUNTER}"', out)
+        self.assertIn("gc.zgo.at/count.js", out)
+
     def test_reports_remaining_count(self):
         out = pages.render_page(self.page(count=1234, examples=[row("Acme Ltd")]))
         self.assertIn("to see the other 1,233", out)

@@ -74,12 +74,20 @@ Suggested path to revenue:
 
 ## Analytics
 
-The site uses [GoatCounter](https://www.goatcounter.com) — free for personal
-use, no cookies, so no consent banner is required.
+The site uses [GoatCounter](https://www.goatcounter.com). No cookies, so no
+consent banner is needed. Dashboard: https://sponsorsignal.goatcounter.com
 
-**You must do this once:** create an account, then replace `SITECODE` in the
-GoatCounter `<script>` tag at the bottom of `index.html` with your own site
-code. Until you do, page views are simply not recorded — nothing breaks.
+The tag lives in two places and they must stay in step:
+
+- the bottom of `index.html`
+- the `GOATCOUNTER` constant in `pipeline/pages.py`, which emits the same tag
+  on every generated landing page
+
+The landing pages are the whole SEO channel, so tracking them is the point.
+If you change the site code, change both.
+
+Note GoatCounter's free tier is intended for non-commercial use. Once this
+earns money, move to a paid plan or switch to Cloudflare Web Analytics.
 
 ## Weekly digest
 
