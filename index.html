@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SponsorSignal — Find UK employers licensed to sponsor your visa</title>
+<meta name="description" content="Search every organisation on the official UK Home Office register of licensed sponsors. Filter by industry, city and visa route. Updated daily from GOV.UK.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#17233B;        /* deep navy ink */
+    --ink-soft:#4A5670;
+    --paper:#FFFFFF;
+    --paper-dim:#F5F7FB;
+    --cobalt:#2145C9;     /* primary action */
+    --cobalt-dark:#17348F;
+    --signal:#FFC933;     /* "new sponsor" highlight */
+    --line:#D9DFEA;
+    --good:#0E7B4F;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  body{
+    font-family:'Public Sans',system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.55;
+  }
+  a{color:var(--cobalt)}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+
+  /* header */
+  header{border-bottom:3px solid var(--ink);padding:14px 0}
+  .brand{font-weight:800;font-size:1.1rem;letter-spacing:-0.01em}
+  .brand .dot{color:var(--cobalt)}
+
+  /* hero = the search itself */
+  .hero{padding:44px 0 12px}
+  .hero h1{
+    font-size:clamp(1.6rem,4.5vw,2.5rem);
+    font-weight:800;line-height:1.15;letter-spacing:-0.02em;
+    max-width:640px;
+  }
+  .hero p.lead{margin-top:10px;color:var(--ink-soft);max-width:560px}
+  .sourceline{margin-top:8px;font-size:.85rem;color:var(--ink-soft)}
+  .sourceline strong{color:var(--ink)}
+  .sample-note{
+    display:none;margin-top:10px;padding:8px 12px;background:#FFF6DC;
+    border:1px solid #EAD48A;border-radius:6px;font-size:.85rem;max-width:560px;
+  }
+
+  .searchbox{
+    margin-top:26px;display:flex;gap:0;border:2px solid var(--ink);
+    border-radius:8px;overflow:hidden;background:var(--paper);
+    box-shadow:4px 4px 0 var(--cobalt);
+  }
+  .searchbox input{
+    flex:1;border:0;outline:none;font:inherit;font-size:1.05rem;
+    padding:14px 16px;min-width:0;
+  }
+  .searchbox input:focus{background:var(--paper-dim)}
+  .searchbox button{
+    border:0;background:var(--cobalt);color:#fff;font:inherit;font-weight:600;
+    padding:0 22px;cursor:pointer;
+  }
+  .searchbox button:hover{background:var(--cobalt-dark)}
+
+  .filters{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+  .filters select{
+    font:inherit;font-size:.9rem;padding:8px 10px;border:1.5px solid var(--line);
+    border-radius:6px;background:var(--paper);color:var(--ink);max-width:100%;
+  }
+  .toggle-new{
+    font:inherit;font-size:.9rem;padding:8px 12px;border:1.5px solid var(--line);
+    border-radius:6px;background:var(--paper);cursor:pointer;color:var(--ink);
+  }
+  .toggle-new[aria-pressed="true"]{
+    background:var(--signal);border-color:var(--ink);font-weight:600;
+  }
+  :is(input,select,button,a):focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
+
+  /* results */
+  .results-meta{margin:26px 0 10px;font-size:.9rem;color:var(--ink-soft)}
+  .results-meta strong{color:var(--ink)}
+  table{width:100%;border-collapse:collapse;font-size:.95rem}
+  thead th{
+    text-align:left;font-weight:600;font-size:.82rem;color:var(--ink-soft);
+    border-bottom:2px solid var(--ink);padding:8px 10px 6px;
+  }
+  tbody td{padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:hover{background:var(--paper-dim)}
+  td.name{font-weight:600}
+  .tag{
+    display:inline-block;font-size:.75rem;padding:2px 8px;border-radius:99px;
+    border:1px solid var(--line);color:var(--ink-soft);margin:1px 4px 1px 0;white-space:nowrap;
+  }
+  .tag.new{background:var(--signal);border-color:var(--ink);color:var(--ink);font-weight:600}
+  .rating-a{color:var(--good);font-weight:600}
+  .loadmore{
+    display:block;margin:18px auto 0;font:inherit;font-weight:600;
+    padding:10px 26px;border:2px solid var(--ink);border-radius:8px;
+    background:var(--paper);cursor:pointer;
+  }
+  .loadmore:hover{background:var(--paper-dim)}
+  .empty{padding:40px 10px;color:var(--ink-soft)}
+  .empty strong{color:var(--ink)}
+
+  /* alerts band */
+  .alerts{
+    margin:56px 0;border:2px solid var(--ink);border-radius:10px;
+    background:var(--paper-dim);padding:26px 24px;
+  }
+  .alerts h2{font-size:1.25rem;font-weight:800;letter-spacing:-0.01em}
+  .alerts p{color:var(--ink-soft);margin-top:6px;max-width:520px}
+  .alerts form{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+  .alerts input[type=email]{
+    flex:1;min-width:220px;font:inherit;padding:11px 14px;
+    border:2px solid var(--ink);border-radius:8px;
+  }
+  .alerts button{
+    font:inherit;font-weight:600;color:#fff;background:var(--cobalt);
+    border:0;border-radius:8px;padding:11px 22px;cursor:pointer;
+  }
+  .alerts button:hover{background:var(--cobalt-dark)}
+  .alerts .fineprint{font-size:.8rem;margin-top:10px}
+  .alerts .done{display:none;font-weight:600;color:var(--good);margin-top:12px}
+
+  /* faq + footer */
+  .faq{margin:40px 0 10px}
+  .faq h2{font-size:1.25rem;font-weight:800;margin-bottom:8px}
+  .faq details{border-bottom:1px solid var(--line);padding:12px 0}
+  .faq summary{cursor:pointer;font-weight:600}
+  .faq details p{margin-top:8px;color:var(--ink-soft);max-width:640px}
+  footer{
+    margin-top:48px;border-top:3px solid var(--ink);padding:22px 0 40px;
+    font-size:.85rem;color:var(--ink-soft);
+  }
+  footer p+p{margin-top:6px}
+
+  @media (max-width:640px){
+    thead th:nth-child(4),tbody td:nth-child(4){display:none}
+    .searchbox{box-shadow:3px 3px 0 var(--cobalt)}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">SponsorSignal<span class="dot">.</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Find UK employers licensed to sponsor your visa.</h1>
+    <p class="lead">Search every organisation on the official Home Office register of licensed sponsors — filter by industry, city and visa route, and see who was added this week.</p>
+    <p class="sourceline">Source: GOV.UK Register of Licensed Sponsors · <strong id="total">…</strong> sponsors · refreshed <strong id="updated">…</strong></p>
+    <div class="sample-note" id="sampleNote">You're viewing sample preview data. Run the refresh pipeline once (or wait for the daily job) to load the full live register.</div>
+
+    <div class="searchbox" role="search">
+      <input id="q" type="search" placeholder="Company name, city, or industry — try “software London”" aria-label="Search sponsors">
+      <button id="go">Search</button>
+    </div>
+
+    <div class="filters">
+      <select id="industry" aria-label="Filter by industry"><option value="">All industries</option></select>
+      <select id="route" aria-label="Filter by visa route"><option value="">All visa routes</option></select>
+      <button class="toggle-new" id="newOnly" aria-pressed="false">Added recently</button>
+    </div>
+  </section>
+
+  <section aria-live="polite">
+    <p class="results-meta"><strong id="count">0</strong> matching sponsors</p>
+    <table>
+      <thead>
+        <tr><th>Organisation</th><th>Location</th><th>Industry</th><th>Visa routes</th><th>Rating</th></tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <div class="empty" id="empty" hidden>
+      <strong>No sponsors match that search.</strong><br>Try fewer words, or clear the industry and route filters.
+    </div>
+    <button class="loadmore" id="more" hidden>Show more</button>
+  </section>
+
+  <section class="alerts" id="alerts">
+    <h2>Get new sponsors in your inbox</h2>
+    <p>The register changes almost every week. Tell us your email and we'll send you the newly licensed sponsors — so you can apply before everyone else finds them.</p>
+    <!-- Point this action at your form endpoint (Tally / Formspree / Buttondown). See README. -->
+    <form id="alertForm" action="#" method="post">
+      <input type="email" name="email" required placeholder="you@example.com" aria-label="Email address">
+      <button type="submit">Notify me</button>
+    </form>
+    <p class="done" id="alertDone">You're on the list — first digest coming soon.</p>
+    <p class="fineprint">Free while in beta. One email a week, unsubscribe anytime.</p>
+  </section>
+
+  <section class="faq">
+    <h2>Common questions</h2>
+    <details>
+      <summary>What does it mean if a company is on this register?</summary>
+      <p>The organisation holds an active Home Office sponsor licence, so it is legally able to sponsor workers on the listed routes. It doesn't guarantee they are hiring right now, or that any application will succeed — it tells you where sponsorship is possible.</p>
+    </details>
+    <details>
+      <summary>Where does the data come from?</summary>
+      <p>Directly from the official GOV.UK "Register of licensed sponsors: workers" publication. We download the latest file automatically every day, clean it, and add industry tags to make it searchable. Nothing here is edited by hand.</p>
+    </details>
+    <details>
+      <summary>What does the A rating mean?</summary>
+      <p>An A rating means the sponsor is in good standing with the Home Office. A B rating means the sponsor has been downgraded and is working through an action plan — they generally can't issue new certificates until restored to an A rating.</p>
+    </details>
+    <details>
+      <summary>How do the industry tags work?</summary>
+      <p>Industry tags are our own classification, inferred from organisation names, because the official register doesn't include industries. They are a search aid, not official data — always verify details with the employer.</p>
+    </details>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>SponsorSignal is an independent search tool built on open public data from GOV.UK. It is not affiliated with the Home Office and is not immigration advice.</p>
+    <p>Always confirm a sponsor's current status on the official register before making decisions.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const PAGE = 50;
+  let all = [], newNames = new Set(), filtered = [], shown = 0;
+
+  const $ = id => document.getElementById(id);
+  const rows = $('rows');
+
+  function esc(s){const d=document.createElement('span');d.textContent=s;return d.innerHTML;}
+
+  function render(reset){
+    if(reset){ rows.innerHTML=''; shown=0; }
+    const slice = filtered.slice(shown, shown+PAGE);
+    const html = slice.map(s=>{
+      const [name,town,county,industry,routes,rating] = s;
+      const loc = [town,county].filter(Boolean).join(', ');
+      const isNew = newNames.has(name.toLowerCase());
+      return `<tr>
+        <td class="name">${esc(name)}${isNew?' <span class="tag new">New</span>':''}</td>
+        <td>${esc(loc)}</td>
+        <td>${esc(industry)}</td>
+        <td>${routes.map(r=>`<span class="tag">${esc(r)}</span>`).join('')}</td>
+        <td>${rating==='A'?'<span class="rating-a">A</span>':esc(rating||'—')}</td>
+      </tr>`;
+    }).join('');
+    rows.insertAdjacentHTML('beforeend', html);
+    shown += slice.length;
+    $('count').textContent = filtered.length.toLocaleString();
+    $('empty').hidden = filtered.length>0;
+    $('more').hidden = shown >= filtered.length;
+  }
+
+  function apply(){
+    const q = $('q').value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    const ind = $('industry').value;
+    const route = $('route').value;
+    const onlyNew = $('newOnly').getAttribute('aria-pressed')==='true';
+    filtered = all.filter(s=>{
+      if(ind && s[3]!==ind) return false;
+      if(route && !s[4].includes(route)) return false;
+      if(onlyNew && !newNames.has(s[0].toLowerCase())) return false;
+      if(q.length){
+        const hay = (s[0]+' '+s[1]+' '+s[2]+' '+s[3]).toLowerCase();
+        for(const w of q){ if(!hay.includes(w)) return false; }
+      }
+      return true;
+    });
+    render(true);
+  }
+
+  // events
+  let t; $('q').addEventListener('input',()=>{clearTimeout(t);t=setTimeout(apply,150);});
+  $('go').addEventListener('click',apply);
+  $('industry').addEventListener('change',apply);
+  $('route').addEventListener('change',apply);
+  $('more').addEventListener('click',()=>render(false));
+  $('newOnly').addEventListener('click',e=>{
+    const b=e.currentTarget, on=b.getAttribute('aria-pressed')==='true';
+    b.setAttribute('aria-pressed',String(!on)); apply();
+  });
+  $('alertForm').addEventListener('submit',e=>{
+    // If no real endpoint is configured yet, show inline confirmation.
+    if($('alertForm').getAttribute('action')==='#'){
+      e.preventDefault();
+      $('alertForm').style.display='none';
+      $('alertDone').style.display='block';
+    }
+  });
+
+  // load data
+  Promise.all([
+    fetch('data/sponsors.json').then(r=>r.json()),
+    fetch('data/new_sponsors.json').then(r=>r.json()).catch(()=>({new:[]})),
+    fetch('data/meta.json').then(r=>r.json()).catch(()=>({}))
+  ]).then(([main,recent,meta])=>{
+    all = main.sponsors||[];
+    (recent.new||[]).forEach(s=>newNames.add(s[0].toLowerCase()));
+    $('total').textContent = all.length.toLocaleString();
+    $('updated').textContent = main.updated||'—';
+    if(meta.sample){ $('sampleNote').style.display='block'; }
+
+    // build filter options from data
+    const inds=[...new Set(all.map(s=>s[3]))].sort();
+    $('industry').insertAdjacentHTML('beforeend', inds.map(i=>`<option>${esc(i)}</option>`).join(''));
+    const routes=[...new Set(all.flatMap(s=>s[4]))].sort();
+    $('route').insertAdjacentHTML('beforeend', routes.map(r=>`<option>${esc(r)}</option>`).join(''));
+
+    filtered = all; render(true);
+  }).catch(()=>{
+    $('empty').hidden=false;
+    $('empty').innerHTML='<strong>Could not load the sponsor data.</strong><br>If you are previewing locally, serve the folder with a local web server (see README).';
+  });
+})();
+</script>
+</body>
+</html>
