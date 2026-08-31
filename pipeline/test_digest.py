@@ -85,6 +85,34 @@ class BuildDigestTests(unittest.TestCase):
         out = build_digest([row("Café Solutions Ltd")], DATE)
         self.assertIn("- **Café Solutions Ltd**", out)
 
+    def test_lists_removed_employers(self):
+        out = build_digest([row("Acme Ltd")], DATE,
+                           removed_rows=[row("Gone Ltd", town="Leeds")])
+        self.assertIn("## No longer on the register", out)
+        self.assertIn("- **Gone Ltd** — Leeds", out)
+        self.assertIn("1 employer is no longer licensed", out)
+
+    def test_plural_wording_for_several_removals(self):
+        out = build_digest([], DATE,
+                           removed_rows=[row("A"), row("B")])
+        self.assertIn("2 employers are no longer licensed", out)
+
+    def test_removals_alone_still_produce_a_digest(self):
+        out = build_digest([], DATE, removed_rows=[row("Gone Ltd")])
+        self.assertIn("No new employers were added", out)
+        self.assertIn("## No longer on the register", out)
+        self.assertIn("Search the full list at", out)
+
+    def test_no_removed_section_when_there_are_none(self):
+        out = build_digest([row("Acme Ltd")], DATE)
+        self.assertNotIn("No longer on the register", out)
+
+    def test_removals_are_capped(self):
+        rows = [row(f"Gone {i:03d}") for i in range(250)]
+        out = build_digest([], DATE, cap=100, removed_rows=rows)
+        self.assertIn("250 employers are no longer licensed", out)
+        self.assertIn("Showing the first 100, in alphabetical order.", out)
+
     def test_includes_source_link(self):
         out = build_digest([row("Acme Ltd")], DATE)
         self.assertIn(

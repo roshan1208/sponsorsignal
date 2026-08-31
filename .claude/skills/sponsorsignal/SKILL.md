@@ -84,34 +84,32 @@ for a month?* If the answer is no, it needs a guard rail or it does not ship.
 **Known gaps, in priority order.** Re-check these against the repo before
 trusting them; this list is a starting point, not a source of truth.
 
-1. **Email capture is inert.** `ALERT_ENDPOINT` in `index.html` is still empty,
-   so nothing is collected. Every visitor until this is set is lost for good.
-   Highest value item on the list. Needs an endpoint URL from the user.
-2. **No analytics.** GoatCounter is wired but the site code is still
-   `SITECODE`. Until this is set we cannot tell whether anything works.
-3. **The pipeline has no safety guard.** `find_latest_csv_url()` takes the
-   first CSV link on the GOV.UK page and nothing checks the result is sane. One
-   layout change silently rewrites the data, all 20 landing pages, the sitemap
-   and the homepage footer, then auto-deploys. This is the biggest technical
-   risk to a hands-off pipeline.
-4. **"Added recently" is empty.** Changes are only diffed against the previous
-   run, and removals are never detected. The one feature people would subscribe
-   for currently shows nothing.
-5. **Sitemap not submitted to Google Search Console.** The landing pages cannot
-   earn traffic until Google finds them. Only the user can do this.
+1. **Removals are tracked but not shown on the site.** The pipeline records
+   them in `data/removed_sponsors.json`, and the newsletter lists them, but
+   there is no way to see them on the site yet. "This employer lost its
+   licence" saves someone a wasted application and is worth surfacing.
+2. **Nobody is sending the newsletter.** `data/digest.md` is generated every
+   day and MailerLite holds the list, but the send is still manual. Prove the
+   content manually first, then automate it.
+3. **Change history is one day old.** It only starts accumulating from the
+   first run of the tracking code, so its value grows with calendar time.
+   Nothing to fix, just do not delete it.
+
+Done, so do not redo: email capture (MailerLite), analytics (GoatCounter, on
+the homepage and every landing page), Search Console verification and sitemap,
+the publish guard, and additions/removals tracking.
 
 ## What to do next
 
 Work in this order unless the user says otherwise. Each step unlocks the next.
 
-1. **Capture emails.** The list is the compounding asset; everything else is
-   downstream of it.
-2. **Make the pipeline trustworthy.** Sanity checks, loud failure. Passive
-   income needs a pipeline that cannot quietly poison itself.
-3. **Track additions and removals properly.** This builds the moat and fills
-   the newsletter with something worth reading.
-4. **Get found.** Search Console, then more landing pages, then launch posts.
-5. **Only then, charge.** A paid tier before there is a list, a history and
+1. **Show removals on the site.** The data is already there. It is the most
+   differentiated thing we have and it protects people from wasted effort.
+2. **Get found.** More landing pages driven by real Search Console queries,
+   then the launch posts in `launch/posts.md`.
+3. **Send the newsletter weekly, by hand at first.** Prove people open it
+   before automating the send.
+4. **Only then, charge.** A paid tier before there is a list, a history and
    traffic is premature.
 
 Before a launch push, verify email capture works and that "Added recently"

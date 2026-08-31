@@ -89,6 +89,38 @@ If you change the site code, change both.
 Note GoatCounter's free tier is intended for non-commercial use. Once this
 earns money, move to a paid plan or switch to Cloudflare Web Analytics.
 
+## Change tracking
+
+GOV.UK publishes only the current state of the register, never what changed.
+Each run diffs today's data against the previous run and appends the result to
+`data/changes.json`, keeping 90 days. That history cannot be rebuilt later, so
+**do not delete it and do not rewrite this repo's git history.**
+
+- `data/changes.json` — dated additions and removals
+- `data/new_sponsors.json` — added in the last 7 days (what the site shows)
+- `data/removed_sponsors.json` — removed in the last 7 days
+
+A sponsor is identified by name **and** town, because chains repeat a name
+across towns and treating those as one record hides real additions.
+
+## The publish guard
+
+The daily job runs unattended and pushes straight to the live site, so it
+refuses to publish data that looks wrong. Before anything is written, it
+checks the parsed total against the previous run and stops if:
+
+- fewer than 10,000 employers were parsed, or
+- the register moved by more than 10% in a single run.
+
+On a refusal nothing is written, no pages are generated, and the workflow
+fails, so you get a GitHub notification instead of a quietly broken site.
+
+If a change is genuine (GOV.UK really did publish something very different),
+re-run the workflow with `ALLOW_BIG_CHANGE=1` set. Check the source page
+first — a 10% swing is far more likely to be a broken scrape than real news.
+
+The thresholds are `MAX_CHANGE_RATIO` and `MIN_ROWS` in `pipeline/changes.py`.
+
 ## Weekly digest
 
 Each pipeline run also writes [`data/digest.md`](data/digest.md) — the newly

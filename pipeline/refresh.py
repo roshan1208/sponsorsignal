@@ -10,21 +10,25 @@ Runs in GitHub Actions on a daily cron (see .github/workflows/refresh.yml).
 Uses only the official public dataset published by the Home Office.
 
 Outputs (relative to repo root):
-  data/sponsors.json      compact list of all sponsors
-  data/new_sponsors.json  sponsors added since the previous run
-  data/meta.json          counts + last-updated timestamps
-  data/digest.md          human-readable digest of the new sponsors
+  data/sponsors.json          compact list of all sponsors
+  data/changes.json           dated history of additions and removals
+  data/new_sponsors.json      sponsors added in the last 7 days
+  data/removed_sponsors.json  sponsors removed in the last 7 days
+  data/meta.json              counts + last-updated timestamps
+  data/digest.md              human-readable digest of the changes
 """
 
 import csv
 import io
 import json
+import os
 import re
 import sys
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
+import changes
 import pages
 
 REGISTER_PAGE = (
@@ -150,7 +154,28 @@ def parse_register(text: str):
 DIGEST_CAP = 100
 
 
-def build_digest(new_rows, generated_on, cap=DIGEST_CAP):
+def _removed_section(removed_rows, cap):
+    """The 'lost their licence' half of the digest.
+
+    Worth as much as the additions: it stops someone wasting an application
+    on an employer who can no longer sponsor them.
+    """
+    total = len(removed_rows)
+    shown = sorted(removed_rows, key=lambda r: str(r[0]).lower())[:cap]
+    noun = "employer is" if total == 1 else "employers are"
+
+    lines = ["## No longer on the register", "",
+             f"{total} {noun} no longer licensed to sponsor workers.", ""]
+    if total > len(shown):
+        lines += [f"Showing the first {len(shown)}, in alphabetical order.", ""]
+    for name, town, county, _industry, _routes, _rating in shown:
+        location = ", ".join(p for p in (town, county) if p)
+        lines.append(f"- **{name}**" + (f" — {location}" if location else ""))
+    lines.append("")
+    return lines
+
+
+def build_digest(new_rows, generated_on, cap=DIGEST_CAP, removed_rows=()):
     """
     Render newly added sponsors as a markdown digest, grouped by industry.
 
@@ -161,9 +186,14 @@ def build_digest(new_rows, generated_on, cap=DIGEST_CAP):
     """
     lines = [f"# New UK visa sponsors, {generated_on}", ""]
 
-    if not new_rows:
+    if not new_rows and not removed_rows:
         lines += ["No new employers were added since the last update.", ""]
         return "\n".join(lines)
+
+    if not new_rows:
+        lines += ["No new employers were added since the last update.", ""]
+        lines += _removed_section(removed_rows, cap)
+        return "\n".join(lines + _digest_footer())
 
     total = len(new_rows)
     shown = sorted(new_rows, key=lambda r: str(r[0]).lower())[:cap]
@@ -189,7 +219,14 @@ def build_digest(new_rows, generated_on, cap=DIGEST_CAP):
             lines.append(f"- **{name}**" + (f" — {detail}" if detail else ""))
         lines.append("")
 
-    lines += [
+    if removed_rows:
+        lines += _removed_section(removed_rows, cap)
+
+    return "\n".join(lines + _digest_footer())
+
+
+def _digest_footer():
+    return [
         "---",
         "",
         f"Source: [GOV.UK Register of Licensed Sponsors (Workers)]({REGISTER_PAGE})",
@@ -197,7 +234,15 @@ def build_digest(new_rows, generated_on, cap=DIGEST_CAP):
         "Search the full list at https://roshan1208.github.io/sponsorsignal/",
         "",
     ]
-    return "\n".join(lines)
+
+
+def load_previous():
+    """The previous run's sponsor rows, or [] if there is no usable file."""
+    try:
+        data = json.loads((DATA / "sponsors.json").read_text(encoding="utf-8"))
+        return data.get("sponsors", [])
+    except Exception:
+        return []
 
 
 # -------------------------------------------------------------------- main --
@@ -213,34 +258,42 @@ def main():
     orgs = parse_register(text)
     print(f"{len(orgs)} unique organisations")
 
-    # Previous names, for new-sponsor detection
-    prev_names = set()
-    prev_file = DATA / "sponsors.json"
-    if prev_file.exists():
-        try:
-            prev = json.loads(prev_file.read_text())
-            prev_names = {s[0].lower() for s in prev.get("sponsors", [])}
-        except Exception:
-            pass
-
     # Compact records: [name, town, county, industry, routes, rating]
-    sponsors, new_sponsors = [], []
-    for rec in sorted(orgs.values(), key=lambda x: x["n"].lower()):
-        industry = classify(rec["n"])
-        row = [
-            rec["n"],
-            rec["t"],
-            rec["c"],
-            industry,
-            sorted(rec["routes"]),
-            rec["rating"],
-        ]
-        sponsors.append(row)
-        if prev_names and rec["n"].lower() not in prev_names:
-            new_sponsors.append(row)
+    sponsors = [
+        [rec["n"], rec["t"], rec["c"], classify(rec["n"]),
+         sorted(rec["routes"]), rec["rating"]]
+        for rec in sorted(orgs.values(), key=lambda x: x["n"].lower())
+    ]
+
+    previous = load_previous()
+
+    # Nothing is written above this point. This job runs unattended and
+    # pushes straight to the live site, so an implausible download has to
+    # stop here rather than quietly replace good data with rubbish.
+    reason = changes.check_totals(len(sponsors), len(previous))
+    if reason:
+        if os.environ.get("ALLOW_BIG_CHANGE") == "1":
+            print(f"WARNING: {reason}")
+            print("Publishing anyway because ALLOW_BIG_CHANGE=1.")
+        else:
+            raise SystemExit(
+                f"Refusing to publish: {reason}\n"
+                "Nothing was written. Check the GOV.UK page, and if the "
+                "change is genuine re-run with ALLOW_BIG_CHANGE=1."
+            )
 
     stamp = datetime.now(timezone.utc)
     now = stamp.strftime("%Y-%m-%d %H:%M UTC")
+    today = stamp.strftime("%Y-%m-%d")
+
+    # On a first run there is no previous data, so everything would look new.
+    added, removed = changes.diff(previous, sponsors) if previous else ([], [])
+    print(f"{len(added)} added, {len(removed)} removed since the last run")
+
+    history = changes.append_day(
+        changes.load(DATA / "changes.json"), today, added, removed)
+    recent_added = changes.recent(history, "added", today)
+    recent_removed = changes.recent(history, "removed", today)
 
     # encoding is pinned because organisation names contain non-ASCII
     # characters; without it this crashes on a non-UTF-8 default locale.
@@ -249,25 +302,44 @@ def main():
                    separators=(",", ":"), ensure_ascii=False),
         encoding="utf-8",
     )
+    (DATA / "changes.json").write_text(
+        json.dumps({"updated": now, "days": history},
+                   separators=(",", ":"), ensure_ascii=False),
+        encoding="utf-8",
+    )
     (DATA / "new_sponsors.json").write_text(
-        json.dumps({"updated": now, "new": new_sponsors[:500]},
+        json.dumps({"updated": now, "window_days": changes.RECENT_DAYS,
+                    "new": recent_added[:500]},
+                   separators=(",", ":"), ensure_ascii=False),
+        encoding="utf-8",
+    )
+    (DATA / "removed_sponsors.json").write_text(
+        json.dumps({"updated": now, "window_days": changes.RECENT_DAYS,
+                    "removed": recent_removed[:500]},
                    separators=(",", ":"), ensure_ascii=False),
         encoding="utf-8",
     )
     (DATA / "meta.json").write_text(json.dumps({
         "updated": now,
         "total": len(sponsors),
-        "new_since_last_run": len(new_sponsors),
+        "added_since_last_run": len(added),
+        "removed_since_last_run": len(removed),
+        "added_recently": len(recent_added),
+        "removed_recently": len(recent_removed),
+        "window_days": changes.RECENT_DAYS,
         "sample": False,
     }), encoding="utf-8")
     (DATA / "digest.md").write_text(
-        build_digest(new_sponsors, stamp.strftime("%d %B %Y")),
+        build_digest(recent_added, stamp.strftime("%d %B %Y"),
+                     removed_rows=recent_removed),
         encoding="utf-8",
     )
     built = pages.write_all(ROOT, sponsors, updated=now)
     print(f"Generated {len(built)} landing pages + sitemap.xml")
 
-    print(f"Done. {len(sponsors)} sponsors, {len(new_sponsors)} new since last run.")
+    print(f"Done. {len(sponsors)} employers. "
+          f"Last {changes.RECENT_DAYS} days: "
+          f"{len(recent_added)} added, {len(recent_removed)} removed.")
 
 
 if __name__ == "__main__":
