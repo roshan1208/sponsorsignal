@@ -148,7 +148,7 @@ class RenderPageTests(unittest.TestCase):
 
     def test_reports_remaining_count(self):
         out = pages.render_page(self.page(count=1234, examples=[row("Acme Ltd")]))
-        self.assertIn("1,233 more", out)
+        self.assertIn("to see the other 1,233", out)
 
 
 class BrowseNavTests(unittest.TestCase):

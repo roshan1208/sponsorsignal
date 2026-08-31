@@ -1,3 +1,3 @@
-# New UK sponsors — 31 August 2026
+# New UK visa sponsors, 31 August 2026
 
-No new sponsors were added to the register in this update.
+No new employers were added since the last update.

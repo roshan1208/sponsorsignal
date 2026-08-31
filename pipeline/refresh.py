@@ -159,20 +159,21 @@ def build_digest(new_rows, generated_on, cap=DIGEST_CAP):
     same shape written to sponsors.json:
         [name, town, county, industry, routes[], rating]
     """
-    lines = [f"# New UK sponsors — {generated_on}", ""]
+    lines = [f"# New UK visa sponsors, {generated_on}", ""]
 
     if not new_rows:
-        lines += ["No new sponsors were added to the register in this update.", ""]
+        lines += ["No new employers were added since the last update.", ""]
         return "\n".join(lines)
 
     total = len(new_rows)
     shown = sorted(new_rows, key=lambda r: str(r[0]).lower())[:cap]
 
-    noun = "organisation was" if total == 1 else "organisations were"
-    lines += [f"**{total} {noun}** added to the official register "
-              f"in this update.", ""]
+    noun = "employer" if total == 1 else "employers"
+    verb = "was" if total == 1 else "were"
+    lines += [f"**{total} {noun}** {verb} added to the register "
+              f"since the last update.", ""]
     if total > len(shown):
-        lines += [f"Showing the first {len(shown)} alphabetically.", ""]
+        lines += [f"Showing the first {len(shown)}, in alphabetical order.", ""]
 
     groups = {}
     for row in shown:
@@ -193,7 +194,7 @@ def build_digest(new_rows, generated_on, cap=DIGEST_CAP):
         "",
         f"Source: [GOV.UK Register of Licensed Sponsors (Workers)]({REGISTER_PAGE})",
         "",
-        "Generated automatically by SponsorSignal.",
+        "Search the full list at https://roshan1208.github.io/sponsorsignal/",
         "",
     ]
     return "\n".join(lines)

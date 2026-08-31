@@ -21,17 +21,17 @@ class BuildDigestTests(unittest.TestCase):
 
     def test_empty_input_states_nothing_was_added(self):
         out = build_digest([], DATE)
-        self.assertIn(f"# New UK sponsors — {DATE}", out)
-        self.assertIn("No new sponsors were added", out)
+        self.assertIn(f"# New UK visa sponsors, {DATE}", out)
+        self.assertIn("No new employers were added", out)
         self.assertNotIn("##", out)
 
     def test_singular_wording_for_one_sponsor(self):
         out = build_digest([row("Acme Ltd")], DATE)
-        self.assertIn("**1 organisation was** added", out)
+        self.assertIn("**1 employer** was added", out)
 
     def test_plural_wording_and_total(self):
         out = build_digest([row("Acme Ltd"), row("Beta Ltd")], DATE)
-        self.assertIn("**2 organisations were** added", out)
+        self.assertIn("**2 employers** were added", out)
 
     def test_groups_by_industry_with_counts(self):
         rows = [
@@ -65,8 +65,8 @@ class BuildDigestTests(unittest.TestCase):
     def test_caps_entries_but_reports_true_total(self):
         rows = [row(f"Company {i:03d}") for i in range(250)]
         out = build_digest(rows, DATE, cap=100)
-        self.assertIn("**250 organisations were** added", out)
-        self.assertIn("Showing the first 100 alphabetically.", out)
+        self.assertIn("**250 employers** were added", out)
+        self.assertIn("Showing the first 100, in alphabetical order.", out)
         self.assertEqual(out.count("\n- **"), 100)
 
     def test_no_truncation_note_when_under_cap(self):

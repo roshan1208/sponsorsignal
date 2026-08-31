@@ -251,12 +251,12 @@
 <main class="wrap">
   <section class="hero">
     <h1>Find UK employers licensed to sponsor your visa.</h1>
-    <p class="lead">Search every organisation on the official Home Office register of licensed sponsors — filter by industry, city and visa route, and see who was added this week.</p>
-    <p class="sourceline">Source: GOV.UK Register of Licensed Sponsors · <strong id="total">…</strong> sponsors · refreshed <strong id="updated">…</strong></p>
-    <div class="sample-note" id="sampleNote">You're viewing sample preview data. Run the refresh pipeline once (or wait for the daily job) to load the full live register.</div>
+    <p class="lead">Search the official Home Office list of employers who can sponsor a work visa. Filter by industry, city and visa route, and see who was added this week.</p>
+    <p class="sourceline">From the GOV.UK Register of Licensed Sponsors · <strong id="total">…</strong> employers · updated <strong id="updated">…</strong></p>
+    <div class="sample-note" id="sampleNote">This is sample data. The full list appears after the next daily update.</div>
 
     <div class="searchbox" role="search">
-      <input id="q" type="search" placeholder="Company name, city, or industry — try “software London”" aria-label="Search sponsors">
+      <input id="q" type="search" placeholder="Company, city or industry. Try: software London" aria-label="Search sponsors">
       <button id="go">Search</button>
     </div>
 
@@ -268,55 +268,55 @@
   </section>
 
   <section aria-live="polite">
-    <p class="results-meta" id="resultsMeta" hidden><strong id="count">0</strong> matching sponsors</p>
+    <p class="results-meta" id="resultsMeta" hidden><strong id="count">0</strong> employers found</p>
 
     <div class="loading" id="loading" role="status">
       <span class="spinner" aria-hidden="true"></span>
-      <span>Loading the full register — this is a few MB, so it can take a moment on a slow connection.</span>
+      <span>Loading the list. This takes a few seconds.</span>
     </div>
 
     <table id="resultsTable" hidden>
       <thead>
-        <tr><th>Organisation</th><th>Location</th><th>Industry</th><th>Visa routes</th><th>Rating</th></tr>
+        <tr><th>Employer</th><th>Location</th><th>Industry</th><th>Visa routes</th><th>Rating</th></tr>
       </thead>
       <tbody id="rows"></tbody>
     </table>
     <div class="empty" id="empty" hidden>
-      <strong>No sponsors match that search.</strong><br>Try fewer words, or clear the industry and route filters.
+      <strong>Nothing matched that search.</strong><br>Try fewer words, or clear the industry and route filters.
     </div>
     <button class="loadmore" id="more" hidden>Show more</button>
   </section>
 
   <section class="alerts" id="alerts">
     <h2>Get new sponsors in your inbox</h2>
-    <p>The register changes almost every week. Tell us your email and we'll send you the newly licensed sponsors — so you can apply before everyone else finds them.</p>
+    <p>New employers get a licence almost every week. Leave your email and we'll send you the new ones, so you can apply before everyone else finds them.</p>
     <!-- Submission is handled in JS; set ALERT_ENDPOINT at the top of the script. See README. -->
     <form id="alertForm">
       <input type="email" name="email" required placeholder="you@example.com" aria-label="Email address">
       <button type="submit">Notify me</button>
     </form>
-    <p class="done" id="alertDone" role="status">You're on the list — first digest coming soon.</p>
+    <p class="done" id="alertDone" role="status">You're on the list. We'll email you when new sponsors appear.</p>
     <p class="err" id="alertErr" role="alert"></p>
-    <p class="fineprint">Free while in beta. One email a week, unsubscribe anytime.</p>
+    <p class="fineprint">Free. One email a week. Unsubscribe anytime.</p>
   </section>
 
   <section class="faq">
     <h2>Common questions</h2>
     <details>
-      <summary>What does it mean if a company is on this register?</summary>
-      <p>The organisation holds an active Home Office sponsor licence, so it is legally able to sponsor workers on the listed routes. It doesn't guarantee they are hiring right now, or that any application will succeed — it tells you where sponsorship is possible.</p>
+      <summary>What does it mean if an employer is on this list?</summary>
+      <p>They hold a current Home Office sponsor licence, so they can legally sponsor workers on the visa routes shown. It does not mean they are hiring right now, or that your application will succeed. It means sponsorship is possible there.</p>
     </details>
     <details>
       <summary>Where does the data come from?</summary>
-      <p>Directly from the official GOV.UK "Register of licensed sponsors: workers" publication. We download the latest file automatically every day, clean it, and add industry tags to make it searchable. Nothing here is edited by hand.</p>
+      <p>Straight from the official GOV.UK "Register of licensed sponsors: workers" file. We download the latest version every day, tidy it up, and add industry tags so you can search it. Nothing is edited by hand.</p>
     </details>
     <details>
       <summary>What does the A rating mean?</summary>
-      <p>An A rating means the sponsor is in good standing with the Home Office. A B rating means the sponsor has been downgraded and is working through an action plan — they generally can't issue new certificates until restored to an A rating.</p>
+      <p>An A rating means the employer is in good standing with the Home Office. A B rating means they have been downgraded and are working through an action plan. Employers on a B rating usually cannot issue new certificates until they get back to an A.</p>
     </details>
     <details>
       <summary>How do the industry tags work?</summary>
-      <p>Industry tags are our own classification, inferred from organisation names, because the official register doesn't include industries. They are a search aid, not official data — always verify details with the employer.</p>
+      <p>The official list does not include industries, so we work them out from each employer's name. They are there to help you search, not official data. Always check the details with the employer.</p>
     </details>
   </section>
 </main>
@@ -464,7 +464,7 @@
     $('alertErr').style.display = 'none';
 
     if(!ALERT_ENDPOINT){
-      alertError("Email alerts aren't switched on yet — please check back shortly.");
+      alertError("Email alerts aren't running yet. Please check back soon.");
       return;
     }
 
@@ -489,7 +489,7 @@
       $('alertDone').style.display = 'block';
     }catch(err){
       btn.disabled = false; btn.textContent = label;
-      alertError('Sorry — that did not go through. Please try again in a moment.');
+      alertError("That didn't send. Please try again.");
     }
   });
 
@@ -523,7 +523,7 @@
   }).catch(()=>{
     $('loading').hidden = true;
     $('empty').hidden=false;
-    $('empty').innerHTML='<strong>Could not load the sponsor data.</strong><br>If you are previewing locally, serve the folder with a local web server (see README).';
+    $('empty').innerHTML='<strong>The list could not be loaded.</strong><br>Please refresh the page to try again.';
   });
   // Progressive enhancement only — the site works identically without it.
   // updateViaCache:'none' makes the browser revalidate sw.js itself on every

@@ -103,15 +103,14 @@ def lead_paragraph(page):
     label, count = page["label"], page["count"]
     n = f"{count:,}"
     if page["kind"] == "industry":
-        return (f"{n} organisations in {label.lower()} hold a UK Home Office "
-                f"licence to sponsor workers. Holding a licence means an "
-                f"employer is legally able to sponsor a visa on the routes "
-                f"listed against it — it does not mean they are hiring "
-                f"today, but it is where sponsorship is possible at all.")
-    return (f"{n} licensed sponsors are registered in {label}. If you are "
-            f"job hunting in {label} and need visa sponsorship, these are the "
-            f"employers legally able to provide it — every other employer "
-            f"in the city cannot, however strong your application.")
+        return (f"{n} employers in {label.lower()} hold a Home Office licence "
+                f"to sponsor workers in the UK. A licence does not mean they "
+                f"are hiring today. It means they can sponsor your visa if "
+                f"they do hire you.")
+    return (f"{n} employers in {label} hold a licence to sponsor work visas. "
+            f"If you need sponsorship, these are the ones who can offer it. "
+            f"Any other employer in {label} cannot, no matter how good your "
+            f"application.")
 
 
 def render_page(page, updated=""):
@@ -122,8 +121,8 @@ def render_page(page, updated=""):
     esc = html.escape
     url = f"{SITE}/{page['slug']}/"
     app = "../?" + filter_query(page["kind"], label)
-    desc = (f"{page['count']:,} UK employers {where} hold a Home Office "
-            f"sponsor licence. Searchable, updated daily from the official "
+    desc = (f"{page['count']:,} UK employers {where} can sponsor a work visa. "
+            f"Search the full list, updated every day from the official "
             f"GOV.UK register.")
 
     rows = []
@@ -183,15 +182,15 @@ def render_page(page, updated=""):
   <p class="lead">{esc(lead_paragraph(page))}</p>
   <a class="cta" href="{esc(app)}">Search all {page['count']:,} &rarr;</a>
 
-  <h2>Sample of these sponsors</h2>
+  <h2>Some of these employers</h2>
   <table>
-    <thead><tr><th>Organisation</th><th>Location</th><th>Visa routes</th></tr></thead>
+    <thead><tr><th>Employer</th><th>Location</th><th>Visa routes</th></tr></thead>
     <tbody>
 {table}
     </tbody>
   </table>
   <p class="more">Showing {len(page['examples'])} of {page['count']:,}.
-     <a href="{esc(app)}">Search the full list</a>{f' &mdash; {more:,} more' if more else ''}.</p>
+     <a href="{esc(app)}">Search the full list</a>{f' to see the other {more:,}' if more else ''}.</p>
 </main>
 <footer><div class="wrap">
   <p>Source: GOV.UK Register of Licensed Sponsors (Workers){f", updated {esc(updated)}" if updated else ""}.
