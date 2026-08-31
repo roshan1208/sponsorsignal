@@ -5,9 +5,78 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SponsorSignal — Find UK employers licensed to sponsor your visa</title>
 <meta name="description" content="Search every organisation on the official UK Home Office register of licensed sponsors. Filter by industry, city and visa route. Updated daily from GOV.UK.">
+<link rel="canonical" href="https://roshan1208.github.io/sponsorsignal/">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SponsorSignal">
+<meta property="og:url" content="https://roshan1208.github.io/sponsorsignal/">
+<meta property="og:title" content="SponsorSignal — Find UK employers licensed to sponsor your visa">
+<meta property="og:description" content="Search every organisation on the official UK Home Office register of licensed sponsors. Filter by industry, city and visa route. Updated daily from GOV.UK.">
+<meta property="og:image" content="https://roshan1208.github.io/sponsorsignal/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SponsorSignal — find UK employers licensed to sponsor your visa.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SponsorSignal — Find UK employers licensed to sponsor your visa">
+<meta name="twitter:description" content="The official UK sponsor register, refreshed daily and searchable by industry, city and visa route.">
+<meta name="twitter:image" content="https://roshan1208.github.io/sponsorsignal/og-image.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://roshan1208.github.io/sponsorsignal/#website",
+      "url": "https://roshan1208.github.io/sponsorsignal/",
+      "name": "SponsorSignal",
+      "description": "Searchable copy of the official UK Home Office register of licensed sponsors, refreshed daily.",
+      "inLanguage": "en-GB",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://roshan1208.github.io/sponsorsignal/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://roshan1208.github.io/sponsorsignal/#dataset",
+      "name": "UK Register of Licensed Sponsors (Workers) — searchable mirror",
+      "description": "Every organisation holding a UK Home Office worker sponsor licence, grouped one record per organisation with visa routes, rating, location and a heuristic industry tag. Rebuilt daily from the official GOV.UK publication.",
+      "url": "https://roshan1208.github.io/sponsorsignal/",
+      "inLanguage": "en-GB",
+      "isAccessibleForFree": true,
+      "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "creativeWorkStatus": "Published",
+      "isBasedOn": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "sourceOrganization": {
+        "@type": "GovernmentOrganization",
+        "name": "UK Home Office",
+        "url": "https://www.gov.uk/government/organisations/home-office"
+      },
+      "spatialCoverage": {
+        "@type": "Place",
+        "name": "United Kingdom"
+      },
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://roshan1208.github.io/sponsorsignal/data/sponsors.json"
+        }
+      ]
+    }
+  ]
+}
+</script>
 <style>
   :root{
     --ink:#17233B;        /* deep navy ink */
