@@ -287,16 +287,55 @@
     render(true);
   }
 
+  // ------------------------------------------------------- url state --
+  // Filter state lives in the query string so any view is shareable.
+  function stateToQuery(){
+    const p = new URLSearchParams();
+    const q = $('q').value.trim();
+    if(q) p.set('q', q);
+    if($('industry').value) p.set('industry', $('industry').value);
+    if($('route').value) p.set('route', $('route').value);
+    if($('newOnly').getAttribute('aria-pressed')==='true') p.set('new','1');
+    return p.toString();
+  }
+
+  // push=true for discrete control changes (so Back steps through them);
+  // push=false while typing, otherwise every pause would add a history entry.
+  function syncURL(push){
+    const qs = stateToQuery();
+    const url = location.pathname + (qs ? '?'+qs : '');
+    if(url === location.pathname + location.search) return;
+    history[push ? 'pushState' : 'replaceState'](null, '', url);
+  }
+
+  // Must run after the industry/route <option>s are built from the data,
+  // otherwise assigning .value silently falls back to "".
+  function queryToState(){
+    const p = new URLSearchParams(location.search);
+    $('q').value = p.get('q') || '';
+    for(const [id,key] of [['industry','industry'],['route','route']]){
+      const want = p.get(key) || '';
+      $(id).value = want;
+      if($(id).value !== want) $(id).value = '';   // unknown value → "All"
+    }
+    $('newOnly').setAttribute('aria-pressed', p.get('new')==='1' ? 'true' : 'false');
+  }
+
   // events
-  let t; $('q').addEventListener('input',()=>{clearTimeout(t);t=setTimeout(apply,150);});
-  $('go').addEventListener('click',apply);
-  $('industry').addEventListener('change',apply);
-  $('route').addEventListener('change',apply);
+  let t;
+  $('q').addEventListener('input',()=>{
+    clearTimeout(t);
+    t=setTimeout(()=>{ apply(); syncURL(false); },150);
+  });
+  $('go').addEventListener('click',()=>{ apply(); syncURL(true); });
+  $('industry').addEventListener('change',()=>{ apply(); syncURL(true); });
+  $('route').addEventListener('change',()=>{ apply(); syncURL(true); });
   $('more').addEventListener('click',()=>render(false));
   $('newOnly').addEventListener('click',e=>{
     const b=e.currentTarget, on=b.getAttribute('aria-pressed')==='true';
-    b.setAttribute('aria-pressed',String(!on)); apply();
+    b.setAttribute('aria-pressed',String(!on)); apply(); syncURL(true);
   });
+  window.addEventListener('popstate',()=>{ queryToState(); apply(); });
   // ----------------------------------------------------------- alerts --
   const alertForm = $('alertForm');
   function alertError(msg){
@@ -356,7 +395,9 @@
     const routes=[...new Set(all.flatMap(s=>s[4]))].sort();
     $('route').insertAdjacentHTML('beforeend', routes.map(r=>`<option>${esc(r)}</option>`).join(''));
 
-    filtered = all; render(true);
+    // Restore any filters from the URL, then do the first render.
+    queryToState();
+    apply();
   }).catch(()=>{
     $('empty').hidden=false;
     $('empty').innerHTML='<strong>Could not load the sponsor data.</strong><br>If you are previewing locally, serve the folder with a local web server (see README).';
