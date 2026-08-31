@@ -526,9 +526,13 @@
     $('empty').innerHTML='<strong>Could not load the sponsor data.</strong><br>If you are previewing locally, serve the folder with a local web server (see README).';
   });
   // Progressive enhancement only — the site works identically without it.
+  // updateViaCache:'none' makes the browser revalidate sw.js itself on every
+  // navigation, so a new worker is picked up on the next visit after a push.
   if('serviceWorker' in navigator){
     window.addEventListener('load',()=>{
-      navigator.serviceWorker.register('sw.js').catch(()=>{});
+      navigator.serviceWorker
+        .register('sw.js',{updateViaCache:'none'})
+        .catch(()=>{});
     });
   }
 })();

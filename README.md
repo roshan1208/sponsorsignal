@@ -106,10 +106,14 @@ Screen" on Android Chrome. Icons live in `icons/` and are generated one-off
 
 The service worker is deliberately minimal:
 
-- `data/*.json` is **network-first** — a stale register is worse than a slow
-  one, so it only falls back to cache when offline.
-- everything else is stale-while-revalidate: instant from cache, refreshed in
-  the background, so a deploy is picked up on the next visit.
+- **HTML pages and `data/*.json` are network-first**, fetched with
+  `cache: 'no-cache'` so the browser revalidates instead of trusting GitHub
+  Pages' `max-age=600`. A push therefore goes live on the next load, not the
+  one after it.
+- Other assets (icons, images) are stale-while-revalidate.
+
+The cache is an offline fallback, not a page speed-up — correctness over
+roughly 200ms on repeat loads, chosen because the register changes daily.
 
 If you ever need to ship a breaking shell change, bump `CACHE` in `sw.js`
 (`sponsorsignal-v1` → `v2`); the activate handler deletes every other cache.

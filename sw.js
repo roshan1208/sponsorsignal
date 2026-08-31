@@ -2,14 +2,20 @@
  * SponsorSignal service worker — deliberately minimal.
  *
  * Strategy:
- *   data/*.json  network-first (cache only as an offline fallback), because
- *                showing a stale register would be worse than showing none.
- *   everything    stale-while-revalidate: instant from cache, refreshed in
- *   else          the background, so a deploy is picked up on the next load.
+ *   HTML pages   network-first, and with cache:'no-cache' so the browser
+ *                must revalidate. A push goes live on the very next load
+ *                rather than the one after it.
+ *   data/*.json  network-first for the same reason — a stale register is
+ *                worse than a slow one.
+ *   other assets stale-while-revalidate. Icons and images are content-stable
+ *                and worth serving instantly from cache.
+ *
+ * The cache is therefore an offline fallback, not a speed-up for pages.
+ * That is a deliberate trade: correctness over ~200ms on repeat loads.
  *
  * Bump CACHE when the shell changes to evict the old one.
  */
-const CACHE = 'sponsorsignal-v1';
+const CACHE = 'sponsorsignal-v2';
 
 const SHELL = [
   './',
@@ -50,7 +56,10 @@ self.addEventListener('fetch', event => {
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
 
-  if (url.pathname.includes('/data/')) {
+  const isPage = request.mode === 'navigate' ||
+                 request.destination === 'document';
+
+  if (isPage || url.pathname.includes('/data/')) {
     event.respondWith(networkFirst(request));
   } else {
     event.respondWith(staleWhileRevalidate(request));
@@ -59,14 +68,23 @@ self.addEventListener('fetch', event => {
 
 async function networkFirst(request) {
   try {
-    const response = await fetch(request);
+    // cache:'no-cache' revalidates with the server instead of trusting the
+    // HTTP cache. GitHub Pages serves max-age=600, which would otherwise
+    // pin a just-replaced page for up to ten minutes.
+    const response = await fetch(request.url, {
+      cache: 'no-cache',
+      credentials: 'same-origin',
+    });
     if (response && response.ok) {
       const cache = await caches.open(CACHE);
       cache.put(request, response.clone());
     }
     return response;
   } catch (err) {
-    const cached = await caches.match(request);
+    // Offline: fall back to whatever was cached, keyed by the original
+    // request so a navigation still resolves to the cached shell.
+    const cached = await caches.match(request) ||
+                   await caches.match(request.url);
     if (cached) return cached;
     throw err;
   }
