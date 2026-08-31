@@ -63,6 +63,15 @@ Suggested path to revenue:
 3. Once you have a few hundred subscribers, add a paid tier ($5–9/mo) for
    industry/city-filtered alerts, and automate sending from the pipeline.
 
+## Analytics
+
+The site uses [GoatCounter](https://www.goatcounter.com) — free for personal
+use, no cookies, so no consent banner is required.
+
+**You must do this once:** create an account, then replace `SITECODE` in the
+GoatCounter `<script>` tag at the bottom of `index.html` with your own site
+code. Until you do, page views are simply not recorded — nothing breaks.
+
 ## Notes and care
 
 - Data source is the official public register on GOV.UK. Keep the footer
