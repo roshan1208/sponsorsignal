@@ -72,6 +72,19 @@ use, no cookies, so no consent banner is required.
 GoatCounter `<script>` tag at the bottom of `index.html` with your own site
 code. Until you do, page views are simply not recorded — nothing breaks.
 
+## Weekly digest
+
+Each pipeline run also writes [`data/digest.md`](data/digest.md) — the newly
+added sponsors grouped by industry, capped at 100 entries. Paste it straight
+into your newsletter. The renderer is a pure function (`build_digest` in
+`pipeline/refresh.py`) covered by `pipeline/test_digest.py`:
+
+```bash
+python -m unittest discover -s pipeline -v
+```
+
+The same tests run in CI before every refresh.
+
 ## Notes and care
 
 - Data source is the official public register on GOV.UK. Keep the footer

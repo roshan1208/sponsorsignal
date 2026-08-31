@@ -13,6 +13,7 @@ Outputs (relative to repo root):
   data/sponsors.json      compact list of all sponsors
   data/new_sponsors.json  sponsors added since the previous run
   data/meta.json          counts + last-updated timestamps
+  data/digest.md          human-readable digest of the new sponsors
 """
 
 import csv
@@ -143,6 +144,59 @@ def parse_register(text: str):
     return orgs
 
 
+# ------------------------------------------------------------------ digest --
+DIGEST_CAP = 100
+
+
+def build_digest(new_rows, generated_on, cap=DIGEST_CAP):
+    """
+    Render newly added sponsors as a markdown digest, grouped by industry.
+
+    Pure function of its arguments (no I/O, no clock) so it can be unit
+    tested — see pipeline/test_digest.py. `new_rows` are records in the
+    same shape written to sponsors.json:
+        [name, town, county, industry, routes[], rating]
+    """
+    lines = [f"# New UK sponsors — {generated_on}", ""]
+
+    if not new_rows:
+        lines += ["No new sponsors were added to the register in this update.", ""]
+        return "\n".join(lines)
+
+    total = len(new_rows)
+    shown = sorted(new_rows, key=lambda r: str(r[0]).lower())[:cap]
+
+    noun = "organisation was" if total == 1 else "organisations were"
+    lines += [f"**{total} {noun}** added to the official register "
+              f"in this update.", ""]
+    if total > len(shown):
+        lines += [f"Showing the first {len(shown)} alphabetically.", ""]
+
+    groups = {}
+    for row in shown:
+        groups.setdefault(row[3] or "Other", []).append(row)
+
+    # Biggest industries first, then alphabetically for stable output.
+    for industry in sorted(groups, key=lambda k: (-len(groups[k]), k.lower())):
+        entries = groups[industry]
+        lines += [f"## {industry} ({len(entries)})", ""]
+        for name, town, county, _industry, routes, _rating in entries:
+            location = ", ".join(p for p in (town, county) if p)
+            detail = " · ".join(p for p in (location, " / ".join(routes)) if p)
+            lines.append(f"- **{name}**" + (f" — {detail}" if detail else ""))
+        lines.append("")
+
+    lines += [
+        "---",
+        "",
+        f"Source: [GOV.UK Register of Licensed Sponsors (Workers)]({REGISTER_PAGE})",
+        "",
+        "Generated automatically by SponsorSignal.",
+        "",
+    ]
+    return "\n".join(lines)
+
+
 # -------------------------------------------------------------------- main --
 def main():
     DATA.mkdir(exist_ok=True)
@@ -182,21 +236,31 @@ def main():
         if prev_names and rec["n"].lower() not in prev_names:
             new_sponsors.append(row)
 
-    now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    stamp = datetime.now(timezone.utc)
+    now = stamp.strftime("%Y-%m-%d %H:%M UTC")
+
+    # encoding is pinned because organisation names contain non-ASCII
+    # characters; without it this crashes on a non-UTF-8 default locale.
     (DATA / "sponsors.json").write_text(
         json.dumps({"updated": now, "source": csv_url, "sponsors": sponsors},
-                   separators=(",", ":"), ensure_ascii=False)
+                   separators=(",", ":"), ensure_ascii=False),
+        encoding="utf-8",
     )
     (DATA / "new_sponsors.json").write_text(
         json.dumps({"updated": now, "new": new_sponsors[:500]},
-                   separators=(",", ":"), ensure_ascii=False)
+                   separators=(",", ":"), ensure_ascii=False),
+        encoding="utf-8",
     )
     (DATA / "meta.json").write_text(json.dumps({
         "updated": now,
         "total": len(sponsors),
         "new_since_last_run": len(new_sponsors),
         "sample": False,
-    }))
+    }), encoding="utf-8")
+    (DATA / "digest.md").write_text(
+        build_digest(new_sponsors, stamp.strftime("%d %B %Y")),
+        encoding="utf-8",
+    )
     print(f"Done. {len(sponsors)} sponsors, {len(new_sponsors)} new since last run.")
 
 
