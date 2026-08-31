@@ -43,10 +43,18 @@ python3 -m http.server 8000
 
 ## Email alerts (the monetization seed)
 
-The alert form in `index.html` currently shows an inline "you're on the list"
-confirmation. To collect real emails, create a free form/newsletter endpoint
-(Tally, Formspree, or Buttondown all have free tiers), then set the form's
-`action` attribute to your endpoint URL.
+To collect real emails, create a free form endpoint (Tally, Formspree, and
+Buttondown all have free tiers), then set the `ALERT_ENDPOINT` constant at the
+top of the `<script>` block in `index.html` to that URL:
+
+```js
+const ALERT_ENDPOINT = 'https://formspree.io/f/xxxxxxx';
+```
+
+The form POSTs the email there as `FormData` (field name `email`) via `fetch`,
+with no page reload. It shows the green confirmation only on a successful
+response, and a readable inline error otherwise. While `ALERT_ENDPOINT` is
+empty the form stays functional and explains that alerts aren't live yet.
 
 Suggested path to revenue:
 1. Collect emails free during beta.

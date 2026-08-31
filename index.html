@@ -19,6 +19,7 @@
     --signal:#FFC933;     /* "new sponsor" highlight */
     --line:#D9DFEA;
     --good:#0E7B4F;
+    --bad:#B3261E;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -127,6 +128,8 @@
   .alerts button:hover{background:var(--cobalt-dark)}
   .alerts .fineprint{font-size:.8rem;margin-top:10px}
   .alerts .done{display:none;font-weight:600;color:var(--good);margin-top:12px}
+  .alerts .err{display:none;font-weight:600;color:var(--bad);margin-top:12px}
+  .alerts button[disabled]{opacity:.6;cursor:progress}
 
   /* faq + footer */
   .faq{margin:40px 0 10px}
@@ -190,12 +193,13 @@
   <section class="alerts" id="alerts">
     <h2>Get new sponsors in your inbox</h2>
     <p>The register changes almost every week. Tell us your email and we'll send you the newly licensed sponsors — so you can apply before everyone else finds them.</p>
-    <!-- Point this action at your form endpoint (Tally / Formspree / Buttondown). See README. -->
-    <form id="alertForm" action="#" method="post">
+    <!-- Submission is handled in JS; set ALERT_ENDPOINT at the top of the script. See README. -->
+    <form id="alertForm">
       <input type="email" name="email" required placeholder="you@example.com" aria-label="Email address">
       <button type="submit">Notify me</button>
     </form>
-    <p class="done" id="alertDone">You're on the list — first digest coming soon.</p>
+    <p class="done" id="alertDone" role="status">You're on the list — first digest coming soon.</p>
+    <p class="err" id="alertErr" role="alert"></p>
     <p class="fineprint">Free while in beta. One email a week, unsubscribe anytime.</p>
   </section>
 
@@ -229,6 +233,12 @@
 
 <script>
 (function(){
+  // ---------------------------------------------------------------------
+  // Paste your form endpoint URL here (Tally / Formspree / any POST URL).
+  // Leave it as '' and the form degrades gracefully instead of breaking.
+  // ---------------------------------------------------------------------
+  const ALERT_ENDPOINT = '';
+
   const PAGE = 50;
   let all = [], newNames = new Set(), filtered = [], shown = 0;
 
@@ -287,12 +297,44 @@
     const b=e.currentTarget, on=b.getAttribute('aria-pressed')==='true';
     b.setAttribute('aria-pressed',String(!on)); apply();
   });
-  $('alertForm').addEventListener('submit',e=>{
-    // If no real endpoint is configured yet, show inline confirmation.
-    if($('alertForm').getAttribute('action')==='#'){
-      e.preventDefault();
-      $('alertForm').style.display='none';
-      $('alertDone').style.display='block';
+  // ----------------------------------------------------------- alerts --
+  const alertForm = $('alertForm');
+  function alertError(msg){
+    const el = $('alertErr');
+    el.textContent = msg;
+    el.style.display = 'block';
+  }
+  alertForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    $('alertErr').style.display = 'none';
+
+    if(!ALERT_ENDPOINT){
+      alertError("Email alerts aren't switched on yet — please check back shortly.");
+      return;
+    }
+
+    const email = alertForm.email.value.trim();
+    if(!email) return;
+    const btn = alertForm.querySelector('button');
+    const label = btn.textContent;
+    btn.disabled = true; btn.textContent = 'Sending…';
+
+    try{
+      // FormData (not JSON) keeps this a "simple" CORS request — no preflight,
+      // and it is the format Tally/Formspree/Google Forms all accept.
+      const body = new FormData();
+      body.append('email', email);
+      const res = await fetch(ALERT_ENDPOINT, {
+        method:'POST',
+        headers:{'Accept':'application/json'},
+        body
+      });
+      if(!res.ok) throw new Error('HTTP '+res.status);
+      alertForm.style.display = 'none';
+      $('alertDone').style.display = 'block';
+    }catch(err){
+      btn.disabled = false; btn.textContent = label;
+      alertError('Sorry — that did not go through. Please try again in a moment.');
     }
   });
 
