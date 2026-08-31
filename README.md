@@ -98,6 +98,24 @@ link into the pre-filtered main app. It also rewrites `sitemap.xml` and the
 instead. The `BROWSE-LINKS` marker comments in `index.html` must stay put; the
 pipeline raises if they are missing rather than silently skipping the update.
 
+## Installable (PWA lite)
+
+`manifest.json` plus `sw.js` make the site installable via "Add to Home
+Screen" on Android Chrome. Icons live in `icons/` and are generated one-off
+(not by the pipeline).
+
+The service worker is deliberately minimal:
+
+- `data/*.json` is **network-first** — a stale register is worse than a slow
+  one, so it only falls back to cache when offline.
+- everything else is stale-while-revalidate: instant from cache, refreshed in
+  the background, so a deploy is picked up on the next visit.
+
+If you ever need to ship a breaking shell change, bump `CACHE` in `sw.js`
+(`sponsorsignal-v1` → `v2`); the activate handler deletes every other cache.
+To drop the worker entirely for a visitor, use DevTools → Application →
+Service Workers → Unregister.
+
 ## Notes and care
 
 - Data source is the official public register on GOV.UK. Keep the footer

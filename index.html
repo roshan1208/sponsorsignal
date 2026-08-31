@@ -6,6 +6,9 @@
 <title>SponsorSignal — Find UK employers licensed to sponsor your visa</title>
 <meta name="description" content="Search every organisation on the official UK Home Office register of licensed sponsors. Filter by industry, city and visa route. Updated daily from GOV.UK.">
 <link rel="canonical" href="https://roshan1208.github.io/sponsorsignal/">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#17233B">
 
 <!-- Open Graph / Twitter -->
 <meta property="og:type" content="website">
@@ -522,6 +525,12 @@
     $('empty').hidden=false;
     $('empty').innerHTML='<strong>Could not load the sponsor data.</strong><br>If you are previewing locally, serve the folder with a local web server (see README).';
   });
+  // Progressive enhancement only — the site works identically without it.
+  if('serviceWorker' in navigator){
+    window.addEventListener('load',()=>{
+      navigator.serviceWorker.register('sw.js').catch(()=>{});
+    });
+  }
 })();
 </script>
 
