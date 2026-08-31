@@ -31,6 +31,8 @@ jobs:
         run: |
           git config user.name "sponsorsignal-bot"
           git config user.email "actions@github.com"
-          git add data/
+          # -A because the run also regenerates the landing pages,
+          # sitemap.xml and the browse links inside index.html.
+          git add -A
           git diff --cached --quiet || git commit -m "Data refresh: $(date -u +%F)"
           git push

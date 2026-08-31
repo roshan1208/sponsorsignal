@@ -85,6 +85,19 @@ python -m unittest discover -s pipeline -v
 
 The same tests run in CI before every refresh.
 
+## Landing pages (SEO)
+
+`pipeline/pages.py` generates one page per top industry and top city — e.g.
+`/tech-software/`, `/london/` — each with its own title, description,
+canonical URL, a distinct lead paragraph, a sample table of sponsors, and a
+link into the pre-filtered main app. It also rewrites `sitemap.xml` and the
+"browse" links in the homepage footer between the `BROWSE-LINKS` markers.
+
+**Do not hand-edit these** — every pipeline run overwrites them. Change
+`TOP_INDUSTRIES` / `TOP_TOWNS` / `EXAMPLES_PER_PAGE` in `pipeline/pages.py`
+instead. The `BROWSE-LINKS` marker comments in `index.html` must stay put; the
+pipeline raises if they are missing rather than silently skipping the update.
+
 ## Notes and care
 
 - Data source is the official public register on GOV.UK. Keep the footer

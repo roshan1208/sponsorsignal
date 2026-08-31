@@ -25,6 +25,8 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
+import pages
+
 REGISTER_PAGE = (
     "https://www.gov.uk/government/publications/"
     "register-of-licensed-sponsors-workers"
@@ -261,6 +263,9 @@ def main():
         build_digest(new_sponsors, stamp.strftime("%d %B %Y")),
         encoding="utf-8",
     )
+    built = pages.write_all(ROOT, sponsors, updated=now)
+    print(f"Generated {len(built)} landing pages + sitemap.xml")
+
     print(f"Done. {len(sponsors)} sponsors, {len(new_sponsors)} new since last run.")
 
 
