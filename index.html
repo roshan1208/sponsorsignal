@@ -295,7 +295,7 @@
       <input type="email" name="email" required placeholder="you@example.com" aria-label="Email address">
       <button type="submit">Notify me</button>
     </form>
-    <p class="done" id="alertDone" role="status">You're on the list. We'll email you when new sponsors appear.</p>
+    <p class="done" id="alertDone" role="status">Almost there. Check your inbox and click the confirmation link to finish signing up.</p>
     <p class="err" id="alertErr" role="alert"></p>
     <p class="fineprint">Free. One email a week. Unsubscribe anytime.</p>
   </section>
@@ -337,10 +337,11 @@
 <script>
 (function(){
   // ---------------------------------------------------------------------
-  // Paste your form endpoint URL here (Tally / Formspree / any POST URL).
+  // MailerLite subscribe endpoint for the "SponsorSignal alerts" group.
   // Leave it as '' and the form degrades gracefully instead of breaking.
   // ---------------------------------------------------------------------
-  const ALERT_ENDPOINT = '';
+  const ALERT_ENDPOINT =
+    'https://assets.mailerlite.com/jsonp/2607953/forms/197356360586757575/subscribe';
 
   const PAGE = 50;
   let all = [], newNames = new Set(), filtered = [], shown = 0, loaded = false;
@@ -459,6 +460,14 @@
     el.textContent = msg;
     el.style.display = 'block';
   }
+  // Prefer the provider's own message ("that address is already subscribed")
+  // over a generic one, when it sends a usable one.
+  function firstFieldError(data){
+    const fields = data && data.errors && data.errors.fields;
+    if(!fields) return '';
+    const first = Object.values(fields)[0];
+    return Array.isArray(first) ? first[0] : '';
+  }
   alertForm.addEventListener('submit', async e => {
     e.preventDefault();
     $('alertErr').style.display = 'none';
@@ -475,21 +484,27 @@
     btn.disabled = true; btn.textContent = 'Sending…';
 
     try{
-      // FormData (not JSON) keeps this a "simple" CORS request — no preflight,
-      // and it is the format Tally/Formspree/Google Forms all accept.
       const body = new FormData();
-      body.append('email', email);
-      const res = await fetch(ALERT_ENDPOINT, {
-        method:'POST',
-        headers:{'Accept':'application/json'},
-        body
-      });
-      if(!res.ok) throw new Error('HTTP '+res.status);
+      body.append('fields[email]', email);
+      body.append('ml-submit', '1');
+      body.append('anticsrf', 'true');
+      const res = await fetch(ALERT_ENDPOINT, {method:'POST', body});
+
+      // A rejected address still comes back as HTTP 200 with
+      // {"success":false,...}, so the body decides, not the status code.
+      const data = await res.json().catch(()=>null);
+      if(!res.ok || !data || data.success !== true){
+        btn.disabled = false; btn.textContent = label;
+        alertError(firstFieldError(data) ||
+          'That address was not accepted. Please check it and try again.');
+        return;
+      }
+
       alertForm.style.display = 'none';
       $('alertDone').style.display = 'block';
     }catch(err){
       btn.disabled = false; btn.textContent = label;
-      alertError("That didn't send. Please try again.");
+      alertError("That didn't send. Please check your connection and try again.");
     }
   });
 

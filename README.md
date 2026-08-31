@@ -43,18 +43,27 @@ python3 -m http.server 8000
 
 ## Email alerts (the monetization seed)
 
-To collect real emails, create a free form endpoint (Tally, Formspree, and
-Buttondown all have free tiers), then set the `ALERT_ENDPOINT` constant at the
-top of the `<script>` block in `index.html` to that URL:
+Signups go to MailerLite, into the **SponsorSignal alerts** group. The
+endpoint is the `ALERT_ENDPOINT` constant at the top of the `<script>` block
+in `index.html`. Setting it to `''` disables signup gracefully rather than
+breaking the form.
 
-```js
-const ALERT_ENDPOINT = 'https://formspree.io/f/xxxxxxx';
-```
+Only the endpoint is used, not MailerLite's embed snippet — that ships its own
+fonts, colours and jQuery, which would fight the site's design.
 
-The form POSTs the email there as `FormData` (field name `email`) via `fetch`,
-with no page reload. It shows the green confirmation only on a successful
-response, and a readable inline error otherwise. While `ALERT_ENDPOINT` is
-empty the form stays functional and explains that alerts aren't live yet.
+The form POSTs `fields[email]` (plus `ml-submit` and `anticsrf`) as `FormData`
+via `fetch`, with no page reload. MailerLite allows cross-origin reads, so the
+real response decides what the visitor sees. Note it answers **HTTP 200 with
+`{"success": false, ...}`** for a rejected address, so the JSON body is what
+matters, not the status code. When it sends a useful message ("already
+subscribed") that message is shown instead of a generic one.
+
+**Double opt-in is on**, which is worth keeping for deliverability. A new
+signup is not a subscriber until they click the link in the confirmation
+email, so the success message tells them to go and check their inbox.
+
+To change the destination, create a new embedded form in MailerLite and copy
+the `action` URL out of its snippet.
 
 Suggested path to revenue:
 1. Collect emails free during beta.
