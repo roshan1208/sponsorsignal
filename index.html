@@ -178,6 +178,22 @@
   .empty{padding:40px 10px;color:var(--ink-soft)}
   .empty strong{color:var(--ink)}
 
+  /* loading: reserves the same vertical space the first page of rows will
+     occupy, so nothing below it jumps when the data lands */
+  .loading{
+    display:flex;align-items:center;gap:12px;
+    min-height:220px;padding:40px 10px;color:var(--ink-soft);
+  }
+  /* an author display: rule beats the UA [hidden] rule, so restate it */
+  .loading[hidden]{display:none}
+  .spinner{
+    width:18px;height:18px;flex:0 0 auto;border-radius:50%;
+    border:2.5px solid var(--line);border-top-color:var(--cobalt);
+    animation:spin .8s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.spinner{animation:none}}
+
   /* alerts band */
   .alerts{
     margin:56px 0;border:2px solid var(--ink);border-radius:10px;
@@ -249,8 +265,14 @@
   </section>
 
   <section aria-live="polite">
-    <p class="results-meta"><strong id="count">0</strong> matching sponsors</p>
-    <table>
+    <p class="results-meta" id="resultsMeta" hidden><strong id="count">0</strong> matching sponsors</p>
+
+    <div class="loading" id="loading" role="status">
+      <span class="spinner" aria-hidden="true"></span>
+      <span>Loading the full register — this is a few MB, so it can take a moment on a slow connection.</span>
+    </div>
+
+    <table id="resultsTable" hidden>
       <thead>
         <tr><th>Organisation</th><th>Location</th><th>Industry</th><th>Visa routes</th><th>Rating</th></tr>
       </thead>
@@ -318,7 +340,7 @@
   const ALERT_ENDPOINT = '';
 
   const PAGE = 50;
-  let all = [], newNames = new Set(), filtered = [], shown = 0;
+  let all = [], newNames = new Set(), filtered = [], shown = 0, loaded = false;
 
   const $ = id => document.getElementById(id);
   const rows = $('rows');
@@ -348,6 +370,10 @@
   }
 
   function apply(){
+    // Typing is allowed before the register arrives; filtering an empty
+    // array would just flash "no sponsors match". The load handler calls
+    // apply() again once the data is in, honouring whatever was typed.
+    if(!loaded) return;
     const q = $('q').value.trim().toLowerCase().split(/\s+/).filter(Boolean);
     const ind = $('industry').value;
     const route = $('route').value;
@@ -386,17 +412,22 @@
     history[push ? 'pushState' : 'replaceState'](null, '', url);
   }
 
-  // Must run after the industry/route <option>s are built from the data,
-  // otherwise assigning .value silently falls back to "".
-  function queryToState(){
+  // Restoring is split in two. The text/toggle half runs immediately so the
+  // controls are correct while the data is still downloading; the select half
+  // has to wait for the <option>s to be built from the data, otherwise
+  // assigning .value silently falls back to "".
+  function restoreInputs(){
     const p = new URLSearchParams(location.search);
     $('q').value = p.get('q') || '';
-    for(const [id,key] of [['industry','industry'],['route','route']]){
-      const want = p.get(key) || '';
+    $('newOnly').setAttribute('aria-pressed', p.get('new')==='1' ? 'true' : 'false');
+  }
+  function restoreSelects(){
+    const p = new URLSearchParams(location.search);
+    for(const id of ['industry','route']){
+      const want = p.get(id) || '';
       $(id).value = want;
       if($(id).value !== want) $(id).value = '';   // unknown value → "All"
     }
-    $('newOnly').setAttribute('aria-pressed', p.get('new')==='1' ? 'true' : 'false');
   }
 
   // events
@@ -413,7 +444,11 @@
     const b=e.currentTarget, on=b.getAttribute('aria-pressed')==='true';
     b.setAttribute('aria-pressed',String(!on)); apply(); syncURL(true);
   });
-  window.addEventListener('popstate',()=>{ queryToState(); apply(); });
+  window.addEventListener('popstate',()=>{ restoreInputs(); restoreSelects(); apply(); });
+
+  // Reflect the URL in the controls straight away, so someone landing on a
+  // shared link sees the right filters while the register downloads.
+  restoreInputs();
   // ----------------------------------------------------------- alerts --
   const alertForm = $('alertForm');
   function alertError(msg){
@@ -473,10 +508,17 @@
     const routes=[...new Set(all.flatMap(s=>s[4]))].sort();
     $('route').insertAdjacentHTML('beforeend', routes.map(r=>`<option>${esc(r)}</option>`).join(''));
 
-    // Restore any filters from the URL, then do the first render.
-    queryToState();
+    // Swap the loading state for the results, then render the first page.
+    // Note restoreInputs() is deliberately NOT called again here: anything
+    // typed into the search box while the data downloaded must survive.
+    $('loading').hidden = true;
+    $('resultsTable').hidden = false;
+    $('resultsMeta').hidden = false;
+    loaded = true;
+    restoreSelects();
     apply();
   }).catch(()=>{
+    $('loading').hidden = true;
     $('empty').hidden=false;
     $('empty').innerHTML='<strong>Could not load the sponsor data.</strong><br>If you are previewing locally, serve the folder with a local web server (see README).';
   });
