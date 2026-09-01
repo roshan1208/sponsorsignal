@@ -255,7 +255,10 @@ def render_browse_nav(pages):
         links = " ".join(
             f'<a href="{p["slug"]}/">{esc(p["label"])}</a>' for p in group
         )
-        out.append(f"    <p><strong>{heading}:</strong> {links}</p>")
+        # class="links" scopes the gap between adjacent links. Without it the
+        # rule also applied to links that sit inside a sentence and pushed the
+        # following full stop away from the word.
+        out.append(f'    <p class="links"><strong>{heading}:</strong> {links}</p>')
     return "\n".join(out)
 
 

@@ -172,6 +172,12 @@ class BrowseNavTests(unittest.TestCase):
         self.assertIn("Browse by industry", nav)
         self.assertIn("Browse by city", nav)
 
+    def test_link_lists_are_classed_so_the_gap_stays_scoped(self):
+        # The spacing rule must not reach a link that sits inside a sentence,
+        # where it pushed the following full stop away from the word.
+        built = [{"kind": "town", "label": "London", "slug": "london"}]
+        self.assertIn('<p class="links">', pages.render_browse_nav(built))
+
     def test_injection_replaces_marker_contents(self):
         doc = f"<footer>{pages.BROWSE_START}\nOLD\n{pages.BROWSE_END}</footer>"
         out = pages.inject_browse_links(doc, "NEW")
