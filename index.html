@@ -151,13 +151,28 @@
     font:inherit;font-size:.9rem;padding:8px 10px;border:1.5px solid var(--line);
     border-radius:6px;background:var(--paper);color:var(--ink);max-width:100%;
   }
-  .toggle-new{
-    font:inherit;font-size:.9rem;padding:8px 12px;border:1.5px solid var(--line);
-    border-radius:6px;background:var(--paper);cursor:pointer;color:var(--ink);
+  .views{display:flex;gap:0;border:1.5px solid var(--line);border-radius:6px;overflow:hidden}
+  .view{
+    font:inherit;font-size:.9rem;padding:8px 12px;border:0;
+    border-right:1.5px solid var(--line);
+    background:var(--paper);cursor:pointer;color:var(--ink);white-space:nowrap;
   }
-  .toggle-new[aria-pressed="true"]{
-    background:var(--signal);border-color:var(--ink);font-weight:600;
+  .view:last-child{border-right:0}
+  .view:hover{background:var(--paper-dim)}
+  .view[aria-pressed="true"]{font-weight:600;background:var(--paper-dim)}
+  #viewAdded[aria-pressed="true"]{background:var(--signal)}
+  #viewRemoved[aria-pressed="true"]{background:#FBE3E1}
+  .view .n{opacity:.65;font-weight:400;margin-left:2px}
+
+  /* explains a view whose meaning is not obvious from the rows alone */
+  .notice{
+    margin:20px 0 0;padding:12px 14px;border-radius:8px;
+    border:1.5px solid var(--line);background:var(--paper-dim);
+    font-size:.9rem;color:var(--ink-soft);max-width:640px;
   }
+  .notice[hidden]{display:none}
+  .notice strong{color:var(--ink)}
+  .notice.warn{background:#FBE3E1;border-color:#E7B4AE}
   :is(input,select,button,a):focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
 
   /* results */
@@ -242,6 +257,10 @@
   @media (max-width:640px){
     thead th:nth-child(4),tbody td:nth-child(4){display:none}
     .searchbox{box-shadow:3px 3px 0 var(--cobalt)}
+    /* keep the three-way switch on one line on a narrow phone */
+    .views{width:100%}
+    .view{flex:1;padding:8px 6px;font-size:.82rem;text-align:center}
+    .view .n{display:block;margin:0}
   }
 </style>
 </head>
@@ -268,8 +287,14 @@
     <div class="filters">
       <select id="industry" aria-label="Filter by industry"><option value="">All industries</option></select>
       <select id="route" aria-label="Filter by visa route"><option value="">All visa routes</option></select>
-      <button class="toggle-new" id="newOnly" aria-pressed="false">Added recently</button>
+      <div class="views" role="group" aria-label="Choose which employers to show">
+        <button class="view" id="viewAll" aria-pressed="true">All</button>
+        <button class="view" id="viewAdded" aria-pressed="false">Just added <span class="n" id="nAdded"></span></button>
+        <button class="view" id="viewRemoved" aria-pressed="false">Lost licence <span class="n" id="nRemoved"></span></button>
+      </div>
     </div>
+
+    <p class="notice" id="viewNotice" hidden></p>
   </section>
 
   <section aria-live="polite">
@@ -350,6 +375,8 @@
 
   const PAGE = 50;
   let all = [], newNames = new Set(), filtered = [], shown = 0, loaded = false;
+  // '' = the whole register, 'added' = newly licensed, 'removed' = licence lost
+  let addedRows = [], removedRows = [], view = '', windowDays = 7;
 
   const $ = id => document.getElementById(id);
   const rows = $('rows');
@@ -362,20 +389,52 @@
     const html = slice.map(s=>{
       const [name,town,county,industry,routes,rating] = s;
       const loc = [town,county].filter(Boolean).join(', ');
-      const isNew = newNames.has(name.toLowerCase());
+      // In the "just added" view every row is new, so the tag is only noise.
+      const isNew = view === '' && newNames.has(name.toLowerCase());
+      // A removed employer's last rating says nothing about today, and
+      // showing "A" next to "no longer licensed" would contradict itself.
+      const ratingCell = view === 'removed'
+        ? '—'
+        : (rating==='A' ? '<span class="rating-a">A</span>' : esc(rating||'—'));
       return `<tr>
         <td class="name">${esc(name)}${isNew?' <span class="tag new">New</span>':''}</td>
         <td>${esc(loc)}</td>
         <td>${esc(industry)}</td>
         <td>${routes.map(r=>`<span class="tag">${esc(r)}</span>`).join('')}</td>
-        <td>${rating==='A'?'<span class="rating-a">A</span>':esc(rating||'—')}</td>
+        <td>${ratingCell}</td>
       </tr>`;
     }).join('');
     rows.insertAdjacentHTML('beforeend', html);
     shown += slice.length;
     $('count').textContent = filtered.length.toLocaleString();
     $('empty').hidden = filtered.length>0;
+    if(!filtered.length) $('empty').innerHTML = emptyMessage();
     $('more').hidden = shown >= filtered.length;
+  }
+
+  // An empty view must explain itself. "No sponsors match" next to an empty
+  // "lost licence" list reads as broken, when in fact it is good news.
+  function emptyMessage(){
+    if(!sourceRows().length){
+      if(view === 'added'){
+        return `<strong>No employers were added in the last ${windowDays} days.</strong>` +
+               `<br>The register does not change every day. Check back soon.`;
+      }
+      if(view === 'removed'){
+        return `<strong>No employer lost their licence in the last ${windowDays} days.</strong>` +
+               `<br>That is good news for anyone job hunting right now.`;
+      }
+    }
+    return '<strong>Nothing matched that search.</strong>' +
+           '<br>Try fewer words, or clear the industry and route filters.';
+  }
+
+  // Removed employers are not in the main register any more, so the views
+  // swap the underlying list rather than filtering it.
+  function sourceRows(){
+    if(view === 'added') return addedRows;
+    if(view === 'removed') return removedRows;
+    return all;
   }
 
   function apply(){
@@ -386,11 +445,9 @@
     const q = $('q').value.trim().toLowerCase().split(/\s+/).filter(Boolean);
     const ind = $('industry').value;
     const route = $('route').value;
-    const onlyNew = $('newOnly').getAttribute('aria-pressed')==='true';
-    filtered = all.filter(s=>{
+    filtered = sourceRows().filter(s=>{
       if(ind && s[3]!==ind) return false;
       if(route && !s[4].includes(route)) return false;
-      if(onlyNew && !newNames.has(s[0].toLowerCase())) return false;
       if(q.length){
         const hay = (s[0]+' '+s[1]+' '+s[2]+' '+s[3]).toLowerCase();
         for(const w of q){ if(!hay.includes(w)) return false; }
@@ -398,6 +455,33 @@
       return true;
     });
     render(true);
+  }
+
+  // ----------------------------------------------------------- views --
+  const VIEW_BUTTONS = {'':'viewAll', 'added':'viewAdded', 'removed':'viewRemoved'};
+
+  function setView(next){
+    view = VIEW_BUTTONS[next] ? next : '';
+    for(const [name,id] of Object.entries(VIEW_BUTTONS)){
+      $(id).setAttribute('aria-pressed', String(name === view));
+    }
+    const el = $('viewNotice');
+    if(view === 'removed'){
+      el.className = 'notice warn';
+      el.innerHTML = '<strong>These employers can no longer sponsor a visa.</strong> ' +
+        `They were on the official register within the last ${windowDays} days ` +
+        'but have since been removed. Applying to them for sponsored work is ' +
+        'unlikely to lead anywhere.';
+      el.hidden = false;
+    }else if(view === 'added'){
+      el.className = 'notice';
+      el.innerHTML = '<strong>Newly licensed employers.</strong> ' +
+        `Added to the register in the last ${windowDays} days. Fewer applicants ` +
+        'know these exist yet, so there is often less competition.';
+      el.hidden = false;
+    }else{
+      el.hidden = true;
+    }
   }
 
   // ------------------------------------------------------- url state --
@@ -408,7 +492,7 @@
     if(q) p.set('q', q);
     if($('industry').value) p.set('industry', $('industry').value);
     if($('route').value) p.set('route', $('route').value);
-    if($('newOnly').getAttribute('aria-pressed')==='true') p.set('new','1');
+    if(view) p.set('view', view);
     return p.toString();
   }
 
@@ -428,7 +512,8 @@
   function restoreInputs(){
     const p = new URLSearchParams(location.search);
     $('q').value = p.get('q') || '';
-    $('newOnly').setAttribute('aria-pressed', p.get('new')==='1' ? 'true' : 'false');
+    // ?new=1 was the old spelling; links using it are still out there.
+    setView(p.get('view') || (p.get('new')==='1' ? 'added' : ''));
   }
   function restoreSelects(){
     const p = new URLSearchParams(location.search);
@@ -449,10 +534,9 @@
   $('industry').addEventListener('change',()=>{ apply(); syncURL(true); });
   $('route').addEventListener('change',()=>{ apply(); syncURL(true); });
   $('more').addEventListener('click',()=>render(false));
-  $('newOnly').addEventListener('click',e=>{
-    const b=e.currentTarget, on=b.getAttribute('aria-pressed')==='true';
-    b.setAttribute('aria-pressed',String(!on)); apply(); syncURL(true);
-  });
+  for(const [name,id] of Object.entries(VIEW_BUTTONS)){
+    $(id).addEventListener('click',()=>{ setView(name); apply(); syncURL(true); });
+  }
   window.addEventListener('popstate',()=>{ restoreInputs(); restoreSelects(); apply(); });
 
   // Reflect the URL in the controls straight away, so someone landing on a
@@ -517,13 +601,22 @@
   Promise.all([
     fetch('data/sponsors.json').then(r=>r.json()),
     fetch('data/new_sponsors.json').then(r=>r.json()).catch(()=>({new:[]})),
-    fetch('data/meta.json').then(r=>r.json()).catch(()=>({}))
-  ]).then(([main,recent,meta])=>{
+    fetch('data/meta.json').then(r=>r.json()).catch(()=>({})),
+    fetch('data/removed_sponsors.json').then(r=>r.json()).catch(()=>({removed:[]}))
+  ]).then(([main,recent,meta,gone])=>{
     all = main.sponsors||[];
-    (recent.new||[]).forEach(s=>newNames.add(s[0].toLowerCase()));
+    addedRows = recent.new||[];
+    removedRows = gone.removed||[];
+    windowDays = recent.window_days || meta.window_days || 7;
+    addedRows.forEach(s=>newNames.add(s[0].toLowerCase()));
     $('total').textContent = all.length.toLocaleString();
     $('updated').textContent = main.updated||'—';
     if(meta.sample){ $('sampleNote').style.display='block'; }
+
+    // Counts on the buttons: they tell someone whether a view is worth a click.
+    $('nAdded').textContent = addedRows.length ? `(${addedRows.length})` : '';
+    $('nRemoved').textContent = removedRows.length ? `(${removedRows.length})` : '';
+    setView(view);   // re-render the notice now that windowDays is known
 
     // build filter options from data
     const inds=[...new Set(all.map(s=>s[3]))].sort();
