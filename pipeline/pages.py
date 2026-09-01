@@ -16,6 +16,7 @@ Everything except write_all() is a pure function so it can be unit tested
 """
 
 import html
+import json
 import re
 import unicodedata
 from urllib.parse import urlencode
@@ -253,6 +254,44 @@ def render_sitemap(pages):
             f"{body}\n</urlset>\n")
 
 
+# Which slugs the last run generated. Without this a page that drops out of
+# the top list stays live and indexed, unlinked and slowly going stale, which
+# is worse than never having existed.
+MANIFEST = "generated_pages.json"
+
+
+def stale_slugs(previous, current):
+    """Slugs generated last time that are not generated this time."""
+    return sorted(set(previous) - set(current))
+
+
+def read_manifest(data_dir):
+    try:
+        return json.loads((data_dir / MANIFEST).read_text(encoding="utf-8"))["slugs"]
+    except Exception:
+        return []
+
+
+def remove_stale(root, slugs):
+    """Delete pages we generated and no longer generate.
+
+    Only removes a directory that contains exactly the index.html we wrote,
+    so a hand-made directory, or one holding anything else, is never touched.
+    """
+    removed = []
+    for slug in slugs:
+        directory = root / slug
+        page = directory / "index.html"
+        if not page.exists():
+            continue
+        if {entry.name for entry in directory.iterdir()} != {"index.html"}:
+            continue
+        page.unlink()
+        directory.rmdir()
+        removed.append(slug)
+    return removed
+
+
 def write_all(root, sponsors, updated=""):
     """Generate every landing page, the sitemap, and the homepage nav."""
     pages = build_pages(sponsors)
@@ -272,4 +311,16 @@ def write_all(root, sponsors, updated=""):
                             render_browse_nav(pages)),
         encoding="utf-8",
     )
+
+    # Retire pages that dropped out of the top list, then record what this
+    # run produced so the next one can do the same.
+    data_dir = root / "data"
+    data_dir.mkdir(exist_ok=True)
+    slugs = [p["slug"] for p in pages]
+    gone = remove_stale(root, stale_slugs(read_manifest(data_dir), slugs))
+    if gone:
+        print("Retired landing pages no longer in the top list:", ", ".join(gone))
+    (data_dir / MANIFEST).write_text(
+        json.dumps({"slugs": sorted(slugs)}, indent=1), encoding="utf-8")
+
     return pages

@@ -46,16 +46,34 @@ DATA = ROOT / "data"
 # conservative: an org gets a tag only on a confident keyword hit,
 # otherwise "Other". Extend freely.
 INDUSTRY_RULES = [
-    ("Healthcare & Care", r"\b(care|caring|nursing|nurses|health|medical|clinic|hospice|hospital|pharma|dental|dentist|gp|surgery|homecare|home care|carers)\b"),
-    ("Tech & Software", r"\b(tech|software|digital|data|cyber|cloud|systems|solutions|it services|informatics|analytics|ai|labs)\b"),
-    ("Hospitality & Food", r"\b(restaurant|hotel|hospitality|catering|cafe|kitchen|foods?|dining|takeaway|grill|pizza|curry|tandoori|bakery|brewery|pub)\b"),
-    ("Construction & Engineering", r"\b(construction|builders?|building|engineering|engineers|civil|electrical|mechanical|contractors?|scaffolding|roofing)\b"),
-    ("Finance & Professional", r"\b(accountants?|accounting|finance|financial|capital|consulting|consultants|advisory|solicitors?|legal|law|insurance|audit)\b"),
-    ("Education & Research", r"\b(school|college|university|academy|education|training|institute|research|nursery)\b"),
-    ("Logistics & Transport", r"\b(logistics|transport|haulage|freight|shipping|courier|delivery|distribution)\b"),
-    ("Retail & Commerce", r"\b(retail|stores?|supermarket|trading|wholesale|commerce|mart|shop)\b"),
-    ("Charity & Faith", r"\b(charity|charitable|foundation|trust|church|mosque|temple|gurdwara|ministries|mission)\b"),
-    ("Recruitment & Staffing", r"\b(recruitment|recruiting|staffing|personnel|workforce|manpower|talent)\b"),
+    # Order matters: the first rule that matches wins. More specific
+    # descriptions come before broader ones, so "Medical Recruitment" is a
+    # recruiter and "Hotel & Spa" is a hotel rather than a beauty salon.
+    #
+    # Patterns end in \w* rather than a bare word so longer forms are caught.
+    # An earlier version matched \bhealth\b and \btech\b, which silently
+    # missed "healthcare" (1,196 employers) and "technologies" (958).
+    ("Recruitment & Staffing", r"\b(recruit\w*|staffing|personnel|workforce|manpower|headhunt\w*)\b"),
+    ("Public Sector", r"\b(council|borough|nhs|police|constabulary|fire and rescue|parish council)\b"),
+    ("Charity & Faith", r"\b(charity|charitable|foundation|church|mosque|temple|gurdwara|ministries|mission|synagogue|parish|diocese)\b"),
+    ("Education & Research", r"\b(school|college|universit\w*|academy|educat\w*|training|institute|research|nursery|tuition|montessori)\b"),
+    ("Healthcare & Care", r"\b(care|carers|caring|healthcare|health|nursing|nurses|medical|medicine|clinic\w*|hospice|hospital|pharmac\w*|dental|dentist\w*|surgery|homecare|physio\w*|optic\w*|therapy|therapist\w*|diagnostic\w*|veterinar\w*|vets)\b"),
+    ("Sport & Leisure", r"\b(cricket|football|rugby|tennis|sports?|athletic\w*|fitness|gym|leisure|golf|boxing)\b"),
+    ("Hospitality & Food", r"\b(restaurant\w*|hotels?|hospitality|catering|caterers|caf\w*|kitchen\w*|foods?|dining|takeaway|grill|pizza|curry|tandoori|bakery|bakers|brewery|pub|spice\w*|halal|sweets|chef\w*|lounge|bistro|deli|chicken|bbq|kebab|doner|noodle\w*|sushi|burger\w*|buffet|tapas|desserts?|meals?|cuisine)\b"),
+    ("Beauty & Wellbeing", r"\b(beauty|salon|barbers?|spa|aesthetic\w*|cosmetic\w*|hairdress\w*|nails|wellness)\b"),
+    ("Tech & Software", r"\b(tech\w*|software|digital|cyber\w*|cloud|systems|informatics|analytics|robotics|data|it services|telecom\w*)\b"),
+    ("Construction & Engineering", r"\b(construction|builders?|building|engineer\w*|civil|electrical|mechanical|contractors?|scaffold\w*|roofing|plumbing|joinery|plastering|groundwork\w*)\b"),
+    ("Property & Real Estate", r"\b(propert\w*|estates?|lettings|housing|realty|developments)\b"),
+    ("Motor & Automotive", r"\b(motors?|cars?|autos?|automotive|garage|tyres?|vehicles?|coachworks)\b"),
+    ("Logistics & Transport", r"\b(logistics|transport\w*|haulage|freight|shipping|courier\w*|delivery|distribution|removals)\b"),
+    ("Manufacturing & Industry", r"\b(manufactur\w*|industries|industrial|plastics|steel|textiles|packaging|foundry|fabrication|works)\b"),
+    ("Agriculture & Food Production", r"\b(farms?|farming|agricultur\w*|growers?|horticultur\w*|fisheries)\b"),
+    ("Security & Facilities", r"\b(security|cleaning|cleaners|facilities|janitorial|maintenance|landscaping)\b"),
+    ("Energy & Utilities", r"\b(energy|solar|renewable\w*|utilities|petroleum|electric\w*)\b"),
+    ("Media & Creative", r"\b(media|news|design\w*|studios?|photograph\w*|film\w*|marketing|advertis\w*|creative|productions|events|print\w*)\b"),
+    ("Travel & Tourism", r"\b(travel|tours?|tourism|holidays|airways|aviation)\b"),
+    ("Retail & Commerce", r"\b(retail|stores?|supermarket|trading|wholesale|commerce|mart|shop|market|grocer\w*|post office)\b"),
+    ("Finance & Professional", r"\b(accountant\w*|accounting|financ\w*|capital|consult\w*|advisory|solicitors?|legal|law|insurance|audit|tax|taxation|mortgage\w*|investment\w*|chambers|bank|banking|associates|partners)\b"),
 ]
 INDUSTRY_RULES = [(name, re.compile(rx, re.I)) for name, rx in INDUSTRY_RULES]
 

@@ -4,8 +4,10 @@ Run from the repo root:
     python -m unittest discover -s pipeline -v
 """
 
+import tempfile
 import unittest
 import xml.etree.ElementTree as ET
+from pathlib import Path
 
 import pages
 
@@ -185,6 +187,50 @@ class BrowseNavTests(unittest.TestCase):
     def test_missing_markers_raise(self):
         with self.assertRaises(RuntimeError):
             pages.inject_browse_links("<footer></footer>", "NEW")
+
+
+class StalePageTests(unittest.TestCase):
+    """A page that drops out of the top list must be retired, not left live
+    and unlinked with numbers that stop updating."""
+
+    def setUp(self):
+        self.root = Path(tempfile.mkdtemp())
+
+    def _make_page(self, slug, extra=None):
+        d = self.root / slug
+        d.mkdir()
+        (d / "index.html").write_text("page", encoding="utf-8")
+        if extra:
+            (d / extra).write_text("x", encoding="utf-8")
+        return d
+
+    def test_identifies_what_dropped_out(self):
+        self.assertEqual(pages.stale_slugs(["a", "b", "c"], ["a", "c"]), ["b"])
+
+    def test_nothing_stale_when_the_list_is_unchanged(self):
+        self.assertEqual(pages.stale_slugs(["a"], ["a"]), [])
+
+    def test_removes_a_page_it_generated(self):
+        self._make_page("charity-faith")
+        removed = pages.remove_stale(self.root, ["charity-faith"])
+        self.assertEqual(removed, ["charity-faith"])
+        self.assertFalse((self.root / "charity-faith").exists())
+
+    def test_leaves_a_directory_holding_anything_else(self):
+        # Never delete something a human put there.
+        self._make_page("keep-me", extra="notes.md")
+        self.assertEqual(pages.remove_stale(self.root, ["keep-me"]), [])
+        self.assertTrue((self.root / "keep-me" / "index.html").exists())
+
+    def test_ignores_a_slug_that_is_already_gone(self):
+        self.assertEqual(pages.remove_stale(self.root, ["never-existed"]), [])
+
+    def test_missing_manifest_reads_as_empty(self):
+        self.assertEqual(pages.read_manifest(self.root), [])
+
+    def test_corrupt_manifest_reads_as_empty(self):
+        (self.root / pages.MANIFEST).write_text("{oops", encoding="utf-8")
+        self.assertEqual(pages.read_manifest(self.root), [])
 
 
 class SitemapTests(unittest.TestCase):
