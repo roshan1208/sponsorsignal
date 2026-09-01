@@ -62,6 +62,23 @@ subscribed") that message is shown instead of a generic one.
 signup is not a subscriber until they click the link in the confirmation
 email, so the success message tells them to go and check their inbox.
 
+### Alert scope: do this in MailerLite or the data is thrown away
+
+The signup form also sends `fields[city]` and `fields[industry]`, prefilled
+from whatever the visitor was already searching for. That is what makes the
+weekly email worth opening: 124 new employers nationwide is noise, three in
+your city is not, and it is the segmentation any paid tier would be sold on.
+
+**MailerLite silently ignores a field it does not know about.** It returns
+success and drops the value, so signup keeps working but the scope is lost.
+Create both fields once, or none of this is recorded:
+
+> Subscribers &rarr; Fields &rarr; Create field, type Text, twice:
+> **city** and **industry**. The keys must match exactly.
+
+Check it worked: sign up with a city selected, then open the subscriber in
+MailerLite and confirm the city shows against them.
+
 To change the destination, create a new embedded form in MailerLite and copy
 the `action` URL out of its snippet.
 
@@ -88,6 +105,19 @@ If you change the site code, change both.
 
 Note GoatCounter's free tier is intended for non-commercial use. Once this
 earns money, move to a paid plan or switch to Cloudflare Web Analytics.
+
+## CSV export
+
+The results bar has a download button that exports exactly what is on screen,
+filters and all. It is built in the browser rather than served as a file, so
+it always matches the current view and costs no bandwidth.
+
+- The filename records the filters, e.g.
+  `sponsorsignal-added-tech-software-london-2026-09-02.csv`.
+- Rows are CRLF terminated with a UTF-8 BOM, so Excel opens it correctly and
+  shows accented employer names properly.
+- In the "lost licence" view the rating column is left empty on purpose. A
+  removed employer's last known rating says nothing about today.
 
 ## Change tracking
 

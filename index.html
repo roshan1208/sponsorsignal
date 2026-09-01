@@ -176,8 +176,20 @@
   :is(input,select,button,a):focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
 
   /* results */
-  .results-meta{margin:26px 0 10px;font-size:.9rem;color:var(--ink-soft)}
+  .results-bar{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    flex-wrap:wrap;margin:26px 0 10px;
+  }
+  .results-bar[hidden]{display:none}
+  .results-meta{font-size:.9rem;color:var(--ink-soft)}
   .results-meta strong{color:var(--ink)}
+  .download{
+    font:inherit;font-size:.85rem;font-weight:600;padding:7px 14px;
+    border:1.5px solid var(--line);border-radius:6px;background:var(--paper);
+    color:var(--ink);cursor:pointer;
+  }
+  .download:hover{background:var(--paper-dim);border-color:var(--ink)}
+  .download[disabled]{opacity:.6;cursor:default}
   table{width:100%;border-collapse:collapse;font-size:.95rem}
   thead th{
     text-align:left;font-weight:600;font-size:.82rem;color:var(--ink-soft);
@@ -224,7 +236,14 @@
   }
   .alerts h2{font-size:1.25rem;font-weight:800;letter-spacing:-0.01em}
   .alerts p{color:var(--ink-soft);margin-top:6px;max-width:520px}
-  .alerts form{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+  .alerts form{margin-top:16px}
+  .alert-scope{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+  .alert-scope label{font-size:.9rem;color:var(--ink-soft)}
+  .alert-scope select{
+    font:inherit;font-size:.9rem;padding:7px 10px;border:1.5px solid var(--line);
+    border-radius:6px;background:var(--paper);color:var(--ink);max-width:100%;
+  }
+  .alert-row{display:flex;gap:10px;flex-wrap:wrap}
   .alerts input[type=email]{
     flex:1;min-width:220px;font:inherit;padding:11px 14px;
     border:2px solid var(--ink);border-radius:8px;
@@ -298,7 +317,10 @@
   </section>
 
   <section aria-live="polite">
-    <p class="results-meta" id="resultsMeta" hidden><strong id="count">0</strong> employers found</p>
+    <div class="results-bar" id="resultsMeta" hidden>
+      <p class="results-meta"><strong id="count">0</strong> employers found</p>
+      <button class="download" id="download" type="button">Download as CSV</button>
+    </div>
 
     <div class="loading" id="loading" role="status">
       <span class="spinner" aria-hidden="true"></span>
@@ -322,8 +344,15 @@
     <p>New employers get a licence almost every week. Leave your email and we'll send you the new ones, so you can apply before everyone else finds them.</p>
     <!-- Submission is handled in JS; set ALERT_ENDPOINT at the top of the script. See README. -->
     <form id="alertForm">
-      <input type="email" name="email" required placeholder="you@example.com" aria-label="Email address">
-      <button type="submit">Notify me</button>
+      <div class="alert-scope">
+        <label for="alertCity">Only tell me about</label>
+        <select id="alertCity" name="city"><option value="">anywhere in the UK</option></select>
+        <select id="alertIndustry" name="industry"><option value="">any industry</option></select>
+      </div>
+      <div class="alert-row">
+        <input type="email" name="email" required placeholder="you@example.com" aria-label="Email address">
+        <button type="submit">Notify me</button>
+      </div>
     </form>
     <p class="done" id="alertDone" role="status">Almost there. Check your inbox and click the confirmation link to finish signing up.</p>
     <p class="err" id="alertErr" role="alert"></p>
@@ -379,6 +408,9 @@
   let all = [], newNames = new Set(), filtered = [], shown = 0, loaded = false;
   // '' = the whole register, 'added' = newly licensed, 'removed' = licence lost
   let addedRows = [], removedRows = [], view = '', windowDays = 7;
+  // Alert scope mirrors what someone is already looking at, until they set
+  // it themselves. Asking again for something they just typed is friction.
+  let alertTouched = false, knownTowns = new Set();
 
   const $ = id => document.getElementById(id);
   const rows = $('rows');
@@ -409,9 +441,15 @@
     rows.insertAdjacentHTML('beforeend', html);
     shown += slice.length;
     $('count').textContent = filtered.length.toLocaleString();
+    const dl = $('download');
+    dl.disabled = !filtered.length;
+    dl.textContent = filtered.length
+      ? `Download ${filtered.length.toLocaleString()} as CSV`
+      : 'Download as CSV';
     $('empty').hidden = filtered.length>0;
     if(!filtered.length) $('empty').innerHTML = emptyMessage();
     $('more').hidden = shown >= filtered.length;
+    mirrorScope();
   }
 
   // An empty view must explain itself. "No sponsors match" next to an empty
@@ -457,6 +495,70 @@
       return true;
     });
     render(true);
+  }
+
+  // Prefill the alert scope from the current search, so someone who just
+  // searched "healthcare Manchester" is offered alerts for exactly that.
+  function mirrorScope(){
+    if(alertTouched) return;
+    const ind = $('industry').value;
+    if(ind) $('alertIndustry').value = ind;
+    const q = $('q').value.trim().toLowerCase();
+    if(knownTowns.has(q)){
+      for(const opt of $('alertCity').options){
+        if(opt.value.toLowerCase() === q){ $('alertCity').value = opt.value; return; }
+      }
+    }
+  }
+
+  // ------------------------------------------------------------ csv --
+  // Exports exactly what is on screen, filters and all. Built here rather
+  // than served as a file so it always matches the current view and costs
+  // no bandwidth.
+  function csvCell(value){
+    const s = String(value == null ? '' : value);
+    // Quote if the value could break a row, and double any inner quotes.
+    return /[",\n\r]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+  }
+
+  function buildCSV(records){
+    const head = ['Employer','Town','County','Industry','Visa routes','Rating'];
+    const lines = [head.join(',')];
+    for(const [name,town,county,industry,routes,rating] of records){
+      lines.push([name, town, county, industry,
+                  (routes||[]).join('; '),
+                  view === 'removed' ? '' : rating].map(csvCell).join(','));
+    }
+    // CRLF is what the CSV spec says and what Excel is happiest with.
+    return lines.join('\r\n');
+  }
+
+  function csvFilename(){
+    const bits = ['sponsorsignal'];
+    if(view) bits.push(view);
+    const ind = $('industry').value, rt = $('route').value;
+    const q = $('q').value.trim();
+    for(const part of [ind, rt, q]){
+      if(part) bits.push(part.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''));
+    }
+    bits.push(new Date().toISOString().slice(0,10));
+    return bits.join('-').slice(0, 120) + '.csv';
+  }
+
+  function downloadCSV(){
+    if(!filtered.length) return;
+    // A BOM so Excel reads the accents in employer names as UTF-8.
+    const blob = new Blob(['﻿' + buildCSV(filtered)],
+                          {type:'text/csv;charset=utf-8;'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = csvFilename();
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    // Revoke on the next tick; revoking immediately can cancel the download.
+    setTimeout(()=>URL.revokeObjectURL(url), 1000);
   }
 
   // ----------------------------------------------------------- views --
@@ -536,6 +638,10 @@
   $('industry').addEventListener('change',()=>{ apply(); syncURL(true); });
   $('route').addEventListener('change',()=>{ apply(); syncURL(true); });
   $('more').addEventListener('click',()=>render(false));
+  $('download').addEventListener('click',downloadCSV);
+  for(const id of ['alertCity','alertIndustry']){
+    $(id).addEventListener('change',()=>{ alertTouched = true; });
+  }
   for(const [name,id] of Object.entries(VIEW_BUTTONS)){
     $(id).addEventListener('click',()=>{ setView(name); apply(); syncURL(true); });
   }
@@ -577,6 +683,12 @@
     try{
       const body = new FormData();
       body.append('fields[email]', email);
+      // Scope is what makes the weekly email worth opening: 124 new
+      // employers nationwide is noise, 3 in your city is not. MailerLite
+      // ignores a field it does not know, so these are only stored if the
+      // matching custom fields exist in the account (see README).
+      if($('alertCity').value) body.append('fields[city]', $('alertCity').value);
+      if($('alertIndustry').value) body.append('fields[industry]', $('alertIndustry').value);
       body.append('ml-submit', '1');
       body.append('anticsrf', 'true');
       const res = await fetch(ALERT_ENDPOINT, {method:'POST', body});
@@ -625,6 +737,18 @@
     $('industry').insertAdjacentHTML('beforeend', inds.map(i=>`<option>${esc(i)}</option>`).join(''));
     const routes=[...new Set(all.flatMap(s=>s[4]))].sort();
     $('route').insertAdjacentHTML('beforeend', routes.map(r=>`<option>${esc(r)}</option>`).join(''));
+
+    // Alert scope options. Towns are capped: a select of 6,000+ places is
+    // unusable, and the long tail sees too few changes to alert on.
+    const townCount = {};
+    for(const s of all){ if(s[1]) townCount[s[1]] = (townCount[s[1]]||0) + 1; }
+    const topTowns = Object.keys(townCount)
+      .sort((a,b)=>townCount[b]-townCount[a]).slice(0,30).sort();
+    knownTowns = new Set(topTowns.map(t=>t.toLowerCase()));
+    $('alertCity').insertAdjacentHTML('beforeend',
+      topTowns.map(t=>`<option>${esc(t)}</option>`).join(''));
+    $('alertIndustry').insertAdjacentHTML('beforeend',
+      inds.map(i=>`<option>${esc(i)}</option>`).join(''));
 
     // Swap the loading state for the results, then render the first page.
     // Note restoreInputs() is deliberately NOT called again here: anything
