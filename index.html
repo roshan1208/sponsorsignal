@@ -323,6 +323,7 @@
     </div>
 
     <div class="filters">
+      <select id="city" aria-label="Filter by town or city"><option value="">All towns and cities</option></select>
       <select id="industry" aria-label="Filter by industry"><option value="">All industries</option></select>
       <select id="route" aria-label="Filter by visa route"><option value="">All visa routes</option></select>
       <div class="views" role="group" aria-label="Choose which employers to show">
@@ -502,9 +503,11 @@
     // apply() again once the data is in, honouring whatever was typed.
     if(!loaded) return;
     const q = $('q').value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    const city = $('city').value;
     const ind = $('industry').value;
     const route = $('route').value;
     filtered = sourceRows().filter(s=>{
+      if(city && s[1]!==city) return false;
       if(ind && s[3]!==ind) return false;
       if(route && !s[4].includes(route)) return false;
       if(q.length){
@@ -522,10 +525,14 @@
     if(alertTouched) return;
     const ind = $('industry').value;
     if(ind) $('alertIndustry').value = ind;
-    const q = $('q').value.trim().toLowerCase();
-    if(knownTowns.has(q)){
-      for(const opt of $('alertCity').options){
-        if(opt.value.toLowerCase() === q){ $('alertCity').value = opt.value; return; }
+    // The city filter is the reliable signal. A typed search term only
+    // counts when it names a town we actually offer alerts for.
+    const typed = $('q').value.trim().toLowerCase();
+    const want = $('city').value || (knownTowns.has(typed) ? typed : '');
+    if(!want) return;
+    for(const opt of $('alertCity').options){
+      if(opt.value.toLowerCase() === want.toLowerCase()){
+        $('alertCity').value = opt.value; return;
       }
     }
   }
@@ -555,9 +562,9 @@
   function csvFilename(){
     const bits = ['sponsorsignal'];
     if(view) bits.push(view);
-    const ind = $('industry').value, rt = $('route').value;
+    const ct = $('city').value, ind = $('industry').value, rt = $('route').value;
     const q = $('q').value.trim();
-    for(const part of [ind, rt, q]){
+    for(const part of [ct, ind, rt, q]){
       if(part) bits.push(part.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''));
     }
     bits.push(new Date().toISOString().slice(0,10));
@@ -613,6 +620,7 @@
     const p = new URLSearchParams();
     const q = $('q').value.trim();
     if(q) p.set('q', q);
+    if($('city').value) p.set('city', $('city').value);
     if($('industry').value) p.set('industry', $('industry').value);
     if($('route').value) p.set('route', $('route').value);
     if(view) p.set('view', view);
@@ -640,7 +648,7 @@
   }
   function restoreSelects(){
     const p = new URLSearchParams(location.search);
-    for(const id of ['industry','route']){
+    for(const id of ['city','industry','route']){
       const want = p.get(id) || '';
       $(id).value = want;
       if($(id).value !== want) $(id).value = '';   // unknown value → "All"
@@ -654,6 +662,7 @@
     t=setTimeout(()=>{ apply(); syncURL(false); },150);
   });
   $('go').addEventListener('click',()=>{ apply(); syncURL(true); });
+  $('city').addEventListener('change',()=>{ apply(); syncURL(true); });
   $('industry').addEventListener('change',()=>{ apply(); syncURL(true); });
   $('route').addEventListener('change',()=>{ apply(); syncURL(true); });
   $('more').addEventListener('click',()=>render(false));
@@ -765,15 +774,20 @@
     const routes=[...new Set(all.flatMap(s=>s[4]))].sort();
     $('route').insertAdjacentHTML('beforeend', routes.map(r=>`<option>${esc(r)}</option>`).join(''));
 
-    // Alert scope options. Towns are capped: a select of 6,000+ places is
-    // unusable, and the long tail sees too few changes to alert on.
+    // Towns are capped rather than listed in full: there are over 6,000, and
+    // a select that long is unusable. The tail is still reachable by typing,
+    // which is what the search box is for.
     const townCount = {};
     for(const s of all){ if(s[1]) townCount[s[1]] = (townCount[s[1]]||0) + 1; }
-    const topTowns = Object.keys(townCount)
-      .sort((a,b)=>townCount[b]-townCount[a]).slice(0,30).sort();
-    knownTowns = new Set(topTowns.map(t=>t.toLowerCase()));
+    const bySize = Object.keys(townCount).sort((a,b)=>townCount[b]-townCount[a]);
+    const filterTowns = bySize.slice(0,60).sort();
+    const alertTowns = bySize.slice(0,30).sort();
+    knownTowns = new Set(alertTowns.map(t=>t.toLowerCase()));
+
+    $('city').insertAdjacentHTML('beforeend', filterTowns.map(
+      t=>`<option>${esc(t)}</option>`).join(''));
     $('alertCity').insertAdjacentHTML('beforeend',
-      topTowns.map(t=>`<option>${esc(t)}</option>`).join(''));
+      alertTowns.map(t=>`<option>${esc(t)}</option>`).join(''));
     $('alertIndustry').insertAdjacentHTML('beforeend',
       inds.map(i=>`<option>${esc(i)}</option>`).join(''));
 

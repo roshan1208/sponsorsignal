@@ -103,10 +103,13 @@ def examples_for(sponsors, index, label, limit=EXAMPLES_PER_PAGE):
 
 
 def filter_query(kind, label):
-    """Query string that reproduces this page's view in the main app."""
-    # Towns have no dedicated filter; the free-text search already matches
-    # the town column, so q= is the faithful equivalent.
-    key = "industry" if kind == "industry" else "q"
+    """Query string that reproduces this page's view in the main app.
+
+    Both kinds map to a real filter. Towns used to fall back to the
+    free-text search, which also matched employers with the town in their
+    name, so a city page overstated its own count.
+    """
+    key = "industry" if kind == "industry" else "city"
     return urlencode({key: label})
 
 

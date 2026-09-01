@@ -108,9 +108,11 @@ class FilterQueryTests(unittest.TestCase):
         self.assertEqual(pages.filter_query("industry", "Tech & Software"),
                          "industry=Tech+%26+Software")
 
-    def test_town_falls_back_to_free_text_search(self):
+    def test_town_uses_the_city_filter_not_free_text(self):
+        # Free text also matched employers with the town in their name, so a
+        # city page linked to a list bigger than the count it advertised.
         self.assertEqual(pages.filter_query("town", "Milton Keynes"),
-                         "q=Milton+Keynes")
+                         "city=Milton+Keynes")
 
 
 class RenderPageTests(unittest.TestCase):
@@ -126,7 +128,7 @@ class RenderPageTests(unittest.TestCase):
         self.assertIn("<h1>Companies that sponsor UK work visas in London</h1>", out)
         self.assertIn('rel="canonical" href="'
                       'https://roshan1208.github.io/sponsorsignal/london/"', out)
-        self.assertIn("../?q=London", out)
+        self.assertIn("../?city=London", out)
 
     def test_lead_paragraphs_differ_between_pages(self):
         a = pages.lead_paragraph(self.page())
