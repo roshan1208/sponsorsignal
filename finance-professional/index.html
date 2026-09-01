@@ -35,10 +35,18 @@
   footer{margin-top:48px;border-top:3px solid var(--ink);padding:22px 0 40px;
          font-size:.85rem;color:var(--ink-soft)}
   a{color:var(--cobalt)}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;
+                gap:16px;flex-wrap:wrap}
+  .topnav{display:flex;gap:18px;font-size:.9rem;font-weight:600}
+  .topnav a{text-decoration:none}
+  .topnav a:hover{text-decoration:underline}
+  .topnav [aria-current]{color:var(--ink-soft)}
+  @media (max-width:520px){.topnav{gap:14px;font-size:.85rem;width:100%}}
+
 </style>
 </head>
 <body>
-<header><div class="wrap"><div class="brand"><a href="../">SponsorSignal<span class="dot">.</span></a></div></div></header>
+<header><div class="wrap header-inner"><div class="brand"><a href="../">SponsorSignal<span class="dot">.</span></a></div><nav class="topnav" aria-label="Sections"><a href="../changes/">This week's changes</a><a href="../insights/">The numbers</a></nav></div></header>
 <main class="wrap">
   <h1>Companies that sponsor UK work visas in finance &amp; professional</h1>
   <p class="lead">6,541 employers in finance &amp; professional hold a Home Office licence to sponsor workers in the UK. A licence does not mean they are hiring today. It means they can sponsor your visa if they do hire you.</p>
@@ -79,7 +87,7 @@
      <a href="../?industry=Finance+%26+Professional">Search the full list</a> to see the other 6,516.</p>
 </main>
 <footer><div class="wrap">
-  <p>Source: GOV.UK Register of Licensed Sponsors (Workers), updated 2026-09-01 20:16 UTC.
+  <p>Source: GOV.UK Register of Licensed Sponsors (Workers), updated 2026-09-01 21:04 UTC.
      SponsorSignal is an independent search tool built on open public data. It is
      not affiliated with the Home Office and is not immigration advice.</p>
   <p><a href="../">Back to search</a></p>

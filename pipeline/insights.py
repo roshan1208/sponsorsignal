@@ -28,6 +28,8 @@ the page needs no JavaScript to show its numbers.
 import html
 from collections import Counter
 
+import pages
+
 SITE = "https://roshan1208.github.io/sponsorsignal"
 GOATCOUNTER = "https://sponsorsignal.goatcounter.com/count"
 
@@ -335,13 +337,12 @@ def render(stats, updated="", window_days=7):
   footer{{margin-top:48px;border-top:3px solid var(--ink);padding:22px 0 40px;
          font-size:.85rem;color:var(--ink-soft)}}
   footer p+p{{margin-top:6px}}
+  {pages.HEADER_CSS}
   @media (max-width:640px){{ .chart .cat{{font-size:11px}} .chart .val{{font-size:11px}} }}
 </style>
 </head>
 <body>
-<header><div class="wrap"><div class="brand">
-  <a href="../">SponsorSignal<span class="dot">.</span></a>
-</div></div></header>
+{pages.site_header('insights')}
 
 <main class="wrap">
   <h1>{esc(title)}</h1>

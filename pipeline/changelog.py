@@ -21,6 +21,7 @@ import html
 import json
 from collections import defaultdict
 
+import pages
 from pages import GOATCOUNTER, SITE, slugify
 
 I_NAME, I_TOWN, I_COUNTY, I_INDUSTRY, I_ROUTES, I_RATING = range(6)
@@ -200,15 +201,14 @@ def render(added, removed, updated="", window_days=7):
   footer{{margin-top:48px;border-top:3px solid var(--ink);padding:22px 0 40px;
          font-size:.85rem;color:var(--ink-soft)}}
   footer p+p{{margin-top:6px}}
+  {pages.HEADER_CSS}
   @media (max-width:640px){{
     th:nth-child(4),td:nth-child(4){{display:none}}
   }}
 </style>
 </head>
 <body>
-<header><div class="wrap"><div class="brand">
-  <a href="../">SponsorSignal<span class="dot">.</span></a>
-</div></div></header>
+{pages.site_header('changes')}
 
 <main class="wrap">
   <h1>{esc(title)}</h1>

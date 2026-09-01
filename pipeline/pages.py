@@ -41,6 +41,40 @@ BROWSE_START = "<!-- BROWSE-LINKS:START -->"
 BROWSE_END = "<!-- BROWSE-LINKS:END -->"
 
 
+def site_header(current=""):
+    """The shared header. `current` is 'changes' or 'insights' on those pages,
+    so the link to the page you are already on is not repeated as a link.
+
+    Every generated page sits one directory below the root, so the paths are
+    always '../'.
+    """
+    links = []
+    for slug, label in (("changes", "This week's changes"),
+                        ("insights", "The numbers")):
+        if slug == current:
+            links.append(f'<span aria-current="page">{label}</span>')
+        else:
+            links.append(f'<a href="../{slug}/">{label}</a>')
+    return (
+        '<header><div class="wrap header-inner">'
+        '<div class="brand"><a href="../">SponsorSignal'
+        '<span class="dot">.</span></a></div>'
+        f'<nav class="topnav" aria-label="Sections">{"".join(links)}</nav>'
+        "</div></header>"
+    )
+
+
+HEADER_CSS = """
+  .header-inner{display:flex;align-items:center;justify-content:space-between;
+                gap:16px;flex-wrap:wrap}
+  .topnav{display:flex;gap:18px;font-size:.9rem;font-weight:600}
+  .topnav a{text-decoration:none}
+  .topnav a:hover{text-decoration:underline}
+  .topnav [aria-current]{color:var(--ink-soft)}
+  @media (max-width:520px){.topnav{gap:14px;font-size:.85rem;width:100%}}
+"""
+
+
 def slugify(value):
     """'Tech & Software' -> 'tech-software'."""
     value = unicodedata.normalize("NFKD", str(value))
@@ -177,11 +211,11 @@ def render_page(page, updated=""):
   .more{{margin-top:14px;color:var(--ink-soft);font-size:.9rem}}
   footer{{margin-top:48px;border-top:3px solid var(--ink);padding:22px 0 40px;
          font-size:.85rem;color:var(--ink-soft)}}
-  a{{color:var(--cobalt)}}
+  a{{color:var(--cobalt)}}{HEADER_CSS}
 </style>
 </head>
 <body>
-<header><div class="wrap"><div class="brand"><a href="../">SponsorSignal<span class="dot">.</span></a></div></div></header>
+{site_header()}
 <main class="wrap">
   <h1>{esc(title)}</h1>
   <p class="lead">{esc(lead_paragraph(page))}</p>

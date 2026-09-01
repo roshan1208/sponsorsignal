@@ -112,8 +112,22 @@
 
   /* header */
   header{border-bottom:3px solid var(--ink);padding:14px 0}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;
+                gap:16px;flex-wrap:wrap}
   .brand{font-weight:800;font-size:1.1rem;letter-spacing:-0.01em}
   .brand .dot{color:var(--cobalt)}
+  .topnav{display:flex;gap:18px;font-size:.9rem;font-weight:600}
+  .topnav a{text-decoration:none}
+  .topnav a:hover{text-decoration:underline}
+  .badge{
+    display:inline-block;background:var(--signal);color:var(--ink);
+    border-radius:99px;padding:1px 8px;font-size:.78rem;
+    font-variant-numeric:tabular-nums;
+  }
+  .badge[hidden]{display:none}
+  @media (max-width:520px){
+    .topnav{gap:14px;font-size:.85rem;width:100%}
+  }
 
   /* hero = the search itself */
   .hero{padding:44px 0 12px}
@@ -286,8 +300,12 @@
 <body>
 
 <header>
-  <div class="wrap">
+  <div class="wrap header-inner">
     <div class="brand">SponsorSignal<span class="dot">.</span></div>
+    <nav class="topnav" aria-label="Sections">
+      <a href="changes/">This week's changes <span class="badge" id="navChanges" hidden></span></a>
+      <a href="insights/">The numbers</a>
+    </nav>
   </div>
 </header>
 
@@ -730,6 +748,14 @@
     // Counts on the buttons: they tell someone whether a view is worth a click.
     $('nAdded').textContent = addedRows.length ? `(${addedRows.length})` : '';
     $('nRemoved').textContent = removedRows.length ? `(${removedRows.length})` : '';
+
+    // A number on the nav link is the difference between "another page" and
+    // "something happened this week". Hidden when there is nothing to report.
+    const moved = addedRows.length + removedRows.length;
+    if(moved){
+      $('navChanges').textContent = moved.toLocaleString();
+      $('navChanges').hidden = false;
+    }
     setView(view);   // re-render the notice now that windowDays is known
 
     // build filter options from data
