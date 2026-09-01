@@ -100,11 +100,31 @@ class HistoryTests(unittest.TestCase):
         self.assertEqual([r[0] for r in h[0]["added"]], ["A"])
         self.assertEqual([r[0] for r in h[0]["removed"]], ["B"])
 
-    def test_rerunning_the_same_day_replaces_it(self):
+    def test_rerunning_the_same_day_keeps_one_entry(self):
         h = changes.append_day([], "2026-09-01", [row("A")], [])
         h = changes.append_day(h, "2026-09-01", [row("A"), row("B")], [])
         self.assertEqual(len(h), 1)
         self.assertEqual(len(h[0]["added"]), 2)
+
+    def test_rerunning_the_same_day_does_not_lose_earlier_changes(self):
+        # The job can run twice in a day. A second run that finds nothing
+        # must not erase what the first run recorded.
+        h = changes.append_day([], "2026-09-01", [row("Found First")],
+                               [row("Gone First")])
+        h = changes.append_day(h, "2026-09-01", [], [])
+        self.assertEqual([r[0] for r in h[0]["added"]], ["Found First"])
+        self.assertEqual([r[0] for r in h[0]["removed"]], ["Gone First"])
+
+    def test_rerunning_the_same_day_does_not_double_count(self):
+        h = changes.append_day([], "2026-09-01", [row("A")], [])
+        h = changes.append_day(h, "2026-09-01", [row("A")], [])
+        self.assertEqual(len(h[0]["added"]), 1)
+
+    def test_second_run_adds_newly_found_changes(self):
+        h = changes.append_day([], "2026-09-01", [row("A")], [])
+        h = changes.append_day(h, "2026-09-01", [row("B")], [row("C")])
+        self.assertEqual([r[0] for r in h[0]["added"]], ["A", "B"])
+        self.assertEqual([r[0] for r in h[0]["removed"]], ["C"])
 
     def test_history_is_trimmed_to_the_window(self):
         h = []

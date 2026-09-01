@@ -103,6 +103,21 @@ Each run diffs today's data against the previous run and appends the result to
 A sponsor is identified by name **and** town, because chains repeat a name
 across towns and treating those as one record hides real additions.
 
+## Damaged characters in the source
+
+GOV.UK's own CSV contains broken employer names: a right single quote arrives
+as byte `0xE2` followed by two literal `?`, so `BANKY'S KITCHEN` is published
+as `BANKY<?>??S KITCHEN`. The continuation bytes were destroyed before
+publication, so no decoding choice can recover them.
+
+`repair_name()` in `pipeline/refresh.py` fixes the shapes actually observed,
+and nothing else — guessing at others risks renaming an employer to something
+they are not called. It currently affects about 17 of 127,000 names.
+
+`load_previous()` repairs historical rows the same way before diffing.
+Without that, the day a repair changes would look like every affected
+employer was removed and a differently spelled one added.
+
 ## The publish guard
 
 The daily job runs unattended and pushes straight to the live site, so it

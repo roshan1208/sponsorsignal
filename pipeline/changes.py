@@ -99,18 +99,36 @@ def load(path):
         return []
 
 
+def _merge(existing, extra, cap):
+    """Combine two lists of rows, keeping the first sighting of each sponsor."""
+    out, seen = [], set()
+    for row in list(existing) + list(extra):
+        key = sponsor_key(row)
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(row)
+    return out[:cap]
+
+
 def append_day(history, on_date, added, removed,
                keep_days=HISTORY_DAYS, cap=MAX_PER_DAY):
     """Add today's changes to the history and drop anything too old.
 
-    Re-running on the same date replaces that date rather than duplicating
-    it, so a manual re-run does not double-count.
+    A second run on the same date merges into that date rather than
+    replacing it. The job can legitimately run more than once in a day (the
+    schedule, plus any push that touches the pipeline), and an overwrite
+    would silently erase the changes the earlier run found. Merging is
+    deduplicated by sponsor, so a re-run cannot double-count either.
     """
+    same_day = next((d for d in history if d.get("date") == on_date), None)
     kept = [d for d in history if d.get("date") != on_date]
     kept.append({
         "date": on_date,
-        "added": list(added)[:cap],
-        "removed": list(removed)[:cap],
+        "added": _merge(same_day.get("added", []) if same_day else [],
+                        added, cap),
+        "removed": _merge(same_day.get("removed", []) if same_day else [],
+                          removed, cap),
     })
     kept.sort(key=lambda d: d["date"])
 

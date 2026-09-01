@@ -59,6 +59,30 @@ INDUSTRY_RULES = [
 INDUSTRY_RULES = [(name, re.compile(rx, re.I)) for name, rx in INDUSTRY_RULES]
 
 
+# GOV.UK's own file contains damaged characters: a right single quote
+# (UTF-8 e2 80 99) arrives as e2 3f 3f, i.e. "â??". The continuation bytes
+# were already replaced with literal question marks before publication, so
+# this cannot be fixed by decoding differently. Repair the known shapes for
+# display; anything unrecognised is left exactly as published.
+# Written as escapes on purpose: the whole problem is which bytes are
+# actually in the file, so spelling them out avoids any ambiguity.
+# Only shapes seen in the published data are listed. Guessing at others
+# risks renaming an employer to something they are not called.
+MOJIBAKE = [
+    # 0xE2 followed by two literal '?' - what GOV.UK actually publishes
+    (chr(0xE2) + chr(0x3F) * 2, chr(0x2019)),
+    # ordinary double-encoded apostrophe, in case the source is ever fixed
+    (chr(0xE2) + chr(0x20AC) + chr(0x2122), chr(0x2019)),
+]
+
+
+def repair_name(name: str) -> str:
+    """Undo the character damage present in the published CSV."""
+    for broken, fixed in MOJIBAKE:
+        name = name.replace(broken, fixed)
+    return name
+
+
 def classify(name: str) -> str:
     for label, rx in INDUSTRY_RULES:
         if rx.search(name):
@@ -127,11 +151,11 @@ def parse_register(text: str):
     for r in rows[1:]:
         if len(r) <= i_name:
             continue
-        name = r[i_name].strip()
+        name = repair_name(r[i_name].strip())
         if not name:
             continue
-        town = (r[i_town].strip().title() if i_town is not None and len(r) > i_town else "")
-        county = (r[i_county].strip().title() if i_county is not None and len(r) > i_county else "")
+        town = repair_name(r[i_town].strip().title()) if i_town is not None and len(r) > i_town else ""
+        county = repair_name(r[i_county].strip().title()) if i_county is not None and len(r) > i_county else ""
         rating_raw = (r[i_rating].strip() if i_rating is not None and len(r) > i_rating else "")
         route = (r[i_route].strip() if len(r) > i_route else "")
 
@@ -240,9 +264,18 @@ def load_previous():
     """The previous run's sponsor rows, or [] if there is no usable file."""
     try:
         data = json.loads((DATA / "sponsors.json").read_text(encoding="utf-8"))
-        return data.get("sponsors", [])
+        rows = data.get("sponsors", [])
     except Exception:
         return []
+
+    # Repair yesterday's names the same way as today's. Without this, the
+    # day we start repairing a character would look like every affected
+    # employer was removed and a differently-spelled one added.
+    for row in rows:
+        for i in (0, 1, 2):
+            if len(row) > i and isinstance(row[i], str):
+                row[i] = repair_name(row[i])
+    return rows
 
 
 # -------------------------------------------------------------------- main --
