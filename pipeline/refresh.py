@@ -29,6 +29,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import changes
+import insights
 import pages
 
 REGISTER_PAGE = (
@@ -369,6 +370,10 @@ def main():
     )
     built = pages.write_all(ROOT, sponsors, updated=now)
     print(f"Generated {len(built)} landing pages + sitemap.xml")
+
+    insights.write(ROOT, sponsors, added=recent_added, removed=recent_removed,
+                   updated=now, window_days=changes.RECENT_DAYS)
+    print("Generated insights page")
 
     print(f"Done. {len(sponsors)} employers. "
           f"Last {changes.RECENT_DAYS} days: "
