@@ -239,6 +239,7 @@ def inject_browse_links(page_html, nav_html):
 
 def render_sitemap(pages):
     urls = [(f"{SITE}/", "daily", "1.0"),
+            (f"{SITE}/changes/", "daily", "0.9"),
             (f"{SITE}/insights/", "weekly", "0.9")]
     urls += [(f"{SITE}/{p['slug']}/", "weekly", "0.8") for p in pages]
     body = "\n".join(

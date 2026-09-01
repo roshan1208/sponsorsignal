@@ -28,6 +28,7 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
+import changelog
 import changes
 import insights
 import pages
@@ -392,6 +393,10 @@ def main():
     insights.write(ROOT, sponsors, added=recent_added, removed=recent_removed,
                    updated=now, window_days=changes.RECENT_DAYS)
     print("Generated insights page")
+
+    feed = changelog.write(ROOT, recent_added, recent_removed,
+                           updated=now, window_days=changes.RECENT_DAYS)
+    print(f"Generated change log covering {len(feed['regions'])} regions")
 
     print(f"Done. {len(sponsors)} employers. "
           f"Last {changes.RECENT_DAYS} days: "
