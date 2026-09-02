@@ -204,6 +204,14 @@
   }
   .download:hover{background:var(--paper-dim);border-color:var(--ink)}
   .download[disabled]{opacity:.6;cursor:default}
+  .actions{display:flex;gap:8px}
+  .clear{
+    font:inherit;font-size:.82rem;margin-left:10px;padding:2px 10px;
+    border:1.5px solid var(--line);border-radius:99px;background:var(--paper);
+    color:var(--cobalt);cursor:pointer;font-weight:600;
+  }
+  .clear:hover{border-color:var(--cobalt)}
+  .clear[hidden]{display:none}
   table{width:100%;border-collapse:collapse;font-size:.95rem}
   thead th{
     text-align:left;font-weight:600;font-size:.82rem;color:var(--ink-soft);
@@ -338,8 +346,11 @@
 
   <section aria-live="polite">
     <div class="results-bar" id="resultsMeta" hidden>
-      <p class="results-meta"><strong id="count">0</strong> employers found</p>
-      <button class="download" id="download" type="button">Download as CSV</button>
+      <p class="results-meta"><strong id="count">0</strong> employers found<button class="clear" id="clear" type="button" hidden>Clear filters</button></p>
+      <div class="actions">
+        <button class="download" id="copyLink" type="button">Copy link</button>
+        <button class="download" id="download" type="button">Download as CSV</button>
+      </div>
     </div>
 
     <div class="loading" id="loading" role="status">
@@ -469,6 +480,7 @@
     $('empty').hidden = filtered.length>0;
     if(!filtered.length) $('empty').innerHTML = emptyMessage();
     $('more').hidden = shown >= filtered.length;
+    $('clear').hidden = !filtersActive();
     mirrorScope();
   }
 
@@ -535,6 +547,39 @@
         $('alertCity').value = opt.value; return;
       }
     }
+  }
+
+  // --------------------------------------------------------- actions --
+  function filtersActive(){
+    return Boolean($('q').value.trim() || $('city').value ||
+                   $('industry').value || $('route').value || view);
+  }
+
+  function clearFilters(){
+    $('q').value = '';
+    $('city').value = '';
+    $('industry').value = '';
+    $('route').value = '';
+    setView('');
+    apply();
+    syncURL(true);
+    $('q').focus();
+  }
+
+  // Sharing a filtered view is the cheapest growth this site has: someone
+  // pastes "sponsors in Leeds" into a group chat. Copying the address bar
+  // by hand is enough friction to stop most people doing it.
+  async function copyLink(){
+    const btn = $('copyLink');
+    const label = btn.textContent;
+    try{
+      await navigator.clipboard.writeText(location.href);
+      btn.textContent = 'Link copied';
+    }catch(err){
+      // Clipboard access can be blocked; select the URL so Ctrl+C still works.
+      btn.textContent = 'Press Ctrl+C to copy';
+    }
+    setTimeout(()=>{ btn.textContent = label; }, 1800);
   }
 
   // ------------------------------------------------------------ csv --
@@ -667,6 +712,23 @@
   $('route').addEventListener('change',()=>{ apply(); syncURL(true); });
   $('more').addEventListener('click',()=>render(false));
   $('download').addEventListener('click',downloadCSV);
+  $('copyLink').addEventListener('click',copyLink);
+  $('clear').addEventListener('click',clearFilters);
+
+  // Keyboard: "/" jumps to the search box, Escape clears it. Both are
+  // ignored while typing in a field, so they never eat a real keystroke.
+  document.addEventListener('keydown',e=>{
+    const typing = /^(INPUT|SELECT|TEXTAREA)$/.test(document.activeElement.tagName);
+    if(e.key === '/' && !typing){
+      e.preventDefault();
+      $('q').focus();
+      $('q').select();
+    }else if(e.key === 'Escape' && document.activeElement === $('q')){
+      $('q').value = '';
+      apply();
+      syncURL(false);
+    }
+  });
   for(const id of ['alertCity','alertIndustry']){
     $(id).addEventListener('change',()=>{ alertTouched = true; });
   }
