@@ -30,6 +30,8 @@ from pathlib import Path
 
 import changelog
 import changes
+import datadocs
+import feed
 import insights
 import pages
 
@@ -394,9 +396,15 @@ def main():
                    updated=now, window_days=changes.RECENT_DAYS)
     print("Generated insights page")
 
-    feed = changelog.write(ROOT, recent_added, recent_removed,
-                           updated=now, window_days=changes.RECENT_DAYS)
-    print(f"Generated change log covering {len(feed['regions'])} regions")
+    regions = changelog.write(ROOT, recent_added, recent_removed,
+                             updated=now, window_days=changes.RECENT_DAYS)
+    print(f"Generated change log covering {len(regions['regions'])} regions")
+
+    items = feed.write(ROOT, history, updated=stamp)
+    print(f"Generated feed.xml with {items} item(s)")
+
+    datadocs.write(ROOT, meta={"total": len(sponsors)})
+    print("Generated data documentation page")
 
     print(f"Done. {len(sponsors)} employers. "
           f"Last {changes.RECENT_DAYS} days: "

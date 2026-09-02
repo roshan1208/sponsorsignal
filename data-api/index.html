@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The data behind SponsorSignal | SponsorSignal</title>
+<meta name="description" content="Published JSON files of the UK register of licensed visa sponsors, including daily additions and removals. Free to use, no account needed.">
+<link rel="canonical" href="https://roshan1208.github.io/sponsorsignal/data-api/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://roshan1208.github.io/sponsorsignal/data-api/">
+<meta property="og:title" content="The data behind SponsorSignal">
+<meta property="og:description" content="Published JSON files of the UK register of licensed visa sponsors, including daily additions and removals. Free to use, no account needed.">
+<meta property="og:image" content="https://roshan1208.github.io/sponsorsignal/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.png" type="image/png">
+<link rel="alternate" type="application/rss+xml" title="Sponsor changes" href="../feed.xml">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#17233B;--ink-soft:#4A5670;--paper:#fff;--paper-dim:#F5F7FB;
+        --cobalt:#2145C9;--line:#D9DFEA}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Public Sans',system-ui,sans-serif;color:var(--ink);
+       line-height:1.55;background:var(--paper)}
+  .wrap{max-width:820px;margin:0 auto;padding:0 20px}
+  a{color:var(--cobalt)}
+  header{border-bottom:3px solid var(--ink);padding:14px 0}
+  .brand{font-weight:800;font-size:1.1rem}
+  .brand a{color:inherit;text-decoration:none}
+  .brand .dot{color:var(--cobalt)}
+  
+  .header-inner{display:flex;align-items:center;justify-content:space-between;
+                gap:16px;flex-wrap:wrap}
+  .topnav{display:flex;gap:18px;font-size:.9rem;font-weight:600}
+  .topnav a{text-decoration:none}
+  .topnav a:hover{text-decoration:underline}
+  .topnav [aria-current]{color:var(--ink-soft)}
+  @media (max-width:520px){.topnav{gap:14px;font-size:.85rem;width:100%}}
+
+  h1{font-size:clamp(1.6rem,4.5vw,2.3rem);font-weight:800;
+     letter-spacing:-0.02em;margin:36px 0 10px;text-wrap:balance;max-width:20ch}
+  .lead{color:var(--ink-soft);max-width:64ch;text-wrap:pretty}
+  h2{font-size:1.2rem;font-weight:800;margin:44px 0 8px;text-wrap:balance}
+  p{max-width:64ch;text-wrap:pretty}
+  p+p{margin-top:10px}
+  .endpoint{border:1.5px solid var(--line);border-radius:10px;
+            padding:16px 18px;margin-top:14px}
+  .path{font-weight:600;font-size:1rem}
+  .what{color:var(--ink-soft);margin-top:2px}
+  pre{margin-top:10px;background:var(--paper-dim);border-radius:8px;
+      padding:12px 14px;overflow-x:auto}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+       font-size:.82rem;color:var(--ink)}
+  .note{margin-top:10px;font-size:.9rem;color:var(--ink-soft)}
+  ul{margin:10px 0 0 20px;color:var(--ink-soft);max-width:64ch}
+  li+li{margin-top:6px}
+  .cta{margin:48px 0;border:2px solid var(--ink);border-radius:10px;
+       background:var(--paper-dim);padding:22px}
+  .cta p{color:var(--ink-soft);margin-top:6px}
+  :is(a,button):focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
+  footer{margin-top:48px;border-top:3px solid var(--ink);padding:22px 0 40px;
+         font-size:.85rem;color:var(--ink-soft)}
+  footer p+p{margin-top:6px}
+</style>
+</head>
+<body>
+<header><div class="wrap header-inner"><div class="brand"><a href="../">SponsorSignal<span class="dot">.</span></a></div><nav class="topnav" aria-label="Sections"><a href="../changes/">This week's changes</a><a href="../insights/">The numbers</a></nav></div></header>
+
+<main class="wrap">
+  <h1>The data behind SponsorSignal</h1>
+  <p class="lead">Everything this site shows is published as plain JSON,
+     rebuilt every day from the official GOV.UK register. It is free to use,
+     needs no account, and you are welcome to build on it.</p>
+
+  <h2>Start here</h2>
+  <p>If you only want one thing, it is <a href="../data/regional_changes.json">
+     <code>regional_changes.json</code></a>: the employers that gained or lost
+     a licence in the last seven days, split by town. That is the part the
+     official register does not publish, because it shows only who holds a
+     licence today and never who stopped.</p>
+  <p>There is also an <a href="../feed.xml">RSS feed</a> if you would rather
+     not write any code at all.</p>
+
+  <h2>The files</h2>
+    <div class="endpoint">
+      <p class="path"><a href="../data/sponsors.json">data/sponsors.json</a></p>
+      <p class="what">Every licensed sponsor on the register.</p>
+      <pre><code>{&quot;updated&quot;: &quot;...&quot;, &quot;source&quot;: &quot;...&quot;, &quot;sponsors&quot;: [[name, town, county, industry, [routes], rating], ...]}</code></pre>
+      <p class="note">About 10MB uncompressed, served gzipped. Rows are arrays, not objects, to keep it small.</p>
+    </div>
+    <div class="endpoint">
+      <p class="path"><a href="../data/changes.json">data/changes.json</a></p>
+      <p class="what">Dated additions and removals, 90 days of history.</p>
+      <pre><code>{&quot;updated&quot;: &quot;...&quot;, &quot;days&quot;: [{&quot;date&quot;: &quot;YYYY-MM-DD&quot;, &quot;added&quot;: [row, ...], &quot;removed&quot;: [row, ...]}, ...]}</code></pre>
+      <p class="note">The part you cannot rebuild from GOV.UK. The official register publishes only the current state.</p>
+    </div>
+    <div class="endpoint">
+      <p class="path"><a href="../data/regional_changes.json">data/regional_changes.json</a></p>
+      <p class="what">The same changes, split by town or city.</p>
+      <pre><code>{&quot;updated&quot;: &quot;...&quot;, &quot;window_days&quot;: 7, &quot;totals&quot;: {...}, &quot;regions&quot;: {&quot;London&quot;: {&quot;added&quot;: [...], &quot;removed&quot;: [...], &quot;slug&quot;: &quot;london&quot;}, ...}}</code></pre>
+      <p class="note">Built for exactly one job: sending someone the changes in their own area.</p>
+    </div>
+    <div class="endpoint">
+      <p class="path"><a href="../data/new_sponsors.json">data/new_sponsors.json</a></p>
+      <p class="what">Employers licensed in the last 7 days.</p>
+      <pre><code>{&quot;updated&quot;: &quot;...&quot;, &quot;window_days&quot;: 7, &quot;new&quot;: [row, ...]}</code></pre>
+      
+    </div>
+    <div class="endpoint">
+      <p class="path"><a href="../data/removed_sponsors.json">data/removed_sponsors.json</a></p>
+      <p class="what">Employers removed in the last 7 days.</p>
+      <pre><code>{&quot;updated&quot;: &quot;...&quot;, &quot;window_days&quot;: 7, &quot;removed&quot;: [row, ...]}</code></pre>
+      
+    </div>
+    <div class="endpoint">
+      <p class="path"><a href="../data/meta.json">data/meta.json</a></p>
+      <p class="what">Counts and the last update time. Small, cheap to poll.</p>
+      <pre><code>{&quot;updated&quot;: &quot;...&quot;, &quot;total&quot;: 0, &quot;added_recently&quot;: 0, &quot;removed_recently&quot;: 0, &quot;window_days&quot;: 7}</code></pre>
+      <p class="note">Poll this first and only fetch the big files when &quot;updated&quot; has moved.</p>
+    </div>
+    <div class="endpoint">
+      <p class="path"><a href="../feed.xml">feed.xml</a></p>
+      <p class="what">RSS feed, one item per day that changed.</p>
+      <pre><code>RSS 2.0</code></pre>
+      <p class="note">For readers, and for anything that turns a feed into email.</p>
+    </div>
+
+  <h2>How to use it kindly</h2>
+  <ul>
+    <li>The pipeline runs once a day, at 05:30 UTC. Polling more often than
+        hourly only costs you bandwidth.</li>
+    <li>Check <code>meta.json</code> first. It is small, and its
+        <code>updated</code> value tells you whether anything moved.</li>
+    <li>These are static files on GitHub Pages. There is no authentication,
+        no rate limit, and no uptime guarantee. Do not put anything critical
+        behind them without caching your own copy.</li>
+    <li>A row is an array, in this order: name, town, county, industry,
+        routes, rating. Industry is our own guess from the employer's name,
+        not official data.</li>
+  </ul>
+
+  <h2>Licence and credit</h2>
+  <p>The underlying register is Crown copyright, published under the
+     <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open
+     Government Licence v3.0</a>. The cleaning, the industry tags and the
+     change history are ours, and you may use them freely. A link back is
+     appreciated but not required.</p>
+  <p>The register covers 127,652 employers.</p>
+
+  <div class="cta">
+    <h2 style="margin-top:0">Need something that is not here?</h2>
+    <p>If you need a different cut, a longer history, or a filtered feed for
+       one region or sector, say so. It is easier to build the thing someone
+       actually asked for than to guess.</p>
+  </div>
+</main>
+
+<footer><div class="wrap">
+  <p>Built on the official GOV.UK Register of Licensed Sponsors (Workers).
+     SponsorSignal is an independent search tool built on open public data. It
+     is not affiliated with the Home Office and is not immigration advice.</p>
+  <p><a href="../">Search the register</a></p>
+</div></footer>
+<script data-goatcounter="https://sponsorsignal.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

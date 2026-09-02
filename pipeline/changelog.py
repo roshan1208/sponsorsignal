@@ -153,6 +153,7 @@ def render(added, removed, updated="", window_days=7):
 <meta property="og:image" content="{SITE}/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../favicon.png" type="image/png">
+<link rel="alternate" type="application/rss+xml" title="Sponsor changes" href="../feed.xml">
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
 <style>
   :root{{--ink:#17233B;--ink-soft:#4A5670;--paper:#fff;--paper-dim:#F5F7FB;
@@ -243,6 +244,9 @@ def render(added, removed, updated="", window_days=7):
     <p>One email a week with the employers that gained and lost a licence. No
        need to check back.</p>
     <a class="btn" href="../#alerts">Get the weekly email</a>
+    <p style="margin-top:12px">Prefer no email? There is an
+       <a href="../feed.xml">RSS feed</a>, and the
+       <a href="../data-api/">raw data</a> if you would rather build on it.</p>
   </section>
 </main>
 
