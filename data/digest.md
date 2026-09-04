@@ -1,10 +1,10 @@
-# New UK visa sponsors, 03 September 2026
+# New UK visa sponsors, 04 September 2026
 
-**199 employers** were added to the register since the last update.
+**242 employers** were added to the register since the last update.
 
 Showing the first 100, in alphabetical order.
 
-## Other (66)
+## Other (59)
 
 - **24 7 Property Maintenance Ltd** — London, England · Skilled Worker
 - **3Keel Group Ltd** — Witney, Oxfordshire · Skilled Worker
@@ -14,6 +14,7 @@ Showing the first 100, in alphabetical order.
 - **Airport Coordination Limited** — Staines-Upon-Thames · Skilled Worker
 - **Alliance Facility Management Ltd** — Ashton-Under-Lyne, Greater Manches, England · Skilled Worker
 - **ALLPROPERTYCLAIMS LIMITED** — London · Skilled Worker
+- **Amesbury Filling Station** — Amesbury, Wiltshire · Skilled Worker
 - **Arcomedical Infusion Ltd** — Stafford · Skilled Worker
 - **AWP Marine Consultancy LTD** — Wirral, Cheshire · Skilled Worker
 - **Basis Social Limited** — London, --- Select One --- · Skilled Worker
@@ -29,6 +30,7 @@ Showing the first 100, in alphabetical order.
 - **Cameron + Ross Limited** — Aberdeen · Skilled Worker
 - **CK International Ltd** — Dungannon, Co Tyrone · Skilled Worker
 - **COLTS CRICKET COMPANY LIMITED** — London · Skilled Worker
+- **Communications Solutions Ltd UK** — Reading, Berkshire · Skilled Worker
 - **CONNECT44 NEWCO LTD** — Bracknell, Berkshire · Skilled Worker
 - **CONSTRUCTIONS R US LTD** — Northwood · Skilled Worker
 - **Crown Luxury Homes Ltd** — London · Skilled Worker
@@ -37,11 +39,15 @@ Showing the first 100, in alphabetical order.
 - **Deba's Corner Ltd** — London · Skilled Worker
 - **Deep GRC London Ltd** — Uxbridge · Skilled Worker
 - **Dundee Islamic Society** — Dundee · Tier 2 Ministers of Religion
+- **EMS Group Solutions Ltd** — Ellesmere Port · Skilled Worker
 - **Everest Inn 2026 Ltd** — Dunfermline · Skilled Worker
 - **F P Hurley & Sons Ltd** — Bridgend · Skilled Worker
 - **Fast Driving Test Booking Ltd** — Paignton · Skilled Worker
+- **FETIH TEXTILE UK LTD** — London · Global Business Mobility: UK Expansion Worker
 - **Fireantpay (UK) Limited** — London · Skilled Worker
+- **First-Step Group Limited** — Manchester · Skilled Worker
 - **Fleming & Howland Ltd** — Burnley, Lancashire · Skilled Worker
+- **FLOORING SALES LIMITED** — Weybridge, Surrey · Skilled Worker
 - **FONE FIX (NORTH) LTD** — Edinburgh, Midlothian · Skilled Worker
 - **Fruity Booty** — London, London · Skilled Worker
 - **Germany Trade & Invest** — London · Skilled Worker
@@ -53,47 +59,44 @@ Showing the first 100, in alphabetical order.
 - **Haywood & Padgett Ltd** — Barnsley, South Yorkshire · Skilled Worker
 - **Herbert Smith Freehills Kramer LLP** — London · Global Business Mobility: Graduate Trainee / Global Business Mobility: Senior or Specialist Worker / Skilled Worker
 - **HLHP BAYSWATER LIMITED** — London · Skilled Worker
+- **Horison AI LTD** — London, London · Skilled Worker
 - **HOTCAM LTD** — London · Skilled Worker
 - **HT Company (Essex) Ltd** — Gants Hill, Essex · Skilled Worker
+- **Idemitsu Europe Ltd** — Bexley, Kent · Global Business Mobility: UK Expansion Worker
 - **Inlair Group Nottingham Ltd.** — Nottingham · Skilled Worker
 - **Innovative IT Serv Limited** — Norwich · Skilled Worker
-- **Intermusica Artists' Management Ltd** — London · Skilled Worker
-- **International Marine Survey Limited** — Little Ouseburn, York · Skilled Worker
-- **JOEBE UK LTD** — Chelmsford · Skilled Worker
-- **JOHN LILLEY AND GILLIE LTD** — North Shields · Skilled Worker
-- **KAHOUT BROTHERS LTD** — High Wycombe · Skilled Worker
-- **KBS SECURITY LTD** — Grays · Skilled Worker
-- **Kepplegate Limited** — Preesall, Poulton Le Fylde, Lancashire · Skilled Worker
-- **KG&JM LTD** — Dorset · Skilled Worker
-- **KIGG Ltd** — Cardiff · Skilled Worker
-- **L2MTECH UK LIMITED** — London · Skilled Worker
-- **Laichipho Limited** — Sheffield · Skilled Worker
-- **LANARK SMILE CENTRE LTD** — Lanark · Skilled Worker
-- **LHOIRS LIMITED** — Portsmouth, England · Skilled Worker
-- **Life Supply Brands Ltd** — London · Skilled Worker
-- **Lipaz Ltd** — Enfield · Skilled Worker
 
-## Healthcare & Care (11)
+## Healthcare & Care (14)
 
 - **Aldermoor Surgery** — Southampton, Hampshire · Skilled Worker
 - **Amaris Care Ltd** — Coatbridge, North Lanarkshire · Skilled Worker
 - **Asters Specialist Care (Yorkshire) Ltd** — Scarborough · Skilled Worker
+- **Blink Medical Limited t/a Corza Medical** — Solihull, West Midlands · Global Business Mobility: Senior or Specialist Worker / Skilled Worker
+- **Brighter Day Care at Home Ltd** — Salisbury · Skilled Worker
 - **Canaan Care Ltd** — Croydon · Skilled Worker
 - **Care and Protect UK Ltd** — Sacriston, Durham · Skilled Worker
 - **Caulfield & Gopalla Partnership t/a Riverside House Residential Care Home and Newnton House Residential Care Home** — London · Skilled Worker
 - **Fonthill Care (Harry Park) Limited** — St Albans · Skilled Worker
+- **Frontpark Ltd ta the clitheroe pharmacy** — Clitheroe, Lancs · Skilled Worker
 - **GOLDEN CARE SUPPORT LTD** — Ilford · Skilled Worker
-- **Irish and King Dental Practice** — Exeter, Devon · Skilled Worker
-- **Langabhat Medical Practice** — Isle Of Lewis, Western Isles · Skilled Worker
-- **Link Direct Care Limited** — Royal Wootton Bassett, Wiltshire, England · Skilled Worker
+- **Gray Healthcare** — Macclesfield, Cheshire · Skilled Worker
+- **Harlesden Health Limited** — London · Skilled Worker
+- **Healthist Health Consultancy Ltd** — London · Skilled Worker
 
-## Education & Research (5)
+## Hospitality & Food (5)
+
+- **Aaha Foods Ltd T/A Reddys Eat in and Takeaway** — Northampton · Skilled Worker
+- **Dream Hotels Ltd** — Ruislip · Skilled Worker
+- **Empire Bespoke Foods Limited** — Northolt, Middlesex · Skilled Worker
+- **Hado Catering Promotion Limited t/a Hanawata London** — London · Skilled Worker
+- **Harris Catering Ltd** — Pershore Worcestershire · Skilled Worker
+
+## Education & Research (4)
 
 - **Blue Skies Nursery** — Edgware · Skilled Worker
 - **CHINESE-ENGLISH LEGAL EDUCATION LIMITED** — London · Skilled Worker
 - **EBN Academy** — Birmingham, West Midlands · Skilled Worker
 - **Ember Energy Research CIC** — Epsom, Surrey · Skilled Worker
-- **Langley Hall Primary Academy Trust** — Slough · Skilled Worker
 
 ## Finance & Professional (4)
 
@@ -102,23 +105,27 @@ Showing the first 100, in alphabetical order.
 - **CKT CONSULTING KULTUR TOURISMUS LTD** — London · Skilled Worker
 - **HARROW ACCOUNTANTS AND TAX ADVISORS LTD** — Stanmore · Skilled Worker
 
-## Hospitality & Food (4)
-
-- **Aaha Foods Ltd T/A Reddys Eat in and Takeaway** — Northampton · Skilled Worker
-- **Empire Bespoke Foods Limited** — Northolt, Middlesex · Skilled Worker
-- **Hado Catering Promotion Limited t/a Hanawata London** — London · Skilled Worker
-- **Harris Catering Ltd** — Pershore Worcestershire · Skilled Worker
-
-## Tech & Software (3)
+## Tech & Software (4)
 
 - **Business Cube Management Solutions Limited** — London · Skilled Worker
 - **D-Tech (UK) Limited** — Filton, Bristol · Skilled Worker
 - **Gauvin Tech Consultancy Ltd** — Wolverhampton, England · Skilled Worker
+- **Goldtakas Technologies Limited** — Cheshunt, Waltham Cross · Skilled Worker
+
+## Construction & Engineering (2)
+
+- **Engineering Efficiency Ltd** — Mitcham, Surrey · Skilled Worker
+- **Ghazi Contractors Ltd** — Manchester · Skilled Worker
 
 ## Media & Creative (2)
 
 - **British Interactive Media Association** — London · Skilled Worker
 - **Cleveland Process Designs Limited** — Yarm · Skilled Worker
+
+## Property & Real Estate (2)
+
+- **Allstruct Developments Limited** — London · Skilled Worker
+- **Fexco Property Services Limited** — Salisbury, Wiltshire · Skilled Worker
 
 ## Charity & Faith (1)
 
@@ -127,10 +134,6 @@ Showing the first 100, in alphabetical order.
 ## Energy & Utilities (1)
 
 - **Enercon Wind Energy UK Limited** — Edinburgh · Global Business Mobility: Senior or Specialist Worker / Skilled Worker
-
-## Property & Real Estate (1)
-
-- **Allstruct Developments Limited** — London · Skilled Worker
 
 ## Public Sector (1)
 
@@ -142,7 +145,7 @@ Showing the first 100, in alphabetical order.
 
 ## No longer on the register
 
-120 employers are no longer licensed to sponsor workers.
+155 employers are no longer licensed to sponsor workers.
 
 Showing the first 100, in alphabetical order.
 
@@ -159,7 +162,9 @@ Showing the first 100, in alphabetical order.
 - **ARMENIAN CHURCH TRUST (UK) LIMITED** — London
 - **Au Vodka ltd** — Swansea
 - **Banzi Ltd** — London, London
+- **BARBERZ LOUNGE LIMITED** — London
 - **BCON PROJECTS LTD** — London
+- **Beauty Brow Spot Limited** — Harrow
 - **Bezaleel Solutions Limited** — London
 - **BKZH Ltd** — Romford
 - **Black Country Healthcare NHS Foundation Trust** — West Bromwich, West Midlands
@@ -172,23 +177,35 @@ Showing the first 100, in alphabetical order.
 - **Candeo Vision (UK) Limited** — London
 - **CHEFLINE LIMITED** — Birmingham
 - **CHINESE-ENGLISH LEGAL EDUCATION LIMITED** — Wirral
+- **Christ Apostolic Church Canaan Land Birmingham** — Birmingham, West Midlands
 - **CITY WHEELS LIMITED** — Newcastle Upon Tyne
+- **CMOLDS LTD** — London
 - **CRYSTAL NET SOLUTIONS LTD** — Liverpool
 - **CYBERMYSTIC LTD** — Cobham, United Kingdom
 - **DBN HEADHUNTERS LTD** — Milton Keynes
 - **DELIVERZ LIMITED** — Leatherhead
+- **DESIRE RESTAURANT** — Aylesbury, Buckinghamshire
 - **Dial4care Recruitment Ltd** — Bedford, Bedfordshire
+- **Digitus Accountancy Limited** — Luton
 - **DKM Healthcare limited** — Coventry
 - **DNA Aesthetics Limited** — Edinburgh
+- **Dream Hotels Ltd** — Slough
 - **DYNAMIC FOOD LIMITED** — Wakefield
+- **El Paso** — Sheffield
 - **Elastacloud Limited** — London
+- **ELITE UK GROUP LIMITED** — Ilford, Essex
 - **Ember Energy Research CIC** — London
+- **EMS Group Solutions Ltd** — Saltney
 - **Enfuse Group Ltd** — Stevenage, London
 - **Enliven Social Care Ltd** — Leicester
 - **Fast Driving Test Booking Ltd** — Torquay
+- **FEDCAP EMPLOYMENT LIMITED** — Stockton-On-Tees
 - **FLSmidth (UK) Ltd** — Rugby, Warwickshire
+- **FORTIUS TELECOMMUNICATIONS LTD** — London
 - **Gauvin Tech Consultancy Ltd** — Bradford, England
 - **GILLMAN BUSINESS LTD** — London
+- **Goldtakas Technologies Limited** — London
+- **Gray Healthcare** — Liverpool, Merseyside
 - **Great Pelanks Immigration Ltd** — Sheffield
 - **GREEN FORCE HEALTHCARE LTD** — Leeds
 - **Grow Care Agency** — Swanscombe, Kent
@@ -201,19 +218,24 @@ Showing the first 100, in alphabetical order.
 - **Inlair Group Nottingham Ltd.** — Loughborough
 - **Innocent Child** — Manchester
 - **International Marine Survey Limited** — Ripon, North Yorkshire
+- **Jack Bryant Productions Ltd** — Gloucestershire
 - **Javed Phonehouse Ltd** — London
 - **KAHOUT BROTHERS LTD** — Surrey Heath
 - **KBS SECURITY LTD** — London
 - **LTIMindtree UK Limited** — London
+- **MADINA GLOVES LTD** — England
 - **Manchester Street Veterinary Surgery** — Oldham, Lancashire
 - **MBA Consulting Engineers Ltd** — Milton Keynes, Buckinghamshire
 - **MCARE24 LIMITED** — Birmingham
 - **Meadows Veterinary Centre Ltd** — Inverurie, Aberdeenshire
 - **Milans Catering Ltd T/A Everest Abercorn** — Stanmore, Middlesex
+- **Millennium 247 Taxis Ltd** — Hemel Hempstead
 - **MITSUBISHI TANABE PHARMA EUROPE LIMITED** — London
+- **MK Care Ltd** — Milton Keynes, Buckinghamshire
 - **Motion Care Ltd** — Staines-Upon-Thames
 - **MOTIVATIONS EVERY SENSATION LIMITED** — Staffordshire
 - **MZ RESTAURANT (STOKE) LTD** — Stoke On Trent
+- **N & F EMPIRE LIMITED** — Barking, London
 - **New Beginnings South Ltd** — Watford
 - **Niantic International Limited** — London
 - **NJ COFFEE LTD T/A COFEE PLACE** — England
@@ -222,30 +244,11 @@ Showing the first 100, in alphabetical order.
 - **O'Shea Healthcare Ltd** — Liverpool, Merseyside
 - **Oak Support Limited** — Twickenham
 - **Oaks Healthcare Ltd.** — Spalding, Lincolnshire
+- **Omilan Productions Limited** — Edinburgh, Scotland
 - **One Touch Quality Kare Limited** — Walsall
+- **OPEN DOORS HEALTHCARE SERVICES LTD** — Maidstone, Kent
 - **Openarms Housing Ltd** — Gloucester
 - **ORIENTAL RECRUITMENT LTD** — London
-- **Orion Resource Partners (UK) LLP** — London
-- **Orla Homes Ltd t/a St Brelades Retirement Homes** — Herne Bay, Kent, Kent
-- **PATH4YOU LIMITED** — Worcester
-- **Perkbox Limited** — London
-- **Phalaris Limited** — Hungerford, Berkshire
-- **Political Intelligence** — London, London
-- **R&K SHAMROCK HOUSE LIMITED  t/a Shamrock House** — Goole
-- **RBA PAYROLL SERVICES LTD** — Southend-On-Sea, Essex
-- **Red Brick Care** — Slough, Berkshire
-- **Refreshing Care Limited** — Dagenham
-- **RITZY AUTO LTD** — Cambridgeshire
-- **Rock-it Cargo Limited** — Ashford, Middlesex
-- **Scotch Beds Ltd T/A Scotch Beds** — Glasgow
-- **SEE WORLD LTD** — London
-- **SERENE HOME CARE LIMITED** — Kent, England
-- **SERGIO ENTERPRISES LIMITED** — Reading
-- **Seth Butcher's PVT Ltd** — Ilford
-- **SEVA CHILDCARE LTD** — London
-- **SMAR CONSTRUCTION LIMITED** — Walsall
-- **SNOWBALL CARE UK LTD** — London
-- **SOFTSLEEP LTD** — Dewsbury, West Yorkshire
 
 ---
 
