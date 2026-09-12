@@ -1,0 +1,3460 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Check a UK visa sponsor | KnowYourSponsor</title>
+<meta name="description" content="Every UK employer licensed to sponsor a work visa, plus what Companies House says about them. A licence means they can sponsor you. It does not mean they are still trading. Updated daily.">
+<link rel="canonical" href="https://knowyoursponsor.co.uk/">
+
+<!-- Proves ownership to Google Search Console. Must stay on the homepage:
+     removing it makes the property fall out of verification. -->
+<meta name="google-site-verification" content="ZNbGBoW8FlnVr5MM5wrTNaQqzvFz_Pgcde_K1t5RHF8">
+
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="alternate" type="application/rss+xml" title="UK visa sponsors added and removed" href="feed.xml">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#17233B">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KnowYourSponsor">
+<meta property="og:url" content="https://knowyoursponsor.co.uk/">
+<meta property="og:title" content="Check a UK visa sponsor | KnowYourSponsor">
+<meta property="og:description" content="Every UK employer licensed to sponsor a work visa, plus what Companies House says about them. A licence means they can sponsor you. It does not mean they are still trading. Updated daily.">
+<meta property="og:image" content="https://knowyoursponsor.co.uk/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KnowYourSponsor: check a UK visa sponsor before you apply.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Check a UK visa sponsor | KnowYourSponsor">
+<meta name="twitter:description" content="The UK sponsor register, cross-checked against Companies House. See who can sponsor you, and who is in trouble.">
+<meta name="twitter:image" content="https://knowyoursponsor.co.uk/og-image.png">
+<link rel="stylesheet" href="/fonts/public-sans.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://knowyoursponsor.co.uk/#website",
+      "url": "https://knowyoursponsor.co.uk/",
+      "name": "KnowYourSponsor",
+      "description": "Searchable copy of the official UK Home Office register of licensed sponsors, refreshed daily.",
+      "inLanguage": "en-GB",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://knowyoursponsor.co.uk/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://knowyoursponsor.co.uk/#dataset",
+      "name": "UK Register of Licensed Sponsors (Workers) — searchable mirror",
+      "description": "Every organisation holding a UK Home Office worker sponsor licence, grouped one record per organisation with visa routes, rating, location and a heuristic industry tag. Rebuilt daily from the official GOV.UK publication.",
+      "url": "https://knowyoursponsor.co.uk/",
+      "inLanguage": "en-GB",
+      "isAccessibleForFree": true,
+      "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "creativeWorkStatus": "Published",
+      "isBasedOn": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "creator": {
+        "@type": "Person",
+        "name": "Roshan Yadav",
+        "url": "https://knowyoursponsor.co.uk/about/"
+      },
+      "identifier": "https://knowyoursponsor.co.uk/#dataset",
+      "keywords": [
+        "UK visa sponsorship",
+        "licensed sponsors",
+        "Skilled Worker visa",
+        "sponsor licence",
+        "Home Office register",
+        "Companies House",
+        "immigration"
+      ],
+      "temporalCoverage": "2026-08-31/..",
+      "variableMeasured": [
+        "Sponsor name",
+        "Town or city",
+        "Visa routes",
+        "Home Office rating",
+        "Companies House status"
+      ],
+      "sourceOrganization": {
+        "@type": "GovernmentOrganization",
+        "name": "UK Home Office",
+        "url": "https://www.gov.uk/government/organisations/home-office"
+      },
+      "spatialCoverage": {
+        "@type": "Place",
+        "name": "United Kingdom"
+      },
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://knowyoursponsor.co.uk/data/sponsors.json"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+  :root{
+    --ink:#17233B; --ink-soft:#4A5670;
+    --paper:#FFFFFF; --paper-dim:#F5F7FB;
+    --cobalt:#2145C9; --cobalt-dark:#17348F; --on-cobalt:#FFFFFF;
+    --signal:#FFC933; --on-signal:#17233B;
+    --line:#D9DFEA; --good:#0E7B4F; --bad:#B3261E;
+    --warn-bg:#FDF1F0; --warn-bg-2:#FBE3E1; --warn-border:#E7B4AE;
+    --warn-ink:#8A1E18; --warn-solid:#B3261E;
+    --mark-bg:#17233B; --mark-fg:#FFFFFF;
+    --note-bg:#FFF6DC; --note-border:#EAD48A; --note-ink:#6B4E00;
+    --shadow:rgba(23,35,59,.10);
+    /* A three-step radius scale. There were eight different values in this
+       file (4, 6, 7, 8, 10, 14, 50% and 99px), one of which was plainly a
+       typo. Nothing reads cheaper than corners that almost match, because
+       the eye notices the inconsistency without being able to name it.
+       Circles keep 50% and stay literal. */
+    --r-sm:6px; --r-md:10px; --r-pill:999px;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ink:#E8ECF3; --ink-soft:#A3AEC2;
+      --paper:#10151F; --paper-dim:#1A2230;
+      --cobalt:#6B93F5; --cobalt-dark:#8FADF8; --on-cobalt:#10151F;
+      --signal:#FFC933; --on-signal:#17233B;
+      --line:#2A3444; --good:#4FBF8B; --bad:#F08A82;
+      --warn-bg:#2A1A19; --warn-bg-2:#3A1F1D; --warn-border:#6B2B26;
+      --warn-ink:#F5B5AE; --warn-solid:#B3261E;
+      --mark-bg:#E8ECF3; --mark-fg:#10151F;
+      --note-bg:#2A2412; --note-border:#5A4A1E; --note-ink:#F0D28A;
+      --shadow:rgba(0,0,0,.45);
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#E8ECF3; --ink-soft:#A3AEC2;
+    --paper:#10151F; --paper-dim:#1A2230;
+    --cobalt:#6B93F5; --cobalt-dark:#8FADF8; --on-cobalt:#10151F;
+    --signal:#FFC933; --on-signal:#17233B;
+    --line:#2A3444; --good:#4FBF8B; --bad:#F08A82;
+    --warn-bg:#2A1A19; --warn-bg-2:#3A1F1D; --warn-border:#6B2B26;
+    --warn-ink:#F5B5AE; --warn-solid:#B3261E;
+    --mark-bg:#E8ECF3; --mark-fg:#10151F;
+    --note-bg:#2A2412; --note-border:#5A4A1E; --note-ink:#F0D28A;
+    --shadow:rgba(0,0,0,.45);
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  body{
+    font-family:'Public Sans',system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.55;
+  }
+  a{color:var(--cobalt)}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+
+  /* header */
+  header{border-bottom:3px solid var(--ink);padding:14px 0}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;
+                gap:16px;flex-wrap:wrap}
+  .brand{
+    display:flex;align-items:center;gap:9px;font-weight:800;font-size:1.1rem;
+    letter-spacing:-0.01em;color:inherit;text-decoration:none;
+  }
+  .brand .mark{display:block;flex:0 0 auto;border-radius:var(--r-sm)}
+  .brand .dot{color:var(--cobalt)}
+  .topnav{display:flex;gap:18px;font-size:.9rem;font-weight:600}
+  /* "For business" is two words and wrapped at 375px, which pushed the
+     header from 73px to 86px. nowrap keeps it on one line and costs nothing:
+     measured 29px nav either way. .header-inner already wraps, so on a
+     genuinely narrow screen the nav drops to its own line rather than
+     overflowing. */
+  .topnav a{text-decoration:none;white-space:nowrap}
+  .topnav a:hover{text-decoration:underline}
+  .business-short{display:none}
+  .badge{
+    display:inline-block;background:var(--signal);color:var(--on-signal);
+    border-radius:var(--r-pill);padding:1px 8px;font-size:.78rem;
+    font-variant-numeric:tabular-nums;
+  }
+  .badge[hidden]{display:none}
+  .themebtn{
+    font:inherit;font-size:1rem;line-height:1;cursor:pointer;
+    background:transparent;border:1.5px solid var(--line);border-radius:var(--r-pill);
+    color:var(--ink-soft);padding:5px 10px;
+  }
+  .themebtn:hover{border-color:var(--ink-soft);color:var(--ink)}
+  @media (max-width:520px){
+    .header-inner{gap:10px}
+    .topnav{width:100%;display:grid;grid-template-columns:repeat(5,auto);
+            justify-content:space-between;align-items:center;gap:6px;font-size:.8rem}
+    .business-full{display:none}
+    .business-short{display:inline}
+    .themebtn{padding:5px 8px}
+  }
+  @media (max-width:350px){.topnav .badge{display:none}}
+
+  /* hero = the search itself */
+  .hero{padding:30px 0 6px}
+  .hero h1{
+    font-size:clamp(1.5rem,4vw,2.15rem);
+    font-weight:800;line-height:1.15;letter-spacing:-0.02em;
+    max-width:640px;
+  }
+  .hero p.lead{margin-top:8px;color:var(--ink-soft);max-width:56ch;text-wrap:pretty}
+  .sourceline{margin-top:10px;font-size:.82rem;color:var(--ink-soft)}
+  .sourceline strong{color:var(--ink)}
+  .sample-note{
+    display:none;margin-top:10px;padding:8px 12px;background:var(--note-bg);
+    border:1px solid var(--note-border);border-radius:var(--r-sm);font-size:.85rem;max-width:560px;
+  }
+
+  .searchbox{
+    margin-top:18px;display:flex;gap:0;border:2px solid var(--ink);
+    border-radius:var(--r-sm);overflow:hidden;background:var(--paper);
+    box-shadow:4px 4px 0 var(--cobalt);
+  }
+  .searchbox input{
+    flex:1;border:0;outline:none;font:inherit;font-size:1.05rem;
+    padding:14px 16px;min-width:0;
+    background:var(--paper);color:var(--ink);
+  }
+  .searchbox input:focus{background:var(--paper-dim)}
+  .searchbox button{
+    border:0;background:var(--cobalt);color:var(--on-cobalt);font:inherit;font-weight:600;
+    padding:0 22px;cursor:pointer;
+  }
+  .searchbox button:hover{background:var(--cobalt-dark)}
+
+  .tryline{
+    margin-top:10px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;
+    font-size:.83rem;color:var(--ink-soft);
+  }
+  .tryline .try{
+    font:inherit;font-weight:600;color:var(--cobalt);cursor:pointer;
+    background:var(--paper);border:1.5px solid var(--line);
+    border-radius:var(--r-pill);padding:4px 11px;
+  }
+  .tryline .try:hover{border-color:var(--cobalt);background:var(--paper-dim)}
+
+  /* proof strip: the three numbers that justify the page existing */
+  .proof{
+    display:grid;gap:10px;margin-top:16px;
+    grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  }
+  .stat{
+    border:1.5px solid var(--line);border-radius:var(--r-md);padding:11px 14px;
+    background:var(--paper);
+  }
+  .stat .v{
+    display:block;font-size:1.45rem;font-weight:800;letter-spacing:-0.02em;
+    line-height:1.1;
+  }
+  .stat .l{
+    display:block;margin-top:3px;font-size:.83rem;color:var(--ink-soft);
+    text-wrap:pretty;
+  }
+  /* Findable, not alarming. This used to be a solid red card, which made the
+     loudest thing on the page the one number derived from matching names
+     rather than from the register itself. A false positive here is somebody
+     told their prospective employer is dying when it is not, so it should
+     not shout louder than the data we are certain of. The arrow marks it as
+     the clickable one instead. */
+  a.stat.flag{
+    text-decoration:none;color:inherit;border-color:var(--line);
+    background:var(--paper);
+  }
+  a.stat.flag .l::after{content:' \2192';color:var(--cobalt);font-weight:700}
+  a.stat.flag:hover{border-color:var(--ink-soft);background:var(--paper-dim)}
+  a.stat.flag[hidden]{display:none}
+
+  /* Sticky filter bar. This is why there is no sidebar: the controls follow
+     you down the list instead of taking a column from a table that needs
+     the width. */
+  .filterbar{
+    position:sticky;top:0;z-index:20;
+    background:var(--paper);border-bottom:1.5px solid var(--line);
+    padding:9px 0;margin-top:14px;
+  }
+  .filterbar.stuck{box-shadow:0 2px 10px var(--shadow)}
+  .filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .facets{
+    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:10px;flex:1 0 100%;min-width:0;
+  }
+  /* appearance:none is the point. A native dropdown renders as whatever the
+     operating system feels like, which is the difference between a designed
+     control and a form from 2004. The chevron is drawn on the wrapper so it
+     matches --ink in both themes. */
+  .field{position:relative;display:block;max-width:100%}
+  .field .fl{
+    position:absolute;width:1px;height:1px;overflow:hidden;
+    clip-path:inset(50%);white-space:nowrap;
+  }
+  .filters select{
+    font:inherit;font-size:.9rem;padding:8px 28px 8px 10px;
+    border:1.5px solid var(--line);border-radius:var(--r-sm);
+    background:var(--paper);color:var(--ink);max-width:100%;width:100%;
+    appearance:none;-webkit-appearance:none;cursor:pointer;
+  }
+  .field::after{
+    content:'';position:absolute;right:11px;top:calc(50% - 2px);
+    width:8px;height:8px;pointer-events:none;
+    border-right:2px solid var(--ink-soft);border-bottom:2px solid var(--ink-soft);
+    transform:translateY(-50%) rotate(45deg);
+  }
+  .filters select:hover{border-color:var(--ink-soft)}
+  .views{display:flex;gap:0;border:1.5px solid var(--line);border-radius:var(--r-sm);overflow:hidden}
+  .view-field{display:none}
+  .view{
+    font:inherit;font-size:.9rem;padding:8px 12px;border:0;
+    border-right:1.5px solid var(--line);
+    background:var(--paper);cursor:pointer;color:var(--ink);white-space:nowrap;
+  }
+  .view:last-child{border-right:0}
+  .view:hover{background:var(--paper-dim)}
+  .view[aria-pressed="true"]{font-weight:600;background:var(--paper-dim)}
+  #viewAdded[aria-pressed="true"]{background:var(--signal);color:var(--on-signal)}
+  #viewRemoved[aria-pressed="true"]{background:var(--warn-bg-2)}
+  .view .n{opacity:.65;font-weight:400;margin-left:2px}
+
+  /* A modifier, not a mode: it composes with whichever view is active, so
+     "just added" and "company warning" can be asked together. */
+  .pill{
+    font:inherit;font-size:.9rem;padding:8px 12px;cursor:pointer;
+    border:1.5px solid var(--line);border-radius:var(--r-pill);
+    background:var(--paper);color:var(--ink);white-space:nowrap;font-weight:600;
+  }
+  .pill:hover{background:var(--paper-dim)}
+  .pill[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+  .pill.risk{border-color:var(--warn-border);background:var(--warn-bg);color:var(--warn-ink)}
+  .pill.risk:hover{background:var(--warn-bg-2)}
+  .pill.risk[aria-pressed="true"]{background:var(--warn-solid);border-color:var(--warn-solid);color:#fff}
+  .pill[hidden]{display:none}
+  .pill .n{font-weight:400;opacity:.8}
+
+  /* explains a view whose meaning is not obvious from the rows alone */
+  .notice{
+    margin:20px 0 0;padding:12px 14px;border-radius:var(--r-sm);
+    border:1.5px solid var(--line);background:var(--paper-dim);
+    font-size:.9rem;color:var(--ink-soft);max-width:640px;
+  }
+  .notice[hidden]{display:none}
+  .notice strong{color:var(--ink)}
+  .notice.warn{background:var(--warn-bg-2);border-color:var(--warn-border)}
+  .visit-changes{
+    margin:18px 0 0;padding:14px 16px;border:1.5px solid var(--signal-border);
+    border-radius:var(--r-sm);background:var(--signal-soft);max-width:760px;
+  }
+  .visit-changes[hidden]{display:none}
+  .visit-changes h2{font-size:1rem;font-weight:800}
+  .visit-changes p{margin-top:3px;font-size:.84rem;color:var(--ink-soft)}
+  .visit-changes ul{margin:9px 0 0;padding-left:21px;font-size:.88rem}
+  .visit-changes li+li{margin-top:5px}
+  :is(input,select,button,a):focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
+
+  /* results */
+  .results-bar{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    flex-wrap:wrap;margin:18px 0 8px;
+  }
+  .results-bar[hidden]{display:none}
+  .results-meta{font-size:.9rem;color:var(--ink-soft)}
+  .results-meta strong{color:var(--ink)}
+  .sort-field{display:flex;align-items:center;gap:7px;font-size:.82rem;color:var(--ink-soft)}
+  .sort-field select{font:inherit;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:var(--r-sm);padding:6px 26px 6px 8px}
+  .sorthead{font:inherit;font-weight:700;color:inherit;border:0;background:none;padding:0;cursor:pointer}
+  .sorthead::after{content:' \2195';color:var(--ink-soft);font-size:.75rem}
+  .sorthead.active::after{content:' \2193';color:var(--cobalt)}
+  .save-status{margin:8px 0 0;font-size:.84rem;color:var(--ink-soft)}
+  .save-status[hidden]{display:none}
+  .download{
+    font:inherit;font-size:.85rem;font-weight:600;padding:7px 14px;
+    border:1.5px solid var(--line);border-radius:var(--r-sm);background:var(--paper);
+    color:var(--ink);cursor:pointer;
+  }
+  .download:hover{background:var(--paper-dim);border-color:var(--ink)}
+  .download[disabled]{opacity:.6;cursor:default}
+  .actions{display:flex;gap:8px;flex-wrap:wrap}
+  .clear{
+    font:inherit;font-size:.82rem;margin-left:10px;padding:2px 10px;
+    border:1.5px solid var(--line);border-radius:var(--r-pill);background:var(--paper);
+    color:var(--cobalt);cursor:pointer;font-weight:600;
+  }
+  .clear:hover{border-color:var(--cobalt)}
+  .clear[hidden]{display:none}
+  table{width:100%;border-collapse:collapse;font-size:.95rem}
+  thead th{
+    text-align:left;font-weight:600;font-size:.82rem;color:var(--ink-soft);
+    border-bottom:2px solid var(--ink);padding:8px 10px 6px;
+  }
+  tbody td{padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th:nth-child(4),tbody td:nth-child(4){max-width:280px}
+  thead th:last-child,tbody td:last-child{
+    width:1%;white-space:nowrap;text-align:right;padding-left:18px;
+  }
+  tbody tr:hover{background:var(--paper-dim)}
+  /* The whole row opens the employer, so it has to look like it does. The
+     name stays a button because that is what the keyboard and a screen
+     reader need; this is only for the mouse. */
+  tbody tr[data-name]{cursor:pointer}
+  td.name{font-weight:600}
+  .tag{
+    display:inline-block;font-size:.8rem;padding:2px 8px;border-radius:var(--r-pill);
+    border:1px solid var(--line);color:var(--ink-soft);margin:1px 4px 1px 0;white-space:nowrap;
+  }
+  .tag.new{background:var(--signal);border-color:var(--ink);color:var(--on-signal);font-weight:600}
+  /* A company-status warning. Red because it is a warning, and always a link
+     to Companies House so the reader can check us rather than trust us. */
+  .tag.warn{
+    background:var(--warn-bg-2);border-color:var(--warn-solid);color:var(--warn-ink);
+    font-weight:600;text-decoration:none;
+  }
+  .tag.warn:hover{background:var(--warn-bg)}
+  /* Red is reserved for "this company may not exist any more". A late
+     filing gets a quiet grey tag, because that is what it is worth. Using
+     the same red for both is what made the loud number untrustworthy. */
+  .tag.warn.sev-notable{
+    background:var(--note-bg);border-color:var(--note-border);
+    color:var(--note-ink);
+  }
+  .tag.warn.sev-notable:hover{border-color:var(--note-ink)}
+  .tag.warn.sev-context{
+    background:var(--paper-dim);border-color:var(--line);color:var(--ink-soft);
+    font-weight:500;
+  }
+  .tag.warn.sev-context:hover{border-color:var(--ink-soft);color:var(--ink)}
+  /* The shortlist star. Sits before the name, sized for a thumb on mobile
+     without pushing the name off the line. */
+  .star{
+    position:relative;
+    background:none;border:0;padding:4px 8px 4px 0;margin:0;cursor:pointer;
+    font-size:1.15rem;line-height:1;color:var(--ink-soft);
+    vertical-align:baseline;
+  }
+  /* The glyph is ~17px, well under a comfortable thumb target. The hit area
+     is grown vertically and leftwards into the row's own padding, rather
+     than outwards to 44px in both directions: the employer name sits
+     immediately to the right, and a square target would swallow taps meant
+     for it. */
+  .star::after{
+    content:'';position:absolute;top:50%;left:-10px;
+    transform:translateY(-50%);
+    width:calc(100% + 10px);height:44px;
+  }
+  .star:hover{color:var(--signal)}
+  .star.on{color:var(--signal)}
+  .star:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px;border-radius:var(--r-sm)}
+  .rating-a{color:var(--good);font-weight:600}
+  /* B is the whole point of the downgraded view, so it is not left as
+     unstyled text next to a green A. */
+  .rating-b{color:var(--bad);font-weight:700}
+  .loadmore{
+    display:block;margin:18px auto 0;font:inherit;font-weight:600;
+    padding:10px 26px;border:2px solid var(--ink);border-radius:var(--r-sm);
+    background:var(--paper);cursor:pointer;
+  }
+  .loadmore:hover{background:var(--paper-dim)}
+  /* the employer name is a real button, so the row is reachable by keyboard
+     and announced as actionable, not just clickable by mouse */
+  .rowbtn{
+    font:inherit;font-weight:600;color:var(--ink);background:none;border:0;
+    padding:0;text-align:left;cursor:pointer;
+  }
+  .rowbtn:hover{color:var(--cobalt);text-decoration:underline}
+  tbody tr.open{background:var(--paper-dim)}
+
+  /* detail sheet: a side panel on desktop, a bottom sheet on a phone */
+  .sheet-backdrop{
+    position:fixed;inset:0;background:rgba(23,35,59,.45);z-index:40;
+    animation:fade .12s ease-out;
+  }
+  .sheet-backdrop[hidden]{display:none}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .sheet{
+    position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);z-index:41;
+    background:var(--paper);border-left:2px solid var(--ink);
+    box-shadow:-14px 0 34px var(--shadow);
+    display:flex;flex-direction:column;overflow-y:auto;
+    animation:slide .16s ease-out;
+  }
+  .sheet[hidden]{display:none}
+  @keyframes slide{from{transform:translateX(12px);opacity:.6}
+                   to{transform:none;opacity:1}}
+  @media (prefers-reduced-motion:reduce){
+    .sheet,.sheet-backdrop{animation:none}
+  }
+  .sheet-head{
+    display:flex;align-items:flex-start;gap:12px;padding:18px 18px 12px;
+    border-bottom:1.5px solid var(--line);position:sticky;top:0;
+    background:var(--paper);
+  }
+  .sheet-head h2{
+    font-size:1.1rem;font-weight:800;letter-spacing:-0.01em;flex:1;
+    text-wrap:pretty;
+  }
+  .sheet-close{
+    font:inherit;font-size:1.5rem;line-height:1;background:none;border:0;
+    color:var(--ink-soft);cursor:pointer;padding:0 4px;
+  }
+  .sheet-close:hover{color:var(--ink)}
+  .sheet-body{padding:16px 18px 8px}
+  .sheet-foot{padding:0 18px 24px;margin-top:auto;display:grid;gap:8px}
+  .sheet-foot .download{width:100%}
+  .check-kicker{font-size:.72rem;font-weight:800;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--cobalt);margin-bottom:8px}
+  .check-summary{padding:13px 14px;border:1.5px solid var(--line);
+    border-radius:var(--r-sm);background:var(--paper-dim);margin-bottom:18px}
+  .check-summary strong{display:block;font-size:1rem}
+  .check-summary span{display:block;color:var(--ink-soft);font-size:.8rem;margin-top:3px}
+  .evidence-timeline{border-left:3px solid var(--signal);padding-left:14px}
+  .evidence-timeline li{margin:8px 0;color:var(--ink-soft);font-size:.88rem}
+  .evidence-timeline strong{color:var(--ink)}
+  .evidence-timeline .event-note{display:block;margin-top:2px}
+  .compare-row{
+    font:inherit;font-size:.72rem;font-weight:700;color:var(--cobalt);
+    border:0;background:none;padding:2px 6px;cursor:pointer;white-space:nowrap;
+  }
+  .compare-row:hover{text-decoration:underline}
+  .compare-row.on{color:var(--good)}
+  .sheet dl{display:grid;grid-template-columns:auto 1fr;gap:8px 14px}
+  .sheet dt{font-size:.8rem;color:var(--ink-soft);white-space:nowrap}
+  .sheet dd{font-size:.93rem}
+  .sheet .block{margin-top:20px}
+  .sheet .block h3{
+    font-size:.8rem;text-transform:uppercase;letter-spacing:.04em;
+    color:var(--ink-soft);margin-bottom:6px;
+  }
+  /* Long route names must wrap inside a phone-width detail sheet. The table
+     chips can stay on one line; only the sheet needs this escape hatch. */
+  .sheet .tag{white-space:normal;max-width:100%;overflow-wrap:anywhere}
+  /* The health check. Two columns on a roomy sheet, stacked on a phone,
+     because a two-word label beside a two-line answer reads worse than
+     either one alone. */
+  .sheet dl.checks{margin-top:8px}
+  .sheet dl.checks dt{
+    font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;
+    color:var(--ink-soft);font-weight:700;margin-top:12px;
+  }
+  .sheet dl.checks dt:first-child{margin-top:0}
+  .sheet dl.checks dd{margin-top:2px;font-size:.92rem}
+  .sheet .warnbox{
+    margin-top:18px;padding:12px 14px;border-radius:var(--r-sm);
+    background:var(--warn-bg-2);border:1.5px solid var(--warn-border);
+    font-size:.9rem;
+  }
+  .sheet .warnbox strong{color:var(--warn-ink)}
+  .sheet .warnbox.sev-notable{
+    background:var(--note-bg);border-color:var(--note-border);
+  }
+  .sheet .warnbox.sev-notable strong{color:var(--note-ink)}
+  .sheet .warnbox.sev-context{
+    background:var(--paper-dim);border-color:var(--line);
+  }
+  .sheet .warnbox.sev-context strong{color:var(--ink)}
+  .sheet .links{margin-top:20px;display:flex;flex-direction:column;gap:8px}
+  .sheet .links :is(a,button){font:inherit;font-size:.9rem;color:var(--cobalt);
+                              text-align:left}
+  .sheet .links button{border:0;background:none;padding:0;cursor:pointer;
+                       text-decoration:underline}
+  .similar-intro{font-size:.88rem;color:var(--ink-soft);text-wrap:pretty}
+  .similar-list{display:grid;gap:10px;margin-top:10px}
+  .similar-card{
+    padding:12px;border:1.5px solid var(--line);border-radius:var(--r-sm);
+    background:var(--paper-dim);
+  }
+  .similar-name{
+    display:block;font-weight:750;line-height:1.25;color:var(--ink);
+    overflow-wrap:anywhere;
+  }
+  .similar-meta{margin-top:4px;font-size:.8rem;color:var(--ink-soft)}
+  .similar-signal{margin-top:7px;font-size:.78rem;color:var(--warn-ink)}
+  .similar-signal a{color:inherit;font-weight:700}
+  .similar-signal.sev-context{color:var(--ink-soft)}
+  .similar-why{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+  .similar-why span{
+    padding:3px 7px;border:1px solid var(--line);border-radius:999px;
+    background:var(--paper);font-size:.74rem;color:var(--ink-soft);
+  }
+  .similar-actions{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .similar-actions button{
+    min-height:36px;padding:7px 9px;border:1.5px solid var(--ink);
+    border-radius:var(--r-sm);background:var(--paper);color:var(--ink);
+    font:inherit;font-size:.78rem;font-weight:700;cursor:pointer;
+  }
+  .similar-actions button:first-child{background:var(--ink);color:var(--paper)}
+  .similar-actions button[aria-pressed="true"]{
+    border-color:var(--good);color:var(--good);background:var(--paper);
+  }
+  /* The licence check is only the start of an application decision. Keep
+     the next steps inside the employer sheet, where the question arises,
+     instead of sending somebody through a generic guide first. */
+  .sheet .apply-steps{
+    margin:8px 0 0;padding-left:24px;font-size:.9rem;color:var(--ink);
+  }
+  .sheet .apply-steps li{padding-left:4px;margin-top:8px}
+  .sheet .apply-steps li:first-child{margin-top:0}
+  .sheet .apply-steps li::marker{font-weight:800;color:var(--cobalt)}
+  .sheet .caveat{
+    margin-top:20px;font-size:.82rem;color:var(--ink-soft);text-wrap:pretty;
+  }
+  @media (max-width:560px){
+    .sheet{
+      top:auto;left:0;right:0;width:100%;max-height:88vh;
+      border-left:0;border-top:2px solid var(--ink);
+      border-radius:var(--r-md) var(--r-md) 0 0;
+    }
+    @keyframes slide{from{transform:translateY(16px);opacity:.6}
+                     to{transform:none;opacity:1}}
+  }
+
+  /* Comparison is deliberately local and account-free. The selected names
+     live in the URL, so a useful comparison can be shared without storing a
+     profile of the visitor. */
+  .compare-tray{
+    position:fixed;left:50%;bottom:18px;z-index:35;transform:translateX(-50%);
+    width:min(760px,calc(100% - 28px));display:flex;align-items:center;gap:12px;
+    padding:11px 12px 11px 16px;background:var(--ink);color:var(--paper);
+    border-radius:var(--r-md);box-shadow:0 12px 30px var(--shadow);
+  }
+  .compare-tray[hidden]{display:none}
+  .compare-tray p{font-size:.86rem;flex:1}
+  .compare-tray button{font:inherit;font-size:.82rem;font-weight:700;padding:7px 12px;
+    border:1px solid var(--paper);border-radius:var(--r-sm);cursor:pointer}
+  .compare-tray .open{background:var(--signal);color:var(--on-signal);border-color:var(--signal)}
+  .compare-tray .clear-compare{background:transparent;color:var(--paper)}
+  .compare-dialog{width:min(980px,calc(100% - 28px));max-height:90vh;
+    color:var(--ink);background:var(--paper);border:2px solid var(--ink);
+    border-radius:var(--r-md);padding:0;margin:auto;
+    box-shadow:0 18px 50px var(--shadow)}
+  .compare-dialog::backdrop{background:rgba(23,35,59,.58)}
+  .compare-dialog-head{display:flex;gap:12px;align-items:flex-start;padding:20px 22px;
+    border-bottom:2px solid var(--ink)}
+  .compare-dialog-head div{flex:1}
+  .compare-dialog-head h2{font-size:1.3rem;margin:0}
+  .compare-dialog-head p{font-size:.86rem;color:var(--ink-soft);margin-top:4px}
+  .compare-dialog-body{padding:18px 22px;overflow:auto}
+  .compare-table{min-width:720px}
+  .compare-table th:first-child{width:155px}
+  .compare-table td:first-child{font-weight:700;color:var(--ink-soft)}
+  .compare-dialog-foot{display:flex;justify-content:flex-end;gap:8px;padding:0 22px 20px}
+  .compare-dialog-foot .download{width:auto}
+  @media (max-width:640.01px){
+    .compare-tray{bottom:10px;flex-wrap:wrap}
+    .compare-tray p{flex-basis:100%}
+    .compare-tray button{flex:1}
+    .compare-dialog-body{padding:12px 14px}
+  }
+  @media print{
+    body.print-check>*:not(#sheet){display:none!important}
+    body.print-check #sheet{display:block!important;position:static;width:100%;height:auto;
+      overflow:visible;border:1.5px solid #17233b;box-shadow:none;animation:none}
+    body.print-check .sheet-head{position:static}
+    body.print-check .sheet-close,body.print-check .sheet-foot{display:none!important}
+  }
+
+  .empty{padding:40px 10px;color:var(--ink-soft)}
+  .empty strong{color:var(--ink)}
+
+  /* loading: reserves the same vertical space the first page of rows will
+     occupy, so nothing below it jumps when the data lands */
+  .loading{
+    display:flex;align-items:center;gap:12px;
+    min-height:220px;padding:40px 10px;color:var(--ink-soft);
+  }
+  /* an author display: rule beats the UA [hidden] rule, so restate it */
+  .loading[hidden]{display:none}
+  .spinner{
+    width:18px;height:18px;flex:0 0 auto;border-radius:50%;
+    border:2.5px solid var(--line);border-top-color:var(--cobalt);
+    animation:spin .8s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.spinner{animation:none}}
+
+  /* alerts band */
+  /* What else this site does. Cards, because six equal things in a list read
+     as a sitemap and six cards read as a product. */
+  .capabilities{max-width:960px;margin:44px auto 0;padding:0 20px}
+  .capabilities h2{font-size:1.15rem;font-weight:800;margin-bottom:12px}
+  .capgrid{display:grid;gap:10px;
+          grid-template-columns:repeat(auto-fit,minmax(268px,1fr))}
+  .cap{
+    display:block;text-decoration:none;color:inherit;
+    border:1.5px solid var(--line);border-radius:var(--r-md);
+    padding:14px 16px;background:var(--paper);
+  }
+  .cap:hover{border-color:var(--cobalt);background:var(--paper-dim)}
+  .cap strong{display:block;font-weight:800;font-size:.98rem}
+  .cap strong::after{content:' \2192';color:var(--cobalt)}
+  .cap span{display:block;margin-top:4px;font-size:.87rem;
+           color:var(--ink-soft);text-wrap:pretty}
+
+  .alerts{
+    margin:56px 0;border:2px solid var(--ink);border-radius:var(--r-md);
+    background:var(--paper-dim);padding:26px 24px;
+  }
+  .alerts h2{font-size:1.25rem;font-weight:800;letter-spacing:-0.01em}
+  .alerts p{color:var(--ink-soft);margin-top:6px;max-width:520px}
+  .alerts form{margin-top:16px}
+  .alert-scope{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+  .alert-scope label{font-size:.9rem;color:var(--ink-soft)}
+  .follow-scope{display:flex;align-items:center;gap:10px;margin-bottom:10px;
+                color:var(--ink-soft);font-size:.9rem}
+  .follow-scope strong{color:var(--ink)}
+  .follow-scope button{background:none;color:var(--cobalt);padding:2px 0;
+                       text-decoration:underline}
+  .alert-scope select{
+    font:inherit;font-size:.9rem;padding:7px 10px;border:1.5px solid var(--line);
+    border-radius:var(--r-sm);background:var(--paper);color:var(--ink);max-width:100%;
+  }
+  .alert-row{display:flex;gap:10px;flex-wrap:wrap}
+  .alerts input[type=email]{
+    flex:1;min-width:220px;font:inherit;padding:11px 14px;
+    border:2px solid var(--ink);border-radius:var(--r-sm);
+    background:var(--paper);color:var(--ink);
+  }
+  .alerts button{
+    font:inherit;font-weight:600;color:var(--on-cobalt);background:var(--cobalt);
+    border:0;border-radius:var(--r-sm);padding:11px 22px;cursor:pointer;
+  }
+  .alerts button:hover{background:var(--cobalt-dark)}
+  .alerts .fineprint{font-size:.8rem;margin-top:10px}
+  .alerts .done{display:none;font-weight:600;color:var(--good);margin-top:12px}
+  .alerts .err{display:none;font-weight:600;color:var(--bad);margin-top:12px}
+  .alerts button[disabled]{opacity:.6;cursor:progress}
+
+  /* faq + footer */
+  .faq{margin:40px 0 10px}
+  .faq h2{font-size:1.25rem;font-weight:800;margin-bottom:8px}
+  .faq details{border-bottom:1px solid var(--line);padding:12px 0}
+  .faq summary{cursor:pointer;font-weight:600}
+  .faq details p{margin-top:8px;color:var(--ink-soft);max-width:640px}
+  footer{
+    margin-top:48px;border-top:3px solid var(--ink);padding:22px 0 40px;
+    font-size:.85rem;color:var(--ink-soft);
+  }
+  footer p+p{margin-top:6px}
+  .browse{margin-bottom:18px}
+  .browse p{margin-bottom:4px}
+  /* only the link lists get the gap, never a link inside a sentence */
+  .browse .links a{margin-right:10px;white-space:nowrap}
+
+  /* On a phone the results stop being a table and become cards.
+     Hiding a column to make five fit was a compromise, not a design, and
+     most of this audience is on a phone. The markup stays a real table for
+     screen readers and for the desktop layout; only the presentation
+     changes, with each cell labelled by the header it lost. */
+  @media (max-width:640px){
+    /* Three stat cards stacked was ~500px of chrome before a single result,
+       and three stacked selects another ~285px. On a phone the results have
+       to be reachable, so the proof strip becomes a compact row and the
+       filters pair up. */
+    .proof{grid-template-columns:repeat(3,1fr);gap:6px}
+    .stat{padding:8px 9px;border-radius:var(--r-sm)}
+    .stat .v{font-size:1.05rem}
+    .stat .l{font-size:.68rem;line-height:1.25}
+    /* On a phone the label becomes visible and the control becomes a card.
+       An unlabelled 44px dropdown makes you open it to find out what it
+       filters, which is the one place a competitor was plainly better. */
+    .filters{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
+    .facets{display:contents}
+    .field{
+      border:1.5px solid var(--line);border-radius:var(--r-sm);
+      padding:6px 10px 7px;background:var(--paper);min-width:0;
+    }
+    .field .fl{
+      position:static;width:auto;height:auto;overflow:visible;clip-path:none;
+      display:block;font-size:.64rem;font-weight:700;letter-spacing:.06em;
+      text-transform:uppercase;color:var(--ink-soft);
+    }
+    .filters select{
+      width:100%;font-size:.88rem;font-weight:600;padding:1px 20px 1px 0;
+      border:0;border-radius:0;background:transparent;
+    }
+    .filters select:hover{border-color:transparent}
+    /* Three controls in two columns left a dangling empty cell. The third
+       takes the whole row instead. */
+    .field:last-of-type{grid-column:1 / -1}
+    .field::after{right:9px;top:auto;bottom:13px;transform:rotate(45deg)}
+    .views{display:none}
+    .view-field{display:block;grid-column:1 / -1}
+    .pill{
+      grid-column:auto;min-width:0;width:100%;padding:8px 6px;
+      white-space:normal;line-height:1.2;
+    }
+    .pill .pill-label{display:block}
+    .pill .n{display:block;margin-top:2px;white-space:nowrap}
+    .view{padding:7px 4px;font-size:.78rem;line-height:1.2}
+    .view .n{display:inline;margin-left:3px}
+    .hero h1{font-size:1.45rem}
+    .hero p.lead{font-size:.92rem}
+    #resultsTable thead{
+      position:absolute;width:1px;height:1px;overflow:hidden;
+      clip:rect(0 0 0 0);white-space:nowrap;
+    }
+    #resultsTable,#resultsTable tbody,#resultsTable tr,#resultsTable td{
+      display:block;width:100%;
+    }
+    #resultsTable tr{
+      border:1.5px solid var(--line);border-radius:var(--r-md);
+      padding:12px 14px;margin-bottom:10px;
+    }
+    #resultsTable tr.open{border-color:var(--ink)}
+    #resultsTable td{border:0;padding:0}
+    #resultsTable td.name{font-size:1.02rem;margin-bottom:6px}
+    #resultsTable td.name .rowbtn{font-size:1.02rem}
+    /* location, industry, routes, rating read as a labelled list */
+    #resultsTable td:not(.name):not(:empty)::before{
+      content:attr(data-label) ": ";
+      color:var(--ink-soft);font-size:.78rem;
+    }
+    #resultsTable td:not(.name){font-size:.88rem;margin-top:2px}
+    #resultsTable td:empty{display:none}
+    .searchbox{box-shadow:3px 3px 0 var(--cobalt)}
+    .results-bar .actions{width:100%}
+    .sort-field{order:-1;width:100%;justify-content:space-between}
+    .sort-field select{flex:1;max-width:230px}
+  }
+</style>
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-inner">
+    <a class="brand" href="./" aria-label="KnowYourSponsor home">
+      <svg class="mark" width="28" height="28" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <rect width="64" height="64" rx="14" fill="var(--mark-bg)"/>
+        <text x="30" y="47" text-anchor="middle" font-family="'Public Sans',system-ui,sans-serif"
+              font-size="42" font-weight="800" fill="var(--mark-fg)">K</text>
+        <circle cx="48" cy="44" r="5" fill="var(--signal)"/>
+      </svg>
+      <span class="wordmark">KnowYourSponsor<span class="dot">.</span></span>
+    </a>
+    <nav class="topnav" aria-label="Sections">
+      <!-- Must stay in step with pages.site_header(); a test checks it.
+           "Employers" took the slot "Numbers" had: 746 employer pages and
+           93 landing pages were reachable only from a 30-link footer. -->
+      <a href="employer/">Employers</a>
+      <a href="changes/">Changes <span class="badge" id="navChanges" hidden></span></a>
+      <a href="data-api/">Data</a>
+      <a href="pricing/" aria-label="For business"><span class="business-full">For business</span><span class="business-short" aria-hidden="true">Business</span></a>
+      <button class="themebtn" type="button" data-theme-toggle aria-label="Switch between light and dark theme"><span aria-hidden="true">&#9789;</span></button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero"><div class="wrap">
+    <!-- The old headline was "Know your sponsor before you apply", which is a
+         slogan: it assumes the reader already knows why it matters, and it
+         carries none of the words people search for. This states the problem
+         and the answer in two short sentences, and puts "UK visa sponsor" in
+         the h1 where it earns something. -->
+    <h1>Search every UK visa sponsor. Then check the employer is still trading.</h1>
+    <p class="lead">A licence means an employer can sponsor a work visa. It does not mean they are still in business. We check every one against Companies House, daily.</p>
+
+    <div class="searchbox" role="search">
+      <!-- Short, and measured rather than estimated. The original was
+           "Company, city or industry. Try: software London", 47 characters
+           in 202px of usable width, truncating mid-word to "...industr" on
+           the most important control on the site. Shortening it to
+           "Employer, city or industry" measured 198px against 202px and
+           still clipped, because a canvas measurement of a webfont is not
+           exact and 4px is not headroom.
+           The font size cannot come down to make it fit: below 16px, iOS
+           zooms the whole page when the input takes focus. So the text got
+           shorter instead, and the chips underneath now carry the example
+           and teach that the box takes a city and an industry together. -->
+      <input id="q" type="search" placeholder="Employer or city" aria-label="Search sponsors">
+      <button id="go">Search</button>
+    </div>
+
+    <!-- Teaches the combined query rather than describing it. Free
+         discoverability: most people never learn that the one box takes a
+         city and an industry together. -->
+    <div class="tryline">
+      <span>Try</span>
+      <button type="button" class="try" data-q="software London">software London</button>
+      <button type="button" class="try" data-q="care Birmingham">care Birmingham</button>
+      <button type="button" class="try" data-q="NHS">NHS</button>
+    </div>
+
+    <!-- Three numbers, in the order they matter. The third is the only one
+         no other site can show, so it leads the value, not the volume. -->
+    <div class="proof" id="proof">
+      <div class="stat">
+        <span class="v" id="total">&mdash;</span>
+        <span class="l">can sponsor a work visa</span>
+      </div>
+      <div class="stat">
+        <span class="v" id="statAdded">&mdash;</span>
+        <span class="l">licensed in the last 7 days</span>
+      </div>
+      <!-- Headlines the serious count, not every flag. The wider number was
+           dominated by late filings, so the loudest thing on the page was
+           also the least reliable, which is backwards. -->
+      <a class="stat flag" id="statWarnBox" href="?warn=serious" hidden>
+        <span class="v" id="statWarn">&mdash;</span>
+        <span class="l">may have stopped trading</span>
+      </a>
+    </div>
+    <p class="sourceline">From the GOV.UK Register of Licensed Sponsors, updated <strong id="updated">&mdash;</strong>.</p>
+    <div class="sample-note" id="sampleNote">This is sample data. The full list appears after the next daily update.</div>
+  </div></section>
+
+  <!-- Sticky, so the controls stay reachable however far down the list you
+       are. That is why there is no sidebar: the filters follow you instead
+       of taking a column away from a table that needs the width. -->
+  <div class="filterbar" id="filterbar"><div class="wrap filters">
+    <!-- Each select carries a visible label rather than an aria-label. A
+         bare dropdown is the loudest "template" tell there is, and on a
+         phone an unlabelled 44px control makes you open it to find out what
+         it filters. The label is hidden on desktop, where the first option
+         already reads "All towns and cities" and the sticky bar has no room
+         to grow. A visible label also beats an invisible one for screen
+         readers, so the aria-label is gone rather than duplicated. -->
+    <div class="facets">
+      <label class="field"><span class="fl">Location</span>
+        <select id="city"><option value="">Any town or city</option></select></label>
+      <label class="field"><span class="fl">Industry</span>
+        <select id="industry"><option value="">All industries</option></select></label>
+      <label class="field"><span class="fl">Visa route</span>
+        <select id="route"><option value="">All visa routes</option></select></label>
+    </div>
+    <div class="views" role="group" aria-label="Choose which employers to show">
+      <button class="view" id="viewAll" aria-pressed="true">All</button>
+      <button class="view" id="viewAdded" aria-pressed="false">Just added <span class="n" id="nAdded"></span></button>
+      <button class="view" id="viewRemoved" aria-pressed="false">Lost licence <span class="n" id="nRemoved"></span></button>
+      <!-- Hidden until a downgrade actually happens. A permanent
+           "Downgraded (0)" would read as a broken feature rather than as
+           good news, and the register can go weeks without one. -->
+      <button class="view" id="viewDowngraded" aria-pressed="false" hidden>Downgraded <span class="n" id="nDowngraded"></span></button>
+      <!-- Hidden until something is saved. The star on each row is what
+           teaches the feature; a "Saved (0)" tab teaches nothing. -->
+      <button class="view" id="viewSaved" aria-pressed="false" hidden>Saved <span class="n" id="nSaved"></span></button>
+    </div>
+    <label class="field view-field"><span class="fl">Employer status</span>
+      <select id="viewMobile">
+        <option value="">All employers</option>
+        <option value="added">Just added</option>
+        <option value="removed">Lost licence</option>
+        <option value="downgraded" hidden>Downgraded</option>
+        <option value="saved" hidden>Saved shortlist</option>
+      </select></label>
+    <button class="pill" id="warnOnly" aria-pressed="false" hidden>
+      <span class="pill-label">All company checks</span><span class="n" id="nWarn"></span>
+    </button>
+    <button class="pill risk" id="riskOnly" aria-pressed="false" hidden>
+      <span class="pill-label">Trading risk</span><span class="n" id="nRisk"></span>
+    </button>
+  </div></div>
+
+  <div class="wrap">
+    <p class="notice" id="viewNotice" hidden></p>
+    <section class="visit-changes" id="visitChanges" hidden aria-live="polite">
+      <h2>What changed since your last visit</h2>
+      <p id="visitSummary"></p>
+      <ul id="visitItems"></ul>
+    </section>
+
+  <section aria-live="polite">
+    <div class="results-bar" id="resultsMeta" hidden>
+      <p class="results-meta"><strong id="count">0</strong> employers found<button class="clear" id="clear" type="button" hidden>Clear filters</button></p>
+      <label class="sort-field">Sort
+        <select id="sort"><option value="relevance">Best match</option><option value="name">Employer name</option><option value="location">Location</option><option value="industry">Industry</option><option value="rating">Rating</option></select>
+      </label>
+      <div class="actions">
+        <button class="download" id="alertSearch" type="button" hidden>Email me when this search changes</button>
+        <button class="download" id="shareShortlist" type="button" hidden>Share shortlist</button>
+        <button class="download" id="copyLink" type="button">Copy link</button>
+        <button class="download" id="download" type="button">Download as CSV</button>
+      </div>
+    </div>
+    <p class="save-status" id="saveStatus" role="status" hidden></p>
+    <p class="save-status" id="loadNote" role="status" hidden></p>
+
+    <div class="loading" id="loading" role="status">
+      <span class="spinner" aria-hidden="true"></span>
+      <span>Loading the list. This takes a few seconds.</span>
+    </div>
+
+    <table id="resultsTable" hidden>
+      <thead>
+        <tr><th><button class="sorthead" data-sort="name">Employer</button></th><th><button class="sorthead" data-sort="location">Location</button></th><th><button class="sorthead" data-sort="industry">Industry</button></th><th>Visa routes</th><th><button class="sorthead" data-sort="rating">Rating</button></th></tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <div class="empty" id="empty" hidden>
+      <strong>Nothing matched that search.</strong><br>Try fewer words, or clear the industry and route filters.
+    </div>
+    <button class="loadmore" id="more" hidden>Show more</button>
+  </div>
+
+  <!-- Employer detail. The one interaction everybody tries first: a list of
+       127,000 things invites a click, and until now nothing happened. Driven
+       by ?employer= so a single employer can be linked to and shared. -->
+  <div class="sheet-backdrop" id="sheetBackdrop" hidden></div>
+  <aside class="sheet" id="sheet" hidden role="dialog" aria-modal="true"
+         aria-labelledby="sheetName">
+    <div class="sheet-head">
+      <h2 id="sheetName">&nbsp;</h2>
+      <button class="sheet-close" id="sheetClose" type="button"
+              aria-label="Close employer details">&times;</button>
+    </div>
+    <div class="sheet-body" id="sheetBody"></div>
+    <div class="sheet-foot">
+      <button class="download" id="sheetSave" type="button" aria-pressed="false">Save to shortlist</button>
+      <button class="download" id="sheetCompare" type="button" aria-pressed="false">Add to comparison</button>
+      <button class="download" id="sheetShare" type="button">Share this check</button>
+      <button class="download" id="sheetPrint" type="button">Print or save as PDF</button>
+    </div>
+  </aside>
+
+  <section class="compare-tray" id="compareTray" hidden aria-live="polite">
+    <p><strong id="compareCount">0 of 3</strong> employers selected</p>
+    <button class="clear-compare" id="compareClear" type="button">Clear</button>
+    <button class="open" id="compareOpen" type="button">Compare</button>
+  </section>
+
+  <dialog class="compare-dialog" id="compareDialog" aria-labelledby="compareTitle">
+    <div class="compare-dialog-head">
+      <div><p class="check-kicker">KnowYourSponsor Check</p>
+        <h2 id="compareTitle">Compare employer evidence</h2>
+        <p>Public-source facts shown side by side. This is evidence to check, not a safety score.</p></div>
+      <button class="sheet-close" id="compareClose" type="button" aria-label="Close comparison">&times;</button>
+    </div>
+    <div class="compare-dialog-body" id="compareBody"></div>
+    <div class="compare-dialog-foot">
+      <button class="download" id="compareShare" type="button">Copy comparison link</button>
+      <button class="download" id="comparePrint" type="button">Open printable report</button>
+    </div>
+  </dialog>
+
+  <div class="wrap">
+  </section>
+
+  <!-- What else this site does. Deliberately below the results rather than
+       above them: every competitor opens with a pitch you have to click
+       through, and being the one site whose homepage is already the tool is
+       worth more than a feature tour. The nav serves people who look up,
+       this serves people who scroll. -->
+  <section class="capabilities">
+    <h2>What else is here</h2>
+    <div class="capgrid">
+      <a class="cap" href="employer/">
+        <strong>Browse by city and industry</strong>
+        <span>Every licensed employer in London, Birmingham, Leeds and nine
+          more, split again by what they do.</span>
+      </a>
+      <a class="cap" href="changes/">
+        <strong>What changed this week</strong>
+        <span>Who gained a licence, who lost one, and who was downgraded.
+          Kept as a permanent page for every week.</span>
+      </a>
+      <a class="cap" href="methodology/">
+        <strong>How we check</strong>
+        <span>Where each field comes from, how employers are matched to
+          Companies House, and how often that match is wrong.</span>
+      </a>
+      <a class="cap" href="early-warning/">
+        <strong>Early-warning evidence</strong>
+        <span>Whether company warning signs appeared before a sponsor licence
+          disappeared—and exactly how much history supports the answer.</span>
+      </a>
+      <a class="cap" href="insights/">
+        <strong>Sponsorship in numbers</strong>
+        <span>Where the sponsors are, which visa routes they hold, and which
+          industries are growing.</span>
+      </a>
+      <a class="cap" href="data-api/">
+        <strong>Use the data yourself</strong>
+        <span>Every file here as JSON, free, no key and no rate limit. Plus
+          an RSS feed of the weekly changes.</span>
+      </a>
+      <a class="cap" href="watchlist/">
+        <strong>Monitoring for business</strong>
+        <span>Tell us the employers you place people into and we tell you
+          when one of them changes.</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="alerts" id="alerts">
+    <h2>Get new sponsors in your inbox</h2>
+    <p>New employers get a licence almost every week. Leave your email and we'll send you the new ones, so you can apply before everyone else finds them.</p>
+    <!-- Submission is handled in JS; set ALERT_ENDPOINT at the top of the script. See README. -->
+    <form id="alertForm">
+      <input id="alertEmployer" name="employer" type="hidden" value="">
+      <div class="follow-scope" id="followScope" hidden>
+        Following <strong id="followName"></strong>
+        <button id="clearFollow" type="button">Choose filters instead</button>
+      </div>
+      <div class="alert-scope">
+        <label for="alertCity">Only tell me about</label>
+        <select id="alertCity" name="city"><option value="">anywhere in the UK</option></select>
+        <select id="alertIndustry" name="industry"><option value="">any industry</option></select>
+        <select id="alertRoute" name="route" aria-label="Visa route"><option value="">any visa route</option></select>
+      </div>
+      <div class="alert-row">
+        <input type="email" name="email" required placeholder="you@example.com" aria-label="Email address">
+        <button type="submit">Notify me</button>
+      </div>
+    </form>
+    <p class="done" id="alertDone" role="status">Almost there. Check your inbox and click the confirmation link to finish signing up.</p>
+    <p class="err" id="alertErr" role="alert"></p>
+    <p class="fineprint">Free. One email a week. Unsubscribe anytime. We never sell your address. <a href="privacy/">How we handle your data</a>.</p>
+  </section>
+
+  <section class="faq">
+    <h2>Common questions</h2>
+    <details>
+      <summary>What does it mean if an employer is on this list?</summary>
+      <p>They hold a current Home Office sponsor licence, so they can legally sponsor workers on the visa routes shown. It does not mean they are hiring right now, or that your application will succeed. It means sponsorship is possible there.</p>
+    </details>
+    <details>
+      <summary>Where does the data come from?</summary>
+      <p>Straight from the official GOV.UK "Register of licensed sponsors: workers" file. We download the latest version every day, tidy it up, and add industry tags so you can search it. Nothing is edited by hand.</p>
+    </details>
+    <details>
+      <summary>What does the A rating mean?</summary>
+      <p>An A rating means the employer is in good standing with the Home Office. A B rating means they have been downgraded and are working through an action plan. Employers on a B rating usually cannot issue new certificates until they get back to an A.</p>
+    </details>
+    <details>
+      <summary>What does the red warning next to an employer mean?</summary>
+      <p>It means Companies House records something about that company worth knowing before you apply. A sponsor licence is a permission, not a health check, so a company being wound up can stay on the register for months.</p>
+      <p>The warnings are not all equally serious, which is why each one says what it found. "Liquidation" or "Strike-off proposed" is grave. "Accounts overdue" is often just paperwork at a company that is trading perfectly well. Read the label, not the colour.</p>
+      <p>We match employers to Companies House by name, so a warning is not proof and an employer without one is not vetted. Where one name is held by two different companies and we cannot tell which is the employer, we show no warning at all rather than guess. Every warning links straight to the official Companies House record. Check it there before you decide anything.</p>
+    </details>
+    <details>
+      <summary>How do the industry tags work?</summary>
+      <p>The official list does not include industries, so we work them out from each employer's name. They are there to help you search, not official data. Always check the details with the employer.</p>
+    </details>
+  </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav class="browse" aria-label="Browse sponsors by industry and city">
+    <!-- BROWSE-LINKS:START -->
+    <p class="links"><strong>Browse by industry:</strong> <a href="healthcare-care/">Healthcare &amp; Care</a> <a href="hospitality-food/">Hospitality &amp; Food</a> <a href="finance-professional/">Finance &amp; Professional</a> <a href="retail-commerce/">Retail &amp; Commerce</a> <a href="tech-software/">Tech &amp; Software</a> <a href="education-research/">Education &amp; Research</a> <a href="construction-engineering/">Construction &amp; Engineering</a> <a href="media-creative/">Media &amp; Creative</a></p>
+    <p class="links"><strong>Browse by city:</strong> <a href="london/">London</a> <a href="birmingham/">Birmingham</a> <a href="manchester/">Manchester</a> <a href="leicester/">Leicester</a> <a href="glasgow/">Glasgow</a> <a href="bristol/">Bristol</a> <a href="edinburgh/">Edinburgh</a> <a href="leeds/">Leeds</a> <a href="nottingham/">Nottingham</a> <a href="ilford/">Ilford</a> <a href="reading/">Reading</a> <a href="coventry/">Coventry</a></p>
+    <!-- BROWSE-LINKS:END -->
+    <p><a href="changes/">Sponsors added and removed this week</a>. Who gained a licence, and who lost one.</p>
+    <p><a href="insights/">UK visa sponsorship in numbers</a>. Where the sponsors are and which routes they hold.</p>
+    <p><a href="data-api/">Use the data yourself</a>. Everything here as JSON, plus an <a href="feed.xml">RSS feed</a> of the weekly changes.</p>
+    <p><a href="methodology/">How this data is built</a>. Where it comes from, and which parts are guesses that can be wrong.</p>
+    <p><a href="early-warning/">Early-warning evidence</a>. What we can—and cannot yet—measure about the gap before sponsor removal.</p>
+    <p><a href="employer/">Employers with their own page</a>. Chains, and the ones whose licence we watched start.</p>
+    <p><a href="watchlist/">How watchlist monitoring works</a>. What is checked, how often, and what would slip through.</p>
+    <p><a href="pricing/">What costs money, and what never will</a>. Search stays free; watchlist monitoring is the paid part.</p>
+    <p><a href="about/">About KnowYourSponsor</a>. Who built it, and what it will never do.</p>
+    <!-- Must match CONTACT_EMAIL in pipeline/pages.py. index.html is the
+         source rather than a generated page, so the address is written out
+         here; a test asserts the two agree so they cannot drift. -->
+    <p>Something wrong, or need a cut of the data for your team? Email <a href="mailto:hello@knowyoursponsor.co.uk">hello@knowyoursponsor.co.uk</a>.</p>
+    </nav>
+    <p>KnowYourSponsor is an independent search tool built on open public data from GOV.UK. It is not affiliated with the Home Office and is not immigration advice.</p>
+    <p>Always confirm a sponsor's current status on the official register before making decisions.</p>
+    <p class="links"><a href="about/">About</a> <a href="methodology/">Methodology</a> <a href="privacy/">Privacy</a> <a href="terms/">Terms</a> <a href="data-api/">Data</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // ---------------------------------------------------------------------
+  // MailerLite subscribe endpoint for the "KnowYourSponsor alerts" group.
+  // Renaming the group in MailerLite would not change this URL; the form
+  // endpoint is the connection between the website and the group.
+  // Leave it as '' and the form degrades gracefully instead of breaking.
+  // ---------------------------------------------------------------------
+  const ALERT_ENDPOINT =
+    'https://assets.mailerlite.com/jsonp/2629594/forms/198316549786830205/subscribe';
+
+  // Anonymous product events answer whether the site is useful, without
+  // turning a public-interest search tool into a profile of its visitors.
+  // Event names are deliberately fixed: never put an email address, typed
+  // query, employer name, location or filter value in this payload.
+  const ANALYTICS_HOSTS = new Set([
+    'knowyoursponsor.co.uk', 'www.knowyoursponsor.co.uk'
+  ]);
+  const analyticsQueue = [];
+  let analyticsTimer = null, analyticsAttempts = 0;
+  function flushAnalytics(){
+    if(!window.goatcounter || typeof window.goatcounter.count !== 'function') return false;
+    while(analyticsQueue.length){
+      try{ window.goatcounter.count(analyticsQueue.shift()); }
+      catch(err){ analyticsQueue.length = 0; break; }
+    }
+    return true;
+  }
+  function trackEvent(path, title){
+    if(!ANALYTICS_HOSTS.has(location.hostname)) return;
+    analyticsQueue.push({path, title, event:true});
+    if(flushAnalytics() || analyticsTimer) return;
+    analyticsAttempts = 0;
+    analyticsTimer = setInterval(()=>{
+      analyticsAttempts++;
+      if(flushAnalytics() || analyticsAttempts >= 40){
+        clearInterval(analyticsTimer); analyticsTimer = null;
+      }
+    }, 250);
+  }
+
+  const PAGE = 50;
+  let all = [], newNames = new Set(), filtered = [], shown = 0, loaded = false;
+  let fullLoaded = false, fastKey = '', fastRequest = 0;
+  let sortBy = 'relevance';
+  // '' = the whole register, 'added' = newly licensed, 'removed' = licence lost
+  let addedRows = [], removedRows = [], view = '', windowDays = 7;
+  let currentUpdated = '';
+  // Employers whose rating dropped A -> B inside the window. Held as full
+  // register rows, not as the change records, so filtering, CSV export and
+  // the detail sheet all work on them without a special case.
+  let downgradedRows = [], ratingChanges = [];
+  // When each employer's current licence started. Only holds employers we
+  // watched arrive; `licensedBaseline` is the day we started looking, which
+  // is all that can honestly be said about everyone else.
+  let licensedSince = {}, licensedBaseline = '';
+  // Which employers have a static page of their own. Lets the sheet link to
+  // one, which also gives those pages a path in from the rest of the site
+  // rather than leaving them reachable only from their index.
+  let employerPages = {};
+  // Employers named by the government for minimum wage underpayment.
+  // Shown for every employer rather than only the 676 with their own page:
+  // none of the 389 named employers happens to be a chain or to have a
+  // known licence start, so page-only would have shown this to nobody. And
+  // generating pages *because* an employer was named is the one thing this
+  // project has consistently refused to do.
+  let namings = {};
+  // Up to three employer names, encoded in the URL rather than sent to a
+  // server. This makes comparison shareable without creating an account or
+  // collecting a browsing profile.
+  const comparing = new Set();
+
+  // A shortlist, kept on the device. Deliberately not an account: this is a
+  // search tool over public data, and a login would cost the SEO that brings
+  // people here, add a password breach to worry about, and gate a free
+  // public register behind a form. localStorage does the same job with no
+  // signup and nothing of anyone's leaving the browser.
+  const SAVED_KEY = 'kys.shortlist';
+  const VISIT_KEY = 'kys.last-visit.v1';
+  const SEARCH_KEY = 'kys.recent-searches.v1';
+  let saved = new Set();
+  let sharedSaved = new Set();
+  let previousVisit = null;
+  let recentSearches = [];
+  try{
+    const raw = JSON.parse(localStorage.getItem(SAVED_KEY) || '[]');
+    if(Array.isArray(raw)) saved = new Set(raw.filter(k => typeof k === 'string'));
+    previousVisit = JSON.parse(localStorage.getItem(VISIT_KEY) || 'null');
+    const searches = JSON.parse(localStorage.getItem(SEARCH_KEY) || '[]');
+    if(Array.isArray(searches)) recentSearches = searches.slice(0,5);
+  }catch(err){ /* corrupt or blocked: start empty rather than break */ }
+
+  const savedKey = (name, town) => (name + '|' + town).toLowerCase();
+  const visibleSaved = () => new Set([...saved, ...sharedSaved]);
+
+  function refreshSavedCount(){
+    const n = visibleSaved().size;
+    document.getElementById('nSaved').textContent = n ? `(${n})` : '';
+    document.getElementById('viewSaved').hidden = n === 0;
+    document.getElementById('viewMobile').querySelector('[value="saved"]').hidden = n === 0;
+    document.getElementById('shareShortlist').hidden = saved.size === 0;
+    // Leaving an empty Saved view selected would show the "nothing saved
+    // yet" message under a tab that has just disappeared.
+    if(!n && view === 'saved'){ setView(''); }
+  }
+
+  function toggleSaved(key){
+    if(!key) return;
+    const removing = saved.has(key);
+    if(removing) saved.delete(key); else saved.add(key);
+    persistSaved();
+    refreshSavedCount();
+    // Re-render so the star, the count and the Saved view all agree, and so
+    // un-saving from inside the Saved view removes the row you just cleared.
+    apply();
+    syncSheetStar();
+    const status = $('saveStatus');
+    status.textContent = removing
+      ? 'Removed from your shortlist.'
+      : 'Saved. Choose “Saved shortlist” under Employer status to see it again.';
+    status.hidden = false;
+    clearTimeout(toggleSaved.timer);
+    toggleSaved.timer = setTimeout(()=>{ status.hidden = true; }, 4500);
+    if(!removing) trackEvent('shortlist_saved', 'Shortlist saved');
+    recordVisitSnapshot();
+  }
+
+  function persistSaved(){
+    try{
+      localStorage.setItem(SAVED_KEY, JSON.stringify([...saved]));
+    }catch(err){
+      // Private browsing, or the quota is full. The shortlist still works
+      // for this visit; it just will not survive a reload. Not worth an
+      // error message the visitor can do nothing about.
+    }
+  }
+  // Alert scope mirrors what someone is already looking at, until they set
+  // it themselves. Asking again for something they just typed is friction.
+  let alertTouched = false, knownTowns = new Set();
+
+  // Companies House warnings, keyed by the employer's name exactly as the
+  // register spells it. Loaded separately because it refreshes monthly while
+  // the register refreshes daily, and because most employers have no warning.
+  let companyFlags = {};
+  // Legal-entity identities are split by the first employer-name character.
+  // Only the shard for an opened employer is fetched, so this extra evidence
+  // does not slow the initial search.
+  const companyIdentities = new Map(), cqcProviders = new Map();
+  const identityRequests = new Map();
+  let evidenceLoaded = false;
+  // '' | 'any' | 'serious'. Two levels rather than a boolean, because the
+  // hero card headlines the serious count and clicking it must show that
+  // number, not a list four times longer padded out with late filings.
+  let warnOnly = '';
+
+  const CH_COMPANY = 'https://find-and-update.company-information.service.gov.uk/company/';
+
+  // Most serious first. Only the worst one is shown on a row; the rest are
+  // in the title, so a row never turns into a wall of red.
+  //
+  // The fourth column is how much it actually means, and it exists because
+  // treating every flag alike said "9,501 employers with something worth
+  // checking" when 4,905 of those were nothing but a late filing. Somebody
+  // who opens three trivial warnings stops believing the fourth, and the
+  // fourth is a liquidation. Must stay in step with FLAG_SEVERITY in
+  // pipeline/companies.py; a test reads this table and checks that.
+  const WARNINGS = [
+    ['not_active', null, 'serious',
+     'Companies House records this company as no longer active.'],
+    ['dormant', 'Dormant', 'notable',
+     'This company files accounts as dormant, meaning it reports no significant trading.'],
+    ['accounts_overdue', 'Accounts overdue', 'notable',
+     'This company has not filed its accounts by the due date.'],
+    ['confirmation_statement_overdue', 'Filing overdue', 'context',
+     'This company has not filed its confirmation statement by the due date.'],
+    // The label is replaced with the exact age at render time, because
+    // "incorporated 13 days ago" and "incorporated 11 months ago" are
+    // different facts and this said "New company" for both. The youngest
+    // sponsor on the register today is 13 days old.
+    ['incorporated_recently', 'New company', 'context',
+     'This company was incorporated within the last year.'],
+  ];
+
+  // Companies House status strings run to 48 characters. Truncating them
+  // produced "Live but Receiver Man…", so the ones that actually occur get
+  // a proper short label and anything unrecognised still degrades safely.
+  const STATUS_LABEL = [
+    [/proposal to strike off/i, 'Strike-off proposed'],
+    [/voluntary arrangement/i,  'Voluntary arrangement'],
+    [/receiver/i,               'Receiver appointed'],
+    [/administration/i,         'Administration'],
+    [/liquidation/i,            'Liquidation'],
+    [/dissolved/i,              'Dissolved'],
+  ];
+  function shortStatus(status){
+    const s = String(status || '');
+    for(const [pattern, label] of STATUS_LABEL){
+      if(pattern.test(s)) return label;
+    }
+    const plain = s.replace(/^Active\s*-\s*/i, '');
+    return plain.length > 22 ? plain.slice(0, 21) + '…' : (plain || 'Not active');
+  }
+
+  // How old the company is. The twin of companies.describe_age() in
+  // pipeline/companies.py, which does the same job for the static employer
+  // pages. Two copies, deliberately: the alternative is shipping a
+  // precomputed phrase per employer in a file rebuilt monthly, and "13 days
+  // ago" would then be wrong by up to a month. This is date arithmetic
+  // rather than name normalisation, so the two cannot drift in a way that
+  // matters, and a test checks both exist.
+  function ageDays(iso){
+    if(!iso) return null;
+    const started = new Date(iso + 'T00:00:00Z');
+    if(isNaN(started)) return null;
+    const days = Math.floor((Date.now() - started.getTime()) / 86400000);
+    return days < 0 ? null : days;
+  }
+
+  function ageBadge(iso){
+    const days = ageDays(iso);
+    if(days === null) return '';
+    if(days < 60) return days + (days === 1 ? ' day old' : ' days old');
+    const months = Math.max(1, Math.round(days / 30.44));
+    return months + (months === 1 ? ' month old' : ' months old');
+  }
+
+  function ageSentence(iso){
+    const days = ageDays(iso);
+    if(days === null) return '';
+    // 60, matching companies.DAYS_IN_WORDS.
+    if(days < 60){
+      return 'This company was incorporated ' + days +
+             (days === 1 ? ' day ago.' : ' days ago.');
+    }
+    const months = Math.max(1, Math.round(days / 30.44));
+    return 'This company was incorporated ' + months +
+           (months === 1 ? ' month ago.' : ' months ago.');
+  }
+
+  function warningFor(name){
+    const record = companyFlags[name];
+    if(!record || !record.flags || !record.flags.length) return null;
+    for(const [flag, label, severity, explanation] of WARNINGS){
+      if(!record.flags.includes(flag)) continue;
+      const others = WARNINGS
+        .filter(w => w[0] !== flag && record.flags.includes(w[0]))
+        .map(w => w[3]);
+      // "New company" said the same thing about 13 days and 11 months. The
+      // exact age is the whole point of the signal, so it replaces the
+      // generic label wherever we have the date.
+      let shown = label || shortStatus(record.status);
+      if(flag === 'incorporated_recently'){
+        shown = ageBadge(record.incorporated) || shown;
+      }
+      return {
+        label: shown,
+        severity: severity,
+        title: [explanation, ...others,
+                'Source: Companies House. Click to check the record.'].join(' '),
+        href: record.number ? CH_COMPANY + encodeURIComponent(record.number) : '',
+      };
+    }
+    return null;
+  }
+
+  const $ = id => document.getElementById(id);
+  const rows = $('rows');
+
+  function esc(s){const d=document.createElement('span');d.textContent=s;return d.innerHTML;}
+
+  // esc() is safe for element text but NOT for an attribute value: going
+  // through textContent escapes < > & and leaves quotes alone. Ten employers
+  // have a double quote in their name, e.g. '"K" Line Energy Shipping', and
+  // building an attribute with esc() broke out of it, mangling the row and
+  // leaving data-name empty so the row could not be opened.
+  function attr(s){
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  // "Global Business Mobility: Senior or Specialist Worker" is 52 characters
+  // and forced the routes column wide enough to squash everything else. The
+  // table shows the short form with the full name on hover; the detail panel
+  // and the CSV keep the official wording.
+  const ROUTE_SHORT = [["Global Business Mobility:", "GBM:"]];
+  function shortRoute(name){
+    let out = String(name || '');
+    for(const [long, short] of ROUTE_SHORT) out = out.replace(long, short);
+    return out;
+  }
+
+  function render(reset){
+    if(reset){ rows.innerHTML=''; shown=0; }
+    const slice = filtered.slice(shown, shown+PAGE);
+    const html = slice.map(s=>{
+      const [name,town,county,industry,routes,rating] = s;
+      // 1,683 employers record the same place as both town and county,
+      // which rendered as "London, London".
+      const loc = [cleanPlace(town), cleanPlace(county)].filter(Boolean)
+        .filter((v,i,a)=> a.findIndex(x=>x.toLowerCase()===v.toLowerCase())===i)
+        .join(', ');
+      // In the "just added" view every row is new, so the tag is only noise.
+      const isNew = view === '' && newNames.has(name.toLowerCase());
+      // A removed employer's last rating says nothing about today, and
+      // showing "A" next to "no longer licensed" would contradict itself.
+      const ratingCell = view === 'removed'
+        ? '—'
+        : (rating==='A' ? '<span class="rating-a">A</span>'
+           : rating==='B' ? '<span class="rating-b">B</span>' : esc(rating||'—'));
+      const warn = warningFor(name);
+      const warnTag = warn
+        ? (warn.href
+            ? ` <a class="tag warn sev-${attr(warn.severity)}" href="${attr(warn.href)}" target="_blank"` +
+              ` rel="noopener" title="${attr(warn.title)}">${esc(warn.label)}</a>`
+            : ` <span class="tag warn sev-${attr(warn.severity)}" title="${attr(warn.title)}">${esc(warn.label)}</span>`)
+        : '';
+      return `<tr data-name="${attr(name)}">
+        <td class="name"><button class="star${saved.has(savedKey(name, town)) ? ' on' : ''}" type="button" data-save="${attr(savedKey(name, town))}"`+
+          ` aria-pressed="${saved.has(savedKey(name, town))}"`+
+          ` title="Save to your shortlist" aria-label="Save ${attr(cleanDisplayText(name))} to your shortlist">${saved.has(savedKey(name, town)) ? '&#9733;' : '&#9734;'}</button><button class="rowbtn" type="button" data-name="${attr(name)}">${esc(cleanDisplayText(name))}</button>${isNew?' <span class="tag new">New</span>':''}${warnTag}`+
+          `<button class="compare-row${comparing.has(name) ? ' on' : ''}" type="button" data-compare="${attr(name)}" aria-pressed="${comparing.has(name)}">${comparing.has(name) ? 'Selected' : '+ Compare'}</button></td>
+        <td data-label="Location">${esc(loc)}</td>
+        <td data-label="Industry">${esc(industry)}</td>
+        <td data-label="Visa routes">${routes.map(r=>`<span class="tag" title="${attr(r)}">${esc(shortRoute(r))}</span>`).join('')}</td>
+        <td data-label="Rating">${ratingCell}</td>
+      </tr>`;
+    }).join('');
+    rows.insertAdjacentHTML('beforeend', html);
+    syncCompareUI();
+    shown += slice.length;
+    $('count').textContent = filtered.length.toLocaleString();
+    const dl = $('download');
+    dl.disabled = !filtered.length;
+    dl.textContent = filtered.length
+      ? `Download ${filtered.length.toLocaleString()} as CSV`
+      : 'Download as CSV';
+    $('empty').hidden = filtered.length>0;
+    if(!filtered.length) $('empty').innerHTML = emptyMessage();
+    // Hide the table itself when there is nothing in it. A stranded header
+    // row above the explanation reads as a failed load rather than as an
+    // empty result, which is the opposite of what the message is saying.
+    $('resultsTable').hidden = !filtered.length;
+    $('more').hidden = shown >= filtered.length;
+    $('clear').hidden = !filtersActive();
+    mirrorScope();
+  }
+
+  // An empty view must explain itself. "No sponsors match" next to an empty
+  // "lost licence" list reads as broken, when in fact it is good news.
+  function emptyMessage(){
+    if(warnOnly === 'serious'){
+      return '<strong>None of these employers looks like it has stopped trading.</strong>' +
+             '<br>That is the good outcome. Clear the filter to see everything ' +
+             'again.';
+    }
+    if(warnOnly){
+      return '<strong>No employers here have a company warning.</strong>' +
+             '<br>That is the good outcome. Clear the warning filter to see ' +
+             'everything again.';
+    }
+    if(!sourceRows().length){
+      if(view === 'added'){
+        return `<strong>No employers were added in the last ${windowDays} days.</strong>` +
+               `<br>The register does not change every day. Check back soon.`;
+      }
+      if(view === 'removed'){
+        return `<strong>No employer lost their licence in the last ${windowDays} days.</strong>` +
+               `<br>That is good news for anyone job hunting right now.`;
+      }
+      if(view === 'saved'){
+        return '<strong>You have not saved any employers yet.</strong>' +
+               '<br>Tap the star next to any employer to add it here. It is ' +
+               'kept on this device, with no account needed.';
+      }
+      if(view === 'downgraded'){
+        return `<strong>No employer was downgraded to a B rating in the last ${windowDays} days.</strong>` +
+               `<br>We check every day. Downgrades are uncommon, so an empty ` +
+               `list here is the normal and the good outcome.`;
+      }
+    }
+    return '<strong>Nothing matched that search.</strong>' +
+           '<br>Try fewer words, or clear the industry and route filters.';
+  }
+
+  // Filtering without ranking buried what people asked for: a search for
+  // "tesco" listed ATESCO CONSULTANCY and Notesco UK above Tesco Stores.
+  // Lower rank sorts first. Ranked only when the query has narrowed things
+  // enough for it to matter; above the cap, alphabetical is fine and sorting
+  // a six-figure list on every keystroke is not.
+  const RANK_LIMIT = 20000;
+
+  function relevance(row, needle){
+    const name = String(row[0]).toLowerCase();
+    if(name === needle) return 0;
+    if(name.startsWith(needle)) return 1;
+    // A word inside the name starting with the query, so "line" finds
+    // "K Line" without also promoting "Airline". Done by scanning rather
+    // than by building a RegExp, so the query never has to be escaped.
+    let at = name.indexOf(needle);
+    while(at !== -1){
+      const before = at === 0 ? ' ' : name.charAt(at - 1);
+      if(before < '0' || (before > '9' && before < 'a') || before > 'z'){
+        return 2;
+      }
+      at = name.indexOf(needle, at + 1);
+    }
+    if(name.includes(needle)) return 3;
+    return 4;   // matched on town, county or industry only
+  }
+
+  function rankByRelevance(list, query){
+    const needle = query.trim().toLowerCase();
+    if(!needle || list.length > RANK_LIMIT) return list;
+    return list
+      .map((row, i) => [relevance(row, needle), i, row])
+      .sort((a, b) => a[0] - b[0] || a[1] - b[1])   // stable within a rank
+      .map(entry => entry[2]);
+  }
+
+  function cleanPlace(value){
+    const text = String(value || '').trim();
+    return /^(?:-+\s*)?select one(?:\s*-+)?$/i.test(text) ? '' : text;
+  }
+
+  function cleanDisplayText(value){
+    const text = String(value || '');
+    return text.replace(/\?+(?:�\?*)+/g, (run, offset, whole)=>{
+      const before = offset ? whole.charAt(offset - 1) : '';
+      const after = whole.charAt(offset + run.length);
+      if(!before && /\s/.test(after)) return '';
+      if(/\s/.test(before) && /\s/.test(after)) return '–';
+      if(/[a-z0-9]/i.test(before) && (after.toLowerCase() === 's' || /\s/.test(after))) return '’';
+      return run;
+    }).trim();
+  }
+
+  function sortRows(list, query){
+    if(sortBy === 'relevance') return rankByRelevance(list, query);
+    const column = {name:0, location:1, industry:3, rating:5}[sortBy];
+    return list.slice().sort((a,b)=>{
+      const left = String(a[column]||''), right = String(b[column]||'');
+      if(sortBy === 'name'){
+        const leftPoor = /�|\?{2,}/.test(left) || !/^[a-z]/i.test(cleanDisplayText(left));
+        const rightPoor = /�|\?{2,}/.test(right) || !/^[a-z]/i.test(cleanDisplayText(right));
+        if(leftPoor !== rightPoor) return leftPoor ? 1 : -1;
+      }
+      return left.localeCompare(right, 'en-GB', {sensitivity:'base'});
+    });
+  }
+
+  // Removed employers are not in the main register any more, so the views
+  // swap the underlying list rather than filtering it.
+  function sourceRows(){
+    if(view === 'added') return addedRows;
+    if(view === 'removed') return removedRows;
+    if(view === 'downgraded') return downgradedRows;
+    if(view === 'saved'){
+      const keys = visibleSaved();
+      return all.filter(s => keys.has(savedKey(s[0], s[1])));
+    }
+    return all;
+  }
+
+  // A facet is calculated against every active constraint except itself.
+  // That means choosing Croydon and Security & Facilities only offers visa
+  // routes which can actually return an employer. The selected value stays
+  // visible with a zero count when another control makes it unavailable, so
+  // the page never silently changes a visitor's search.
+  function matchesFilters(row, words, omit){
+    if(warnOnly){
+      const warning = warningFor(row[0]);
+      if(!warning) return false;
+      if(warnOnly === 'serious' && warning.severity !== 'serious') return false;
+    }
+    if(omit !== 'city' && $('city').value && row[1] !== $('city').value)
+      return false;
+    if(omit !== 'industry' && $('industry').value && row[3] !== $('industry').value)
+      return false;
+    if(omit !== 'route' && $('route').value && !row[4].includes($('route').value))
+      return false;
+    if(words.length){
+      const hay = (row[0]+' '+row[1]+' '+row[2]+' '+row[3]).toLowerCase();
+      if(!words.every(word=>hay.includes(word))) return false;
+    }
+    return true;
+  }
+
+  function replaceFacetOptions(id, emptyLabel, counts, total, limit){
+    const select = $(id);
+    const selected = select.value;
+    let entries = [...counts.entries()];
+    if(limit){
+      entries.sort((a,b)=>b[1]-a[1] || a[0].localeCompare(b[0], 'en-GB'));
+      entries = entries.slice(0, limit);
+    }
+    entries.sort((a,b)=>a[0].localeCompare(b[0], 'en-GB'));
+
+    // A selected location can fall outside the top 60 after another facet
+    // changes. Keep it at the top, including when its new count is zero.
+    if(selected && !entries.some(([value])=>value === selected))
+      entries.unshift([selected, counts.get(selected) || 0]);
+
+    select.replaceChildren();
+    select.add(new Option(`${emptyLabel} (${total.toLocaleString()})`, ''));
+    for(const [value,count] of entries){
+      select.add(new Option(`${value} (${count.toLocaleString()})`, value));
+    }
+    select.value = selected;
+  }
+
+  function updateFacets(words){
+    if(!fullLoaded) return;
+    const rows = sourceRows();
+    for(const [id,label,column,limit] of [
+      ['city','Any town or city',1,60],
+      ['industry','All industries',3,0],
+      ['route','All visa routes',4,0],
+    ]){
+      const candidates = rows.filter(row=>matchesFilters(row, words, id));
+      const counts = new Map();
+      for(const row of candidates){
+        const values = id === 'route' ? new Set(row[column] || [])
+                     : [row[column]];
+        for(const value of values){
+          if(value) counts.set(value, (counts.get(value) || 0) + 1);
+        }
+      }
+      replaceFacetOptions(id, label, counts, candidates.length, limit);
+    }
+  }
+
+  function apply(){
+    // Typing is allowed before the register arrives; filtering an empty
+    // array would just flash "no sponsors match". The load handler calls
+    // apply() again once the data is in, honouring whatever was typed.
+    if(!loaded){ requestFastPreview(); return; }
+    const q = $('q').value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+
+    // Before the complete register arrives, the small deployment-generated
+    // shard can answer employer-name searches accurately. Town, industry,
+    // route and warning filters wait for the complete register because a
+    // partial answer to those would look complete while silently omitting
+    // employers.
+    if(!fullLoaded){
+      const key = quickShardKey(q.join(' ') || 'a');
+      if(key !== fastKey){ requestFastPreview(); return; }
+      filtered = all.filter(row=>{
+        const name = String(row[0] || '').toLowerCase();
+        return q.every(word=>name.includes(word));
+      });
+      filtered = sortRows(filtered, $('q').value);
+      render(true);
+      return;
+    }
+    filtered = sourceRows().filter(row=>matchesFilters(row, q, ''));
+    updateFacets(q);
+    filtered = sortRows(filtered, $('q').value);
+    render(true);
+    $('alertSearch').hidden = !($('city').value || $('industry').value ||
+      $('route').value);
+    renderVisitChanges();
+  }
+
+  // Prefill the alert scope from the current search, so someone who just
+  // searched "healthcare Manchester" is offered alerts for exactly that.
+  function mirrorScope(){
+    if(alertTouched) return;
+    const ind = $('industry').value;
+    if(ind) $('alertIndustry').value = ind;
+    const route = $('route').value;
+    if(route) $('alertRoute').value = route;
+    // The city filter is the reliable signal. A typed search term only
+    // counts when it names a town we actually offer alerts for.
+    const typed = $('q').value.trim().toLowerCase();
+    const want = $('city').value || (knownTowns.has(typed) ? typed : '');
+    if(!want) return;
+    for(const opt of $('alertCity').options){
+      if(opt.value.toLowerCase() === want.toLowerCase()){
+        $('alertCity').value = opt.value; return;
+      }
+    }
+  }
+
+  // ----------------------------------------------------- detail sheet --
+  const RATING_NOTE = {
+    A: 'In good standing with the Home Office.',
+    B: 'Downgraded and working through an action plan. Employers on a B ' +
+       'rating usually cannot issue new certificates until they return to an A.',
+  };
+  let sheetOpener = null;   // so focus can go back where it came from
+  // The row the sheet is showing, so the save button knows what to toggle.
+  let sheetRow = null;
+
+  // "2026-09-01" -> "1 September 2026". Built from the parts rather than
+  // through Date(), which would shift the day in western time zones.
+  const MONTHS = ['January','February','March','April','May','June','July',
+                  'August','September','October','November','December'];
+  function longDate(iso){
+    const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(iso || ''));
+    if(!m) return String(iso || '');
+    return `${Number(m[3])} ${MONTHS[Number(m[2]) - 1]} ${m[1]}`;
+  }
+
+  function readableTimestamp(value){
+    const match = /^(\d{4})-(\d{2})-(\d{2})(?:[T ](\d{2}):(\d{2}))?/.exec(String(value || ''));
+    if(!match) return String(value || '');
+    const date = `${Number(match[3])} ${MONTHS[Number(match[2]) - 1].slice(0,3)} ${match[1]}`;
+    return match[4] ? `${date} at ${match[4]}:${match[5]} UTC` : date;
+  }
+
+  const EVIDENCE_DATES = [
+    ['company_ceased_on', 'Company ceased'],
+    ['dormant_period_end', 'Dormant accounts period ended'],
+    ['accounts_due_on', 'Accounts were due'],
+    ['confirmation_due_on', 'Confirmation statement was due'],
+  ];
+  function evidenceTimeline(record){
+    const dates = (record && record.dates) || {};
+    const items = EVIDENCE_DATES
+      .filter(([key])=>dates[key])
+      .map(([key,label])=>`<li><strong>${esc(longDate(dates[key]))}</strong> — ${esc(label)}</li>`);
+    if(!items.length) return '';
+    return '<div class="block evidence-timeline"><h3>Dated evidence</h3><ul>' +
+      items.join('') + '</ul><p class="caveat">The dormant date is the ' +
+      'accounts period end, not the date the document was filed.</p></div>';
+  }
+
+  // Alternatives are drawn only from today's register. Similarity is based
+  // on the details the Home Office publishes, not a hidden safety score:
+  // shared route is required, then place and industry decide the order.
+  function similarSponsors(row, limit=4){
+    const [name, town, county, industry, routes] = row;
+    const sourceName = comparableEmployerName(name);
+    const sourceTown = cleanPlace(town).toLowerCase();
+    const sourceCounty = cleanPlace(county).toLowerCase();
+    const sourceIndustry = String(industry || '').trim().toLowerCase();
+    const usefulIndustry = sourceIndustry &&
+      sourceIndustry !== 'other' && sourceIndustry !== 'unknown';
+    const sourceRoutes = new Set((routes || []).map(route=>
+      String(route).trim().toLowerCase()).filter(Boolean));
+    const bestByEmployer = new Map();
+
+    for(const candidate of all){
+      const [otherName, otherTown, otherCounty, otherIndustry, otherRoutes] = candidate;
+      const employerKey = comparableEmployerName(otherName);
+      if(!employerKey || employerKey === sourceName) continue;
+
+      const candidateRoutes = (otherRoutes || []).map(route=>String(route).trim());
+      const sharedRoutes = candidateRoutes.filter(route=>
+        sourceRoutes.has(route.toLowerCase()));
+      if(sourceRoutes.size && !sharedRoutes.length) continue;
+
+      const sameTown = Boolean(sourceTown) &&
+        cleanPlace(otherTown).toLowerCase() === sourceTown;
+      const sameCounty = Boolean(sourceCounty) &&
+        cleanPlace(otherCounty).toLowerCase() === sourceCounty;
+      const sameIndustry = Boolean(usefulIndustry) &&
+        String(otherIndustry || '').trim().toLowerCase() === sourceIndustry;
+      if(!sameTown && !sameCounty && !sameIndustry) continue;
+
+      const recentlyLicensed = newNames.has(String(otherName).toLowerCase());
+      const warning = warningFor(otherName);
+      let score = (sameTown ? 9 : 0) + (sameIndustry ? 6 : 0) +
+        (sameCounty ? 2 : 0) + Math.min(sharedRoutes.length, 2) * 3 +
+        (recentlyLicensed ? 1 : 0);
+      // A serious filing signal is still visible if the match is useful,
+      // but it should not be the first alternative we put in front of someone.
+      if(warning && warning.severity === 'serious') score -= 8;
+
+      const reasons = [];
+      if(sameTown) reasons.push('Same town or city');
+      else if(sameCounty) reasons.push('Same county');
+      if(sameIndustry) reasons.push('Same industry');
+      if(sharedRoutes.length === 1){
+        reasons.push(shortRoute(sharedRoutes[0]) + ' route');
+      }else if(sharedRoutes.length > 1){
+        reasons.push(sharedRoutes.length + ' shared visa routes');
+      }
+      if(recentlyLicensed) reasons.push('Recently licensed');
+
+      const match = {row:candidate, score, reasons, warning};
+      const previous = bestByEmployer.get(employerKey);
+      if(!previous || previous.score < score) bestByEmployer.set(employerKey, match);
+    }
+
+    return [...bestByEmployer.values()]
+      .sort((a,b)=>b.score-a.score ||
+        cleanDisplayText(a.row[0]).localeCompare(cleanDisplayText(b.row[0])))
+      .slice(0, limit);
+  }
+
+  function similarSponsorsHTML(row){
+    const matches = similarSponsors(row);
+    if(!matches.length) return '';
+    const cards = matches.map(match=>{
+      const [name, town, county, industry] = match.row;
+      const location = [cleanPlace(town), cleanPlace(county)].filter(Boolean)
+        .filter((value,index,list)=>list.findIndex(item=>
+          item.toLowerCase()===value.toLowerCase())===index).join(', ');
+      const key = savedKey(name, town);
+      const isSaved = saved.has(key);
+      const isCompared = comparing.has(name);
+      const meta = [location, industry].filter(Boolean).map(esc).join(' &middot; ');
+      const warning = match.warning;
+      let signal = '';
+      if(warning){
+        const wording = 'Company record: ' + esc(warning.label) +
+          '. Check before applying.';
+        signal = '<p class="similar-signal sev-' + attr(warning.severity) + '">' +
+          (warning.href
+            ? '<a href="' + attr(warning.href) + '" target="_blank" rel="noopener">' +
+              wording + '</a>'
+            : wording) + '</p>';
+      }
+      return '<article class="similar-card">' +
+        '<span class="similar-name">' + esc(cleanDisplayText(name)) + '</span>' +
+        (meta ? '<p class="similar-meta">' + meta + '</p>' : '') +
+        signal +
+        '<div class="similar-why" aria-label="Why this matched">' +
+        match.reasons.map(reason=>'<span>' + esc(reason) + '</span>').join('') +
+        '</div><div class="similar-actions">' +
+        '<button type="button" data-similar-view="' + attr(name) + '">View</button>' +
+        '<button type="button" data-similar-save="' + attr(key) + '" ' +
+          'aria-pressed="' + isSaved + '">' + (isSaved ? 'Saved' : 'Save') + '</button>' +
+        '<button type="button" data-similar-compare="' + attr(name) + '" ' +
+          'aria-pressed="' + isCompared + '">' +
+          (isCompared ? 'Selected' : 'Add to comparison') + '</button>' +
+        '</div></article>';
+    }).join('');
+    return '<div class="block similar-sponsors">' +
+      '<h3>Similar sponsors worth checking</h3>' +
+      '<p class="similar-intro">Currently listed employers that share this ' +
+      'location or industry and at least one visa route.</p><div class="similar-list">' + cards +
+      '</div><p class="caveat">These are similarity matches, not endorsements ' +
+      'or safety rankings. Check each employer before applying.</p></div>';
+  }
+
+  function sheetHTML(row){
+    const [name, town, county, industry, routes, rating] = row;
+    const location = [cleanPlace(town), cleanPlace(county)].filter(Boolean)
+      .filter((v,i,a)=>a.findIndex(x=>x.toLowerCase()===v.toLowerCase())===i)
+      .join(', ');
+    const record = companyFlags[name];
+    const identity = companyIdentities.get(name);
+    const listingPresent = all.some(s=>savedKey(s[0],s[1])===savedKey(name,town));
+    const checked = readableTimestamp(currentUpdated);
+    const parts = ['<p class="check-kicker">KnowYourSponsor Check</p>',
+      '<div class="check-summary"><strong>' +
+      (listingPresent ? 'Present in the latest sponsor register' :
+        'This listing is not present in the latest sponsor register') +
+      '</strong><span>' + (checked ? 'Checked ' + esc(checked) + '. ' : '') +
+      'Always confirm against the official source before acting.</span></div>',
+      '<dl>'];
+    if(location) parts.push(`<dt>Location</dt><dd>${esc(location)}</dd>`);
+    parts.push(`<dt>Industry</dt><dd>${esc(industry)}</dd>`);
+
+    parts.push('</dl>');
+
+    // Nobody else can answer this. GOV.UK publishes who holds a licence
+    // today and never when it started, so it only exists because the
+    // pipeline has kept a dated log.
+    const started = licensedSince[(name + '|' + town).toLowerCase()];
+
+    if(routes && routes.length){
+      parts.push('<div class="block"><h3>Visa routes it can sponsor</h3>' +
+        routes.map(r=>`<span class="tag">${esc(r)}</span>`).join('') + '</div>');
+    }
+
+    if(record){
+      const worst = warningFor(name);
+      // known[3] is the explanation. known[2] became the severity when the
+      // warnings were tiered, and this line was left pointing at [2], so the
+      // sheet printed the word "serious" where a sentence belonged.
+      const flags = (record.flags || []).map(f=>{
+        // The exact age beats "within the last year" for the same reason
+        // it beats "New company" on the row badge.
+        if(f === 'incorporated_recently'){
+          const exact = ageSentence(record.incorporated);
+          if(exact) return exact;
+        }
+        const known = WARNINGS.find(w=>w[0]===f);
+        return known ? known[3] : f;
+      });
+      const severity = worst ? worst.severity : 'context';
+      parts.push('<div class="warnbox sev-' + attr(severity) +
+        '"><strong>Companies House says:</strong> ' +
+        (record.status ? esc(record.status) + '. ' : '') +
+        flags.map(esc).join(' ') +
+        '<br>Matched by name, so check the official record before deciding ' +
+        'anything.</div>');
+      parts.push(employerHistory(record, row, started));
+    }else{
+      parts.push(employerHistory(null, row, started));
+    }
+
+    // The evidence passport says whether the sponsor name resolved to one
+    // legal company, several possible companies, or none. A missing match is
+    // not a clean bill of health and an ambiguous match is never guessed.
+    let identityText = 'Checking the latest monthly Companies House match…';
+    if(identity === null){
+      identityText = 'No reliable Companies House identity match was found ' +
+        'this month. The sponsor listing is still valid, but company facts ' +
+        'cannot safely be attached to it.';
+    }else if(identity && identity.state === 'ambiguous'){
+      identityText = 'More than one Companies House record shares this name. ' +
+        'We have not chosen one because that could attach the wrong company ' +
+        'history to this sponsor.';
+    }else if(identity && identity.state === 'identified'){
+      const renamed = identity.match_basis === 'previous_name' && identity.legal_name;
+      const legalName = renamed
+        ? 'The current legal name is ' + esc(identity.legal_name) + '. '
+        : '';
+      identityText = legalName + 'Matched to company ' +
+        '<a href="' + CH_COMPANY + encodeURIComponent(identity.number) + '" ' +
+        'target="_blank" rel="noopener">' + esc(identity.number) + '</a>' +
+        (identity.status ? ', shown as ' + esc(identity.status) : '') +
+        ' at Companies House. The match is evidence to verify, not a verdict.';
+    }
+    parts.push('<div class="block"><h3>Company identity</h3><p>' +
+      identityText + '</p></div>');
+
+    const cqc = cqcProviders.get(name);
+    if(cqc && cqc.state === 'identified'){
+      const services = (cqc.services || []).slice(0,3).map(esc).join(', ');
+      const cqcLink = String(cqc.url || '').startsWith('https://www.cqc.org.uk/')
+        ? '<a href="' + attr(cqc.url) + '" target="_blank" rel="noopener">' +
+          'open the CQC record</a>' : 'check the CQC directory';
+      parts.push('<div class="block"><h3>Care Quality Commission</h3><p>' +
+        'Matched by provider name to CQC provider ' + esc(cqc.provider_id) +
+        ', with ' + Number(cqc.locations || 0).toLocaleString('en-GB') +
+        ' registered location' + (cqc.locations === 1 ? '' : 's') +
+        (services ? '. Services include ' + services : '') + '. ' + cqcLink +
+        '.</p><p class="caveat">CQC regulates care services in England. ' +
+        'This provider match is separate from the sponsor licence and should ' +
+        'be verified before use.</p></div>');
+    }else if(cqc && cqc.state === 'ambiguous'){
+      parts.push('<div class="block"><h3>Care Quality Commission</h3><p>' +
+        'More than one CQC provider shares this name, so we have not attached ' +
+        'one provider record to this sponsor.</p></div>');
+    }
+
+    // Named for minimum wage underpayment. An enforcement finding rather
+    // than a filing signal, so it gets its own box and its own wording:
+    // what was owed, to how many workers, when, and a link to the
+    // government publication. Nothing about what it implies.
+    const named = namings[name];
+    if(named && named.length){
+      const latest = named[0];
+      const year = String(latest.round || '').slice(0,4);
+      const money = typeof latest.arrears === 'number'
+        ? '£' + latest.arrears.toLocaleString('en-GB',
+            {minimumFractionDigits:2, maximumFractionDigits:2}) : '';
+      const workers = latest.workers
+        ? latest.workers.toLocaleString() +
+          (latest.workers === 1 ? ' worker' : ' workers') : '';
+      const bits = ['<strong>Named for underpaying the minimum wage' +
+        (year ? ' in ' + esc(year) : '') + '.</strong>'];
+      if(money && workers) bits.push(money + ' was owed to ' + workers + '.');
+      else if(money) bits.push(money + ' was owed.');
+      if(named.length > 1) bits.push('Named in ' + named.length +
+        ' separate rounds.');
+      const src = String(latest.source || '');
+      if(src.startsWith('https://www.gov.uk/')){
+        bits.push('<a href="' + attr(src) + '" target="_blank" ' +
+          'rel="noopener">The government publication</a>.');
+      }
+      bits.push('<br>A published enforcement finding, not an allegation. ' +
+        'Arrears named in a round have to be repaid, and being named does ' +
+        'not tell you what the employer is like to work for now.');
+      parts.push('<div class="warnbox sev-notable">' + bits.join(' ') +
+        '</div>');
+    }
+
+    // What we can and cannot vouch for, in one place. No competitor shows
+    // any of this, and the value is entirely in it being honest about the
+    // gap: an employer with no warning has not been vetted, it has either
+    // been matched and found clean or not matched at all, and the published
+    // file cannot tell those apart without shipping 96,000 more names.
+    const checks = [];
+    checks.push(['Home Office rating', rating === 'A'
+      ? 'A, which is good standing'
+      : (rating === 'B'
+          ? 'B, so it usually cannot issue new certificates right now'
+          : 'Not published')]);
+    checks.push(['Licence held since', started
+      ? esc(longDate(started))
+      : (licensedBaseline
+          ? `At least ${esc(longDate(licensedBaseline))}. It was already on ` +
+            'the register when we started keeping a daily record, so the ' +
+            'licence is older than that.'
+          : 'Not known')]);
+    if(record){
+      const worst = warningFor(name);
+      checks.push(['Companies House record',
+        (record.status ? esc(record.status) : 'Signal found') +
+        (worst && worst.severity === 'serious'
+          ? '. This is the serious kind: the company may not be trading.'
+          : '. Worth a look, but common and not proof of anything.')]);
+    }else{
+      checks.push(['Companies House record',
+        'No signal found. That is not a clean bill of health: we match ' +
+        'employers to company records by name, and this one either matched ' +
+        'and looked fine or could not be matched at all.']);
+    }
+    parts.push('<div class="block"><h3>What we can check</h3><dl class="checks">' +
+      checks.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${v}</dd>`).join('') +
+      '</dl></div>');
+
+    const links = [];
+    if(record && record.number){
+      links.push(`<a href="${CH_COMPANY}${encodeURIComponent(record.number)}"` +
+        ` target="_blank" rel="noopener">Company ${esc(record.number)} at ` +
+        `Companies House</a>`);
+    }
+    links.push('<a href="https://www.gov.uk/government/publications/' +
+      'register-of-licensed-sponsors-workers" target="_blank" rel="noopener">' +
+      'The official GOV.UK register</a>');
+    // A page of its own, where one exists. Only some employers have one:
+    // a chain, or a licence we watched start.
+    const ownPage = employerPages[name];
+    if(ownPage){
+      links.unshift(`<a href="employer/${encodeURIComponent(ownPage)}/">` +
+        `Everything we know about ${esc(name)}</a>`);
+    }
+    parts.push('<div class="links">' + links.join('') + '</div>');
+
+    const correction = 'mailto:' + 'hello@knowyoursponsor.co.uk?subject=' +
+      encodeURIComponent('Correction: ' + name) + '&body=' +
+      encodeURIComponent('Employer: ' + name + '\nPage: ' + location.href +
+        '\n\nWhat looks wrong?\n\nOfficial source or supporting link:\n');
+    parts.push('<p class="caveat">Something wrong here? ' +
+      '<a href="' + attr(correction) + '">Send a correction with your source</a>. ' +
+      'We review evidence rather than accepting anonymous edits.</p>');
+
+    // The same employer often holds a licence at several sites. Knowing
+    // there is one nearer you is more useful than knowing this one exists.
+    const elsewhere = all
+      .filter(s => s[0] === name && s[1] && s[1] !== town)
+      .map(s => s[1]);
+    const towns = [...new Set(elsewhere)].sort();
+    if(towns.length){
+      parts.push('<div class="block"><h3>Also listed in</h3>' +
+        towns.map(t=>`<span class="tag">${esc(t)}</span>`).join('') + '</div>');
+    }
+
+    parts.push(similarSponsorsHTML(row));
+
+    // A licence is not an offer. These are the few checks a person can make
+    // before giving an employer time, money or documents. The links stay on
+    // GOV.UK so this panel does not turn into immigration advice.
+    parts.push('<div class="block"><h3>Before you apply</h3>' +
+      '<ol class="apply-steps">' +
+      '<li>Confirm the vacancy through the employer\'s own website or ' +
+        'switchboard.</li>' +
+      '<li>Ask whether this specific role will be sponsored.</li>' +
+      '<li>For a Skilled Worker application, check the ' +
+        '<a href="https://www.gov.uk/skilled-worker-visa/your-job" ' +
+        'target="_blank" rel="noopener">job and salary rules on GOV.UK</a>.' +
+        '</li>' +
+      '<li>Do not pay anyone to secure a job offer or Certificate of ' +
+        'Sponsorship. <a href="https://www.gov.uk/government/publications/' +
+        'frauds-tricks-and-scams/fraud-tricks-and-scams" target="_blank" ' +
+        'rel="noopener">Read the official scam guidance</a>.</li>' +
+      '<li><a href="https://www.gov.uk/government/publications/' +
+        'register-of-licensed-sponsors-workers" target="_blank" ' +
+        'rel="noopener">Check the licence again</a> before sending personal ' +
+        'documents.</li>' +
+      '</ol></div>');
+
+    const alertParams = new URLSearchParams();
+    if(town) alertParams.set('city', cleanPlace(town));
+    if(industry) alertParams.set('industry', industry);
+    const alertHref = '?' + alertParams.toString() + '#alerts';
+    parts.push('<div class="block"><h3>Keep checking</h3>' +
+      '<p>Register and company facts can change after today.</p>' +
+      '<div class="links"><button type="button" data-follow-employer="' +
+      attr(name) + '">Follow this employer</button><a href="' +
+      attr(alertHref) + '">' +
+      'Get weekly changes for this area</a>' +
+      '<a href="start/">Monitor this employer for a business</a></div></div>');
+
+    parts.push('<p class="caveat">Holding a licence means this employer can ' +
+      'sponsor a visa on the routes listed. It does not mean they are hiring, ' +
+      'and this is not immigration advice.</p>');
+    return parts.join('');
+  }
+
+  function openSheet(name, opener){
+    if(!fullLoaded){
+      $('loadNote').hidden = false;
+      $('loadNote').textContent = 'Complete employer details are still loading.';
+      return;
+    }
+    const row = sourceRows().find(s=>s[0]===name) || all.find(s=>s[0]===name);
+    if(!row) return;
+    sheetRow = row;
+    sheetOpener = opener || null;
+    $('sheetName').textContent = cleanDisplayText(name);
+    $('sheetBody').innerHTML = sheetHTML(row);
+    loadCompanyIdentity(name).then(()=>{
+      if(sheetRow && sheetRow[0] === name){
+        $('sheetBody').innerHTML = sheetHTML(sheetRow);
+      }
+    });
+    syncSheetStar();
+    syncSheetCompare();
+    $('sheetBackdrop').hidden = false;
+    $('sheet').hidden = false;
+    $('sheetClose').focus();
+    for(const tr of rows.querySelectorAll('tr.open')) tr.classList.remove('open');
+    if(opener) opener.closest('tr').classList.add('open');
+    trackEvent('employer_opened', 'Employer details opened');
+    syncURL(true);
+  }
+
+  function identityShard(name){
+    const plain = String(name || '').normalize('NFKD')
+      .replace(/[\u0300-\u036f]/g, '').replace(/^[^0-9A-Za-z]+/, '')
+      .toLowerCase();
+    return /^[0-9a-z]/.test(plain) ? plain[0] : '_';
+  }
+
+  function loadCompanyIdentity(name){
+    if(companyIdentities.has(name)) return Promise.resolve();
+    const key = identityShard(name);
+    if(!identityRequests.has(key)){
+      identityRequests.set(key, fetch('data/identity/' + key + '.json',
+        {cache:'no-cache'})
+        .then(response=>response.ok ? response.json() : {employers:{}})
+        .then(document=>{
+          const values = document && document.employers || {};
+          for(const [employer, evidence] of Object.entries(values)){
+            // Wrapper is the current format. The fallback accepts the first
+            // identity-only shard deployment without breaking old caches.
+            const wrapped = evidence && ('company' in evidence || 'cqc' in evidence);
+            companyIdentities.set(employer, wrapped ? evidence.company : evidence);
+            if(wrapped && evidence.cqc) cqcProviders.set(employer, evidence.cqc);
+          }
+        }).catch(()=>{}));
+    }
+    return identityRequests.get(key).then(()=>{
+      if(!companyIdentities.has(name)) companyIdentities.set(name, null);
+    });
+  }
+
+  function closeSheet(){
+    if($('sheet').hidden) return;
+    sheetRow = null;
+    $('sheet').hidden = true;
+    $('sheetBackdrop').hidden = true;
+    for(const tr of rows.querySelectorAll('tr.open')) tr.classList.remove('open');
+    // Send focus back to the row that opened it, not to the top of the page.
+    if(sheetOpener && document.contains(sheetOpener)) sheetOpener.focus();
+    sheetOpener = null;
+    syncURL(true);
+  }
+
+  function sheetOpenName(){
+    return $('sheet').hidden ? '' : $('sheetName').textContent;
+  }
+
+  // --------------------------------------------------------- actions --
+  function filtersActive(){
+    return Boolean($('q').value.trim() || $('city').value ||
+                   $('industry').value || $('route').value || view || warnOnly);
+  }
+
+  function setWarnOnly(level){
+    warnOnly = (level === 'serious' || level === 'any') ? level
+             : (level ? 'any' : '');
+    $('warnOnly').setAttribute('aria-pressed', String(warnOnly === 'any'));
+    $('riskOnly').setAttribute('aria-pressed', String(warnOnly === 'serious'));
+    $('statWarnBox').setAttribute('aria-pressed', String(warnOnly === 'serious'));
+  }
+
+  function clearFilters(){
+    $('q').value = '';
+    $('city').value = '';
+    $('industry').value = '';
+    $('route').value = '';
+    setWarnOnly(false);
+    setView('');
+    setSort('relevance');
+    apply();
+    syncURL(true);
+    $('q').focus();
+  }
+
+  // Sharing a filtered view is the cheapest growth this site has: someone
+  // pastes "sponsors in Leeds" into a group chat. Copying the address bar
+  // by hand is enough friction to stop most people doing it.
+  async function copyLink(){
+    const btn = $('copyLink');
+    const label = btn.textContent;
+    try{
+      await navigator.clipboard.writeText(location.href);
+      btn.textContent = 'Link copied';
+    }catch(err){
+      // Clipboard access can be blocked; select the URL so Ctrl+C still works.
+      btn.textContent = 'Press Ctrl+C to copy';
+    }
+    setTimeout(()=>{ btn.textContent = label; }, 1800);
+  }
+
+  async function shareOrCopy(btn, title, text, url){
+    const label = btn.textContent;
+    let completed = false;
+    try{
+      if(navigator.share){
+        await navigator.share({title, text, url});
+        btn.textContent = 'Shared';
+        completed = true;
+      }else{
+        await navigator.clipboard.writeText(url);
+        btn.textContent = 'Link copied';
+        completed = true;
+      }
+    }catch(err){
+      // Cancelling the native share sheet is not an error the visitor needs
+      // to see. Clipboard failures still leave the address bar available.
+      if(err && err.name !== 'AbortError') btn.textContent = 'Copy from address bar';
+    }
+    setTimeout(()=>{ btn.textContent = label; }, 1800);
+    return completed;
+  }
+
+  function shortlistURL(){
+    const url = new URL(location.origin + location.pathname);
+    url.searchParams.set('view', 'saved');
+    for(const key of [...saved].slice(0,25)) url.searchParams.append('shortlist', key);
+    return url.href;
+  }
+
+  async function shareShortlist(){
+    if(!saved.size) return;
+    if(saved.size > 25){
+      $('saveStatus').textContent = 'A shareable shortlist can contain up to 25 employers.';
+      $('saveStatus').hidden = false;
+      return;
+    }
+    const completed = await shareOrCopy($('shareShortlist'), 'KnowYourSponsor shortlist',
+      'Employers saved for a closer look. Check each one against the official sources.',
+      shortlistURL());
+    if(completed) trackEvent('shortlist_shared', 'Shortlist shared');
+  }
+
+  function primeSearchAlert(){
+    alertTouched = true;
+    clearEmployerFollow();
+    $('alertCity').value = $('city').value;
+    $('alertIndustry').value = $('industry').value;
+    $('alertRoute').value = $('route').value;
+    trackEvent('alert_started', 'Search alert started');
+    $('alerts').scrollIntoView({behavior:'smooth', block:'center'});
+    alertForm.email.focus({preventScroll:true});
+  }
+
+  function followEmployer(name){
+    alertTouched = true;
+    $('alertEmployer').value = name;
+    $('followName').textContent = cleanDisplayText(name);
+    $('followScope').hidden = false;
+    document.querySelector('.alert-scope').hidden = true;
+    trackEvent('employer_follow_started', 'Employer follow started');
+    $('alerts').scrollIntoView({behavior:'smooth', block:'center'});
+    alertForm.email.focus({preventScroll:true});
+  }
+
+  function clearEmployerFollow(){
+    $('alertEmployer').value = '';
+    $('followScope').hidden = true;
+    document.querySelector('.alert-scope').hidden = false;
+  }
+
+  function syncSheetCompare(){
+    const btn = $('sheetCompare');
+    if(!btn || !sheetRow) return;
+    const on = comparing.has(sheetRow[0]);
+    btn.textContent = on ? 'Remove from comparison' : 'Add to comparison';
+    btn.setAttribute('aria-pressed', String(on));
+  }
+
+  function syncCompareUI(){
+    const count = comparing.size;
+    $('compareTray').hidden = count === 0;
+    $('compareCount').textContent = `${count} of 3`;
+    $('compareOpen').disabled = count < 2;
+    document.querySelectorAll('[data-compare]').forEach(btn=>{
+      const on = comparing.has(btn.dataset.compare);
+      btn.classList.toggle('on', on);
+      btn.setAttribute('aria-pressed', String(on));
+      btn.textContent = on ? 'Selected' : '+ Compare';
+    });
+    syncSheetCompare();
+  }
+
+  function toggleCompare(name){
+    if(comparing.has(name)) comparing.delete(name);
+    else if(comparing.size < 3) comparing.add(name);
+    else{
+      $('saveStatus').hidden = false;
+      $('saveStatus').textContent = 'You can compare up to three employers. Remove one first.';
+      setTimeout(()=>{ $('saveStatus').hidden = true; }, 2600);
+      return;
+    }
+    syncCompareUI();
+    syncURL(true);
+    if($('compareDialog').open) renderComparison();
+  }
+
+  function comparableEmployerName(value){
+    return cleanDisplayText(value).replace(/\s+/g,' ').trim().toLowerCase();
+  }
+
+  function employerHistory(record, row, started){
+    const dates = (record && record.dates) || {};
+    const events = EVIDENCE_DATES
+      .filter(([key])=>dates[key])
+      .map(([key,label])=>({date:dates[key], label,
+        note:key === 'dormant_period_end'
+          ? 'This is the accounts period end, not the filing date.' : ''}));
+    if(record && record.incorporated){
+      events.push({date:record.incorporated, label:'Company incorporated', note:''});
+    }
+    const [name,town] = row;
+    for(const change of ratingChanges){
+      if(change.name === name && (!change.town || change.town === town)){
+        events.push({date:change.date, label:'Sponsor rating changed from ' +
+          change.from + ' to ' + change.to,
+          note:'Observed in the Home Office register.'});
+      }
+    }
+    if(started){
+      events.push({date:started, label:'First observed on the sponsor register',
+        note:'This is when our daily records first saw the listing.'});
+    }else if(licensedBaseline){
+      events.push({date:licensedBaseline,
+        label:'Already present when daily tracking began',
+        note:'The licence started before this date; the exact date is not published.'});
+    }
+    const checkedDate = String(currentUpdated || '').slice(0,10);
+    if(checkedDate){
+      events.push({date:checkedDate, label:'Present in the latest register',
+        note:'Latest check by KnowYourSponsor.'});
+    }
+    if(!events.length) return '';
+    events.sort((a,b)=>String(b.date).localeCompare(String(a.date)) ||
+      a.label.localeCompare(b.label));
+    const items = events.map(event=>'<li><strong>' + esc(longDate(event.date)) +
+      '</strong> &mdash; ' + esc(event.label) + (event.note
+        ? '<span class="event-note">' + esc(event.note) + '</span>' : '') + '</li>');
+    return '<div class="block evidence-timeline"><h3>Employer history</h3><ul>' +
+      items.join('') + '</ul></div>';
+  }
+
+  function visitSnapshot(){
+    const employers = {};
+    for(const key of saved){
+      const row = all.find(item=>savedKey(item[0], item[1])===key);
+      const old = previousVisit && previousVisit.employers &&
+        previousVisit.employers[key];
+      const name = row ? row[0] : (old && old.name) || key.split('|')[0];
+      const town = row ? row[1] : (old && old.town) || key.split('|').slice(1).join('|');
+      const warning = warningFor(name);
+      employers[key] = {
+        name, town, present:Boolean(row), rating:row ? row[5] || '' : '',
+        warning:warning ? warning.label : '',
+        warningSeverity:warning ? warning.severity : '',
+      };
+    }
+    return {updated:currentUpdated, employers};
+  }
+
+  function recordVisitSnapshot(){
+    if(!fullLoaded || !evidenceLoaded || !currentUpdated) return;
+    try{ localStorage.setItem(VISIT_KEY, JSON.stringify(visitSnapshot())); }
+    catch(err){ /* This convenience must never stop search in private mode. */ }
+  }
+
+  function rowMatchesCurrentSearch(row){
+    const words = $('q').value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    if($('city').value && row[1] !== $('city').value) return false;
+    if($('industry').value && row[3] !== $('industry').value) return false;
+    if($('route').value && !(row[4] || []).includes($('route').value)) return false;
+    if(words.length){
+      const hay = (row[0]+' '+row[1]+' '+row[2]+' '+row[3]).toLowerCase();
+      if(!words.every(word=>hay.includes(word))) return false;
+    }
+    return true;
+  }
+
+  function rowMatchesRememberedSearch(row, search){
+    const words = String(search.q || '').toLowerCase().split(/\s+/).filter(Boolean);
+    if(search.city && row[1] !== search.city) return false;
+    if(search.industry && row[3] !== search.industry) return false;
+    if(search.route && !(row[4] || []).includes(search.route)) return false;
+    const hay = (row[0]+' '+row[1]+' '+row[2]+' '+row[3]).toLowerCase();
+    return words.every(word=>hay.includes(word));
+  }
+
+  function searchLabel(search){
+    const parts = [search.q, search.city, search.industry, search.route].filter(Boolean);
+    return parts.join(' · ');
+  }
+
+  function rememberSearch(){
+    if(!fullLoaded) return;
+    const search = {q:$('q').value.trim(), city:$('city').value,
+      industry:$('industry').value, route:$('route').value,
+      updated:currentUpdated};
+    const label = searchLabel(search);
+    if(!label) return;
+    recentSearches = [search, ...recentSearches.filter(item=>
+      searchLabel(item) !== label)].slice(0,5);
+    try{ localStorage.setItem(SEARCH_KEY, JSON.stringify(recentSearches)); }
+    catch(err){ /* Search still works when browser storage is blocked. */ }
+  }
+
+  function renderVisitChanges(){
+    const box = $('visitChanges');
+    if(!fullLoaded || !previousVisit || !previousVisit.updated ||
+       previousVisit.updated === currentUpdated){
+      box.hidden = true; return;
+    }
+    const items = [];
+    const before = previousVisit.employers || {};
+    const now = visitSnapshot().employers;
+    for(const [key, old] of Object.entries(before)){
+      if(!saved.has(key)) continue;
+      const current = now[key];
+      const label = esc(cleanDisplayText(old.name || key.split('|')[0]));
+      if(old.present && current && !current.present){
+        items.push(`<li><strong>${label}</strong> is no longer in the current register.</li>`);
+      }else if(current && old.rating && current.rating && old.rating !== current.rating){
+        items.push(`<li><strong>${label}</strong> changed from rating ${esc(old.rating)} to ${esc(current.rating)}.</li>`);
+      }
+      if(current && current.warning && current.warning !== old.warning){
+        items.push(`<li><strong>${label}</strong> now has a Companies House signal: ${esc(current.warning)}.</li>`);
+      }
+    }
+
+    const scoped = Boolean($('q').value.trim() || $('city').value ||
+      $('industry').value || $('route').value);
+    if(scoped){
+      const added = addedRows.filter(rowMatchesCurrentSearch).length;
+      const removed = removedRows.filter(rowMatchesCurrentSearch).length;
+      const downgraded = downgradedRows.filter(rowMatchesCurrentSearch).length;
+      if(added) items.push(`<li>${added.toLocaleString()} matching ${added===1?'employer is':'employers are'} newly listed.</li>`);
+      if(removed) items.push(`<li>${removed.toLocaleString()} matching ${removed===1?'employer is':'employers are'} no longer listed.</li>`);
+      if(downgraded) items.push(`<li>${downgraded.toLocaleString()} matching ${downgraded===1?'employer was':'employers were'} downgraded.</li>`);
+    }
+    for(const search of recentSearches){
+      if(!search.updated || search.updated === currentUpdated) continue;
+      const added = addedRows.filter(row=>rowMatchesRememberedSearch(row, search)).length;
+      const removed = removedRows.filter(row=>rowMatchesRememberedSearch(row, search)).length;
+      const downgraded = downgradedRows.filter(row=>rowMatchesRememberedSearch(row, search)).length;
+      if(!added && !removed && !downgraded) continue;
+      const changes = [added && `${added} new`, removed && `${removed} removed`,
+        downgraded && `${downgraded} downgraded`].filter(Boolean).join(', ');
+      items.push('<li><strong>' + esc(searchLabel(search)) + '</strong>: ' +
+        esc(changes) + ' since this search was last viewed.</li>');
+    }
+    box.hidden = !items.length;
+    if(!items.length) return;
+    $('visitSummary').textContent = 'Compared with the register data you last saw on ' +
+      readableTimestamp(previousVisit.updated) + '.';
+    $('visitItems').innerHTML = items.slice(0,8).join('');
+  }
+
+  function rowsForEmployer(name){
+    const comparableName = comparableEmployerName(name);
+    const sameName = row=>row[0]===name ||
+      comparableEmployerName(row[0])===comparableName;
+    const current = all.filter(sameName);
+    if(current.length) return current;
+    return [...removedRows, ...addedRows, ...downgradedRows]
+      .filter(sameName);
+  }
+
+  function employerComparison(name){
+    const records = rowsForEmployer(name);
+    const actualName = records[0] ? records[0][0] : name;
+    const current = all.filter(row=>row[0]===actualName);
+    const locations = [...new Set(records.map(row=>
+      [cleanPlace(row[1]),cleanPlace(row[2])].filter(Boolean).join(', '))
+      .filter(Boolean))].sort();
+    const industries = [...new Set(records.map(row=>row[3]).filter(Boolean))].sort();
+    const routes = [...new Set(records.flatMap(row=>row[4]||[]))].sort();
+    const ratings = [...new Set(current.map(row=>row[5]).filter(Boolean))].sort();
+    const starts = Object.entries(licensedSince)
+      .filter(([key])=>key.startsWith(actualName.toLowerCase()+'|'))
+      .map(([,date])=>date).filter(Boolean).sort();
+    const flag = companyFlags[actualName];
+    let change = `No recorded change in the last ${windowDays} days`;
+    if(removedRows.some(row=>row[0]===actualName)) change = 'A listing was no longer present';
+    else if(downgradedRows.some(row=>row[0]===actualName)) change = 'Rating moved from A to B';
+    else if(addedRows.some(row=>row[0]===actualName)) change = 'Newly present in the register';
+    const company = flag
+      ? (flag.status || 'Signal found') + '. Matched by name; verify the official record.'
+      : 'No signal found. This is not a clean bill of health.';
+    const first = starts[0] || '';
+    return {name:actualName, current:current.length>0, locations, industries, routes,
+      ratings, first, observedDays:first ? ageDays(first) : null, change, company,
+      incorporated:flag&&flag.incorporated, number:flag&&flag.number};
+  }
+
+  function renderComparison(){
+    const items = [...comparing].map(employerComparison);
+    const cell = value=>`<td>${value}</td>`;
+    const values = fn=>items.map(item=>cell(fn(item))).join('');
+    const checked = readableTimestamp(currentUpdated);
+    $('compareBody').innerHTML = '<table class="compare-table"><thead><tr><th>Evidence</th>' +
+      items.map(item=>`<th>${esc(cleanDisplayText(item.name))}</th>`).join('') +
+      '</tr></thead><tbody>' +
+      '<tr><td>Latest register</td>' + values(item=>item.current
+        ? '<span class="rating-a">Present</span>'
+        : '<span class="rating-b">Not present</span>') + '</tr>' +
+      '<tr><td>Checked</td>' + values(()=>esc(checked||'Not available')) + '</tr>' +
+      '<tr><td>Location</td>' + values(item=>esc(item.locations.join('; ')||'Not given')) + '</tr>' +
+      '<tr><td>Industry</td>' + values(item=>esc(item.industries.join('; ')||'Other')) + '</tr>' +
+      '<tr><td>Visa routes</td>' + values(item=>esc(item.routes.join('; ')||'Not currently published')) + '</tr>' +
+      '<tr><td>Rating</td>' + values(item=>esc(item.ratings.join(', ')||'Not currently published')) + '</tr>' +
+      '<tr><td>Days observed</td>' + values(item=>item.observedDays === null
+        ? 'Not known' : esc(item.observedDays.toLocaleString()) + ' days') + '</tr>' +
+      '<tr><td>First observed</td>' + values(item=>item.first
+        ? esc(longDate(item.first))
+        : (licensedBaseline ? 'Already present when daily records began' : 'Not known')) + '</tr>' +
+      `<tr><td>Recent change</td>${values(item=>esc(item.change))}</tr>` +
+      '<tr><td>Incorporated</td>' + values(item=>item.incorporated
+        ? esc(longDate(item.incorporated)) : 'Not available') + '</tr>' +
+      `<tr><td>Company warning</td>${values(item=>esc(item.company) +
+        (item.number ? ` <a href="${CH_COMPANY}${encodeURIComponent(item.number)}" target="_blank" rel="noopener">Official record</a>` : ''))}</tr>` +
+      '</tbody></table><p class="caveat">A sponsor licence means an employer can sponsor on the routes shown. It does not mean the employer is hiring, that a role qualifies, or that an application will succeed. Companies House matches are pointers, not verdicts.</p>';
+  }
+
+  function openComparison(){
+    if(comparing.size < 2) return;
+    renderComparison();
+    const dialog = $('compareDialog');
+    if(typeof dialog.showModal === 'function') dialog.showModal();
+    else dialog.setAttribute('open','');
+    trackEvent('comparison_created', 'Employer comparison created');
+  }
+
+  function closeComparison(){
+    const dialog = $('compareDialog');
+    if(typeof dialog.close === 'function' && dialog.open) dialog.close();
+    else dialog.removeAttribute('open');
+  }
+
+  function clearPrintView(){
+    document.body.classList.remove('print-check');
+  }
+
+  function printView(className){
+    document.body.classList.add(className);
+    trackEvent('pdf_report_opened', 'Employer report opened');
+    window.print();
+  }
+
+  function printComparisonReport(){
+    // Replace this tab with an ordinary, visible report before printing.
+    // Printing a native <dialog>, a hidden clone, or a scripted popup is
+    // inconsistent across Chromium desktop and mobile. Here the report the
+    // user sees is exactly the document the browser prints.
+    trackEvent('pdf_report_opened', 'Comparison report opened');
+    const returnUrl = location.href;
+    const head = $('compareDialog').querySelector('.compare-dialog-head').cloneNode(true);
+    const body = $('compareDialog').querySelector('.compare-dialog-body').cloneNode(true);
+    const doc = document;
+    const employerNames = Array.from(body.querySelectorAll('.compare-table thead th'))
+      .slice(1).map(node=>node.textContent.trim()).filter(Boolean);
+    const namesForTitle = employerNames.length > 1
+      ? employerNames.slice(0,-1).join(', ') + ' and ' + employerNames.at(-1)
+      : (employerNames[0] || 'employers');
+    const reportDate = new Intl.DateTimeFormat('en-GB',{
+      day:'2-digit',month:'short',year:'numeric'
+    }).format(new Date());
+    const reportTitle = (`Employer comparison - ${namesForTitle} - ${reportDate} - KnowYourSponsor`)
+      .replace(/[\\/:*?"<>|]/g,'-').slice(0,180);
+    doc.title = reportTitle;
+    doc.documentElement.lang = 'en';
+    const style = doc.createElement('style');
+    style.id = 'comparisonReportStyles';
+    style.textContent = `
+      @page{size:A4 portrait;margin:12mm}
+      *{box-sizing:border-box}
+      html{color:#17233b;background:#fff;font-family:Arial,sans-serif}
+      body.comparison-report-page{margin:0;padding:0 12px 24px;background:#fff;overflow:auto}
+      .report{width:100%;max-width:900px;margin:0 auto;border:1.5px solid #17233b;background:#fff}
+      .compare-dialog-head{display:flex;padding:14px 16px;border-bottom:2px solid #17233b}
+      .compare-dialog-head>div{flex:1}.compare-dialog-head h2{font-size:18pt;margin:0}
+      .compare-dialog-head p{font-size:9pt;color:#506078;margin:4px 0 0}
+      .check-kicker{font-size:8pt!important;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+      .compare-dialog-body{padding:12px 16px;overflow:visible}
+      .compare-table{border-collapse:collapse;min-width:0;width:100%;table-layout:fixed;font-size:8.5pt}
+      .compare-table th,.compare-table td{padding:7px 8px;border-bottom:1px solid #d9e0eb;
+        text-align:left;vertical-align:top;overflow-wrap:anywhere}
+      .compare-table th:first-child{width:112px}.compare-table td:first-child{font-weight:700;color:#506078}
+      .report .compare-table th:last-child,.report .compare-table td:last-child{
+        width:auto;max-width:none;white-space:normal;text-align:left;padding-left:8px}
+      .status-ok{color:#087a4b;font-weight:700}.status-warn{color:#a42e24;font-weight:700}
+      a{color:#1548d3}.caveat{font-size:8.5pt;line-height:1.45;margin:10px 0 0}
+      .sheet-close{display:none!important}
+      .print-tools{display:flex;align-items:center;justify-content:space-between;gap:12px;
+        max-width:900px;margin:14px auto;padding:0 12px;font:14px Arial,sans-serif;color:#17233b}
+      .print-actions{display:flex;gap:8px}
+      .print-tools button{border:1.5px solid #17233b;border-radius:6px;background:#1548d3;color:#fff;
+        padding:10px 16px;font-weight:700;cursor:pointer}
+      .print-tools .back{background:#fff;color:#17233b}
+      @media(max-width:600px){.print-tools{align-items:flex-start;flex-direction:column}
+        .print-actions{width:100%}.print-tools button{flex:1}}
+      @media print{body.comparison-report-page{padding:0}.print-tools{display:none!important}
+        .report{max-width:none;border:1.5px solid #17233b}}
+    `;
+    doc.head.append(style);
+
+    const tools = doc.createElement('div');
+    tools.className = 'print-tools';
+    const note = doc.createElement('span');
+    note.textContent = 'Your comparison report is ready.';
+    const actions = doc.createElement('div');
+    actions.className = 'print-actions';
+    const backButton = doc.createElement('button');
+    backButton.type = 'button';
+    backButton.className = 'back';
+    backButton.textContent = 'Back to comparison';
+    backButton.addEventListener('click',()=>location.href=returnUrl);
+    const printButton = doc.createElement('button');
+    printButton.type = 'button';
+    printButton.textContent = 'Print or save as PDF';
+    printButton.addEventListener('click',()=>window.print());
+    actions.append(backButton,printButton);
+    tools.append(note,actions);
+
+    const printable = doc.createElement('main');
+    printable.className = 'report';
+    printable.append(head,body);
+    printable.querySelectorAll('[id]').forEach(node=>node.removeAttribute('id'));
+    printable.querySelectorAll('.sheet-close').forEach(node=>node.remove());
+    doc.body.className = 'comparison-report-page';
+    doc.body.replaceChildren(tools,printable);
+    window.scrollTo(0,0);
+    void printable.offsetHeight;
+  }
+
+  // ------------------------------------------------------------ csv --
+  // Exports exactly what is on screen, filters and all. Built here rather
+  // than served as a file so it always matches the current view and costs
+  // no bandwidth.
+  function csvCell(value){
+    const s = String(value == null ? '' : value);
+    // Quote if the value could break a row, and double any inner quotes.
+    return /[",\n\r]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+  }
+
+  function buildCSV(records){
+    const head = ['Employer','Town','County','Industry','Visa routes','Rating',
+                  'Company status','Company number','Companies House warnings'];
+    const lines = [head.join(',')];
+    for(const [name,town,county,industry,routes,rating] of records){
+      const record = companyFlags[name] || {};
+      lines.push([name, town, county, industry,
+                  (routes||[]).join('; '),
+                  view === 'removed' ? '' : rating,
+                  record.status || '', record.number || '',
+                  (record.flags || []).join('; ')].map(csvCell).join(','));
+    }
+    // CRLF is what the CSV spec says and what Excel is happiest with.
+    return lines.join('\r\n');
+  }
+
+  function csvFilename(){
+    const bits = ['knowyoursponsor'];
+    // view already covers 'saved', so a shortlist export is named as one.
+    if(view) bits.push(view);
+    const ct = $('city').value, ind = $('industry').value, rt = $('route').value;
+    const q = $('q').value.trim();
+    for(const part of [ct, ind, rt, q]){
+      if(part) bits.push(part.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''));
+    }
+    bits.push(new Date().toISOString().slice(0,10));
+    return bits.join('-').slice(0, 120) + '.csv';
+  }
+
+  function downloadCSV(){
+    if(!filtered.length) return;
+    // A BOM so Excel reads the accents in employer names as UTF-8.
+    const blob = new Blob(['﻿' + buildCSV(filtered)],
+                          {type:'text/csv;charset=utf-8;'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = csvFilename();
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    trackEvent('csv_downloaded', 'CSV downloaded');
+    // Revoke on the next tick; revoking immediately can cancel the download.
+    setTimeout(()=>URL.revokeObjectURL(url), 1000);
+  }
+
+  // ----------------------------------------------------------- views --
+  const VIEW_BUTTONS = {'':'viewAll', 'added':'viewAdded', 'removed':'viewRemoved',
+                        'downgraded':'viewDowngraded', 'saved':'viewSaved'};
+
+  function setView(next){
+    view = VIEW_BUTTONS[next] ? next : '';
+    for(const [name,id] of Object.entries(VIEW_BUTTONS)){
+      $(id).setAttribute('aria-pressed', String(name === view));
+    }
+    $('viewMobile').value = view;
+    const el = $('viewNotice');
+    if(view === 'removed'){
+      el.className = 'notice warn';
+      el.innerHTML = '<strong>These employers can no longer sponsor a visa.</strong> ' +
+        `They were on the official register within the last ${windowDays} days ` +
+        'but have since been removed. Applying to them for sponsored work is ' +
+        'unlikely to lead anywhere.';
+      el.hidden = false;
+    }else if(view === 'added'){
+      // Newly licensed AND already carrying a Companies House signal. This
+      // cross-signal needs both datasets, which is why nobody else can show
+      // it: a company incorporated weeks ago, already licensed to sponsor,
+      // and already behind on its filings is worth a second look.
+      const flagged = addedRows.filter(s=>warningFor(s[0]));
+      const serious = flagged.filter(s=>{
+        const w = warningFor(s[0]);
+        return w && w.severity === 'serious';
+      }).length;
+      let extra = '';
+      if(flagged.length){
+        extra = ` <strong>${flagged.length} of them already have a ` +
+          `Companies House signal</strong>` +
+          (serious ? `, ${serious} of the serious kind` : '') +
+          '. New licence, existing question: worth checking before you apply.';
+      }
+      el.className = 'notice';
+      el.innerHTML = '<strong>Newly licensed employers.</strong> ' +
+        `Added to the register in the last ${windowDays} days. Fewer applicants ` +
+        'know these exist yet, so there is often less competition.' + extra;
+      el.hidden = false;
+    }else if(view === 'saved'){
+      el.className = 'notice';
+      const shared = sharedSaved.size
+        ? ' This link includes a shared shortlist. <button class="clear" ' +
+          'type="button" id="saveShared">Save it on this device</button>'
+        : '';
+      el.innerHTML = '<strong>Your shortlist.</strong> ' +
+        'Saved on this device only, with no account or browsing profile. ' +
+        'Clearing your browser data clears it too.' + shared;
+      el.hidden = false;
+    }else if(view === 'downgraded'){
+      el.className = 'notice warn';
+      el.innerHTML = '<strong>These employers have just dropped to a B rating.</strong> ' +
+        `Their rating moved from A to B in the last ${windowDays} days. A B-rated ` +
+        'sponsor is working through a Home Office action plan and usually ' +
+        'cannot issue new certificates of sponsorship until it is back to an A, ' +
+        'so a job there may not come with a visa for now.';
+      el.hidden = false;
+    }else{
+      el.hidden = true;
+    }
+  }
+
+  function setSort(next){
+    sortBy = ['relevance','name','location','industry','rating'].includes(next)
+      ? next : 'relevance';
+    $('sort').value = sortBy;
+    document.querySelectorAll('.sorthead').forEach(button=>{
+      button.classList.toggle('active', button.dataset.sort === sortBy);
+    });
+  }
+
+  // ------------------------------------------------------- url state --
+  // Filter state lives in the query string so any view is shareable.
+  function stateToQuery(){
+    const p = new URLSearchParams();
+    const q = $('q').value.trim();
+    if(q) p.set('q', q);
+    if($('city').value) p.set('city', $('city').value);
+    if($('industry').value) p.set('industry', $('industry').value);
+    if($('route').value) p.set('route', $('route').value);
+    if(view) p.set('view', view);
+    if(warnOnly) p.set('warn', warnOnly === 'serious' ? 'serious' : '1');
+    if(sortBy !== 'relevance') p.set('sort', sortBy);
+    if(view === 'saved'){
+      for(const key of [...sharedSaved].slice(0,25)) p.append('shortlist', key);
+    }
+    for(const name of [...comparing].slice(0,3)) p.append('compare', name);
+    const open = sheetOpenName();
+    if(open) p.set('employer', open);
+    return p.toString();
+  }
+
+  // push=true for discrete control changes (so Back steps through them);
+  // push=false while typing, otherwise every pause would add a history entry.
+  function syncURL(push){
+    const qs = stateToQuery();
+    const url = location.pathname + (qs ? '?'+qs : '');
+    if(url === location.pathname + location.search) return;
+    history[push ? 'pushState' : 'replaceState'](null, '', url);
+  }
+
+  // Restoring is split in two. The text/toggle half runs immediately so the
+  // controls are correct while the data is still downloading; the select half
+  // has to wait for the <option>s to be built from the data, otherwise
+  // assigning .value silently falls back to "".
+  function restoreInputs(){
+    const p = new URLSearchParams(location.search);
+    $('q').value = p.get('q') || '';
+    sharedSaved = new Set(p.getAll('shortlist').slice(0,25)
+      .filter(key=>key && key.includes('|')).map(key=>key.toLowerCase()));
+    // ?new=1 was the old spelling; links using it are still out there.
+    setView(p.get('view') || (sharedSaved.size ? 'saved' :
+      (p.get('new')==='1' ? 'added' : '')));
+    // ?warn=1 kept working: it was already a shareable link before
+    // severity existed, and it means "any warning".
+    const wanted = p.get('warn');
+    setWarnOnly(wanted === 'serious' ? 'serious' : (wanted === '1' ? 'any' : ''));
+    setSort(p.get('sort') || 'relevance');
+    comparing.clear();
+    p.getAll('compare').slice(0,3).filter(Boolean).forEach(name=>comparing.add(name));
+    syncCompareUI();
+  }
+  function restoreSelects(){
+    const p = new URLSearchParams(location.search);
+    for(const id of ['city','industry','route']){
+      const want = p.get(id) || '';
+      $(id).value = want;
+      if($(id).value !== want) $(id).value = '';   // unknown value → "All"
+    }
+  }
+
+  // events
+  let t;
+  $('q').addEventListener('input',()=>{
+    clearTimeout(t);
+    t=setTimeout(()=>{
+      apply(); syncURL(false);
+      if($('q').value.trim().length >= 2) trackEvent('search_used', 'Search used');
+    },150);
+  });
+  $('go').addEventListener('click',()=>{
+    apply(); rememberSearch(); syncURL(true);
+    trackEvent('search_used', 'Search used');
+  });
+  // Example queries. They fill the box rather than filtering silently, so
+  // the reader sees what was typed and can edit it.
+  document.querySelectorAll('.tryline .try').forEach(b=>{
+    b.addEventListener('click',()=>{
+      $('q').value=b.dataset.q;
+      apply(); rememberSearch(); syncURL(true);
+      trackEvent('search_used', 'Search used');
+      $('q').focus();
+    });
+  });
+  $('city').addEventListener('change',()=>{
+    apply(); rememberSearch(); syncURL(true); trackEvent('search_used', 'Search used');
+  });
+  $('industry').addEventListener('change',()=>{
+    apply(); rememberSearch(); syncURL(true); trackEvent('search_used', 'Search used');
+  });
+  $('route').addEventListener('change',()=>{
+    apply(); rememberSearch(); syncURL(true); trackEvent('search_used', 'Search used');
+  });
+  $('viewMobile').addEventListener('change',()=>{ setView($('viewMobile').value); apply(); syncURL(true); });
+  $('sort').addEventListener('change',()=>{ setSort($('sort').value); apply(); syncURL(true); });
+  document.querySelectorAll('.sorthead').forEach(button=>button.addEventListener('click',()=>{
+    setSort(button.dataset.sort); apply(); syncURL(true);
+  }));
+  $('more').addEventListener('click',()=>render(false));
+  $('download').addEventListener('click',downloadCSV);
+  $('copyLink').addEventListener('click',copyLink);
+  $('shareShortlist').addEventListener('click',shareShortlist);
+  $('alertSearch').addEventListener('click',primeSearchAlert);
+  $('clearFollow').addEventListener('click',clearEmployerFollow);
+  $('clear').addEventListener('click',clearFilters);
+  $('viewNotice').addEventListener('click',event=>{
+    if(!event.target.closest('#saveShared')) return;
+    for(const key of sharedSaved) saved.add(key);
+    sharedSaved.clear();
+    persistSaved();
+    refreshSavedCount();
+    setView('saved');
+    apply();
+    syncURL(true);
+    $('saveStatus').textContent = 'Shared shortlist saved on this device.';
+    $('saveStatus').hidden = false;
+  });
+
+  // Keyboard: "/" jumps to the search box, Escape clears it. Both are
+  // ignored while typing in a field, so they never eat a real keystroke.
+  document.addEventListener('keydown',e=>{
+    const typing = /^(INPUT|SELECT|TEXTAREA)$/.test(document.activeElement.tagName);
+    if(e.key === 'Escape' && !$('sheet').hidden){
+      closeSheet();
+      return;
+    }
+    if(e.key === '/' && !typing){
+      e.preventDefault();
+      $('q').focus();
+      $('q').select();
+    }else if(e.key === 'Escape' && document.activeElement === $('q')){
+      $('q').value = '';
+      apply();
+      syncURL(false);
+    }
+  });
+  for(const id of ['alertCity','alertIndustry','alertRoute']){
+    $(id).addEventListener('change',()=>{ alertTouched = true; });
+  }
+  for(const [name,id] of Object.entries(VIEW_BUTTONS)){
+    $(id).addEventListener('click',()=>{ setView(name); apply(); syncURL(true); });
+  }
+  $('warnOnly').addEventListener('click',()=>{
+    setWarnOnly(warnOnly === 'any' ? '' : 'any'); apply(); syncURL(true);
+  });
+  $('riskOnly').addEventListener('click',()=>{
+    setWarnOnly(warnOnly === 'serious' ? '' : 'serious'); apply(); syncURL(true);
+  });
+
+  // A real href, so it still works without JavaScript and can be opened in a
+  // new tab. Intercepted here because a reload would re-fetch the register.
+  rows.addEventListener('click',e=>{
+    // The company warning is a real link to Companies House. A click there
+    // must go there, and not also open the sheet behind it.
+    if(e.target.closest('a')) return;
+    const star = e.target.closest('.star');
+    if(star){ toggleSaved(star.dataset.save); return; }
+    const compare = e.target.closest('.compare-row');
+    if(compare){ toggleCompare(compare.dataset.compare); return; }
+    const btn = e.target.closest('.rowbtn');
+    if(btn){ openSheet(btn.dataset.name, btn); return; }
+    // Anywhere else in the row. People click the row rather than hunting for
+    // the name, and on a five-column table that left most of the row dead:
+    // the click did nothing, which reads as a broken site rather than a
+    // missed target.
+    const tr = e.target.closest('tr[data-name]');
+    if(tr) openSheet(tr.dataset.name, tr);
+  });
+  // Keeps the sheet's save button showing the truth, including when the
+  // star for the same employer is toggled in the row behind it.
+  function syncSheetStar(){
+    const btn = $('sheetSave');
+    const row = sheetRow;
+    if(!btn || !row){ return; }
+    const on = saved.has(savedKey(row[0], row[1]));
+    btn.textContent = on ? 'Saved. Tap to remove' : 'Save to shortlist';
+    btn.setAttribute('aria-pressed', String(on));
+  }
+
+  $('sheetSave').addEventListener('click',()=>{
+    if(sheetRow) toggleSaved(savedKey(sheetRow[0], sheetRow[1]));
+  });
+  $('sheetCompare').addEventListener('click',()=>{
+    if(sheetRow) toggleCompare(sheetRow[0]);
+  });
+  $('sheetBody').addEventListener('click',event=>{
+    const followButton = event.target.closest('[data-follow-employer]');
+    if(followButton){
+      const employer = followButton.dataset.followEmployer;
+      closeSheet();
+      followEmployer(employer);
+      return;
+    }
+    const viewButton = event.target.closest('[data-similar-view]');
+    if(viewButton){
+      openSheet(viewButton.dataset.similarView, null);
+      return;
+    }
+    const saveButton = event.target.closest('[data-similar-save]');
+    if(saveButton){
+      toggleSaved(saveButton.dataset.similarSave);
+      if(sheetRow) $('sheetBody').innerHTML = sheetHTML(sheetRow);
+      return;
+    }
+    const compareButton = event.target.closest('[data-similar-compare]');
+    if(compareButton){
+      toggleCompare(compareButton.dataset.similarCompare);
+      if(sheetRow) $('sheetBody').innerHTML = sheetHTML(sheetRow);
+    }
+  });
+
+  $('sheetClose').addEventListener('click',closeSheet);
+  $('sheetShare').addEventListener('click',()=>{
+    if(!sheetRow) return;
+    shareOrCopy($('sheetShare'), `KnowYourSponsor check: ${sheetRow[0]}`,
+      'Public-source sponsor and company evidence. Verify against the official sources before acting.',
+      location.href);
+  });
+  $('sheetPrint').addEventListener('click',()=>printView('print-check'));
+  $('compareClear').addEventListener('click',()=>{
+    comparing.clear();
+    closeComparison();
+    syncCompareUI();
+    syncURL(true);
+  });
+  $('compareOpen').addEventListener('click',openComparison);
+  $('compareClose').addEventListener('click',closeComparison);
+  $('compareDialog').addEventListener('click',e=>{
+    if(e.target === $('compareDialog')) closeComparison();
+  });
+  $('compareShare').addEventListener('click',()=>{
+    syncURL(true);
+    shareOrCopy($('compareShare'), 'KnowYourSponsor employer comparison',
+      'Public-source employer evidence shown side by side. Verify against the official sources before acting.',
+      location.href);
+  });
+  $('comparePrint').addEventListener('click',printComparisonReport);
+  window.addEventListener('afterprint',clearPrintView);
+  $('sheetBackdrop').addEventListener('click',closeSheet);
+
+  $('statWarnBox').addEventListener('click',e=>{
+    e.preventDefault();
+    setWarnOnly('serious');
+    apply();
+    syncURL(true);
+    $('filterbar').scrollIntoView({block:'start'});
+  });
+
+  // Lift the sticky bar only once it is actually stuck, so the shadow is a
+  // signal rather than decoration. rootMargin watches the line it sticks to.
+  if('IntersectionObserver' in window){
+    const sentinel = document.createElement('div');
+    $('filterbar').before(sentinel);
+    new IntersectionObserver(
+      ([entry])=>$('filterbar').classList.toggle('stuck', !entry.isIntersecting),
+      {threshold:0}
+    ).observe(sentinel);
+  }
+  window.addEventListener('popstate',()=>{ restoreInputs(); restoreSelects(); apply(); });
+
+  // Reflect the URL in the controls straight away, so someone landing on a
+  // shared link sees the right filters while the register downloads.
+  restoreInputs();
+  // ----------------------------------------------------------- alerts --
+  const alertForm = $('alertForm');
+  function alertError(msg){
+    const el = $('alertErr');
+    el.textContent = msg;
+    el.style.display = 'block';
+  }
+  // Prefer the provider's own message ("that address is already subscribed")
+  // over a generic one, when it sends a usable one.
+  function firstFieldError(data){
+    const fields = data && data.errors && data.errors.fields;
+    if(!fields) return '';
+    const first = Object.values(fields)[0];
+    return Array.isArray(first) ? first[0] : '';
+  }
+  alertForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    $('alertErr').style.display = 'none';
+
+    if(!ALERT_ENDPOINT){
+      alertError("Email alerts aren't running yet. Please check back soon.");
+      return;
+    }
+
+    const email = alertForm.email.value.trim();
+    if(!email) return;
+    const btn = alertForm.querySelector('button');
+    const label = btn.textContent;
+    btn.disabled = true; btn.textContent = 'Sending…';
+
+    try{
+      const body = new FormData();
+      body.append('fields[email]', email);
+      // Scope is what makes the weekly email worth opening: 124 new
+      // employers nationwide is noise, 3 in your city is not. MailerLite
+      // ignores a field it does not know, so these are only stored if the
+      // matching custom fields exist in the account (see README).
+      if($('alertCity').value) body.append('fields[city]', $('alertCity').value);
+      if($('alertIndustry').value) body.append('fields[industry]', $('alertIndustry').value);
+      if($('alertRoute').value) body.append('fields[route]', $('alertRoute').value);
+      if($('alertEmployer').value) body.append('fields[employer]', $('alertEmployer').value);
+      body.append('ml-submit', '1');
+      body.append('anticsrf', 'true');
+      const res = await fetch(ALERT_ENDPOINT, {method:'POST', body});
+
+      // A rejected address still comes back as HTTP 200 with
+      // {"success":false,...}, so the body decides, not the status code.
+      const data = await res.json().catch(()=>null);
+      if(!res.ok || !data || data.success !== true){
+        btn.disabled = false; btn.textContent = label;
+        alertError(firstFieldError(data) ||
+          'That address was not accepted. Please check it and try again.');
+        return;
+      }
+
+      alertForm.style.display = 'none';
+      $('alertDone').style.display = 'block';
+      trackEvent('alert_signup_completed', 'Search alert signup completed');
+    }catch(err){
+      btn.disabled = false; btn.textContent = label;
+      alertError("That didn't send. Please check your connection and try again.");
+    }
+  });
+
+  // One retry, because the register is 2MB gzipped and a single failed
+  // request should not be a dead end. Two real causes, both seen:
+  //
+  //   A phone on a weak connection drops a long download. That is our actual
+  //   audience, so treating one failure as fatal fails the people the site
+  //   is for.
+  //
+  //   A service worker upgrade can abort a request that is already in
+  //   flight. Renaming the cache did exactly that on the live site: the
+  //   small files finished, the 2MB one was aborted, and the whole load
+  //   failed with "the list could not be loaded".
+  //
+  // 'reload' on the second attempt so a poisoned cache entry cannot be
+  // handed back twice.
+  async function fetchJSON(url, attempts=2){
+    let last;
+    for(let i=0; i<attempts; i++){
+      try{
+        const res = await fetch(url, i ? {cache:'reload'} : undefined);
+        if(!res.ok) throw new Error('HTTP ' + res.status);
+        return await res.json();
+      }catch(err){ last = err; }
+    }
+    throw last;
+  }
+
+  function quickShardKey(value){
+    const ascii = String(value || '').normalize('NFKD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/^[^0-9A-Za-z]+/, '')
+      .toLowerCase();
+    return /^[0-9a-z]/.test(ascii) ? ascii.charAt(0) : '_';
+  }
+
+  async function requestFastPreview(){
+    if(fullLoaded) return;
+    const query = $('q').value.trim();
+    const key = quickShardKey(query || 'a');
+    if(loaded && key === fastKey){ apply(); return; }
+    const request = ++fastRequest;
+    $('loadNote').hidden = false;
+    $('loadNote').textContent = query
+      ? 'Finding employer-name matches while the complete register loads.'
+      : 'Showing the first employers while the complete register loads.';
+    $('download').disabled = true;
+    try{
+      const data = await fetchJSON(`data/search/${key}.json`);
+      if(fullLoaded || request !== fastRequest ||
+         key !== quickShardKey($('q').value.trim() || 'a')) return;
+      all = data.sponsors || [];
+      fastKey = key;
+      loaded = true;
+      $('loading').hidden = true;
+      $('resultsTable').hidden = false;
+      $('resultsMeta').hidden = false;
+      apply();
+    }catch(err){
+      // The complete register starts when this request settles. Keep the
+      // existing loading state rather than making an optional speed-up fatal.
+      if(!loaded) $('loadNote').hidden = true;
+    }
+  }
+
+  // The numbers do not have to wait for the register.
+  //
+  // Everything below went through one Promise.all, so the three headline
+  // figures and the "updated" line sat at an em dash until the slowest
+  // fetch finished. That is sponsors.json: 11.4MB raw, 2.04MB gzipped.
+  // meta.json holds the same totals and is 164 bytes gzipped, so it lands
+  // more or less immediately. Painting from it first turns several seconds
+  // of dashes into a page that looks alive while the register arrives.
+  //
+  // The values are authoritative either way: meta.json is written by the
+  // same run that writes sponsors.json. Promise.all sets them again below
+  // from the register itself, which is the count of what actually loaded,
+  // so a half-written meta.json cannot leave a wrong number on screen.
+  fetchJSON('data/meta.json').then(meta => {
+    if (typeof meta.total === 'number' && !all.length) {
+      $('total').textContent = meta.total.toLocaleString();
+    }
+    if (meta.updated) {
+      currentUpdated = meta.updated;
+      $('updated').textContent = readableTimestamp(meta.updated);
+    }
+    if (typeof meta.added_recently === 'number') {
+      $('statAdded').textContent = meta.added_recently.toLocaleString();
+    }
+  }).catch(()=>{});
+
+  // Start the slower enrichment downloads at the same time, but do not make
+  // the sponsor search wait for them. The register answers the visitor's
+  // first question. Company and enforcement evidence can paint onto the
+  // results as soon as it arrives.
+  const enrichment = Promise.all([
+    fetchJSON('data/company_flags.json').catch(()=>({companies:{}})),
+    fetchJSON('data/nmw.json').catch(()=>({employers:{}}))
+  ]);
+
+  // Paint an accurate first page or employer-name match from a small shard.
+  // The complete register still follows so every town, industry, route and
+  // substring search keeps the same coverage it has always had.
+  let completeRequested = false;
+  function loadCompleteRegister(){
+    if(completeRequested) return;
+    completeRequested = true;
+
+    // Load the files needed to search and describe the current register.
+    Promise.all([
+    fetchJSON('data/sponsors.json'),
+    fetchJSON('data/new_sponsors.json').catch(()=>({new:[]})),
+    fetchJSON('data/meta.json').catch(()=>({})),
+    fetchJSON('data/removed_sponsors.json').catch(()=>({removed:[]})),
+    // Optional in the same way: the file only appears once the pipeline has
+    // seen two consecutive runs, so its absence is normal, not an error.
+    fetchJSON('data/rating_changes.json').catch(()=>({changes:[]})),
+    // Optional too: absent until the history log has recorded a day.
+    fetchJSON('data/licensed_since.json').catch(()=>({since:{}})),
+    // Optional: absent until the employer pages have been generated once.
+    fetchJSON('data/employer_pages.json').catch(()=>({pages:{}}))
+    ]).then(([main,recent,meta,gone,ratings,since,pageIndex])=>{
+    fullLoaded = true;
+    $('download').disabled = false;
+    employerPages = pageIndex.pages || {};
+    licensedSince = since.since || {};
+    licensedBaseline = since.baseline || '';
+    all = main.sponsors||[];
+    currentUpdated = main.updated || meta.updated || currentUpdated;
+    addedRows = recent.new||[];
+    removedRows = gone.removed||[];
+    windowDays = recent.window_days || meta.window_days || 7;
+    addedRows.forEach(s=>newNames.add(s[0].toLowerCase()));
+    $('total').textContent = all.length.toLocaleString();
+    $('updated').textContent = readableTimestamp(main.updated)||'—';
+    if(meta.sample){ $('sampleNote').style.display='block'; }
+
+    // Counts on the buttons: they tell someone whether a view is worth a click.
+    $('nAdded').textContent = addedRows.length ? `(${addedRows.length})` : '';
+    $('nRemoved').textContent = removedRows.length ? `(${removedRows.length})` : '';
+
+    // Match each downgrade back to its register row by name and town, the
+    // same identity the pipeline uses. An employer that was downgraded and
+    // then left the register entirely finds no row and is dropped: it belongs
+    // in "lost licence", which is the worse news and already covers it.
+    const byKey = new Map(all.map(s=>[(s[0]+'|'+s[1]).toLowerCase(), s]));
+    ratingChanges = ratings.changes || [];
+    downgradedRows = ratingChanges
+      .filter(c=>c.action === 'downgraded')
+      .map(c=>byKey.get(((c.name||'')+'|'+(c.town||'')).toLowerCase()))
+      .filter(Boolean)
+      // The row must still say B. Otherwise this view could announce "just
+      // dropped to a B rating" above a column reading A, which destroys
+      // trust in the one screen that exists to warn somebody off.
+      .filter(s=>String(s[5]||'').trim().toUpperCase() === 'B');
+    if(downgradedRows.length){
+      $('nDowngraded').textContent = `(${downgradedRows.length})`;
+      $('viewDowngraded').hidden = false;
+      $('viewMobile').querySelector('[value="downgraded"]').hidden = false;
+    }
+
+    // A number on the nav link is the difference between "another page" and
+    // "something happened this week". Hidden when there is nothing to report.
+    const moved = addedRows.length + removedRows.length + downgradedRows.length;
+    if(moved){
+      $('navChanges').textContent = moved.toLocaleString();
+      $('navChanges').hidden = false;
+    }
+
+    // Proof strip. Warning counts arrive with the optional enrichment below.
+    $('statAdded').textContent = addedRows.length.toLocaleString();
+    // A shortlist saved on an earlier visit only becomes visible once the
+    // register is in memory, because the Saved view filters it.
+    refreshSavedCount();
+    setView(view);   // re-render the notice now that windowDays is known
+
+    // Alert scope choices are stable. Search facets are built by apply() and
+    // then recalculate whenever another active constraint changes.
+    const inds=[...new Set(all.map(s=>s[3]))].sort();
+    const alertRoutes=[...new Set(all.flatMap(s=>s[4]||[]))].sort();
+    const townCount = {};
+    for(const s of all){ if(s[1]) townCount[s[1]] = (townCount[s[1]]||0) + 1; }
+    const bySize = Object.keys(townCount).sort((a,b)=>townCount[b]-townCount[a]);
+    const alertTowns = bySize.slice(0,30).sort();
+    knownTowns = new Set(alertTowns.map(t=>t.toLowerCase()));
+
+    $('alertCity').insertAdjacentHTML('beforeend',
+      alertTowns.map(t=>`<option>${esc(t)}</option>`).join(''));
+    $('alertIndustry').insertAdjacentHTML('beforeend',
+      inds.map(i=>`<option>${esc(i)}</option>`).join(''));
+    $('alertRoute').insertAdjacentHTML('beforeend',
+      alertRoutes.map(route=>`<option>${esc(route)}</option>`).join(''));
+
+    // Swap the loading state for the results, then render the first page.
+    // Note restoreInputs() is deliberately NOT called again here: anything
+    // typed into the search box while the data downloaded must survive.
+    $('loading').hidden = true;
+    $('loadNote').hidden = true;
+    $('resultsTable').hidden = false;
+    $('resultsMeta').hidden = false;
+    loaded = true;
+    updateFacets([]);
+    restoreSelects();
+    apply();
+
+    enrichment.then(([flags,nmw])=>{
+      companyFlags = flags.companies || {};
+      namings = nmw.employers || {};
+      evidenceLoaded = true;
+
+      // Two counts, because they say different things. The card headlines
+      // employers that may have stopped trading; the pill offers every flag.
+      let warnCount = 0, seriousCount = 0;
+      for(const s of all){
+        const warning = warningFor(s[0]);
+        if(!warning) continue;
+        warnCount++;
+        if(warning.severity === 'serious') seriousCount++;
+      }
+      if(seriousCount){
+        $('statWarn').textContent = seriousCount.toLocaleString();
+        $('statWarnBox').hidden = false;
+        $('nRisk').textContent = `(${seriousCount.toLocaleString()})`;
+        $('riskOnly').hidden = false;
+      }
+      if(warnCount){
+        $('nWarn').textContent = `(${warnCount.toLocaleString()})`;
+        $('warnOnly').hidden = false;
+      }
+
+      // Refresh visible evidence and an open sheet without moving focus.
+      apply();
+      recordVisitSnapshot();
+      rememberSearch();
+      if(!$('sheet').hidden && sheetRow){
+        $('sheetBody').innerHTML = sheetHTML(sheetRow);
+      }
+    });
+
+    // A shared ?employer= link opens straight onto that employer.
+    const wanted = new URLSearchParams(location.search).get('employer');
+    if(wanted) openSheet(wanted, null);
+    if(comparing.size >= 2) openComparison();
+  }).catch(()=>{
+    $('loading').hidden = true;
+    if(loaded){
+      $('loadNote').hidden = false;
+      $('loadNote').textContent = 'Employer-name search is available, but town, industry and route filters could not load. Refresh to try again.';
+    }else{
+      $('empty').hidden=false;
+      $('empty').innerHTML='<strong>The list could not be loaded.</strong><br>Please refresh the page to try again.';
+    }
+    });
+  }
+
+  // Give the small name shard the first network turn. If a browser, blocker
+  // or transient CDN problem holds that request open, the complete register
+  // still starts after 1.5 seconds rather than waiting indefinitely.
+  Promise.race([
+    requestFastPreview(),
+    new Promise(resolve=>setTimeout(resolve, 1500))
+  ]).finally(loadCompleteRegister);
+  // Progressive enhancement only — the site works identically without it.
+  // updateViaCache:'none' makes the browser revalidate sw.js itself on every
+  // navigation, so a new worker is picked up on the next visit after a push.
+  if('serviceWorker' in navigator){
+    window.addEventListener('load',()=>{
+      navigator.serviceWorker
+        .register('sw.js',{updateViaCache:'none'})
+        .catch(()=>{});
+    });
+  }
+})();
+</script>
+
+<!-- GoatCounter: privacy-friendly, cookie-free analytics (no consent banner
+     needed). Loaded async and isolated from app code, so blocking it cannot
+     break the site. The same tag is emitted on the generated landing pages
+     by pipeline/pages.py — keep the two in step. -->
+<script data-goatcounter="https://sponsorsignal.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<script>(function(){var b=document.querySelector('[data-theme-toggle]');if(!b)return;var r=document.documentElement;function dark(){return r.getAttribute('data-theme')==='dark'||(!r.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);}function sync(){b.setAttribute('aria-pressed',String(dark()));}b.addEventListener('click',function(){var next=dark()?'light':'dark';r.setAttribute('data-theme',next);try{localStorage.setItem('theme',next);}catch(e){}sync();});sync();})();</script>
+</body>
+</html>

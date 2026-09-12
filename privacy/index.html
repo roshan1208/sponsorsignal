@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy | KnowYourSponsor</title>
+<meta name="description" content="What KnowYourSponsor collects, which is very little, and who else sees it. Searching is anonymous and nothing is ever sold.">
+<link rel="canonical" href="https://knowyoursponsor.co.uk/privacy/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowyoursponsor.co.uk/privacy/">
+<meta property="og:title" content="Privacy">
+<meta property="og:description" content="What KnowYourSponsor collects, which is very little, and who else sees it. Searching is anonymous and nothing is ever sold.">
+<meta property="og:image" content="https://knowyoursponsor.co.uk/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.png" type="image/png">
+<link rel="stylesheet" href="/fonts/public-sans.css">
+<style>
+
+  :root{
+    --ink:#17233B; --ink-soft:#4A5670;
+    --paper:#FFFFFF; --paper-dim:#F5F7FB;
+    --cobalt:#2145C9; --cobalt-dark:#17348F; --on-cobalt:#FFFFFF;
+    --signal:#FFC933; --on-signal:#17233B;
+    --line:#D9DFEA; --good:#0E7B4F; --bad:#B3261E;
+    --warn-bg:#FDF1F0; --warn-bg-2:#FBE3E1; --warn-border:#E7B4AE;
+    --warn-ink:#8A1E18; --warn-solid:#B3261E;
+    --mark-bg:#17233B; --mark-fg:#FFFFFF;
+    --note-bg:#FFF6DC; --note-border:#EAD48A; --note-ink:#6B4E00;
+    --shadow:rgba(23,35,59,.10);
+    /* Three-step radius scale, shared with index.html. Corners
+       that almost match are what makes an interface feel cheap.
+       50% stays literal for circles. */
+    --r-sm:6px; --r-md:10px; --r-pill:999px;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ink:#E8ECF3; --ink-soft:#A3AEC2;
+      --paper:#10151F; --paper-dim:#1A2230;
+      --cobalt:#6B93F5; --cobalt-dark:#8FADF8; --on-cobalt:#10151F;
+      --signal:#FFC933; --on-signal:#17233B;
+      --line:#2A3444; --good:#4FBF8B; --bad:#F08A82;
+      --warn-bg:#2A1A19; --warn-bg-2:#3A1F1D; --warn-border:#6B2B26;
+      --warn-ink:#F5B5AE; --warn-solid:#B3261E;
+      --mark-bg:#E8ECF3; --mark-fg:#10151F;
+      --note-bg:#2A2412; --note-border:#5A4A1E; --note-ink:#F0D28A;
+      --shadow:rgba(0,0,0,.45);
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#E8ECF3; --ink-soft:#A3AEC2;
+    --paper:#10151F; --paper-dim:#1A2230;
+    --cobalt:#6B93F5; --cobalt-dark:#8FADF8; --on-cobalt:#10151F;
+    --signal:#FFC933; --on-signal:#17233B;
+    --line:#2A3444; --good:#4FBF8B; --bad:#F08A82;
+    --warn-bg:#2A1A19; --warn-bg-2:#3A1F1D; --warn-border:#6B2B26;
+    --warn-ink:#F5B5AE; --warn-solid:#B3261E;
+    --mark-bg:#E8ECF3; --mark-fg:#10151F;
+    --note-bg:#2A2412; --note-border:#5A4A1E; --note-ink:#F0D28A;
+    --shadow:rgba(0,0,0,.45);
+    color-scheme:dark;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Public Sans',system-ui,sans-serif;color:var(--ink);
+       line-height:1.6;background:var(--paper)}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  a{color:var(--cobalt)}
+  header{border-bottom:3px solid var(--ink);padding:14px 0}
+  .brand{font-weight:800;font-size:1.1rem}
+  .brand a{color:inherit;text-decoration:none}
+  .brand .dot{color:var(--cobalt)}
+  h1{font-size:clamp(1.6rem,4.5vw,2.3rem);font-weight:800;
+     letter-spacing:-0.02em;margin:36px 0 10px;text-wrap:balance;max-width:24ch}
+  .lead{color:var(--ink-soft);max-width:64ch;text-wrap:pretty;font-size:1.05rem}
+  h2{font-size:1.2rem;font-weight:800;margin:40px 0 8px;text-wrap:balance}
+  h3{font-size:1rem;font-weight:700;margin:22px 0 4px}
+  p{max-width:64ch;text-wrap:pretty}
+  p+p{margin-top:10px}
+  ul{margin:10px 0 0 20px;max-width:64ch}
+  li+li{margin-top:8px}
+  .updated{margin-top:8px;font-size:.85rem;color:var(--ink-soft)}
+  .box{border:1.5px solid var(--line);border-radius:var(--r-md);
+       background:var(--paper-dim);padding:16px 18px;margin-top:16px}
+  .box p{max-width:none}
+  table{width:100%;border-collapse:collapse;font-size:.92rem;margin-top:14px}
+  th{text-align:left;font-size:.8rem;color:var(--ink-soft);
+     border-bottom:2px solid var(--ink);padding:8px 10px 6px}
+  td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+  :is(a,button):focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
+  footer{margin-top:52px;border-top:3px solid var(--ink);padding:22px 0 40px;
+         font-size:.85rem;color:var(--ink-soft)}
+  footer p+p{margin-top:6px}
+
+  .header-inner{display:flex;align-items:center;justify-content:space-between;
+                gap:16px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:800;
+         font-size:1.1rem;letter-spacing:-.01em;color:inherit;
+         text-decoration:none}
+  .brand .mark{display:block;flex:0 0 auto;border-radius:var(--r-sm)}
+  .brand .dot{color:var(--cobalt)}
+  .topnav{display:flex;gap:18px;font-size:.9rem;font-weight:600}
+  /* "For business" is two words and wrapped at 375px, which pushed the
+     header from 73px to 86px. nowrap keeps it on one line and costs nothing:
+     measured 29px nav either way. .header-inner already wraps, so on a
+     genuinely narrow screen the nav drops to its own line rather than
+     overflowing. */
+  .topnav a{text-decoration:none;white-space:nowrap}
+  .topnav a:hover{text-decoration:underline}
+  .topnav [aria-current]{color:var(--ink-soft)}
+  .business-short{display:none}
+  @media (max-width:520px){
+    .header-inner{gap:10px}
+    .topnav{width:100%;display:grid;grid-template-columns:repeat(5,auto);
+            justify-content:space-between;align-items:center;gap:6px;font-size:.8rem}
+    .business-full{display:none}
+    .business-short{display:inline}
+    .themebtn{padding:5px 8px}
+  }
+  @media (max-width:350px){.topnav .badge{display:none}}
+
+  .themebtn{
+    font:inherit;font-size:1rem;line-height:1;cursor:pointer;
+    background:transparent;border:1.5px solid var(--line);border-radius:var(--r-pill);
+    color:var(--ink-soft);padding:5px 10px;
+  }
+  .themebtn:hover{border-color:var(--ink-soft);color:var(--ink)}
+
+</style>
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+</head>
+<body>
+<header><div class="wrap header-inner"><a class="brand" href="../" aria-label="KnowYourSponsor home"><svg class="mark" width="28" height="28" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="14" fill="var(--mark-bg)"/><text x="30" y="47" text-anchor="middle" font-family="'Public Sans',system-ui,sans-serif" font-size="42" font-weight="800" fill="var(--mark-fg)">K</text><circle cx="48" cy="44" r="5" fill="var(--signal)"/></svg><span class="wordmark">KnowYourSponsor<span class="dot">.</span></span></a><nav class="topnav" aria-label="Sections"><a href="../employer/">Employers</a><a href="../changes/">Changes</a><a href="../data-api/">Data</a><a href="../pricing/" aria-label="For business"><span class="business-full">For business</span><span class="business-short" aria-hidden="true">Business</span></a><button class="themebtn" type="button" data-theme-toggle aria-label="Switch between light and dark theme"><span aria-hidden="true">&#9789;</span></button></nav></div></header>
+
+<main class="wrap">
+  <h1>Privacy</h1>
+  <p class="lead">What this site collects, which is very little, and
+     who else sees it. In plain English, because a notice nobody reads
+     protects nobody.</p>
+
+  <h2>The short version</h2>
+  <div class="box">
+    <p>Search terms stay on your device and are not sent to me. The whole
+       register is downloaded and searched on your own device.</p>
+    <p>Personal data is collected only when you choose to give it. This can be
+       an email address for alerts or business contact details for a trial or
+       paid service. It is never sold, rented or shared for marketing.</p>
+  </div>
+
+  <h2>What is collected</h2>
+
+  <h3>If you sign up for the weekly email</h3>
+  <p>Your email address, plus the city and industry you picked, so the email
+     can be about your area instead of the whole country. That is all. No
+     name, no phone number, no address.</p>
+  <p>Sign-up is double opt-in: you are not subscribed until you click the
+     link in the confirmation email. Every email has a one-click unsubscribe
+     link. Unsubscribing stops the emails; you can also ask me to delete the
+     subscriber record.</p>
+
+  <h3>If you ask for a trial or paid watchlist</h3>
+  <p>I keep the business contact details you provide, the employers you ask me
+     to monitor, our instructions and the reports sent to you. This is needed
+     to provide the service, keep an audit trail and issue invoices.</p>
+  <p>Do not send candidate names, immigration records, case notes or any other
+     personal data about the people you work with. A watchlist needs employer
+     names and company numbers only.</p>
+
+  <h3>If you only search</h3>
+  <p>Nothing that identifies you. The site records anonymous page views and
+     fixed product actions, such as opening an employer or creating a
+     comparison, so I know which parts are useful. Analytics events never
+     contain search text, employer names, email addresses or filter values.
+     There are no cookies, advertising trackers or visitor profiles.</p>
+  <p>Your browser stores the theme you chose, your shortlist, recent search
+     settings and the register version you last saw. These stay on your own
+     device and are not readable by me. A shortlist leaves the device only if
+     you deliberately create a share link; that link contains the employer
+     identifiers needed to reproduce the list.</p>
+
+  <h3>What your browser reveals to servers</h3>
+  <p>Loading any page means your device asks a server for files, and that
+     request carries your IP address. That is true of every website. The
+     companies below see those requests.</p>
+
+  <h2>Who else sees anything</h2>
+  <p>The services below receive data for the reasons shown. I do not sell,
+     rent or share personal data for marketing.</p>
+  <table>
+    <thead><tr><th>Service</th><th>What it receives</th></tr></thead>
+    <tbody>
+      <tr><td><a href="https://www.mailerlite.com/legal/privacy-policy">MailerLite</a></td><td>Holds newsletter addresses and preferences. For a paid watchlist it also holds the named delivery contact and sends the private report. MailerLite is based in the EU and operates internationally.</td></tr>
+      <tr><td><a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub</a></td><td>GitHub Pages serves the site and sees normal web request data such as IP addresses. Private GitHub Actions runs the checks; customer inputs are secrets, report files are temporary, and only opaque delivery identifiers are retained in the private repository. GitHub operates internationally.</td></tr>
+      <tr><td><a href="https://www.goatcounter.com/help/privacy">GoatCounter</a></td><td>Counts page views and fixed anonymous product actions. No cookies, and it does not store your IP address or build a profile of you. Search text, employer names, email addresses and filter values are never included in analytics events.</td></tr>
+      <tr><td><a href="https://policies.google.com/privacy">Google Gmail</a></td><td>Receives messages sent to the published contact address. A trial watchlist sent by email is therefore held in that mailbox.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Why I am allowed to hold it</h2>
+  <p>Under UK GDPR there has to be a lawful basis for processing personal
+     data. There are three here:</p>
+  <ul>
+    <li><strong>Consent</strong>, for the weekly email. You asked for it, you
+        confirmed it by clicking a link, and you can withdraw it at any time
+        by unsubscribing.</li>
+    <li><strong>Legitimate interests</strong>, for anonymous page counts and
+        server logs. Knowing which pages are used is necessary to run the
+        site, and it cannot identify you.</li>
+    <li><strong>Contract</strong>, when you ask for a trial or buy a monitoring
+        service. Your contact details and instructions are needed to provide
+        the report you requested.</li>
+  </ul>
+
+  <h2>International processing</h2>
+  <p>Some suppliers named above operate outside the UK. Where personal data
+     is processed internationally, the supplier's privacy terms explain the
+     location and the contractual or adequacy safeguards it uses. Contact me
+     if you want the relevant details before providing business information.</p>
+
+  <h2>How long it is kept</h2>
+  <p>Your email address is kept while you subscribe. Unsubscribing stops future
+     emails, and you can ask for the subscriber record to be deleted. Anonymous
+     page-view counts are aggregate numbers with nothing personal in them, so
+     they are kept indefinitely.</p>
+  <p>Trial watchlists and related messages are deleted 90 days after the last
+     contact. Paid watchlist records are kept while the service is active and
+     for 90 days afterwards, unless tax or accounting law requires an invoice
+     record to be kept longer. You can ask for watchlist data to be deleted
+     sooner once the service ends.</p>
+
+  <h2>Your rights</h2>
+  <p>UK GDPR gives you the right to ask what data I hold about you, to have it
+     corrected, to have it deleted, to get a copy of it, and to object to it
+     being processed. There is no charge and I will answer within one month.</p>
+  <p>For an email subscriber, this is usually one email address and one city.
+     A business customer may also have contact messages, watchlist instructions
+     and sent reports. Unsubscribing stops newsletter emails; contact me if you
+     also want the subscriber record deleted.</p>
+  <p>To exercise any of these rights, contact me at <a href="mailto:hello@knowyoursponsor.co.uk">hello@knowyoursponsor.co.uk</a>.</p>
+  <p>If you think I have handled your data badly, you can complain to the
+     Information Commissioner's Office, the UK regulator, at
+     <a href="https://ico.org.uk/make-a-complaint/">ico.org.uk</a>. You are
+     welcome to raise it with me first, but you do not have to.</p>
+
+  <h2>Children</h2>
+  <p>This site is for adults looking for work in the UK. I do not knowingly
+     collect data from children.</p>
+
+  <h2>Changes to this notice</h2>
+  <p>If what the site collects ever changes, this page changes with it and the
+     date below changes too. Nothing here is retroactive: I will not start
+     using data already collected for something new without asking you.</p>
+
+  <h2>Who I am</h2>
+  <p>KnowYourSponsor is run by one person, not a company. I am the data
+     controller for the small amount of personal data described above.
+     Contact: <a href="mailto:hello@knowyoursponsor.co.uk">hello@knowyoursponsor.co.uk</a>.</p>
+  <p>A service address is provided in the written order and invoice before a
+     paid service starts. You can request it using the contact address above.</p>
+
+<p class="updated">Last updated 12 September 2026.</p>
+</main>
+
+<footer><div class="wrap">
+  <p>KnowYourSponsor is an independent search tool built on open public data
+     from GOV.UK. It is not affiliated with the Home Office and is not
+     immigration advice.</p>
+  <p><a href="../">Search the register</a> &middot;
+     <a href="../privacy/">Privacy</a> &middot;
+     <a href="../terms/">Terms</a></p>
+</div></footer>
+<script data-goatcounter="https://sponsorsignal.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>(function(){var b=document.querySelector('[data-theme-toggle]');if(!b)return;var r=document.documentElement;function dark(){return r.getAttribute('data-theme')==='dark'||(!r.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);}function sync(){b.setAttribute('aria-pressed',String(dark()));}b.addEventListener('click',function(){var next=dark()?'light':'dark';r.setAttribute('data-theme',next);try{localStorage.setItem('theme',next);}catch(e){}sync();});sync();})();</script>
+</body>
+</html>

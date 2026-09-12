@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KnowYourSponsor: Visa sponsors added and removed in Ilford</title>
+    <link>https://knowyoursponsor.co.uk/ilford/</link>
+    <atom:link href="https://knowyoursponsor.co.uk/feeds/ilford.xml" rel="self" type="application/rss+xml"/>
+    <description>Employers in Ilford that gained or lost a licence to sponsor UK work visas. Rebuilt every day from the official GOV.UK register. Covers the last 7 days.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 12 Sep 2026 20:19:24 +0000</lastBuildDate>
+    <item>
+      <title>18 NOVEMBER LTD is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/ilford/</link>
+      <guid isPermaLink="false">kys-ilford-removed-18-november-ltd-ilford</guid>
+      <pubDate>Sat, 12 Sep 2026 20:19:24 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Ilford. Industry: Other.</description>
+    </item>
+    <item>
+      <title>Premier Carewaiting Limited is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/ilford/</link>
+      <guid isPermaLink="false">kys-ilford-removed-premier-carewaiting-limited-ilford</guid>
+      <pubDate>Sat, 12 Sep 2026 20:19:24 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Ilford, Essex. Industry: Recruitment &amp; Staffing.</description>
+    </item>
+    <item>
+      <title>RHM STAR LTD is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/ilford/</link>
+      <guid isPermaLink="false">kys-ilford-removed-rhm-star-ltd-ilford</guid>
+      <pubDate>Sat, 12 Sep 2026 20:19:24 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Ilford. Industry: Other.</description>
+    </item>
+    <item>
+      <title>SK ACCOUNTANTS AND TAX CONSULTANTS LTD is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/ilford/</link>
+      <guid isPermaLink="false">kys-ilford-removed-sk-accountants-and-tax-consultants-ltd-ilford</guid>
+      <pubDate>Sat, 12 Sep 2026 20:19:24 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Ilford. Industry: Finance &amp; Professional.</description>
+    </item>
+    <item>
+      <title>VICTORIAN ROOFING COMPANY LTD is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/ilford/</link>
+      <guid isPermaLink="false">kys-ilford-removed-victorian-roofing-company-ltd-ilford</guid>
+      <pubDate>Sat, 12 Sep 2026 20:19:24 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Ilford. Industry: Construction &amp; Engineering.</description>
+    </item>
+    <item>
+      <title>EPR Services Ltd can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/ilford/</link>
+      <guid isPermaLink="false">kys-ilford-added-epr-services-ltd-ilford</guid>
+      <pubDate>Sat, 12 Sep 2026 20:19:24 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Ilford, Essex. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>GLEAMING SUPPORT SERVICES LIMITED can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/ilford/</link>
+      <guid isPermaLink="false">kys-ilford-added-gleaming-support-services-limited-ilford</guid>
+      <pubDate>Sat, 12 Sep 2026 20:19:24 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Ilford. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+  </channel>
+</rss>

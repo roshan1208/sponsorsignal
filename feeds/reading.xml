@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KnowYourSponsor: Visa sponsors added and removed in Reading</title>
+    <link>https://knowyoursponsor.co.uk/reading/</link>
+    <atom:link href="https://knowyoursponsor.co.uk/feeds/reading.xml" rel="self" type="application/rss+xml"/>
+    <description>Employers in Reading that gained or lost a licence to sponsor UK work visas. Rebuilt every day from the official GOV.UK register. Covers the last 7 days.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 12 Sep 2026 20:19:24 +0000</lastBuildDate>
+    <item>
+      <title>TOP WORLD LOGISTICS LTD is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/reading/</link>
+      <guid isPermaLink="false">kys-reading-removed-top-world-logistics-ltd-reading</guid>
+      <pubDate>Sat, 12 Sep 2026 20:19:24 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Reading. Industry: Logistics &amp; Transport.</description>
+    </item>
+  </channel>
+</rss>

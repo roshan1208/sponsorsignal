@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KnowYourSponsor: Visa sponsors added and removed in Coventry</title>
+    <link>https://knowyoursponsor.co.uk/coventry/</link>
+    <atom:link href="https://knowyoursponsor.co.uk/feeds/coventry.xml" rel="self" type="application/rss+xml"/>
+    <description>Employers in Coventry that gained or lost a licence to sponsor UK work visas. Rebuilt every day from the official GOV.UK register. Covers the last 7 days.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 12 Sep 2026 20:19:24 +0000</lastBuildDate>
+    <item>
+      <title>JRD Innovations Ltd is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/coventry/</link>
+      <guid isPermaLink="false">kys-coventry-removed-jrd-innovations-ltd-coventry</guid>
+      <pubDate>Sat, 12 Sep 2026 20:19:24 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Coventry. Industry: Other.</description>
+    </item>
+    <item>
+      <title>Rakhamim Care Ltd is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/coventry/</link>
+      <guid isPermaLink="false">kys-coventry-removed-rakhamim-care-ltd-coventry</guid>
+      <pubDate>Sat, 12 Sep 2026 20:19:24 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Coventry, West Midlands. Industry: Healthcare &amp; Care.</description>
+    </item>
+    <item>
+      <title>CREST (INTERNATIONAL) can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/coventry/</link>
+      <guid isPermaLink="false">kys-coventry-added-crest-international-coventry</guid>
+      <pubDate>Sat, 12 Sep 2026 20:19:24 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Coventry, West Midlands. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>ELENIAK LIMITED can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/coventry/</link>
+      <guid isPermaLink="false">kys-coventry-added-eleniak-limited-coventry</guid>
+      <pubDate>Sat, 12 Sep 2026 20:19:24 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Coventry. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Fineline AV can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/coventry/</link>
+      <guid isPermaLink="false">kys-coventry-added-fineline-av-coventry</guid>
+      <pubDate>Sat, 12 Sep 2026 20:19:24 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Coventry. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Taisan Motors Ltd can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/coventry/</link>
+      <guid isPermaLink="false">kys-coventry-added-taisan-motors-ltd-coventry</guid>
+      <pubDate>Sat, 12 Sep 2026 20:19:24 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Coventry, West Midlands. Industry: Motor &amp; Automotive. Visa routes: Skilled Worker.</description>
+    </item>
+  </channel>
+</rss>

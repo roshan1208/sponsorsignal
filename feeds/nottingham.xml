@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KnowYourSponsor: Visa sponsors added and removed in Nottingham</title>
+    <link>https://knowyoursponsor.co.uk/nottingham/</link>
+    <atom:link href="https://knowyoursponsor.co.uk/feeds/nottingham.xml" rel="self" type="application/rss+xml"/>
+    <description>Employers in Nottingham that gained or lost a licence to sponsor UK work visas. Rebuilt every day from the official GOV.UK register. Covers the last 7 days.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 12 Sep 2026 20:19:24 +0000</lastBuildDate>
+    <item>
+      <title>Headzpace Therapeutic Care limited is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/nottingham/</link>
+      <guid isPermaLink="false">kys-nottingham-removed-headzpace-therapeutic-care-limited-nottingham</guid>
+      <pubDate>Sat, 12 Sep 2026 20:19:24 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Nottingham. Industry: Healthcare &amp; Care.</description>
+    </item>
+    <item>
+      <title>Medina Continental Foodstore Limited is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/nottingham/</link>
+      <guid isPermaLink="false">kys-nottingham-removed-medina-continental-foodstore-limited-nottingham</guid>
+      <pubDate>Sat, 12 Sep 2026 20:19:24 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Nottingham, Nottinghamshire. Industry: Other.</description>
+    </item>
+    <item>
+      <title>NG5 Ltd is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/nottingham/</link>
+      <guid isPermaLink="false">kys-nottingham-removed-ng5-ltd-nottingham</guid>
+      <pubDate>Sat, 12 Sep 2026 20:19:24 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Nottingham. Industry: Other.</description>
+    </item>
+    <item>
+      <title>Marksman Roofing + Cladding Ltd can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/nottingham/</link>
+      <guid isPermaLink="false">kys-nottingham-added-marksman-roofing-cladding-ltd-nottingham</guid>
+      <pubDate>Sat, 12 Sep 2026 20:19:24 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Nottingham. Industry: Construction &amp; Engineering. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Vision Pro Software Limited can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/nottingham/</link>
+      <guid isPermaLink="false">kys-nottingham-added-vision-pro-software-limited-nottingham</guid>
+      <pubDate>Sat, 12 Sep 2026 20:19:24 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Nottingham, Nottinghamshire. Industry: Tech &amp; Software. Visa routes: Skilled Worker.</description>
+    </item>
+  </channel>
+</rss>

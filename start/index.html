@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Start a sponsor watchlist | KnowYourSponsor</title>
+<meta name="description" content="Request a 30-day KnowYourSponsor watchlist pilot for up to 100 employers. No card, no automatic renewal and no candidate data.">
+<link rel="canonical" href="https://knowyoursponsor.co.uk/start/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowyoursponsor.co.uk/start/">
+<meta property="og:title" content="Start a sponsor watchlist">
+<meta property="og:description" content="A reviewed 30-day pilot for up to 100 employers. No card and no automatic renewal.">
+<meta property="og:image" content="https://knowyoursponsor.co.uk/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.png" type="image/png">
+<link rel="stylesheet" href="/fonts/public-sans.css">
+<style>
+
+  :root{
+    --ink:#17233B; --ink-soft:#4A5670;
+    --paper:#FFFFFF; --paper-dim:#F5F7FB;
+    --cobalt:#2145C9; --cobalt-dark:#17348F; --on-cobalt:#FFFFFF;
+    --signal:#FFC933; --on-signal:#17233B;
+    --line:#D9DFEA; --good:#0E7B4F; --bad:#B3261E;
+    --warn-bg:#FDF1F0; --warn-bg-2:#FBE3E1; --warn-border:#E7B4AE;
+    --warn-ink:#8A1E18; --warn-solid:#B3261E;
+    --mark-bg:#17233B; --mark-fg:#FFFFFF;
+    --note-bg:#FFF6DC; --note-border:#EAD48A; --note-ink:#6B4E00;
+    --shadow:rgba(23,35,59,.10);
+    /* Three-step radius scale, shared with index.html. Corners
+       that almost match are what makes an interface feel cheap.
+       50% stays literal for circles. */
+    --r-sm:6px; --r-md:10px; --r-pill:999px;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ink:#E8ECF3; --ink-soft:#A3AEC2;
+      --paper:#10151F; --paper-dim:#1A2230;
+      --cobalt:#6B93F5; --cobalt-dark:#8FADF8; --on-cobalt:#10151F;
+      --signal:#FFC933; --on-signal:#17233B;
+      --line:#2A3444; --good:#4FBF8B; --bad:#F08A82;
+      --warn-bg:#2A1A19; --warn-bg-2:#3A1F1D; --warn-border:#6B2B26;
+      --warn-ink:#F5B5AE; --warn-solid:#B3261E;
+      --mark-bg:#E8ECF3; --mark-fg:#10151F;
+      --note-bg:#2A2412; --note-border:#5A4A1E; --note-ink:#F0D28A;
+      --shadow:rgba(0,0,0,.45);
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#E8ECF3; --ink-soft:#A3AEC2;
+    --paper:#10151F; --paper-dim:#1A2230;
+    --cobalt:#6B93F5; --cobalt-dark:#8FADF8; --on-cobalt:#10151F;
+    --signal:#FFC933; --on-signal:#17233B;
+    --line:#2A3444; --good:#4FBF8B; --bad:#F08A82;
+    --warn-bg:#2A1A19; --warn-bg-2:#3A1F1D; --warn-border:#6B2B26;
+    --warn-ink:#F5B5AE; --warn-solid:#B3261E;
+    --mark-bg:#E8ECF3; --mark-fg:#10151F;
+    --note-bg:#2A2412; --note-border:#5A4A1E; --note-ink:#F0D28A;
+    --shadow:rgba(0,0,0,.45);
+    color-scheme:dark;
+  }
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Public Sans',system-ui,sans-serif;color:var(--ink);line-height:1.55;background:var(--paper)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+a{color:var(--cobalt)}
+header{border-bottom:3px solid var(--ink);padding:14px 0}
+main{padding:38px 0 64px}
+h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.04;letter-spacing:-.04em;max-width:17ch}
+.lead{margin-top:14px;max-width:64ch;color:var(--ink-soft);font-size:1.08rem}
+.promise{display:grid;grid-template-columns:repeat(3,1fr);border:1.5px solid var(--line);border-radius:var(--r-md);margin:28px 0;overflow:hidden}
+.promise div{padding:16px 18px}
+.promise div+div{border-left:1px solid var(--line)}
+.promise strong{display:block;font-size:1.05rem}
+.promise span{font-size:.84rem;color:var(--ink-soft)}
+.layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(270px,.75fr);gap:24px;align-items:start}
+.panel{border:1.5px solid var(--line);border-radius:var(--r-md);overflow:hidden;background:var(--paper)}
+.panel-head{padding:18px 20px;border-bottom:2px solid var(--ink);background:var(--paper-dim)}
+.panel-head h2{font-size:1.2rem}
+.panel-head p{margin-top:3px;color:var(--ink-soft);font-size:.9rem}
+fieldset{border:0;padding:22px 20px}
+fieldset+fieldset{border-top:1px solid var(--line)}
+legend{font-weight:800;font-size:1rem;padding:0 0 12px;width:100%}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field.full{grid-column:1/-1}
+label{display:block;font-size:.88rem;font-weight:700;margin-bottom:6px}
+input,select,textarea{width:100%;border:1.5px solid var(--line);border-radius:var(--r-sm);background:var(--paper);color:var(--ink);font:inherit;padding:11px 12px}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);background-position:calc(100% - 17px) 52%,calc(100% - 12px) 52%;background-size:5px 5px;background-repeat:no-repeat;padding-right:36px}
+textarea{min-height:190px;resize:vertical}
+input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px;border-color:var(--cobalt)}
+.hint,.count{font-size:.8rem;color:var(--ink-soft);margin-top:6px}
+.count{text-align:right}
+.picker{position:relative;margin-bottom:20px}
+.picker-results{position:absolute;z-index:5;top:calc(100% - 1px);left:0;right:0;max-height:310px;overflow-y:auto;list-style:none;border:1.5px solid var(--ink);border-radius:0 0 var(--r-sm) var(--r-sm);background:var(--paper);box-shadow:0 8px 18px rgba(17,31,58,.12)}
+.picker-results[hidden]{display:none}
+.picker-option{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 14px;padding:11px 12px;border-top:1px solid var(--line);cursor:pointer}
+.picker-option:first-child{border-top:0}
+.picker-option:hover,.picker-option.active{background:var(--paper-dim)}
+.picker-name{font-weight:800}
+.picker-place,.picker-industry{font-size:.78rem;color:var(--ink-soft)}
+.picker-industry{text-align:right}
+.divider-label{display:flex;align-items:center;gap:10px;margin:4px 0 12px;color:var(--ink-soft);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+.divider-label::before,.divider-label::after{content:'';height:1px;flex:1;background:var(--line)}
+.check{display:grid;grid-template-columns:20px 1fr;gap:9px;align-items:start;margin-top:13px}
+.check input{width:18px;height:18px;margin-top:2px;accent-color:var(--cobalt)}
+.check label{font-weight:500;margin:0}
+.warning{border-left:3px solid var(--signal);padding:10px 12px;background:var(--note-bg);color:var(--note-ink);font-size:.86rem;margin-top:14px}
+.actions{padding:20px;border-top:2px solid var(--ink);background:var(--paper-dim)}
+button,.button{display:inline-flex;justify-content:center;align-items:center;border:0;border-radius:var(--r-sm);background:var(--cobalt);color:var(--on-cobalt);font:inherit;font-weight:800;padding:12px 17px;cursor:pointer;text-decoration:none}
+button:hover{filter:brightness(.92)}
+button[disabled]{opacity:.5;cursor:not-allowed}
+.status{min-height:1.5em;margin-top:10px;font-size:.88rem;font-weight:700}
+.status.bad{color:var(--note-ink)}
+.status.good{color:var(--cobalt)}
+.summary{position:sticky;top:18px}
+.summary section{padding:18px 20px}
+.summary section+section{border-top:1px solid var(--line)}
+.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:.78rem;font-weight:800;color:var(--cobalt)}
+.price{font-size:2.2rem;font-weight:800;letter-spacing:-.04em;line-height:1.1;margin-top:5px}
+.price span{font-size:.82rem;font-weight:600;letter-spacing:0;color:var(--ink-soft)}
+.summary h2{font-size:1rem;margin-bottom:8px}
+.summary ul{padding-left:18px;font-size:.88rem}
+.summary li+li{margin-top:7px}
+.summary p{font-size:.86rem;color:var(--ink-soft)}
+.next{padding-left:20px}
+.next li{padding-left:4px;font-size:.86rem}
+.next li+li{margin-top:10px}
+.next li::marker{font-weight:800;color:var(--cobalt)}
+.updated{margin-top:24px;color:var(--ink-soft);font-size:.8rem}
+footer{border-top:3px solid var(--ink);padding:22px 0 40px;color:var(--ink-soft);font-size:.84rem}
+footer p+p{margin-top:6px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:760px){.promise{grid-template-columns:1fr}.promise div+div{border-left:0;border-top:1px solid var(--line)}.layout{grid-template-columns:1fr}.summary{position:static;order:-1}}
+@media(max-width:520px){main{padding-top:28px}.grid{grid-template-columns:1fr}.field.full{grid-column:auto}fieldset,.panel-head,.actions,.summary section{padding-left:16px;padding-right:16px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+
+  .header-inner{display:flex;align-items:center;justify-content:space-between;
+                gap:16px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:800;
+         font-size:1.1rem;letter-spacing:-.01em;color:inherit;
+         text-decoration:none}
+  .brand .mark{display:block;flex:0 0 auto;border-radius:var(--r-sm)}
+  .brand .dot{color:var(--cobalt)}
+  .topnav{display:flex;gap:18px;font-size:.9rem;font-weight:600}
+  /* "For business" is two words and wrapped at 375px, which pushed the
+     header from 73px to 86px. nowrap keeps it on one line and costs nothing:
+     measured 29px nav either way. .header-inner already wraps, so on a
+     genuinely narrow screen the nav drops to its own line rather than
+     overflowing. */
+  .topnav a{text-decoration:none;white-space:nowrap}
+  .topnav a:hover{text-decoration:underline}
+  .topnav [aria-current]{color:var(--ink-soft)}
+  .business-short{display:none}
+  @media (max-width:520px){
+    .header-inner{gap:10px}
+    .topnav{width:100%;display:grid;grid-template-columns:repeat(5,auto);
+            justify-content:space-between;align-items:center;gap:6px;font-size:.8rem}
+    .business-full{display:none}
+    .business-short{display:inline}
+    .themebtn{padding:5px 8px}
+  }
+  @media (max-width:350px){.topnav .badge{display:none}}
+
+  .themebtn{
+    font:inherit;font-size:1rem;line-height:1;cursor:pointer;
+    background:transparent;border:1.5px solid var(--line);border-radius:var(--r-pill);
+    color:var(--ink-soft);padding:5px 10px;
+  }
+  .themebtn:hover{border-color:var(--ink-soft);color:var(--ink)}
+
+</style>
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+</head>
+<body>
+<header><div class="wrap header-inner"><a class="brand" href="../" aria-label="KnowYourSponsor home"><svg class="mark" width="28" height="28" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="14" fill="var(--mark-bg)"/><text x="30" y="47" text-anchor="middle" font-family="'Public Sans',system-ui,sans-serif" font-size="42" font-weight="800" fill="var(--mark-fg)">K</text><circle cx="48" cy="44" r="5" fill="var(--signal)"/></svg><span class="wordmark">KnowYourSponsor<span class="dot">.</span></span></a><nav class="topnav" aria-label="Sections"><a href="../employer/">Employers</a><a href="../changes/">Changes</a><a href="../data-api/">Data</a><span aria-current="page" aria-label="For business"><span class="business-full">For business</span><span class="business-short" aria-hidden="true">Business</span></span><button class="themebtn" type="button" data-theme-toggle aria-label="Switch between light and dark theme"><span aria-hidden="true">&#9789;</span></button></nav></div></header>
+<main class="wrap">
+  <p class="eyebrow">For recruiters and advisers</p>
+  <h1>Try the watchlist on your own employers</h1>
+  <p class="lead">Tell us which employers matter to your team. We review every name before the first check, then run a 30-day pilot. You will not be asked for a card.</p>
+
+  <div class="promise" aria-label="Pilot terms">
+    <div><strong>30 days free</strong><span>No card and no automatic renewal</span></div>
+    <div><strong>Up to 100 employers</strong><span>One private list and one delivery address</span></div>
+    <div><strong>£49 a month after</strong><span>Only if both sides agree in writing</span></div>
+  </div>
+
+  <div class="layout">
+    <form class="panel" id="pilot-form" novalidate>
+      <div class="panel-head"><h2>Request a pilot</h2><p>About four minutes. Nothing is uploaded or stored by this page.</p></div>
+      <fieldset>
+        <legend>1. Your business</legend>
+        <div class="grid">
+          <div class="field"><label for="business">Business name</label><input id="business" name="business" autocomplete="organization" required maxlength="120"></div>
+          <div class="field"><label for="contact">Your name</label><input id="contact" name="contact" autocomplete="name" required maxlength="100"></div>
+          <div class="field"><label for="email">Work email</label><input id="email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="160"></div>
+          <div class="field"><label for="kind">What best describes you?</label><select id="kind" name="kind" required><option value="">Choose one</option><option>Recruitment agency</option><option>Immigration adviser</option><option>Relocation firm</option><option>Employer or HR team</option><option>Other business</option></select></div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>2. Employers to monitor</legend>
+        <div class="picker">
+          <label for="employer-search">Find an employer on the current register</label>
+          <input id="employer-search" type="search" autocomplete="off" placeholder="Start typing an employer name" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="employer-results" aria-describedby="picker-help picker-status">
+          <p class="hint" id="picker-help">Type at least three characters, then choose a result. Your search stays in this browser.</p>
+          <p class="status" id="picker-status" role="status" aria-live="polite"></p>
+          <ul class="picker-results" id="employer-results" role="listbox" aria-label="Matching employers" hidden></ul>
+        </div>
+        <p class="divider-label"><span>Or paste a list</span></p>
+        <label for="employers">One employer per line</label>
+        <textarea id="employers" name="employers" required placeholder="Example Care Limited&#10;Example NHS Trust&#10;Example University" aria-describedby="employer-help employer-count"></textarea>
+        <p class="hint" id="employer-help">Use the legal name where possible. Add a town after a comma if two employers share a name.</p>
+        <p class="count" id="employer-count" aria-live="polite">0 of 100 employers</p>
+        <div class="warning"><strong>Employer names only.</strong> Do not include candidate names, visa details, case notes or other personal data.</div>
+      </fieldset>
+      <fieldset>
+        <legend>3. Confirm the scope</legend>
+        <div class="check"><input id="authority" name="authority" type="checkbox" required><label for="authority">I am authorised to request this pilot for the business named above.</label></div>
+        <div class="check"><input id="limits" name="limits" type="checkbox" required><label for="limits">I understand this reports public-register changes. It is not immigration advice, proof of suitability or a guarantee that an employer is hiring.</label></div>
+        <div class="check"><input id="agreement" name="agreement" type="checkbox" required><label for="agreement">I accept the <a href="../terms/" target="_blank" rel="noopener">terms</a> and have read the <a href="../privacy/" target="_blank" rel="noopener">privacy notice</a>. The pilot does not become paid without a separate written agreement.</label></div>
+      </fieldset>
+      <div class="actions">
+        <button type="submit">Prepare my pilot request</button>
+        <p class="status" id="form-status" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+
+    <aside class="panel summary" aria-label="What you will receive">
+      <section><p class="eyebrow">Watchlist</p><p class="price">£49 <span>per month after the pilot</span></p><p>There is nothing to pay today.</p></section>
+      <section><h2>Included</h2><ul><li>Daily checks against the sponsor register</li><li>Licence removals and rating downgrades</li><li>Companies House risk signals where an exact match is safe</li><li>An email when something material changes</li><li>A weekly all-clear when nothing changes</li></ul></section>
+      <section><h2>What happens next</h2><ol class="next"><li>We check the employer names and ask about any ambiguity.</li><li>You receive the agreed scope and pilot start date in writing.</li><li>Monitoring starts. You receive reports at the work email above.</li><li>After 30 days, continue for £49 a month or stop. Nothing renews by itself.</li></ol></section>
+      <section><p>Questions first? Email <a href="mailto:hello@knowyoursponsor.co.uk">hello@knowyoursponsor.co.uk</a>.</p></section>
+    </aside>
+  </div>
+  <p class="updated">Page checked 12 Sep 2026 at 20:19 UTC.</p>
+</main>
+<footer><div class="wrap">
+  <p>KnowYourSponsor is independent of the Home Office and does not provide immigration advice.</p>
+  <p><a href="../pricing/">Pricing</a> · <a href="../watchlist/">How monitoring works</a> · <a href="../methodology/">Methodology</a> · <a href="../privacy/">Privacy</a> · <a href="../terms/">Terms</a></p>
+</div></footer>
+<script>
+(() => {
+  const form = document.getElementById('pilot-form');
+  const area = document.getElementById('employers');
+  const count = document.getElementById('employer-count');
+  const status = document.getElementById('form-status');
+  const search = document.getElementById('employer-search');
+  const results = document.getElementById('employer-results');
+  const pickerStatus = document.getElementById('picker-status');
+  const ANALYTICS_HOSTS = new Set(['knowyoursponsor.co.uk', 'www.knowyoursponsor.co.uk']);
+  const analyticsQueue = [];
+  let analyticsTimer = null, analyticsAttempts = 0;
+  function flushAnalytics() {
+    if (!window.goatcounter || typeof window.goatcounter.count !== 'function') return false;
+    while (analyticsQueue.length) {
+      try { window.goatcounter.count(analyticsQueue.shift()); }
+      catch (_) { analyticsQueue.length = 0; break; }
+    }
+    return true;
+  }
+  function trackEvent(path, title) {
+    if (!ANALYTICS_HOSTS.has(location.hostname)) return;
+    analyticsQueue.push({path, title, event: true});
+    if (flushAnalytics() || analyticsTimer) return;
+    analyticsAttempts = 0;
+    analyticsTimer = setInterval(() => {
+      analyticsAttempts++;
+      if (flushAnalytics() || analyticsAttempts >= 40) {
+        clearInterval(analyticsTimer); analyticsTimer = null;
+      }
+    }, 250);
+  }
+  const directoryPromises = new Map();
+  let matches = [];
+  let activeIndex = -1;
+  let searchTimer;
+  const lines = () => area.value.split(/\r?\n/).map(v => v.trim()).filter(Boolean);
+  const unique = values => [...new Map(values.map(v => [v.toLocaleLowerCase('en-GB'), v])).values()];
+  function updateCount() {
+    const values = unique(lines());
+    count.textContent = `${values.length} of 100 employers`;
+    count.style.fontWeight = values.length > 100 ? '800' : '';
+    return values;
+  }
+  area.addEventListener('input', updateCount);
+
+  function closeResults() {
+    results.hidden = true;
+    results.replaceChildren();
+    search.setAttribute('aria-expanded', 'false');
+    search.removeAttribute('aria-activedescendant');
+    matches = [];
+    activeIndex = -1;
+  }
+
+  function shardKey(value) {
+    const ascii = String(value || '').normalize('NFKD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/^[^0-9A-Za-z]+/, '')
+      .toLocaleLowerCase('en-GB');
+    return /^[0-9a-z]/.test(ascii) ? ascii.charAt(0) : '_';
+  }
+
+  function loadDirectory(query) {
+    const key = shardKey(query);
+    if (!directoryPromises.has(key)) {
+      pickerStatus.textContent = 'Loading the current sponsor register...';
+      search.setAttribute('aria-busy', 'true');
+      const request = fetch(`../data/search/${key}.json`, {credentials: 'same-origin'})
+        .then(response => { if (!response.ok) throw new Error('Register unavailable'); return response.json(); })
+        .then(data => (data.sponsors || []).map(row => ({
+          name: String(row[0] || ''), town: String(row[1] || ''), county: String(row[2] || ''),
+          industry: String(row[3] || ''),
+          searchText: String(row[0] || '').toLocaleLowerCase('en-GB')
+        })))
+        .catch(() => {
+          directoryPromises.delete(key);
+          throw new Error('Employer search could not load. You can still paste names below.');
+        })
+        .finally(() => search.removeAttribute('aria-busy'));
+      directoryPromises.set(key, request);
+    }
+    return directoryPromises.get(key);
+  }
+
+  function findMatches(directory, query) {
+    const prefix = [], name = [], other = [];
+    for (const employer of directory) {
+      const employerName = employer.name.toLocaleLowerCase('en-GB');
+      if (employerName.startsWith(query) && prefix.length < 8) prefix.push(employer);
+      else if (employerName.includes(query) && name.length < 8) name.push(employer);
+      else if (employer.searchText.includes(query) && other.length < 8) other.push(employer);
+    }
+    return prefix.concat(name, other).slice(0, 8);
+  }
+
+  function renderResults(found) {
+    matches = found;
+    activeIndex = -1;
+    results.replaceChildren();
+    found.forEach((employer, index) => {
+      const option = document.createElement('li');
+      option.className = 'picker-option';
+      option.id = `employer-option-${index}`;
+      option.setAttribute('role', 'option');
+      option.setAttribute('aria-selected', 'false');
+      option.dataset.index = String(index);
+      const employerName = document.createElement('span');
+      employerName.className = 'picker-name';
+      employerName.textContent = employer.name;
+      const place = document.createElement('span');
+      place.className = 'picker-place';
+      place.textContent = [employer.town, employer.county].filter(Boolean).join(', ') || 'Location not listed';
+      const industry = document.createElement('span');
+      industry.className = 'picker-industry';
+      industry.textContent = employer.industry || 'Industry not listed';
+      option.append(employerName, industry, place);
+      results.append(option);
+    });
+    results.hidden = !found.length;
+    search.setAttribute('aria-expanded', String(Boolean(found.length)));
+  }
+
+  function setActive(index) {
+    if (!matches.length) return;
+    activeIndex = (index + matches.length) % matches.length;
+    [...results.children].forEach((option, optionIndex) => {
+      const active = optionIndex === activeIndex;
+      option.classList.toggle('active', active);
+      option.setAttribute('aria-selected', String(active));
+      if (active) option.scrollIntoView({block: 'nearest'});
+    });
+    search.setAttribute('aria-activedescendant', `employer-option-${activeIndex}`);
+  }
+
+  function addEmployer(employer) {
+    const entry = employer.town ? `${employer.name}, ${employer.town}` : employer.name;
+    const current = unique(lines());
+    if (current.some(value => value.toLocaleLowerCase('en-GB') === entry.toLocaleLowerCase('en-GB'))) {
+      pickerStatus.textContent = `${employer.name} is already in your list.`;
+      closeResults();
+      return;
+    }
+    if (current.length >= 100) {
+      pickerStatus.textContent = 'This plan covers up to 100 employers. Remove one before adding another.';
+      closeResults();
+      return;
+    }
+    area.value = current.concat(entry).join('\n');
+    updateCount();
+    pickerStatus.textContent = `Added ${employer.name}${employer.town ? ` in ${employer.town}` : ''}.`;
+    search.value = '';
+    closeResults();
+  }
+
+  async function runSearch() {
+    const query = search.value.trim().toLocaleLowerCase('en-GB');
+    if (query.length < 3) { closeResults(); pickerStatus.textContent = query ? 'Type at least three characters.' : ''; return; }
+    try {
+      const directory = await loadDirectory(query);
+      if (query !== search.value.trim().toLocaleLowerCase('en-GB')) return;
+      const found = findMatches(directory, query);
+      renderResults(found);
+      pickerStatus.textContent = found.length ? `${found.length} matching employers. Use the arrow keys or choose one.` : 'No matching employer found. Check the spelling or paste the legal name below.';
+    } catch (error) { closeResults(); pickerStatus.textContent = error.message; }
+  }
+
+  search.addEventListener('input', () => { clearTimeout(searchTimer); searchTimer = setTimeout(runSearch, 180); });
+  search.addEventListener('keydown', event => {
+    if (event.key === 'ArrowDown') { event.preventDefault(); setActive(activeIndex + 1); }
+    else if (event.key === 'ArrowUp') { event.preventDefault(); setActive(activeIndex - 1); }
+    else if (event.key === 'Enter' && matches.length) { event.preventDefault(); addEmployer(matches[activeIndex < 0 ? 0 : activeIndex]); }
+    else if (event.key === 'Escape') closeResults();
+  });
+  results.addEventListener('click', event => {
+    const option = event.target.closest('[data-index]');
+    if (option) { event.preventDefault(); addEmployer(matches[Number(option.dataset.index)]); }
+  });
+  document.addEventListener('click', event => { if (!event.target.closest('.picker')) closeResults(); });
+
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    status.className = 'status';
+    const employers = updateCount();
+    if (!form.reportValidity()) { status.textContent = 'Complete every required field above.'; status.classList.add('bad'); return; }
+    if (!employers.length) { area.setCustomValidity('Add at least one employer.'); form.reportValidity(); area.setCustomValidity(''); return; }
+    if (employers.length > 100) { status.textContent = 'This plan covers up to 100 employers. Remove the extra names or ask for a custom scope.'; status.classList.add('bad'); area.focus(); return; }
+    const clean = id => document.getElementById(id).value.trim();
+    const requested = new Date().toISOString().slice(0, 10);
+    const body = [
+      'KNOWYOURSPONSOR WATCHLIST PILOT REQUEST', '',
+      `Business: ${clean('business')}`, `Contact: ${clean('contact')}`,
+      `Work email: ${clean('email')}`, `Business type: ${clean('kind')}`,
+      `Requested: ${requested}`, `Employers: ${employers.length}`, '',
+      'EMPLOYERS', ...employers.map((name, i) => `${i + 1}. ${name}`), '',
+      'CONFIRMATIONS',
+      'I am authorised to request this pilot for the business named above.',
+      'I understand the service limitations shown on the request page.',
+      'I accept the published terms and have read the privacy notice.',
+      'I understand the pilot does not become paid without a separate written agreement.'
+    ].join('\n');
+    let copied = false;
+    try { await navigator.clipboard.writeText(body); copied = true; } catch (_) {}
+    const subject = encodeURIComponent(`Watchlist pilot request: ${clean('business')}`);
+    const encodedBody = encodeURIComponent(body);
+    const mailto = `mailto:hello@knowyoursponsor.co.uk?subject=${subject}&body=${encodedBody}`;
+    // This page prepares an email draft; it cannot know whether the visitor
+    // actually presses Send, so the event name must not claim submission.
+    trackEvent('business_pilot_request_prepared', 'Business pilot request prepared');
+    if (mailto.length < 7500) window.location.href = mailto;
+    else window.location.href = `mailto:hello@knowyoursponsor.co.uk?subject=${subject}&body=${encodeURIComponent('My completed pilot request is copied. I will paste it into this email before sending.')}`;
+    status.textContent = copied ? 'Your request is copied and an email draft is opening. Send that draft to finish.' : 'An email draft is opening. Send that draft to finish.';
+    status.classList.add('good');
+  });
+  trackEvent('business_pilot_opened', 'Business pilot opened');
+  updateCount();
+})();
+</script>
+<script data-goatcounter="https://sponsorsignal.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>(function(){var b=document.querySelector('[data-theme-toggle]');if(!b)return;var r=document.documentElement;function dark(){return r.getAttribute('data-theme')==='dark'||(!r.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);}function sync(){b.setAttribute('aria-pressed',String(dark()));}b.addEventListener('click',function(){var next=dark()?'light':'dark';r.setAttribute('data-theme',next);try{localStorage.setItem('theme',next);}catch(e){}sync();});sync();})();</script>
+</body>
+</html>

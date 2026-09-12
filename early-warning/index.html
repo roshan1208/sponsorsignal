@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-GB"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Early warning evidence | KnowYourSponsor</title>
+<meta name="description" content="Does Companies House trouble appear before a UK sponsor licence is removed? Our dated evidence, sample size and limits.">
+<link rel="canonical" href="https://knowyoursponsor.co.uk/early-warning/">
+<link rel="icon" href="../favicon.png" type="image/png"><link rel="stylesheet" href="/fonts/public-sans.css">
+<style>
+  :root{
+    --ink:#17233B; --ink-soft:#4A5670;
+    --paper:#FFFFFF; --paper-dim:#F5F7FB;
+    --cobalt:#2145C9; --cobalt-dark:#17348F; --on-cobalt:#FFFFFF;
+    --signal:#FFC933; --on-signal:#17233B;
+    --line:#D9DFEA; --good:#0E7B4F; --bad:#B3261E;
+    --warn-bg:#FDF1F0; --warn-bg-2:#FBE3E1; --warn-border:#E7B4AE;
+    --warn-ink:#8A1E18; --warn-solid:#B3261E;
+    --mark-bg:#17233B; --mark-fg:#FFFFFF;
+    --note-bg:#FFF6DC; --note-border:#EAD48A; --note-ink:#6B4E00;
+    --shadow:rgba(23,35,59,.10);
+    /* Three-step radius scale, shared with index.html. Corners
+       that almost match are what makes an interface feel cheap.
+       50% stays literal for circles. */
+    --r-sm:6px; --r-md:10px; --r-pill:999px;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ink:#E8ECF3; --ink-soft:#A3AEC2;
+      --paper:#10151F; --paper-dim:#1A2230;
+      --cobalt:#6B93F5; --cobalt-dark:#8FADF8; --on-cobalt:#10151F;
+      --signal:#FFC933; --on-signal:#17233B;
+      --line:#2A3444; --good:#4FBF8B; --bad:#F08A82;
+      --warn-bg:#2A1A19; --warn-bg-2:#3A1F1D; --warn-border:#6B2B26;
+      --warn-ink:#F5B5AE; --warn-solid:#B3261E;
+      --mark-bg:#E8ECF3; --mark-fg:#10151F;
+      --note-bg:#2A2412; --note-border:#5A4A1E; --note-ink:#F0D28A;
+      --shadow:rgba(0,0,0,.45);
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#E8ECF3; --ink-soft:#A3AEC2;
+    --paper:#10151F; --paper-dim:#1A2230;
+    --cobalt:#6B93F5; --cobalt-dark:#8FADF8; --on-cobalt:#10151F;
+    --signal:#FFC933; --on-signal:#17233B;
+    --line:#2A3444; --good:#4FBF8B; --bad:#F08A82;
+    --warn-bg:#2A1A19; --warn-bg-2:#3A1F1D; --warn-border:#6B2B26;
+    --warn-ink:#F5B5AE; --warn-solid:#B3261E;
+    --mark-bg:#E8ECF3; --mark-fg:#10151F;
+    --note-bg:#2A2412; --note-border:#5A4A1E; --note-ink:#F0D28A;
+    --shadow:rgba(0,0,0,.45);
+    color-scheme:dark;
+  }
+
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Public Sans',system-ui,sans-serif;color:var(--ink);line-height:1.6;background:var(--paper)}
+.wrap{max-width:900px;margin:auto;padding:0 20px}header{border-bottom:3px solid var(--ink);padding:14px 0}.brand{font-weight:800;font-size:1.1rem}.brand a{color:inherit;text-decoration:none}.brand .dot{color:var(--cobalt)}
+h1{font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.08;letter-spacing:-.03em;max-width:18ch;margin:42px 0 14px}h2{font-size:1.25rem;margin:38px 0 8px}p{max-width:68ch}.lead,.note{color:var(--ink-soft)}.status{border:2px solid var(--ink);border-radius:var(--r-md);padding:16px 18px;margin:24px 0}.status strong{display:block}table{width:100%;border-collapse:collapse;margin-top:14px}th{text-align:left;border-bottom:2px solid var(--ink);font-size:.82rem;color:var(--ink-soft)}th,td{padding:10px;vertical-align:top}td{border-bottom:1px solid var(--line)}a{color:var(--cobalt)}footer{border-top:3px solid var(--ink);margin-top:50px;padding:22px 0 40px;font-size:.85rem;color:var(--ink-soft)}
+
+  .header-inner{display:flex;align-items:center;justify-content:space-between;
+                gap:16px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:800;
+         font-size:1.1rem;letter-spacing:-.01em;color:inherit;
+         text-decoration:none}
+  .brand .mark{display:block;flex:0 0 auto;border-radius:var(--r-sm)}
+  .brand .dot{color:var(--cobalt)}
+  .topnav{display:flex;gap:18px;font-size:.9rem;font-weight:600}
+  /* "For business" is two words and wrapped at 375px, which pushed the
+     header from 73px to 86px. nowrap keeps it on one line and costs nothing:
+     measured 29px nav either way. .header-inner already wraps, so on a
+     genuinely narrow screen the nav drops to its own line rather than
+     overflowing. */
+  .topnav a{text-decoration:none;white-space:nowrap}
+  .topnav a:hover{text-decoration:underline}
+  .topnav [aria-current]{color:var(--ink-soft)}
+  .business-short{display:none}
+  @media (max-width:520px){
+    .header-inner{gap:10px}
+    .topnav{width:100%;display:grid;grid-template-columns:repeat(5,auto);
+            justify-content:space-between;align-items:center;gap:6px;font-size:.8rem}
+    .business-full{display:none}
+    .business-short{display:inline}
+    .themebtn{padding:5px 8px}
+  }
+  @media (max-width:350px){.topnav .badge{display:none}}
+
+  .themebtn{
+    font:inherit;font-size:1rem;line-height:1;cursor:pointer;
+    background:transparent;border:1.5px solid var(--line);border-radius:var(--r-pill);
+    color:var(--ink-soft);padding:5px 10px;
+  }
+  .themebtn:hover{border-color:var(--ink-soft);color:var(--ink)}
+</style><script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script></head><body>
+<header><div class="wrap header-inner"><a class="brand" href="../" aria-label="KnowYourSponsor home"><svg class="mark" width="28" height="28" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="14" fill="var(--mark-bg)"/><text x="30" y="47" text-anchor="middle" font-family="'Public Sans',system-ui,sans-serif" font-size="42" font-weight="800" fill="var(--mark-fg)">K</text><circle cx="48" cy="44" r="5" fill="var(--signal)"/></svg><span class="wordmark">KnowYourSponsor<span class="dot">.</span></span></a><nav class="topnav" aria-label="Sections"><a href="../employer/">Employers</a><a href="../changes/">Changes</a><a href="../data-api/">Data</a><a href="../pricing/" aria-label="For business"><span class="business-full">For business</span><span class="business-short" aria-hidden="true">Business</span></a><button class="themebtn" type="button" data-theme-toggle aria-label="Switch between light and dark theme"><span aria-hidden="true">&#9789;</span></button></nav></div></header>
+<main class="wrap"><h1>Can company trouble warn you before a sponsor licence disappears?</h1>
+<p class="lead">That is a useful question, but it needs a dated history—not a confident-looking risk score. This is evidence to investigate, not a safety score. We preserve monthly Companies House signals and daily sponsor-register changes, then pair them only when the employer name matches conservatively.</p>
+<div class="status"><strong>We are collecting the history needed to answer this reliably.</strong><span>1 monthly snapshot(s), covering 0 days. Analysis updated 2026-09-12 20:19 UTC.</span></div>
+<h2>Signals before sponsor-register removal</h2><table><thead><tr><th>Signal</th><th>Paired cases</th><th>Observed interval</th></tr></thead><tbody><tr><td>Company recorded as not active</td><td>9</td><td>9 days median; middle half 8–10 days</td></tr><tr><td>Dormant accounts</td><td>1</td><td>10 days median; middle half 10–10 days</td></tr><tr><td>Accounts overdue</td><td>17</td><td>9 days median; middle half 8–9 days</td></tr><tr><td>Confirmation statement overdue</td><td>8</td><td>9 days median; middle half 8–10 days</td></tr></tbody></table>
+<p class="note">A pair means the signal date came before a later observed removal of the same employer name. It does not prove that the signal caused the removal.</p>
+<h2>Dormant accounts and company cessation</h2><p>No matched cases with both dates yet.</p>
+<p class="note">Companies House’s bulk data gives the end of the dormant accounting period—not the date the accounts were submitted. We show that distinction because calling it a filing date would overstate the evidence.</p>
+<h2>What this cannot tell you</h2><p>Dormant accounts can be legitimate, a sponsor name may not map cleanly to a company, and sponsor removal can happen for reasons the public register does not state. Treat every signal as a reason to open the official records, never as a verdict on an employer.</p>
+<p style="margin-top:24px"><a href="../">Check an employer</a> · <a href="../methodology/">Read the full methodology</a></p></main>
+<footer><div class="wrap">Sources: Companies House Free Company Data Product and GOV.UK Register of Licensed Sponsors. Independent analysis; not affiliated with the Home Office and not immigration advice.</div></footer><script>(function(){var b=document.querySelector('[data-theme-toggle]');if(!b)return;var r=document.documentElement;function dark(){return r.getAttribute('data-theme')==='dark'||(!r.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);}function sync(){b.setAttribute('aria-pressed',String(dark()));}b.addEventListener('click',function(){var next=dark()?'light':'dark';r.setAttribute('data-theme',next);try{localStorage.setItem('theme',next);}catch(e){}sync();});sync();})();</script></body></html>

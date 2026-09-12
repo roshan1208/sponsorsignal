@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KnowYourSponsor: Visa sponsors added and removed in Glasgow</title>
+    <link>https://knowyoursponsor.co.uk/glasgow/</link>
+    <atom:link href="https://knowyoursponsor.co.uk/feeds/glasgow.xml" rel="self" type="application/rss+xml"/>
+    <description>Employers in Glasgow that gained or lost a licence to sponsor UK work visas. Rebuilt every day from the official GOV.UK register. Covers the last 7 days.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 12 Sep 2026 20:19:24 +0000</lastBuildDate>
+    <item>
+      <title>Pacific Care Limited is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-removed-pacific-care-limited-glasgow</guid>
+      <pubDate>Sat, 12 Sep 2026 20:19:24 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Glasgow. Industry: Healthcare &amp; Care.</description>
+    </item>
+    <item>
+      <title>PHEONIX WORLDWIDE TRAVEL LTD is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-removed-pheonix-worldwide-travel-ltd-glasgow</guid>
+      <pubDate>Sat, 12 Sep 2026 20:19:24 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Glasgow. Industry: Travel &amp; Tourism.</description>
+    </item>
+    <item>
+      <title>SHADY&#x27;S JOINT LTD is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-removed-shady-s-joint-ltd-glasgow</guid>
+      <pubDate>Sat, 12 Sep 2026 20:19:24 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Glasgow. Industry: Other.</description>
+    </item>
+    <item>
+      <title>ASP Hospitality Ltd t/a Firangi can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-added-asp-hospitality-ltd-t-a-firangi-glasgow</guid>
+      <pubDate>Sat, 12 Sep 2026 20:19:24 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Glasgow. Industry: Hospitality &amp; Food. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Graham + Sibbald Property Consultants Limited can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-added-graham-sibbald-property-consultants-limited-glasgow</guid>
+      <pubDate>Sat, 12 Sep 2026 20:19:24 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Glasgow. Industry: Property &amp; Real Estate. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Wee Print Big Ltd can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-added-wee-print-big-ltd-glasgow</guid>
+      <pubDate>Sat, 12 Sep 2026 20:19:24 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Glasgow. Industry: Media &amp; Creative. Visa routes: Skilled Worker.</description>
+    </item>
+  </channel>
+</rss>
