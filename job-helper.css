@@ -1,0 +1,11 @@
+.job-browser-helper{border-top:1px solid var(--line);padding-top:10px}
+.job-browser-helper summary{width:max-content;max-width:100%;cursor:pointer;color:var(--cobalt);font-size:.82rem;font-weight:750}
+.job-browser-helper[open] summary{margin-bottom:10px}
+.job-browser-helper-body{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 14px;align-items:center;padding:12px;border-left:3px solid var(--cobalt);background:var(--paper-dim)}
+.job-browser-helper-body p{font-size:.82rem;color:var(--ink-soft)}
+.job-browser-helper-body .download{white-space:nowrap;text-decoration:none}
+.job-browser-helper-body small{grid-column:1/-1;color:var(--ink-soft)}
+@media(max-width:700px){
+  .job-browser-helper-body{grid-template-columns:1fr}
+  .job-browser-helper-body small{grid-column:auto}
+}
