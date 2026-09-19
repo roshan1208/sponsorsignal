@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KnowYourSponsor: Visa sponsors added and removed in Manchester</title>
+    <link>https://knowyoursponsor.co.uk/manchester/</link>
+    <atom:link href="https://knowyoursponsor.co.uk/feeds/manchester.xml" rel="self" type="application/rss+xml"/>
+    <description>Employers in Manchester that gained or lost a licence to sponsor UK work visas. Rebuilt every day from the official GOV.UK register. Covers the last 7 days.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 19 Sep 2026 09:42:14 +0000</lastBuildDate>
+    <item>
+      <title>Exuberance Limited is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/manchester/</link>
+      <guid isPermaLink="false">kys-manchester-removed-exuberance-limited-manchester</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Manchester. Industry: Other.</description>
+    </item>
+    <item>
+      <title>GFA World is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/manchester/</link>
+      <guid isPermaLink="false">kys-manchester-removed-gfa-world-manchester</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Manchester. Industry: Other.</description>
+    </item>
+    <item>
+      <title>Ofsted is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/manchester/</link>
+      <guid isPermaLink="false">kys-manchester-removed-ofsted-manchester</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Manchester. Industry: Other.</description>
+    </item>
+    <item>
+      <title>REDSTAR (G.B) LIMITED T/A STORM is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/manchester/</link>
+      <guid isPermaLink="false">kys-manchester-removed-redstar-g-b-limited-t-a-storm-manchester</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Manchester. Industry: Other.</description>
+    </item>
+    <item>
+      <title>Intact Projects Ltd can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/manchester/</link>
+      <guid isPermaLink="false">kys-manchester-added-intact-projects-ltd-manchester</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Manchester. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>International Testing &amp; Training Services Ltd can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/manchester/</link>
+      <guid isPermaLink="false">kys-manchester-added-international-testing-training-services-ltd-manchester</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Manchester. Industry: Education &amp; Research. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Move Direct Limited can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/manchester/</link>
+      <guid isPermaLink="false">kys-manchester-added-move-direct-limited-manchester</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Manchester, Greater Manchester. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Therme North Limited can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/manchester/</link>
+      <guid isPermaLink="false">kys-manchester-added-therme-north-limited-manchester</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Manchester. Industry: Other. Visa routes: Global Business Mobility: Senior or Specialist Worker, Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Trees Park (Kenyon) Ltd can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/manchester/</link>
+      <guid isPermaLink="false">kys-manchester-added-trees-park-kenyon-ltd-manchester</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Manchester, Cumbria. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>USERTESTING TECHNOLOGIES LIMITED. can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/manchester/</link>
+      <guid isPermaLink="false">kys-manchester-added-usertesting-technologies-limited-manchester</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Manchester. Industry: Tech &amp; Software. Visa routes: Global Business Mobility: Senior or Specialist Worker, Skilled Worker.</description>
+    </item>
+  </channel>
+</rss>

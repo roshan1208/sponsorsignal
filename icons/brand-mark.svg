@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny-ps" width="512" height="512" viewBox="0 0 512 512">
+  <title>KnowYourSponsor</title>
+  <desc>A white K and yellow full stop on a dark navy circle.</desc>
+  <circle cx="256" cy="256" r="248" fill="#17233B"/>
+  <path fill="#FFFFFF" d="M135 110h70v115l65-115h85L245 246l105 156h-80l-60-102-5 12v90h-70z"/>
+  <circle cx="395" cy="370" r="30" fill="#FFC933"/>
+</svg>

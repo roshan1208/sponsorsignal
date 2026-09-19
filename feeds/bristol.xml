@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KnowYourSponsor: Visa sponsors added and removed in Bristol</title>
+    <link>https://knowyoursponsor.co.uk/bristol/</link>
+    <atom:link href="https://knowyoursponsor.co.uk/feeds/bristol.xml" rel="self" type="application/rss+xml"/>
+    <description>Employers in Bristol that gained or lost a licence to sponsor UK work visas. Rebuilt every day from the official GOV.UK register. Covers the last 7 days.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 19 Sep 2026 09:42:14 +0000</lastBuildDate>
+    <item>
+      <title>UK VAP LTD is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/bristol/</link>
+      <guid isPermaLink="false">kys-bristol-removed-uk-vap-ltd-bristol</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Bristol. Industry: Other.</description>
+    </item>
+    <item>
+      <title>Parsons Bakery Limited can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/bristol/</link>
+      <guid isPermaLink="false">kys-bristol-added-parsons-bakery-limited-bristol</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Bristol. Industry: Hospitality &amp; Food. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Vivo Health Ltd can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/bristol/</link>
+      <guid isPermaLink="false">kys-bristol-added-vivo-health-ltd-bristol</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Bristol. Industry: Healthcare &amp; Care. Visa routes: Skilled Worker.</description>
+    </item>
+  </channel>
+</rss>

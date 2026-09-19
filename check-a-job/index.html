@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<base href="/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Check a sponsored job before you apply | KnowYourSponsor</title>
+<meta name="description" content="Paste or enter a UK vacancy and check the sponsor, company, occupation, salary and advert evidence before you decide whether to apply.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://knowyoursponsor.co.uk/check-a-job/">
+
+<!-- Proves ownership to Google Search Console. Must stay on the homepage:
+     removing it makes the property fall out of verification. -->
+<meta name="google-site-verification" content="ZNbGBoW8FlnVr5MM5wrTNaQqzvFz_Pgcde_K1t5RHF8">
+<meta name="google-site-verification" content="m94MdrUz_p55Z0mB9vTT2EAKy-efkkxMerNhs-Fhah8">
+
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="alternate" type="application/rss+xml" title="UK visa sponsors added and removed" href="feed.xml">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#17233B">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KnowYourSponsor">
+<meta property="og:url" content="https://knowyoursponsor.co.uk/check-a-job/">
+<meta property="og:title" content="Check a sponsored job before you apply | KnowYourSponsor">
+<meta property="og:description" content="Paste or enter a UK vacancy and check the sponsor, company, occupation, salary and advert evidence before you decide whether to apply.">
+<meta property="og:image" content="https://knowyoursponsor.co.uk/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KnowYourSponsor: check a UK visa sponsor before you apply.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Check a sponsored job before you apply | KnowYourSponsor">
+<meta name="twitter:description" content="Paste or enter a UK vacancy and check the sponsor, company, occupation, salary and advert evidence before you decide whether to apply.">
+<meta name="twitter:image" content="https://knowyoursponsor.co.uk/og-image.png">
+<link rel="stylesheet" href="/fonts/public-sans.css">
+<link rel=stylesheet href="job-helper.css?v=13">
+<link rel=stylesheet href="search-results.css?v=7">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://knowyoursponsor.co.uk/#organization",
+      "name": "KnowYourSponsor",
+      "url": "https://knowyoursponsor.co.uk/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://knowyoursponsor.co.uk/icons/brand-profile-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "email": "hello@knowyoursponsor.co.uk",
+      "sameAs": [
+        "https://x.com/KnowSponsorUK",
+        "https://www.reddit.com/user/KnowSponsorUK/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://knowyoursponsor.co.uk/#website",
+      "url": "https://knowyoursponsor.co.uk/",
+      "name": "KnowYourSponsor",
+      "description": "Searchable copy of the official UK Home Office register of licensed sponsors, refreshed daily.",
+      "inLanguage": "en-GB",
+      "publisher": {"@id": "https://knowyoursponsor.co.uk/#organization"},
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://knowyoursponsor.co.uk/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://knowyoursponsor.co.uk/#dataset",
+      "name": "UK Register of Licensed Sponsors (Workers) — searchable mirror",
+      "description": "Every organisation holding a UK Home Office worker sponsor licence, grouped one record per organisation with visa routes, rating, location and a heuristic industry tag. Rebuilt daily from the official GOV.UK publication.",
+      "url": "https://knowyoursponsor.co.uk/",
+      "inLanguage": "en-GB",
+      "isAccessibleForFree": true,
+      "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "creativeWorkStatus": "Published",
+      "isBasedOn": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "creator": {
+        "@id": "https://knowyoursponsor.co.uk/#organization"
+      },
+      "identifier": "https://knowyoursponsor.co.uk/#dataset",
+      "keywords": [
+        "UK visa sponsorship",
+        "licensed sponsors",
+        "Skilled Worker visa",
+        "sponsor licence",
+        "Home Office register",
+        "Companies House",
+        "immigration"
+      ],
+      "temporalCoverage": "2026-08-31/..",
+      "variableMeasured": [
+        "Sponsor name",
+        "Town or city",
+        "Visa routes",
+        "Home Office rating",
+        "Companies House status"
+      ],
+      "sourceOrganization": {
+        "@type": "GovernmentOrganization",
+        "name": "UK Home Office",
+        "url": "https://www.gov.uk/government/organisations/home-office"
+      },
+      "spatialCoverage": {
+        "@type": "Place",
+        "name": "United Kingdom"
+      },
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://knowyoursponsor.co.uk/data/sponsors.json"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+  :root{
+    --ink:#17233B; --ink-soft:#4A5670;
+    --paper:#FFFFFF; --paper-dim:#F5F7FB;
+    --cobalt:#2145C9; --cobalt-dark:#17348F; --on-cobalt:#FFFFFF;
+    --signal:#FFC933; --on-signal:#17233B;
+    --line:#D9DFEA; --good:#0E7B4F; --bad:#B3261E;
+    --warn-bg:#FDF1F0; --warn-bg-2:#FBE3E1; --warn-border:#E7B4AE;
+    --warn-ink:#8A1E18; --warn-solid:#B3261E;
+    --mark-bg:#17233B; --mark-fg:#FFFFFF;
+    --note-bg:#FFF6DC; --note-border:#EAD48A; --note-ink:#6B4E00;
+    --shadow:rgba(23,35,59,.10);
+    --r-sm:6px; --r-md:10px; --r-pill:999px;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ink:#E8ECF3; --ink-soft:#A3AEC2;
+      --paper:#10151F; --paper-dim:#1A2230;
+      --cobalt:#6B93F5; --cobalt-dark:#8FADF8; --on-cobalt:#10151F;
+      --signal:#FFC933; --on-signal:#17233B;
+      --line:#2A3444; --good:#4FBF8B; --bad:#F08A82;
+      --warn-bg:#2A1A19; --warn-bg-2:#3A1F1D; --warn-border:#6B2B26;
+      --warn-ink:#F5B5AE; --warn-solid:#B3261E;
+      --mark-bg:#E8ECF3; --mark-fg:#10151F;
+      --note-bg:#2A2412; --note-border:#5A4A1E; --note-ink:#F0D28A;
+      --shadow:rgba(0,0,0,.45);
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#E8ECF3; --ink-soft:#A3AEC2;
+    --paper:#10151F; --paper-dim:#1A2230;
+    --cobalt:#6B93F5; --cobalt-dark:#8FADF8; --on-cobalt:#10151F;
+    --signal:#FFC933; --on-signal:#17233B;
+    --line:#2A3444; --good:#4FBF8B; --bad:#F08A82;
+    --warn-bg:#2A1A19; --warn-bg-2:#3A1F1D; --warn-border:#6B2B26;
+    --warn-ink:#F5B5AE; --warn-solid:#B3261E;
+    --mark-bg:#E8ECF3; --mark-fg:#10151F;
+    --note-bg:#2A2412; --note-border:#5A4A1E; --note-ink:#F0D28A;
+    --shadow:rgba(0,0,0,.45);
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  [hidden]{display:none!important}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  body{
+    font-family:'Public Sans',system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.55;
+  }
+  a{color:var(--cobalt)}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+
+  /* header */
+  header{border-bottom:3px solid var(--ink);padding:14px 0}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;
+                gap:16px;flex-wrap:wrap;min-width:0}
+  .brand{
+    display:flex;align-items:center;gap:9px;font-weight:800;font-size:1.1rem;
+    letter-spacing:-0.01em;color:inherit;text-decoration:none;
+  }
+  .brand .mark{display:block;flex:0 0 auto;border-radius:var(--r-sm)}
+  .brand .dot{color:var(--cobalt)}
+  .topnav{display:flex;gap:18px;font-size:.9rem;font-weight:600}
+  .topnav a{text-decoration:none;white-space:nowrap}
+  .topnav a:hover{text-decoration:underline}
+  .business-short{display:none}
+  .badge{
+    display:inline-block;background:var(--signal);color:var(--on-signal);
+    border-radius:var(--r-pill);padding:1px 8px;font-size:.78rem;
+    font-variant-numeric:tabular-nums;
+  }
+  .badge[hidden]{display:none}
+  .themebtn{
+    font:inherit;font-size:1rem;line-height:1;cursor:pointer;
+    background:transparent;border:1.5px solid var(--line);border-radius:var(--r-pill);
+    color:var(--ink-soft);padding:5px 10px;
+  }
+  .themebtn:hover{border-color:var(--ink-soft);color:var(--ink)}
+  @media (max-width:520px){
+    .header-inner{gap:10px}
+    .topnav{display:flex;width:100%;max-width:100%;min-width:0;align-items:center;
+            justify-content:flex-start;gap:16px;padding-bottom:2px;overflow-x:auto;
+            overscroll-behavior-inline:contain;scrollbar-width:none;
+            -webkit-overflow-scrolling:touch;font-size:.8rem}
+    .topnav::-webkit-scrollbar{display:none}
+    .topnav>*{flex:0 0 auto}
+    .business-full{display:none}
+    .business-short{display:inline}
+    .themebtn{padding:5px 8px}
+  }
+  @media (max-width:350px){.topnav .badge{display:none}}
+
+  .hero{padding:30px 0 6px}
+  .hero h1{
+    font-size:clamp(1.5rem,4vw,2.15rem);
+    font-weight:800;line-height:1.15;letter-spacing:-0.02em;
+    max-width:640px;
+  }
+  .hero p.lead{margin-top:8px;color:var(--ink-soft);max-width:56ch;text-wrap:pretty}
+  .free-tools-prompt{
+    display:flex;align-items:center;gap:8px 12px;flex-wrap:wrap;
+    margin-top:7px;font-size:.82rem;color:var(--ink-soft)
+  }
+  .free-tools-prompt strong{color:var(--good)}
+  .free-tools-prompt :is(button,a){
+    padding:2px 0;border:0;border-bottom:1px solid currentColor;background:none;
+    color:var(--cobalt);font:inherit;font-weight:800;cursor:pointer;text-decoration:none
+  }
+  .free-tools-prompt :is(button,a):hover{color:var(--ink)}
+  .free-tools-prompt :is(button,a):focus-visible{outline:3px solid var(--cobalt);outline-offset:3px}
+  .record-definition{display:block;margin-top:3px;color:var(--ink-soft);font-size:.75rem}
+  .sample-note{
+    margin-top:10px;padding:8px 12px;background:var(--note-bg);
+    border:1px solid var(--note-border);border-radius:var(--r-sm);font-size:.85rem;max-width:560px;
+  }
+
+  .searchbox{
+    margin-top:18px;display:flex;gap:0;border:2px solid var(--ink);
+    border-radius:var(--r-sm);overflow:hidden;background:var(--paper);
+    box-shadow:4px 4px 0 var(--cobalt);
+  }
+  .searchbox input{
+    flex:1;border:0;outline:none;font:inherit;font-size:1.05rem;
+    padding:14px 16px;min-width:0;
+    background:var(--paper);color:var(--ink);
+  }
+  .searchbox input:focus{background:var(--paper-dim)}
+  .searchbox button{
+    border:0;background:var(--cobalt);color:var(--on-cobalt);font:inherit;font-weight:600;
+    padding:0 22px;cursor:pointer;
+  }
+  .searchbox button:hover{background:var(--cobalt-dark)}
+
+
+  /* proof strip: the three numbers that justify the page existing */
+  .proof{
+    display:grid;gap:10px;margin-top:16px;
+    grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  }
+  .stat{
+    border:1.5px solid var(--line);border-radius:var(--r-md);padding:11px 14px;
+    background:var(--paper);
+  }
+  .stat .v{
+    display:block;font-size:1.45rem;font-weight:800;letter-spacing:-0.02em;
+    line-height:1.1;
+  }
+  .stat .l{
+    display:block;margin-top:3px;font-size:.83rem;color:var(--ink-soft);
+    text-wrap:pretty;
+  }
+  a.stat.flag{
+    text-decoration:none;color:inherit;border-color:var(--line);
+    background:var(--paper);
+  }
+  a.stat.flag .l::after{content:' \2192';color:var(--cobalt);font-weight:700}
+  a.stat.flag:hover{border-color:var(--ink-soft);background:var(--paper-dim)}
+  a.stat.flag[hidden]{display:none}
+
+  .filterbar{
+    position:sticky;top:0;z-index:20;
+    background:var(--paper);border-bottom:1.5px solid var(--line);
+    padding:9px 0;margin-top:14px;
+  }
+  .filterbar.stuck{box-shadow:0 2px 10px var(--shadow)}
+  .filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .facets{
+    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:10px;flex:1 0 100%;min-width:0;
+  }
+  .field{position:relative;display:block;max-width:100%}
+  .field .fl{
+    position:absolute;width:1px;height:1px;overflow:hidden;
+    clip-path:inset(50%);white-space:nowrap;
+  }
+  .filters select{
+    font:inherit;font-size:.9rem;padding:8px 28px 8px 10px;
+    border:1.5px solid var(--line);border-radius:var(--r-sm);
+    background:var(--paper);color:var(--ink);max-width:100%;width:100%;
+    appearance:none;-webkit-appearance:none;cursor:pointer;
+  }
+  .field::after{
+    content:'';position:absolute;right:11px;top:calc(50% - 2px);
+    width:8px;height:8px;pointer-events:none;
+    border-right:2px solid var(--ink-soft);border-bottom:2px solid var(--ink-soft);
+    transform:translateY(-50%) rotate(45deg);
+  }
+  .filters select:hover{border-color:var(--ink-soft)}
+  .views{display:flex;gap:0;border:1.5px solid var(--line);border-radius:var(--r-sm);overflow:hidden}
+  .view-field{display:none}
+  .view{
+    font:inherit;font-size:.9rem;padding:8px 12px;border:0;
+    border-right:1.5px solid var(--line);
+    background:var(--paper);cursor:pointer;color:var(--ink);white-space:nowrap;
+  }
+  .view:last-child{border-right:0}
+  .view:hover{background:var(--paper-dim)}
+  .view[aria-pressed="true"]{font-weight:600;background:var(--paper-dim)}
+  #viewAdded[aria-pressed="true"]{background:var(--signal);color:var(--on-signal)}
+  #viewRemoved[aria-pressed="true"]{background:var(--warn-bg-2)}
+  .view .n{opacity:.65;font-weight:400;margin-left:2px}
+
+  .pill{
+    font:inherit;font-size:.9rem;padding:8px 12px;cursor:pointer;
+    border:1.5px solid var(--line);border-radius:var(--r-pill);
+    background:var(--paper);color:var(--ink);white-space:nowrap;font-weight:600;
+  }
+  .pill:hover{background:var(--paper-dim)}
+  .pill[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+  .pill.risk{border-color:var(--warn-border);background:var(--warn-bg);color:var(--warn-ink)}
+  .pill.risk:hover{background:var(--warn-bg-2)}
+  .pill.risk[aria-pressed="true"]{background:var(--warn-solid);border-color:var(--warn-solid);color:#fff}
+  .pill[hidden]{display:none}
+  .pill .n{font-weight:400;opacity:.8}
+
+  .notice{
+    margin:20px 0 0;padding:12px 14px;border-radius:var(--r-sm);
+    border:1.5px solid var(--line);background:var(--paper-dim);
+    font-size:.9rem;color:var(--ink-soft);max-width:640px;
+  }
+  .notice[hidden]{display:none}
+  .notice strong{color:var(--ink)}
+  .notice.warn{background:var(--warn-bg-2);border-color:var(--warn-border)}
+  .visit-changes{
+    margin:18px 0 0;padding:14px 16px;border:1.5px solid var(--signal-border);
+    border-radius:var(--r-sm);background:var(--signal-soft);max-width:760px;
+  }
+  .visit-changes[hidden]{display:none}
+  .visit-changes h2{font-size:1rem;font-weight:800}
+  .visit-changes p{margin-top:3px;font-size:.84rem;color:var(--ink-soft)}
+  .visit-changes ul{margin:9px 0 0;padding-left:21px;font-size:.88rem}
+  .visit-changes li+li{margin-top:5px}
+  :is(input,select,button,a):focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
+
+  /* results */
+  .results-bar{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    flex-wrap:wrap;margin:18px 0 8px;
+  }
+  .results-bar[hidden]{display:none}
+  .sort-field{display:flex;align-items:center;gap:7px;font-size:.82rem;color:var(--ink-soft)}
+  .sort-field select{font:inherit;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:var(--r-sm);padding:6px 26px 6px 8px}
+  .sorthead{font:inherit;font-weight:700;color:inherit;border:0;background:none;padding:0;cursor:pointer}
+  .sorthead::after{content:' \2195';color:var(--ink-soft);font-size:.75rem}
+  .sorthead.active::after{content:' \2193';color:var(--cobalt)}
+  .save-status{margin:8px 0 0;font-size:.84rem;color:var(--ink-soft)}
+  .save-status[hidden]{display:none}
+  .download{
+    font:inherit;font-size:.85rem;font-weight:600;padding:7px 14px;
+    border:1.5px solid var(--line);border-radius:var(--r-sm);background:var(--paper);
+    color:var(--ink);cursor:pointer;
+  }
+  .download:hover{background:var(--paper-dim);border-color:var(--ink)}
+  .download[disabled]{opacity:.6;cursor:default}
+  .actions{display:flex;gap:8px;flex-wrap:wrap}
+  .clear{
+    font:inherit;font-size:.82rem;margin-left:10px;padding:2px 10px;
+    border:1.5px solid var(--line);border-radius:var(--r-pill);background:var(--paper);
+    color:var(--cobalt);cursor:pointer;font-weight:600;
+  }
+  .clear:hover{border-color:var(--cobalt)}
+  .clear[hidden]{display:none}
+  table{width:100%;border-collapse:collapse;font-size:.95rem}
+  thead th{
+    text-align:left;font-weight:600;font-size:.82rem;color:var(--ink-soft);
+    border-bottom:2px solid var(--ink);padding:8px 10px 6px;
+  }
+  tbody td{padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th:nth-child(4),tbody td:nth-child(4){max-width:280px}
+  thead th:last-child,tbody td:last-child{
+    width:1%;white-space:nowrap;text-align:right;padding-left:18px;
+  }
+  tbody tr:hover{background:var(--paper-dim)}
+  /* The whole row opens the employer, so it has to look like it does. The
+     name stays a button because that is what the keyboard and a screen
+     reader need; this is only for the mouse. */
+  tbody tr[data-name]{cursor:pointer}
+  td.name{font-weight:600}
+  .identity-search-hit{
+    display:block;margin:4px 0 0 28px;color:var(--ink-soft);font-size:.76rem;
+    font-weight:500;line-height:1.35;
+  }
+  .identity-search-hit strong{color:var(--cobalt);font-weight:700}
+  .identity-passport{
+    margin:12px 0;border:1.5px solid var(--line);border-left:4px solid var(--ink-soft);
+    border-radius:var(--r-sm);background:var(--paper);padding:13px 14px;
+  }
+  .identity-passport.identified{border-left-color:var(--good)}
+  .identity-passport-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+  .identity-passport-kicker{display:block;color:var(--ink-soft);font-size:.68rem;
+    font-weight:800;letter-spacing:.07em;text-transform:uppercase}
+  .identity-passport h3{margin:2px 0 0;font-size:.96rem}
+  .identity-passport-status{flex:0 0 auto;border:1px solid var(--line);border-radius:var(--r-pill);
+    padding:3px 8px;color:var(--ink-soft);font-size:.68rem;font-weight:800;text-transform:uppercase}
+  .identity-passport.identified .identity-passport-status{border-color:var(--good);color:var(--good)}
+  .identity-passport>p{margin:7px 0 0;color:var(--ink-soft);font-size:.8rem;line-height:1.45}
+  .identity-passport-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:1px;margin-top:10px;border:1px solid var(--line);background:var(--line)}
+  .identity-passport-facts>div{min-width:0;padding:8px 10px;background:var(--paper-dim)}
+  .identity-passport-facts span,.identity-passport-facts strong{display:block}
+  .identity-passport-facts span{color:var(--ink-soft);font-size:.66rem}
+  .identity-passport-facts strong{margin-top:2px;font-size:.76rem;overflow-wrap:anywhere}
+  .identity-passport-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;
+    font-size:.76rem;font-weight:700}
+  .tag{
+    display:inline-block;font-size:.8rem;padding:2px 8px;border-radius:var(--r-pill);
+    border:1px solid var(--line);color:var(--ink-soft);margin:1px 4px 1px 0;white-space:nowrap;
+  }
+  .tag.new{background:var(--signal);border-color:var(--ink);color:var(--on-signal);font-weight:600}
+  /* A company-status warning. Red because it is a warning, and always a link
+     to Companies House so the reader can check us rather than trust us. */
+  .tag.warn{
+    background:var(--warn-bg-2);border-color:var(--warn-solid);color:var(--warn-ink);
+    font-weight:600;text-decoration:none;
+  }
+  .tag.warn:hover{background:var(--warn-bg)}
+  /* Red is reserved for "this company may not exist any more". A late
+     filing gets a quiet grey tag, because that is what it is worth. Using
+     the same red for both is what made the loud number untrustworthy. */
+  .tag.warn.sev-notable{
+    background:var(--note-bg);border-color:var(--note-border);
+    color:var(--note-ink);
+  }
+  .tag.warn.sev-notable:hover{border-color:var(--note-ink)}
+  .tag.warn.sev-context{
+    background:var(--paper-dim);border-color:var(--line);color:var(--ink-soft);
+    font-weight:500;
+  }
+  .tag.warn.sev-context:hover{border-color:var(--ink-soft);color:var(--ink)}
+  /* The shortlist star. Sits before the name, sized for a thumb on mobile
+     without pushing the name off the line. */
+  .star{
+    position:relative;
+    background:none;border:0;padding:4px 8px 4px 0;margin:0;cursor:pointer;
+    font-size:1.15rem;line-height:1;color:var(--ink-soft);
+    vertical-align:baseline;
+  }
+  /* The glyph is ~17px, well under a comfortable thumb target. The hit area
+     is grown vertically and leftwards into the row's own padding, rather
+     than outwards to 44px in both directions: the employer name sits
+     immediately to the right, and a square target would swallow taps meant
+     for it. */
+  .star::after{
+    content:'';position:absolute;top:50%;left:-10px;
+    transform:translateY(-50%);
+    width:calc(100% + 10px);height:44px;
+  }
+  .star:hover{color:var(--signal)}
+  .star.on{color:var(--signal)}
+  .star:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px;border-radius:var(--r-sm)}
+  .rating-a{color:var(--good);font-weight:600}
+  /* B is the whole point of the downgraded view, so it is not left as
+     unstyled text next to a green A. */
+  .rating-b{color:var(--bad);font-weight:700}
+  .loadmore{
+    display:block;margin:18px auto 0;font:inherit;font-weight:600;
+    padding:10px 26px;border:2px solid var(--ink);border-radius:var(--r-sm);
+    background:var(--paper);cursor:pointer;
+  }
+  .loadmore[hidden]{display:none}
+  .loadmore:hover{background:var(--paper-dim)}
+  /* the employer name is a real button, so the row is reachable by keyboard
+     and announced as actionable, not just clickable by mouse */
+  .rowbtn{
+    font:inherit;font-weight:600;color:var(--ink);background:none;border:0;
+    padding:0;text-align:left;cursor:pointer;
+  }
+  .rowbtn:hover{color:var(--cobalt);text-decoration:underline}
+  tbody tr.open{background:var(--paper-dim)}
+
+  /* detail sheet: a side panel on desktop, a bottom sheet on a phone */
+  .sheet-backdrop{
+    position:fixed;inset:0;background:rgba(23,35,59,.45);z-index:40;
+    animation:fade .12s ease-out;
+  }
+  .sheet-backdrop[hidden]{display:none}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .sheet{
+    position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);z-index:41;
+    background:var(--paper);border-left:2px solid var(--ink);
+    box-shadow:-14px 0 34px var(--shadow);
+    display:flex;flex-direction:column;overflow-y:auto;
+    animation:slide .16s ease-out;
+  }
+  .sheet[hidden]{display:none}
+  @keyframes slide{from{transform:translateX(12px);opacity:.6}
+                   to{transform:none;opacity:1}}
+  @media (prefers-reduced-motion:reduce){
+    .sheet,.sheet-backdrop{animation:none}
+  }
+  .sheet-head{
+    display:flex;align-items:flex-start;gap:12px;padding:18px 18px 12px;
+    border-bottom:1.5px solid var(--line);position:sticky;top:0;
+    background:var(--paper);
+  }
+  .sheet-head h2{
+    font-size:1.1rem;font-weight:800;letter-spacing:-0.01em;flex:1;
+    text-wrap:pretty;
+  }
+  .sheet-close{
+    font:inherit;font-size:1.5rem;line-height:1;background:none;border:0;
+    color:var(--ink-soft);cursor:pointer;padding:0 4px;
+  }
+  .sheet-close:hover{color:var(--ink)}
+  .sheet-body{padding:16px 18px 8px;flex-shrink:0}
+  .sheet-foot{padding:0 18px 24px;margin-top:auto;display:grid;gap:8px;flex-shrink:0}
+  .sheet-foot .download{width:100%}
+  #employerPrintRoot{display:none}
+  .check-kicker{font-size:.72rem;font-weight:800;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--cobalt);margin-bottom:8px}
+  .check-summary{padding:13px 14px;border:1.5px solid var(--line);
+    border-radius:var(--r-sm);background:var(--paper-dim);margin-bottom:18px}
+  .check-summary strong{display:block;font-size:1rem}
+  .check-summary span{display:block;color:var(--ink-soft);font-size:.8rem;margin-top:3px}
+  .evidence-receipt{margin:0 0 18px;padding:12px 14px;border:1.5px solid var(--line);
+    border-radius:var(--r-sm);background:var(--paper)}
+  .evidence-receipt-head{display:flex;align-items:flex-start;justify-content:space-between;
+    gap:10px;margin-bottom:9px}
+  .evidence-receipt-head strong{font-size:.9rem}
+  .evidence-receipt-head span{font-size:.75rem;color:var(--ink-soft);text-align:right}
+  .evidence-claims{display:grid;gap:0;margin:0}
+  .evidence-claim{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 10px;
+    padding:9px 0;border-top:1px solid var(--line)}
+  .evidence-claim:first-child{border-top:0;padding-top:0}
+  .evidence-claim:last-child{padding-bottom:0}
+  .evidence-kind{align-self:start;display:inline-flex;padding:2px 6px;border:1px solid var(--line);
+    border-radius:999px;background:var(--paper-dim);font-size:.66rem;font-weight:800;
+    letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+  .evidence-kind.official{color:var(--good)}
+  .evidence-kind.derived{color:var(--cobalt)}
+  .evidence-kind.unknown{color:var(--warn-ink)}
+  .evidence-kind.user{color:var(--ink-soft)}
+  .evidence-claim-copy strong{display:block;font-size:.82rem}
+  .evidence-claim-copy span{display:block;margin-top:2px;color:var(--ink-soft);font-size:.75rem;line-height:1.4}
+  .evidence-claim-copy a{font-weight:700}
+  .evidence-timeline{border-left:3px solid var(--signal);padding-left:14px}
+  .evidence-timeline li{margin:8px 0;color:var(--ink-soft);font-size:.88rem}
+  .evidence-timeline strong{color:var(--ink)}
+  .evidence-timeline .event-note{display:block;margin-top:2px}
+  .compare-row{
+    font:inherit;font-size:.72rem;font-weight:700;color:var(--cobalt);
+    border:0;background:none;padding:2px 6px;cursor:pointer;white-space:nowrap;
+  }
+  .compare-row:hover{text-decoration:underline}
+  .compare-row.on{color:var(--good)}
+  .sheet dl{display:grid;grid-template-columns:auto 1fr;gap:8px 14px}
+  .sheet dt{font-size:.8rem;color:var(--ink-soft);white-space:nowrap}
+  .sheet dd{font-size:.93rem}
+  .sheet .block{margin-top:20px}
+  .sheet .block h3{
+    font-size:.8rem;text-transform:uppercase;letter-spacing:.04em;
+    color:var(--ink-soft);margin-bottom:6px;
+  }
+  /* Long route names must wrap inside a phone-width detail sheet. The table
+     chips can stay on one line; only the sheet needs this escape hatch. */
+  .sheet .tag{white-space:normal;max-width:100%;overflow-wrap:anywhere}
+  .cos-history{border-top:2px solid var(--ink);padding-top:14px}
+  .cos-intro{font-size:.88rem;color:var(--ink-soft);text-wrap:pretty}
+  .cos-route{margin-top:12px;border:1.5px solid var(--line);
+    border-radius:var(--r-sm);overflow:hidden;background:var(--paper)}
+  .cos-route-head{display:flex;align-items:flex-start;justify-content:space-between;
+    gap:12px;padding:10px 12px;border-bottom:1px solid var(--line)}
+  .cos-route-head>strong{font-size:.86rem;line-height:1.35}
+  .cos-route-head>span{font-size:.7rem;color:var(--ink-soft);text-align:right;
+    white-space:nowrap}
+  .cos-route-head b{display:block;color:var(--ink);font-size:.9rem}
+  .cos-usage-route .cos-route-head{border-bottom:0}
+  .cos-years{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+  .cos-year{padding:9px 8px;border-left:1px solid var(--line);min-width:0}
+  .cos-year:first-child{border-left:0}
+  .cos-year>span{display:block;font-size:.68rem;color:var(--ink-soft)}
+  .cos-year>strong{display:block;font-size:.94rem;overflow-wrap:anywhere}
+  .cos-year>span+strong+span{margin-top:2px;font-size:.62rem;line-height:1.25}
+  @media(max-width:360px){
+    .cos-years{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .cos-year:nth-child(3){border-left:0;border-top:1px solid var(--line)}
+    .cos-year:nth-child(4){border-top:1px solid var(--line)}
+  }
+  /* The health check. Two columns on a roomy sheet, stacked on a phone,
+     because a two-word label beside a two-line answer reads worse than
+     either one alone. */
+  .sheet dl.checks{margin-top:8px}
+  .sheet dl.checks dt{
+    font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;
+    color:var(--ink-soft);font-weight:700;margin-top:12px;
+  }
+  .sheet dl.checks dt:first-child{margin-top:0}
+  .sheet dl.checks dd{margin-top:2px;font-size:.92rem}
+  .sheet .warnbox{
+    margin-top:18px;padding:12px 14px;border-radius:var(--r-sm);
+    background:var(--warn-bg-2);border:1.5px solid var(--warn-border);
+    font-size:.9rem;
+  }
+  .sheet .warnbox strong{color:var(--warn-ink)}
+  .sheet .warnbox.sev-notable{
+    background:var(--note-bg);border-color:var(--note-border);
+  }
+  .sheet .warnbox.sev-notable strong{color:var(--note-ink)}
+  .sheet .warnbox.sev-context{
+    background:var(--paper-dim);border-color:var(--line);
+  }
+  .sheet .warnbox.sev-context strong{color:var(--ink)}
+  .sheet .links{margin-top:20px;display:flex;flex-direction:column;gap:8px}
+  .sheet .links :is(a,button){font:inherit;font-size:.9rem;color:var(--cobalt);
+                              text-align:left}
+  .sheet .links button{border:0;background:none;padding:0;cursor:pointer;
+                       text-decoration:underline}
+  .similar-intro{font-size:.88rem;color:var(--ink-soft);text-wrap:pretty}
+  .similar-list{display:grid;gap:10px;margin-top:10px}
+  .similar-card{
+    padding:12px;border:1.5px solid var(--line);border-radius:var(--r-sm);
+    background:var(--paper-dim);
+  }
+  .similar-name{
+    display:block;font-weight:750;line-height:1.25;color:var(--ink);
+    overflow-wrap:anywhere;
+  }
+  .similar-meta{margin-top:4px;font-size:.8rem;color:var(--ink-soft)}
+  .similar-signal{margin-top:7px;font-size:.78rem;color:var(--warn-ink)}
+  .similar-signal a{color:inherit;font-weight:700}
+  .similar-signal.sev-context{color:var(--ink-soft)}
+  .similar-why{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+  .similar-why span{
+    padding:3px 7px;border:1px solid var(--line);border-radius:999px;
+    background:var(--paper);font-size:.74rem;color:var(--ink-soft);
+  }
+  .similar-actions{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .similar-actions button{
+    min-height:36px;padding:7px 9px;border:1.5px solid var(--ink);
+    border-radius:var(--r-sm);background:var(--paper);color:var(--ink);
+    font:inherit;font-size:.78rem;font-weight:700;cursor:pointer;
+  }
+  .similar-actions button:first-child{background:var(--ink);color:var(--paper)}
+  .similar-actions button[aria-pressed="true"]{
+    border-color:var(--good);color:var(--good);background:var(--paper);
+  }
+  /* The licence check is only the start of an application decision. Keep
+     the next steps inside the employer sheet, where the question arises,
+     instead of sending somebody through a generic guide first. */
+  .sheet .apply-steps{
+    margin:8px 0 0;padding-left:24px;font-size:.9rem;color:var(--ink);
+  }
+  .sheet .apply-steps li{padding-left:4px;margin-top:8px}
+  .sheet .apply-steps li:first-child{margin-top:0}
+  .sheet .apply-steps li::marker{font-weight:800;color:var(--cobalt)}
+  .sheet .caveat{
+    margin-top:20px;font-size:.82rem;color:var(--ink-soft);text-wrap:pretty;
+  }
+  @media (max-width:560px){
+    .sheet{
+      top:auto;left:0;right:0;width:100%;max-height:88vh;
+      border-left:0;border-top:2px solid var(--ink);
+      border-radius:var(--r-md) var(--r-md) 0 0;
+    }
+    .sheet-body,.sheet-head,.sheet-foot{min-width:0}
+    .sheet-body{overflow-x:hidden}
+    .evidence-receipt-head{display:block}
+    .evidence-receipt-head span{display:block;margin-top:2px;text-align:left}
+    .evidence-claim{grid-template-columns:1fr}
+    .evidence-kind{justify-self:start}
+    .evidence-claim-copy,.evidence-claim-copy :is(strong,span){min-width:0;overflow-wrap:anywhere}
+    @keyframes slide{from{transform:translateY(16px);opacity:.6}
+                     to{transform:none;opacity:1}}
+  }
+
+  .compare-tray{
+    position:fixed;left:50%;bottom:18px;z-index:35;transform:translateX(-50%);
+    width:min(760px,calc(100% - 28px));display:flex;align-items:center;gap:12px;
+    padding:11px 12px 11px 16px;background:var(--ink);color:var(--paper);
+    border-radius:var(--r-md);box-shadow:0 12px 30px var(--shadow);
+  }
+  .compare-tray[hidden]{display:none}
+  .compare-tray p{font-size:.86rem;flex:1}
+  .compare-tray button{font:inherit;font-size:.82rem;font-weight:700;padding:7px 12px;
+    border:1px solid var(--paper);border-radius:var(--r-sm);cursor:pointer}
+  .compare-tray .open{background:var(--signal);color:var(--on-signal);border-color:var(--signal)}
+  .compare-tray .clear-compare{background:transparent;color:var(--paper)}
+  .compare-dialog{width:min(980px,calc(100% - 28px));max-height:90vh;
+    color:var(--ink);background:var(--paper);border:2px solid var(--ink);
+    border-radius:var(--r-md);padding:0;margin:auto;
+    box-shadow:0 18px 50px var(--shadow)}
+  .compare-dialog[open]{display:grid;grid-template-rows:auto minmax(0,1fr) auto;
+    overflow:hidden}
+  .job-dialog[open]{grid-template-rows:auto auto minmax(0,1fr)}
+  .compare-dialog::backdrop{background:rgba(23,35,59,.58)}
+  .compare-dialog-head{display:flex;gap:12px;align-items:flex-start;padding:20px 22px;
+    border-bottom:2px solid var(--ink)}
+  .compare-dialog-head div{flex:1}
+  .compare-dialog-head h2{font-size:1.3rem;margin:0}
+  .compare-dialog-head p{font-size:.86rem;color:var(--ink-soft);margin-top:4px}
+  .compare-dialog-body{padding:18px 22px;overflow:auto}
+  .compare-table{min-width:720px}
+  .compare-table th,.compare-table td{color:var(--ink);background:var(--paper)}
+  .compare-table th:first-child,.compare-table td:first-child{position:sticky;left:0;
+    z-index:1;width:155px;box-shadow:1px 0 0 var(--line)}
+  .compare-table th:first-child{z-index:2}
+  .compare-table td:first-child{font-weight:700;color:var(--ink-soft)}
+  .compare-dialog-foot{display:flex;justify-content:flex-end;gap:8px;padding:0 22px 20px}
+  .compare-dialog-foot .download{width:auto}
+  .job-dialog{width:min(820px,calc(100% - 28px))}
+  .job-dialog .compare-dialog-body{display:grid;gap:18px}
+  /* /check-a-job/ is a first-class product route, not a second checker.  It
+     uses this same dialog and evidence engine with a roomier work surface. */
+  body.job-route .job-dialog{width:min(1080px,calc(100% - 24px));max-height:calc(100vh - 24px)}
+  body.job-route .job-dialog::backdrop{background:var(--paper-dim)}
+  body.job-route .job-dialog{box-shadow:0 18px 55px color-mix(in srgb,var(--ink) 20%,transparent)}
+  body.job-route .job-purpose{padding:15px 17px}
+  .job-mode-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+    border-bottom:1.5px solid var(--line)}
+  .job-mode-tabs button{
+    padding:11px 14px;border:0;border-right:1.5px solid var(--line);
+    background:var(--paper);color:var(--ink);font:inherit;font-weight:750;cursor:pointer
+  }
+  .job-mode-tabs button:last-child{border-right:0}
+  .job-mode-tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+  .job-mode-tabs button:focus-visible{outline:3px solid var(--cobalt);outline-offset:-4px}
+  .job-pane[hidden]{display:none}
+  .job-purpose{padding:12px 14px;border-left:4px solid var(--cobalt);background:var(--paper-dim)}
+  .job-purpose strong{display:block;font-size:.9rem}
+  .job-purpose p{margin-top:4px;font-size:.82rem;color:var(--ink-soft)}
+  .vacancy-import{display:grid;gap:10px;padding:14px;border:1.5px solid var(--line);
+    border-radius:var(--r-sm);background:var(--paper)}
+  .vacancy-url-label{display:grid;gap:5px;font-size:.82rem;font-weight:750}
+  .vacancy-url-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}
+  .vacancy-url-row input{min-width:0;padding:11px 12px;border:1.5px solid var(--line);
+    border-radius:var(--r-sm);background:var(--paper);color:var(--ink);font:inherit}
+  .vacancy-url-row input:focus{outline:3px solid color-mix(in srgb,var(--cobalt) 28%,transparent);border-color:var(--cobalt)}
+  .vacancy-url-help{color:var(--ink-soft);font-size:.76rem;font-weight:400}
+  .vacancy-or{display:flex;align-items:center;gap:10px;color:var(--ink-soft);font-size:.72rem;font-weight:750;text-transform:uppercase;letter-spacing:.08em}
+  .vacancy-or:before,.vacancy-or:after{content:"";height:1px;background:var(--line);flex:1}
+  .vacancy-import-actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+  .vacancy-manual{border-top:1px solid var(--line);padding-top:10px}
+  .vacancy-manual summary{width:max-content;cursor:pointer;color:var(--cobalt);font-size:.82rem;font-weight:750}
+  .vacancy-manual[open] summary{margin-bottom:9px}
+  .vacancy-import textarea{width:100%;min-height:128px;resize:vertical;font:inherit;color:var(--ink);
+    border:1.5px solid var(--line);border-radius:var(--r-sm);padding:11px 12px;background:var(--paper)}
+  .vacancy-import textarea:focus{outline:3px solid color-mix(in srgb,var(--cobalt) 28%,transparent);border-color:var(--cobalt)}
+  .vacancy-import-status{padding:10px 12px;border-left:3px solid var(--cobalt);
+    background:var(--paper-dim);font-size:.82rem;color:var(--ink-soft)}
+  .vacancy-import-status[hidden]{display:none}
+  .review-import{margin-left:4px;padding:3px 7px;border:1px solid var(--cobalt);border-radius:var(--r-sm);background:var(--paper);color:var(--cobalt);font:inherit;font-weight:750;cursor:pointer}
+  .vacancy-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  .vacancy-steps span{padding:7px 9px;border:1px solid var(--line);border-radius:var(--r-sm);font-size:.75rem;color:var(--ink-soft)}
+  .vacancy-steps strong{color:var(--ink)}
+  .job-form [data-imported="true"]{border-color:var(--cobalt);background:color-mix(in srgb,var(--cobalt) 4%,var(--paper))}
+  .job-employer{
+    padding:12px 14px;border:1.5px solid var(--line);border-radius:var(--r-sm);
+    background:var(--paper-dim)
+  }
+  .job-employer strong{display:block;font-size:1rem}
+  .job-employer span{display:block;margin-top:3px;color:var(--ink-soft);font-size:.84rem}
+  .job-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .job-form label{display:grid;gap:5px;font-size:.86rem;font-weight:700}
+  .job-form label.wide{grid-column:1/-1}
+  .job-form :is(input,select,textarea){
+    appearance:none;width:100%;font:inherit;color:var(--ink);background:var(--paper);
+    border:1.5px solid var(--line);border-radius:var(--r-sm);padding:10px 12px
+  }
+  .job-form textarea{min-height:84px;resize:vertical}
+  .job-form small{font-weight:400;color:var(--ink-soft);line-height:1.45}
+  .job-title-input{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}
+  .job-title-input button{
+    border:1.5px solid var(--ink);border-radius:var(--r-sm);padding:9px 12px;
+    background:var(--paper);color:var(--ink);font:inherit;font-weight:750;cursor:pointer;
+    white-space:nowrap
+  }
+  .job-title-input button:hover{background:var(--paper-dim)}
+  .job-title-input button:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
+  .salary-fields{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:8px}
+  .job-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .job-primary{
+    font:inherit;font-weight:800;padding:10px 16px;border:1.5px solid var(--cobalt);
+    border-radius:var(--r-sm);background:var(--cobalt);color:var(--on-cobalt);cursor:pointer
+  }
+  .job-primary[disabled]{opacity:.65;cursor:progress}
+  .job-result{padding:14px 16px;border-left:4px solid var(--cobalt);background:var(--paper-dim)}
+  .job-result[hidden]{display:none}
+  .job-result h3{font-size:1rem;margin:0 0 8px}
+  .job-result ul{margin:0;padding-left:20px}
+  .job-result li+li{margin-top:7px}
+  .job-result .check-pass{color:var(--good);font-weight:700}
+  .job-result .check-review{font-weight:700}
+  .job-result .next-checks{margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+  .job-decision-brief{margin:10px 0 12px;border:2px solid var(--ink);border-left:5px solid var(--cobalt);
+    border-radius:var(--r-sm);background:var(--paper);overflow:hidden}
+  .job-decision-brief>.eyebrow{display:block;padding:12px 14px 3px;color:var(--cobalt);
+    font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+  .job-decision-brief>h4{margin:0;padding:0 14px;font-size:1.08rem}
+  .job-decision-summary{margin:6px 0 0;padding:0 14px 12px;color:var(--ink-soft);font-size:.86rem;line-height:1.5}
+  .job-decision-checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--line)}
+  .job-decision-check{min-width:0;padding:11px 14px;border-bottom:1px solid var(--line)}
+  .job-decision-check:nth-child(odd){border-right:1px solid var(--line)}
+  .job-decision-check-head{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+  .job-decision-check-head strong{font-size:.84rem}
+  .job-decision-check-head span{flex:0 0 auto;font-size:.67rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+  .job-decision-check.checked .job-decision-check-head span{color:var(--good)}
+  .job-decision-check.history .job-decision-check-head span{color:var(--cobalt)}
+  .job-decision-check.review .job-decision-check-head span{color:var(--note-ink)}
+  .job-decision-check.unknown .job-decision-check-head span{color:var(--ink-soft)}
+  .job-decision-check.critical{border-color:var(--warn-border);background:var(--warn-bg)}
+  .job-decision-check.critical .job-decision-check-head span{color:var(--warn-ink)}
+  .job-decision-check p{margin:5px 0 7px;font-size:.78rem;line-height:1.45;color:var(--ink-soft)}
+  .job-decision-check .evidence-kind{font-size:.62rem}
+  .job-decision-action{display:grid;grid-template-columns:max-content 1fr;gap:10px;padding:11px 14px;background:var(--paper-dim)}
+  .job-decision-action strong{font-size:.8rem;color:var(--cobalt)}
+  .job-decision-action span{font-size:.82rem;font-weight:700}
+  .job-report-identity{margin:10px 0 12px;padding:12px;border:1.5px solid var(--ink);border-radius:var(--r-sm);background:var(--paper)}
+  .job-report-identity .eyebrow{display:block;margin-bottom:4px;color:var(--ink-soft);font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+  .job-report-identity h4{margin:0 0 9px;font-size:1.05rem}
+  .job-report-identity dl{display:grid;grid-template-columns:max-content 1fr;gap:5px 14px;margin:0;font-size:.82rem}
+  .job-report-identity dt{color:var(--ink-soft)}
+  .job-report-identity dd{margin:0;font-weight:700}
+  .job-evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}
+  .job-evidence-section{padding:12px;border:1.5px solid var(--line);border-radius:var(--r-sm);background:var(--paper)}
+  .job-evidence-section h4{font-size:.88rem;margin:0 0 7px}
+  .job-evidence-section h4 .evidence-kind{margin-left:6px;vertical-align:middle}
+  .job-evidence-section ul{font-size:.82rem;line-height:1.5}
+  .job-evidence-section li+li{margin-top:5px}
+  .job-result-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+  .job-feedback{margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+  .job-feedback strong{display:block;margin-bottom:8px}
+  .job-feedback-actions{display:flex;gap:8px;flex-wrap:wrap}
+  .job-feedback-actions button{min-height:42px}
+  .job-feedback-reasons{margin-top:10px;padding:10px;border-left:3px solid var(--cobalt);background:var(--paper)}
+  .job-feedback-reasons[hidden]{display:none}
+  .job-feedback-status{margin:9px 0 0;color:var(--ink-soft)}
+  .job-privacy{font-size:.8rem;color:var(--ink-soft)}
+  .employer-suggestions{display:grid;border:1.5px solid var(--line);border-top:0;
+    background:var(--paper);max-height:220px;overflow:auto}
+  .employer-suggestions[hidden]{display:none}
+  .employer-suggestions button{padding:9px 11px;border:0;border-bottom:1px solid var(--line);
+    background:var(--paper);color:var(--ink);font:inherit;text-align:left;cursor:pointer}
+  .employer-suggestions button:last-child{border-bottom:0}
+  .employer-suggestions button:hover,.employer-suggestions button:focus{background:var(--paper-dim)}
+  .employer-suggestions strong,.employer-suggestions span{display:block}
+  .employer-suggestions span{margin-top:2px;font-size:.76rem;color:var(--ink-soft)}
+  .occupation-selection{padding:11px 12px;border:1.5px solid var(--line);
+    border-radius:var(--r-sm);background:var(--paper-dim)}
+  .occupation-selection[hidden]{display:none}
+  .occupation-selection strong,.occupation-selection span{display:block}
+  .occupation-selection span{margin-top:3px;font-size:.78rem;color:var(--ink-soft)}
+  .occupation-confirm{display:flex!important;align-items:flex-start;gap:7px;margin-top:9px!important;padding-top:9px;border-top:1px solid var(--line);color:var(--ink)!important;font-weight:700}
+  .occupation-confirm input{appearance:auto!important;width:auto!important;margin-top:2px;accent-color:var(--cobalt)}
+  .salary-comparison{margin:10px 0 0;padding:12px;border:1.5px solid var(--line);
+    border-radius:var(--r-sm);background:var(--paper)}
+  .salary-comparison strong{display:block;margin-bottom:6px}
+  .salary-comparison dl{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:5px 12px;margin:0}
+  .salary-comparison dt{color:var(--ink-soft)}
+  .salary-comparison dd{margin:0;font-weight:750;text-align:right}
+  .salary-comparison p{margin-top:8px;font-size:.8rem;color:var(--ink-soft)}
+  .salary-comparison .salary-answer{margin:0 0 10px;padding:8px 10px;border-left:4px solid var(--cobalt);background:var(--paper-dim);color:var(--ink);font-size:.88rem;font-weight:700}
+  .salary-comparison .salary-answer.below{border-color:var(--note-border);background:var(--note-bg);color:var(--note-ink)}
+  .salary-key{color:var(--cobalt);font-weight:800}
+  #jobPrintRoot{display:none}
+  .save-application{display:grid;gap:12px;padding:14px 16px;border:1.5px solid var(--line);
+    border-radius:var(--r-sm)}
+  .save-application[hidden]{display:none}
+  .save-application h3{font-size:1rem}
+  .save-application-fields{display:grid;grid-template-columns:180px 1fr;gap:12px}
+  .save-application label{display:grid;gap:5px;font-size:.84rem;font-weight:700}
+  .save-application :is(select,textarea){appearance:none;width:100%;padding:9px 11px;
+    border:1.5px solid var(--line);border-radius:var(--r-sm);background:var(--paper);color:var(--ink);font:inherit}
+  .save-application textarea{min-height:72px;resize:vertical}
+  .applications-toolbar{display:flex;justify-content:space-between;gap:12px;align-items:center}
+  .applications-toolbar p{font-size:.82rem;color:var(--ink-soft)}
+  .application-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .application-head h3{font-size:1rem}
+  .application-list{display:grid;gap:8px}
+  .application-empty{padding:18px;background:var(--paper-dim);color:var(--ink-soft)}
+  .application-empty strong{display:block;color:var(--ink);font-size:.95rem}
+  .application-empty p{margin-top:5px;font-size:.82rem}
+  .application-empty button{margin-top:12px}
+  .application-card{
+    display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;padding:12px 14px;
+    border:1.5px solid var(--line);border-radius:var(--r-sm)
+  }
+  .application-card strong{display:block}
+  .application-card span{display:block;margin-top:3px;color:var(--ink-soft);font-size:.82rem}
+  .application-evidence{grid-column:1/-1;padding:10px 12px;border:1px solid var(--line);
+    border-left:4px solid var(--good);border-radius:0 var(--r-sm) var(--r-sm) 0;
+    background:var(--paper-dim)}
+  .application-evidence.changed{border-left-color:var(--signal)}
+  .application-evidence.critical{border-left-color:var(--warn-ink);background:var(--warn-bg)}
+  .application-evidence.limited,.application-evidence.baseline{border-left-color:var(--note-ink);background:var(--note-bg)}
+  .application-evidence.loading{border-left-color:var(--line)}
+  .application-evidence-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+  .application-evidence-head strong{font-size:.85rem}
+  .application-evidence-head time{color:var(--ink-soft);font-size:.74rem;white-space:nowrap}
+  .application-evidence p{margin-top:4px;color:var(--ink-soft);font-size:.8rem}
+  .application-evidence ul{margin:7px 0 0;padding-left:20px;font-size:.8rem}
+  .application-evidence li+li{margin-top:3px}
+  .application-evidence-note{font-size:.74rem!important}
+  .application-card-actions{display:flex;gap:6px;align-items:center}
+  .application-card button{
+    font:inherit;font-size:.78rem;font-weight:700;padding:7px 9px;border:1.5px solid var(--line);
+    border-radius:var(--r-sm);background:var(--paper);color:var(--ink);cursor:pointer
+  }
+  .application-card button:hover{border-color:var(--cobalt);color:var(--cobalt)}
+  @media (max-width:640.01px){
+    .compare-tray{bottom:10px;flex-wrap:wrap}
+    .compare-tray p{flex-basis:100%}
+    .compare-tray button{flex:1}
+    .compare-dialog-body{padding:12px 14px}
+    body.job-route .job-dialog{width:100%;max-height:100dvh;height:100dvh;border:0;border-radius:0}
+    .job-form{grid-template-columns:1fr}
+    .vacancy-url-row{grid-template-columns:1fr}
+    .vacancy-url-row button{justify-self:start}
+    .vacancy-steps{grid-template-columns:1fr}
+    .job-evidence-grid{grid-template-columns:1fr}
+    .job-decision-checks{grid-template-columns:1fr}
+    .job-decision-check:nth-child(odd){border-right:0}
+    .job-decision-action{grid-template-columns:1fr;gap:3px}
+    .identity-passport-facts{grid-template-columns:1fr}
+    .job-report-identity dl{grid-template-columns:1fr;gap:2px}
+    .job-report-identity dd+dt{margin-top:6px}
+    .job-form label.wide{grid-column:auto}
+    .job-title-input{grid-template-columns:1fr}
+    .job-title-input button{justify-self:start}
+    .salary-fields{grid-template-columns:minmax(0,1fr) 132px}
+    .save-application-fields{grid-template-columns:1fr}
+    .applications-toolbar{align-items:flex-start;flex-direction:column}
+    .application-card{grid-template-columns:1fr}
+    .application-card-actions{justify-content:flex-start}
+    .application-evidence-head{display:block}
+    .application-evidence-head time{display:block;margin-top:2px}
+  }
+  @media print{
+    body.print-check,body.print-job-evidence{color-scheme:light}
+    body.print-check>*:not(#employerPrintRoot){display:none!important}
+    body.print-check #employerPrintRoot{display:block!important;color:#17233b;background:#fff;color-scheme:light}
+    body.print-check #employerPrintRoot .sheet{display:block!important;position:static;width:100%;height:auto;
+      overflow:visible;border:1.5px solid #17233b;box-shadow:none;animation:none;
+      --ink:#17233b;--ink-soft:#4a5670;--paper:#fff;--paper-dim:#f5f7fb;--line:#d9dfea;
+      --cobalt:#2145c9;--good:#0e7b4f;--warn-bg:#fdf1f0;--warn-bg-2:#fbe3e1;
+      --warn-border:#e7b4ae;--warn-ink:#8a1e18;--note-bg:#fff6dc;
+      --note-border:#ead48a;--note-ink:#6b4e00;color:#17233b;background:#fff;color-scheme:light}
+    body.print-check #employerPrintRoot .sheet-head{position:static}
+    body.print-check #employerPrintRoot .sheet-close,body.print-check #employerPrintRoot .sheet-foot{display:none!important}
+    body.print-check #employerPrintRoot :is(.evidence-receipt,.identity-passport,.evidence-timeline,
+      .cos-history,.cos-route,.warnbox,dl.checks,.apply-steps,.similar-card){
+      break-inside:avoid-page;page-break-inside:avoid}
+    body.print-check #employerPrintRoot :is(h2,h3){break-after:avoid-page;page-break-after:avoid}
+    body.print-job-evidence>*:not(#jobPrintRoot){display:none!important}
+    body.print-job-evidence #jobPrintRoot{display:block!important;--ink:#17233b;--ink-soft:#4a5670;--paper:#fff;--paper-dim:#f5f7fb;--line:#d9dfea;--cobalt:#2145c9;--note-bg:#fff6dc;--note-border:#ead48a;--note-ink:#6b4e00;color:#17233b;background:#fff;color-scheme:light}
+    body.print-job-evidence #jobPrintRoot .job-result{display:block!important;border:0;background:#fff}
+    body.print-job-evidence #jobPrintRoot button{display:none!important}
+  }
+
+  .empty{padding:40px 10px;color:var(--ink-soft)}
+  .empty strong{color:var(--ink)}
+
+  .loading{
+    display:flex;align-items:center;gap:12px;
+    min-height:220px;padding:40px 10px;color:var(--ink-soft);
+  }
+  /* an author display: rule beats the UA [hidden] rule, so restate it */
+  .loading[hidden]{display:none}
+  .spinner{
+    width:18px;height:18px;flex:0 0 auto;border-radius:50%;
+    border:2.5px solid var(--line);border-top-color:var(--cobalt);
+    animation:spin .8s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.spinner{animation:none}}
+
+  /* alerts band */
+  /* What else this site does. Cards, because six equal things in a list read
+     as a sitemap and six cards read as a product. */
+  .capabilities{max-width:960px;margin:44px auto 0;padding:0 20px}
+  .capabilities h2{font-size:1.15rem;font-weight:800;margin-bottom:12px}
+  .capgrid{display:grid;gap:10px;
+          grid-template-columns:repeat(auto-fit,minmax(268px,1fr))}
+  .cap{
+    display:block;text-decoration:none;color:inherit;
+    border:1.5px solid var(--line);border-radius:var(--r-md);
+    padding:14px 16px;background:var(--paper);
+  }
+  .cap:hover{border-color:var(--cobalt);background:var(--paper-dim)}
+  .cap strong{display:block;font-weight:800;font-size:.98rem}
+  .cap strong::after{content:' \2192';color:var(--cobalt)}
+  .cap span{display:block;margin-top:4px;font-size:.87rem;
+           color:var(--ink-soft);text-wrap:pretty}
+  .cap-business{
+    grid-column:1/-1;border-left:4px solid var(--cobalt);background:var(--paper-dim)
+  }
+  .cap-business span{max-width:64ch}
+
+  .alerts{
+    margin:56px 0;border:2px solid var(--ink);border-radius:var(--r-md);
+    background:var(--paper-dim);padding:26px 24px;
+  }
+  .alerts h2{font-size:1.25rem;font-weight:800;letter-spacing:-0.01em}
+  .alerts p{color:var(--ink-soft);margin-top:6px;max-width:520px}
+  .alerts form{margin-top:16px}
+  .alert-scope{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+  .alert-scope label{font-size:.9rem;color:var(--ink-soft)}
+  .follow-scope{display:flex;align-items:center;gap:10px;margin-bottom:10px;
+                color:var(--ink-soft);font-size:.9rem}
+  .follow-scope strong{color:var(--ink)}
+  .follow-scope button{background:none;color:var(--cobalt);padding:2px 0;
+                       text-decoration:underline}
+  .alert-scope select{
+    font:inherit;font-size:.9rem;padding:7px 10px;border:1.5px solid var(--line);
+    border-radius:var(--r-sm);background:var(--paper);color:var(--ink);max-width:100%;
+  }
+  .alert-row{display:flex;gap:10px;flex-wrap:wrap}
+  .alerts input[type=email]{
+    flex:1;min-width:220px;font:inherit;padding:11px 14px;
+    border:2px solid var(--ink);border-radius:var(--r-sm);
+    background:var(--paper);color:var(--ink);
+  }
+  .alerts button{
+    font:inherit;font-weight:600;color:var(--on-cobalt);background:var(--cobalt);
+    border:0;border-radius:var(--r-sm);padding:11px 22px;cursor:pointer;
+  }
+  .alerts button:hover{background:var(--cobalt-dark)}
+  .alerts .fineprint{font-size:.8rem;margin-top:10px}
+  .alerts .done{display:none;font-weight:600;color:var(--good);margin-top:12px}
+  .alerts .err{display:none;font-weight:600;color:var(--bad);margin-top:12px}
+  .alerts button[disabled]{opacity:.6;cursor:progress}
+
+  /* faq + footer */
+  .faq{margin:40px 0 10px}
+  .faq h2{font-size:1.25rem;font-weight:800;margin-bottom:8px}
+  .faq details{border-bottom:1px solid var(--line);padding:12px 0}
+  .faq summary{cursor:pointer;font-weight:600}
+  .faq details p{margin-top:8px;color:var(--ink-soft);max-width:640px}
+  footer{
+    margin-top:48px;border-top:3px solid var(--ink);padding:22px 0 40px;
+    font-size:.85rem;color:var(--ink-soft);
+  }
+  footer p+p{margin-top:6px}
+  .browse{margin-bottom:18px}
+  .browse p{margin-bottom:4px}
+  /* only the link lists get the gap, never a link inside a sentence */
+  .browse .links a{margin-right:10px;white-space:nowrap}
+
+  /* On a phone the results stop being a table and become cards.
+     Hiding a column to make five fit was a compromise, not a design, and
+     most of this audience is on a phone. The markup stays a real table for
+     screen readers and for the desktop layout; only the presentation
+     changes, with each cell labelled by the header it lost. */
+  @media (max-width:640px){
+    /* Three stat cards stacked was ~500px of chrome before a single result,
+       and three stacked selects another ~285px. On a phone the results have
+       to be reachable, so the proof strip becomes a compact row and the
+       filters pair up. */
+    .proof{grid-template-columns:repeat(3,1fr);gap:6px}
+    .stat{padding:8px 9px;border-radius:var(--r-sm)}
+    .stat .v{font-size:1.05rem}
+    .stat .l{font-size:.68rem;line-height:1.25}
+    /* On a phone the label becomes visible and the control becomes a card.
+       An unlabelled 44px dropdown makes you open it to find out what it
+       filters, which is the one place a competitor was plainly better. */
+    .filters{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
+    .facets{display:contents}
+    .field{
+      border:1.5px solid var(--line);border-radius:var(--r-sm);
+      padding:6px 10px 7px;background:var(--paper);min-width:0;
+    }
+    .field .fl{
+      position:static;width:auto;height:auto;overflow:visible;clip-path:none;
+      display:block;font-size:.64rem;font-weight:700;letter-spacing:.06em;
+      text-transform:uppercase;color:var(--ink-soft);
+    }
+    .filters select{
+      width:100%;font-size:.88rem;font-weight:600;padding:1px 20px 1px 0;
+      border:0;border-radius:0;background:transparent;
+    }
+    .filters select:hover{border-color:transparent}
+    /* Three controls in two columns left a dangling empty cell. The third
+       takes the whole row instead. */
+    .field:last-of-type{grid-column:1 / -1}
+    .field::after{right:9px;top:auto;bottom:13px;transform:rotate(45deg)}
+    .views{display:none}
+    .view-field{display:block;grid-column:1 / -1}
+    .pill{
+      grid-column:auto;min-width:0;width:100%;padding:8px 6px;
+      white-space:normal;line-height:1.2;
+    }
+    .pill .pill-label{display:block}
+    .pill .n{display:block;margin-top:2px;white-space:nowrap}
+    .view{padding:7px 4px;font-size:.78rem;line-height:1.2}
+    .view .n{display:inline;margin-left:3px}
+    .hero h1{font-size:1.45rem}
+    .hero p.lead{font-size:.92rem}
+    #resultsTable thead{
+      position:absolute;width:1px;height:1px;overflow:hidden;
+      clip:rect(0 0 0 0);white-space:nowrap;
+    }
+    #resultsTable,#resultsTable tbody,#resultsTable tr,#resultsTable td{
+      display:block;width:100%;
+    }
+    #resultsTable tr{
+      border:1.5px solid var(--line);border-radius:var(--r-md);
+      padding:12px 14px;margin-bottom:10px;
+    }
+    #resultsTable tr.open{border-color:var(--ink)}
+    #resultsTable td{border:0;padding:0}
+    #resultsTable td.name{font-size:1.02rem;margin-bottom:6px}
+    #resultsTable td.name .rowbtn{font-size:1.02rem}
+    /* location, industry, routes, rating read as a labelled list */
+    #resultsTable td:not(.name):not(:empty)::before{
+      content:attr(data-label) ": ";
+      color:var(--ink-soft);font-size:.78rem;
+    }
+    #resultsTable td:not(.name){font-size:.88rem;margin-top:2px}
+    #resultsTable td:empty{display:none}
+    .searchbox{box-shadow:3px 3px 0 var(--cobalt)}
+    .results-bar .actions{width:100%}
+    .sort-field{order:-1;width:100%;justify-content:space-between}
+    .sort-field select{flex:1;max-width:230px}
+  }
+</style>
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+</head>
+<body class="job-route">
+
+<header>
+  <div class="wrap header-inner">
+    <a class="brand" href="./" aria-label="KnowYourSponsor home">
+      <svg class="mark" width="28" height="28" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <rect width="64" height="64" rx="14" fill="var(--mark-bg)"/>
+        <text x="30" y="47" text-anchor="middle" font-family="'Public Sans',system-ui,sans-serif"
+              font-size="42" font-weight="800" fill="var(--mark-fg)">K</text>
+        <circle cx="48" cy="44" r="5" fill="var(--signal)"/>
+      </svg>
+      <span class="wordmark">KnowYourSponsor<span class="dot">.</span></span>
+    </a>
+    <nav class="topnav" aria-label="Sections">
+      <a href="employer/">Employers</a>
+      <a href="changes/">Changes <span class="badge" id="navChanges" hidden></span></a>
+      <a href="check-a-job/" id="navJobTools" aria-current="page">Job tools <span class="badge" id="navApplicationCount" hidden></span></a>
+      <a href="pricing/" aria-label="For business"><span class="business-full">For business</span><span class="business-short" aria-hidden="true">Business</span></a>
+      <button class="themebtn" type="button" data-theme-toggle aria-label="Switch between light and dark theme"><span aria-hidden="true">&#9789;</span></button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero"><div class="wrap">
+    <p class="hero-kicker">Evidence from official sources, checked daily</p>
+    <h1>Check the evidence behind a UK visa sponsor.</h1>
+    <p class="lead">See current licence status, historical sponsorship evidence and matched company records. We label what is official, what is matched and what remains unknown.</p>
+
+    <form class="searchbox" role="search">
+      <input id="q" type="search" enterkeyhint="search" placeholder="Employer, brand, company number or city" aria-label="Search sponsors by employer, trading name, company number or city">
+      <button id="go" type="submit">Search</button>
+    </form>
+
+    <div class="tryline">
+      <span>Try</span>
+      <button type="button" class="try" data-q="software London">software London</button>
+      <button type="button" class="try" data-q="care Birmingham">care Birmingham</button>
+      <button type="button" class="try" data-q="NHS">NHS</button>
+    </div>
+
+    <div class="proof" id="proof">
+      <button class="stat stat-action" id="browseAll" type="button">
+        <span class="v" id="total">&mdash;</span>
+        <span class="l">current sponsor records <span aria-hidden="true">&#8594;</span></span>
+      </button>
+      <button class="stat stat-action" id="showRecent" type="button">
+        <span class="v" id="statAdded">&mdash;</span>
+        <span class="l">licensed in the last 7 days <span aria-hidden="true">&#8594;</span></span>
+      </button>
+      <a class="stat flag" id="statWarnBox" href="?warn=serious" hidden>
+        <span class="v" id="statWarn">&mdash;</span>
+        <span class="l">linked to a non-active company record <span aria-hidden="true">&#8594;</span></span>
+      </a>
+    </div>
+    <button class="hero-filter-action" id="filterEmployers" type="button" aria-controls="searchFilters">
+      Filter by location, industry or visa route <span aria-hidden="true">&#8594;</span>
+    </button>
+    <div class="hero-meta">
+      <p class="sourceline">From the GOV.UK Register of Licensed Sponsors, updated <strong id="updated">&mdash;</strong>.
+        <span class="record-definition">Counted by sponsor name and town. The same legal employer can appear in more than one town.</span>
+      </p>
+      <p class="free-tools-prompt"><span><strong>Check an employer:</strong> search above, free with no account.</span>
+        <button id="startJobCheck" type="button">Check a vacancy <span id="applicationCount"></span> &#8594;</button>
+        <a href="pricing/">Monitor a portfolio &#8594;</a>
+      </p>
+    </div>
+    <div class="sample-note" id="sampleNote" hidden></div>
+  </div></section>
+
+  <div class="filterbar" id="filterbar" hidden><div class="wrap">
+    <button class="refine-search" id="refineSearch" type="button" aria-expanded="false" aria-controls="searchFilters">Refine search</button>
+    <div class="filters" id="searchFilters">
+    <div class="facets">
+      <label class="field"><span class="fl">Location</span>
+        <select id="city"><option value="">Any town or city</option></select></label>
+      <label class="field"><span class="fl">Industry</span>
+        <select id="industry"><option value="">All industries</option></select></label>
+      <label class="field"><span class="fl">Visa route</span>
+        <select id="route"><option value="">All visa routes</option></select></label>
+    </div>
+    <div class="views" role="group" aria-label="Choose which employers to show">
+      <button class="view" id="viewAll" aria-pressed="true">All</button>
+      <button class="view" id="viewAdded" aria-pressed="false">Just added <span class="n" id="nAdded"></span></button>
+      <button class="view" id="viewRemoved" aria-pressed="false">Lost licence <span class="n" id="nRemoved"></span></button>
+      <button class="view" id="viewDowngraded" aria-pressed="false" hidden>Downgraded <span class="n" id="nDowngraded"></span></button>
+      <button class="view" id="viewSaved" aria-pressed="false" hidden>Saved <span class="n" id="nSaved"></span></button>
+    </div>
+    <label class="field view-field"><span class="fl">Employer status</span>
+      <select id="viewMobile">
+        <option value="">All employers</option>
+        <option value="added">Just added</option>
+        <option value="removed">Lost licence</option>
+        <option value="downgraded" hidden>Downgraded</option>
+        <option value="saved" hidden>Saved shortlist</option>
+      </select></label>
+    <button class="pill" id="warnOnly" aria-pressed="false" hidden>
+      <span class="pill-label">All company checks</span><span class="n" id="nWarn"></span>
+    </button>
+    <button class="pill risk" id="riskOnly" aria-pressed="false" hidden>
+      <span class="pill-label">Trading risk</span><span class="n" id="nRisk"></span>
+    </button>
+  </div>
+  <p class="filter-hint" id="filterHint" hidden>Choose at least one filter to build a targeted employer list.</p>
+  </div></div>
+
+  <div class="wrap">
+    <p class="notice" id="viewNotice" hidden></p>
+    <section class="visit-changes" id="visitChanges" hidden aria-live="polite">
+      <h2>What changed since your last visit</h2>
+      <p id="visitSummary"></p>
+      <ul id="visitItems"></ul>
+    </section>
+
+  <section aria-live="polite">
+    <div class="results-bar" id="resultsMeta" hidden>
+      <p class="results-meta"><strong id="count"></strong> <span id="resultNoun"></span><button class="clear" id="clear" type="button" hidden>Clear filters</button></p>
+      <label class="sort-field" id="sortField">Sort
+        <select id="sort"><option value="relevance">Best match</option><option value="name">Employer name</option><option value="location">Location</option><option value="industry">Industry</option><option value="rating">Rating</option></select>
+      </label>
+      <div class="actions">
+        <button class="download" id="alertSearch" type="button" hidden>Email me when this search changes</button>
+        <button class="download" id="shareShortlist" type="button" hidden>Share shortlist</button>
+        <button class="download" id="copyLink" type="button">Copy link</button>
+        <button class="download" id="download" type="button">Download as CSV</button>
+      </div>
+    </div>
+    <p class="save-status" id="saveStatus" role="status" hidden></p>
+    <p class="save-status" id="loadNote" role="status" hidden></p>
+    <aside class="monitor-nudge" id="monitorNudge" aria-labelledby="monitorNudgeTitle" hidden>
+      <div>
+        <h2 id="monitorNudgeTitle">Want this shortlist checked while you are away?</h2>
+        <p id="monitorNudgeCopy">Your free shortlist stays in this browser and shows changes when you return. Watch checks up to 10 employers every day and emails material changes.</p>
+      </div>
+      <div class="monitor-nudge-actions">
+        <a class="upgrade" id="watchNudgeCta" href="https://app.knowyoursponsor.co.uk/?plan=watch&amp;source=free-shortlist" rel="nofollow">Start a no-card Watch pilot</a>
+        <a class="learn" href="pricing/#watch">Watch from £19</a>
+      </div>
+    </aside>
+
+    <div class="loading" id="loading" role="status">
+      <span class="spinner" aria-hidden="true"></span>
+      <span>Loading the list. This takes a few seconds.</span>
+    </div>
+
+    <table id="resultsTable" hidden>
+      <thead>
+        <tr><th><button class="sorthead" data-sort="name">Employer</button></th><th><button class="sorthead" data-sort="location">Location</button></th><th><button class="sorthead" data-sort="industry">Industry</button></th><th>Visa routes</th><th><button class="sorthead" data-sort="rating">Rating</button></th></tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <div class="empty" id="empty" hidden></div>
+    <button class="loadmore" id="more" hidden>Show more</button>
+  </div>
+
+  <!-- Employer detail. The one interaction everybody tries first: a list of
+       127,000 things invites a click, and until now nothing happened. Driven
+       by ?employer= so a single employer can be linked to and shared. -->
+  <div class="sheet-backdrop" id="sheetBackdrop" hidden></div>
+  <aside class="sheet" id="sheet" hidden role="dialog" aria-modal="true"
+         aria-labelledby="sheetName">
+    <div class="sheet-head">
+      <h2 id="sheetName">&nbsp;</h2>
+      <button class="sheet-close" id="sheetClose" type="button"
+              aria-label="Close employer details">&times;</button>
+    </div>
+    <div class="sheet-body" id="sheetBody"></div>
+    <div class="sheet-foot">
+      <button class="job-primary" id="sheetJob" type="button">Check a job at this employer</button>
+      <button class="download" id="sheetSave" type="button" aria-pressed="false">Save to shortlist</button>
+      <button class="download" id="sheetCompare" type="button" aria-pressed="false">Add to comparison</button>
+      <button class="download" id="sheetShare" type="button">Share this check</button>
+      <button class="download" id="sheetPrint" type="button">Print or save as PDF</button>
+    </div>
+  </aside>
+
+  <section class="compare-tray" id="compareTray" hidden aria-live="polite">
+    <p><strong id="compareCount">0 of 3</strong> employers selected</p>
+    <button class="clear-compare" id="compareClear" type="button">Clear</button>
+    <button class="open" id="compareOpen" type="button">Compare</button>
+  </section>
+
+  <dialog class="compare-dialog" id="compareDialog" aria-labelledby="compareTitle">
+    <div class="compare-dialog-head">
+      <div><p class="check-kicker">KnowYourSponsor Check</p>
+        <h2 id="compareTitle">Compare employer evidence</h2>
+        <p>Public-source facts shown side by side. This is evidence to check, not a safety score.</p></div>
+      <button class="sheet-close" id="compareClose" type="button" aria-label="Close comparison">&times;</button>
+    </div>
+    <div class="compare-dialog-body" id="compareBody"></div>
+    <div class="compare-dialog-foot">
+      <button class="download" id="compareShare" type="button">Copy comparison link</button>
+      <button class="download" id="comparePrint" type="button">Open printable report</button>
+    </div>
+  </dialog>
+
+  <dialog class="compare-dialog job-dialog" id="jobDialog" aria-labelledby="jobTitle">
+    <div class="compare-dialog-head">
+      <div><p class="check-kicker">Private job workspace</p>
+        <h2 id="jobTitle">Check this job before you apply</h2>
+        <p id="jobIntro">Use current public evidence to find what is confirmed and what you still need to check.</p></div>
+      <button class="sheet-close" id="jobClose" type="button" aria-label="Close job checker">&times;</button>
+    </div>
+    <div class="job-mode-tabs" id="jobModeTabs" role="tablist" aria-label="Job tools">
+      <button id="jobCheckTab" type="button" role="tab" aria-controls="jobCheckPane" aria-selected="true">Check a job</button>
+      <button id="applicationsTab" type="button" role="tab" aria-controls="applicationsPane" aria-selected="false">My applications <span id="dialogApplicationCount"></span></button>
+    </div>
+    <div class="compare-dialog-body">
+      <section class="job-pane" id="jobCheckPane" role="tabpanel" aria-labelledby="jobCheckTab">
+        <section class="community-pilot" id="communityPilot" aria-labelledby="communityPilotTitle" hidden>
+          <p class="check-kicker">Community product test</p>
+          <h3 id="communityPilotTitle">Check one real vacancy. Tell us if the evidence helped.</h3>
+          <p>Use a public vacancy you are genuinely considering. Review what is confirmed and what still needs checking, then answer <strong>Did this report help?</strong></p>
+          <ol><li>Enter or paste the vacancy.</li><li>Review every suggested field.</li><li>Check the evidence and leave one-tap feedback.</li></ol>
+          <p class="community-pilot-privacy"><strong>No account, CV or personal details.</strong> Pilot measurement records only anonymous action totals, never the employer, role or vacancy text.</p>
+        </section>
+        <div class="job-purpose">
+          <strong>Know what is confirmed before you apply.</strong>
+          <p>See official evidence, possible conflicts and useful questions to ask. This check does not decide visa eligibility.</p>
+        </div>
+        <div class="job-entry-intro">
+          <strong>Enter the vacancy details</strong>
+          <span>Type them yourself, or use optional autofill. You review every suggested field before checking.</span>
+        </div>
+        <details class="vacancy-import" id="vacancyImportDetails">
+          <summary class="vacancy-import-toggle"><span>
+            <strong>Fill from a vacancy <em>Optional</em></strong>
+            <small>Use a public link or paste the advert to suggest fields for your review. Nothing is saved automatically.</small>
+          </span></summary>
+          <div class="vacancy-steps" aria-label="How the job check works"><span><strong>1.</strong> Add the vacancy</span><span><strong>2.</strong> Confirm extracted facts</span><span><strong>3.</strong> Check official evidence</span></div>
+          <div class="vacancy-url-label">
+            <label for="jobVacancyUrl">Public vacancy link</label>
+            <span class="vacancy-url-row">
+              <input id="jobVacancyUrl" type="url" inputmode="url" autocomplete="url" maxlength="2000" placeholder="https://company.com/jobs/…">
+              <button class="job-primary" id="readVacancyUrl" type="button">Read vacancy</button>
+            </span>
+            <small class="vacancy-url-help" id="vacancyUrlHelp">We send only this public link to our server. LinkedIn and some job boards may block automatic reading.</small>
+          </div>
+          <div class="vacancy-or">or copy the vacancy</div>
+          <div class="vacancy-import-actions">
+            <button class="job-primary" id="pasteJobClipboard" type="button">Paste from clipboard</button>
+            <span class="job-privacy">Copy the visible vacancy in any layout. We ignore common job-board controls and never auto-confirm an employer or occupation.</span>
+          </div>
+          <details class="vacancy-manual" id="jobAdvertDetails">
+            <summary>Paste vacancy text manually</summary>
+            <textarea id="jobAdvertText" maxlength="30000" placeholder="Paste whatever you copied from the vacancy. No formatting or labels are required."></textarea>
+            <div class="job-actions">
+              <button class="download" id="extractJobAdvert" type="button">Extract pasted text</button>
+              <button class="download" id="clearJobAdvert" type="button">Clear</button>
+            </div>
+          </details>
+          <div id="jobBrowserHelperMount"></div>
+        </details>
+        <p class="vacancy-import-status" id="jobAdvertStatus" aria-live="polite" hidden></p>
+        <div class="job-employer" id="jobEmployer" hidden>
+          <strong id="jobEmployerName"></strong>
+          <span id="jobEmployerEvidence"></span>
+        </div>
+        <form class="job-form" id="jobForm">
+          <input id="jobEditId" name="editId" type="hidden">
+          <label class="wide">Employer
+            <input id="jobEmployerInput" name="employer" required maxlength="180" autocomplete="off" aria-autocomplete="list" aria-controls="jobEmployerSuggestions" placeholder="Start typing the legal employer name">
+            <span class="employer-suggestions" id="jobEmployerSuggestions" role="listbox" hidden></span>
+            <small>Choose the exact employer and town. We never guess between similar records.</small>
+          </label>
+          <label class="wide">Full job title
+            <span class="job-title-input">
+              <input id="jobRole" name="role" autocomplete="organization-title" required maxlength="120" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="jobOccupationSuggestions" aria-describedby="jobRoleHelp" placeholder="For example IT service manager">
+              <button id="browseOccupations" type="button" aria-controls="jobOccupationSuggestions" aria-expanded="false">Find official occupation</button>
+            </span>
+            <span class="employer-suggestions" id="jobOccupationSuggestions" role="listbox" hidden></span>
+            <small id="jobRoleHelp">Enter the title shown on the vacancy. The term IT on its own is not enough to identify an occupation.</small>
+            <span class="occupation-selection" id="jobOccupationSelection" hidden>
+              <strong id="jobOccupationName"></strong><span id="jobOccupationEvidence"></span>
+              <span class="occupation-confirm"><input id="jobOccupationConfirmed" type="checkbox" aria-label="Confirm the occupation matches the vacancy duties"><span>I compared this occupation with the vacancy duties. It is the closest match, but the employer must confirm the code.</span></span>
+            </span>
+          </label>
+          <label class="wide">Vacancy location (optional)
+            <input id="jobLocation" name="location" maxlength="120" autocomplete="address-level2" placeholder="For example Manchester or Remote">
+            <small>This is the advertised work location. It may differ from the sponsor register town.</small>
+          </label>
+          <label>Advertised salary <span class="optional">(optional)</span>
+            <span class="salary-fields">
+              <input id="jobSalary" name="salary" type="number" min="0" step="0.01" inputmode="decimal" placeholder="42000">
+              <select id="jobSalaryPeriod" name="salaryPeriod" aria-label="Salary period">
+                <option value="year">per year</option><option value="month">per month</option>
+                <option value="week">per week</option><option value="hour">per hour</option>
+              </select>
+            </span>
+            <small>If pay is published, use the guaranteed minimum before bonuses or commission. Leave blank rather than guessing.</small>
+          </label>
+          <label>Hours each week
+            <input id="jobHours" name="hours" type="number" min="1" max="80" step="0.5" inputmode="decimal" value="37.5">
+            <small>Used to annualise hourly pay and adjust occupation going rates based on a 37.5-hour week.</small>
+          </label>
+          <label class="wide">Occupation code
+            <input id="jobSoc" name="soc" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="Four digits">
+            <small>Choose from the ranked options above or enter a code supplied by the employer. <a href="https://www.gov.uk/government/publications/skilled-worker-visa-eligible-occupations/skilled-worker-visa-eligible-occupations-and-codes" target="_blank" rel="noopener">Check the official list</a>.</small>
+          </label>
+          <div class="job-actions wide">
+            <button class="job-primary" id="jobCheckSubmit" type="submit">Check this job</button>
+            <span class="job-privacy">No account needed. The pasted advert is never saved; saved checks stay in this browser.</span>
+          </div>
+        </form>
+        <section class="job-result" id="jobResult" aria-live="polite" hidden></section>
+        <section class="save-application" id="saveApplicationPanel" aria-labelledby="saveApplicationTitle" hidden>
+          <div><h3 id="saveApplicationTitle">Keep this check in My applications</h3>
+            <p class="job-privacy">Add a status and notes so you know what to do next. Nothing is sent to us.</p></div>
+          <div class="save-application-fields">
+            <label>Status
+              <select id="jobStatus" name="status">
+                <option>Considering</option><option>Applied</option><option>Interview</option>
+                <option>Offer</option><option>Rejected</option><option>Not proceeding</option>
+              </select>
+            </label>
+            <label>Notes (optional)
+              <textarea id="jobNotes" name="notes" maxlength="1000" placeholder="Deadline, contact or question to ask the employer"></textarea>
+            </label>
+          </div>
+          <div class="job-actions">
+            <button class="job-primary" id="saveApplication" type="button">Save to My applications</button>
+            <button class="download" id="viewApplicationsAfterSave" type="button">View My applications</button>
+          </div>
+        </section>
+      </section>
+      <section class="job-pane" id="applicationsPane" role="tabpanel" aria-labelledby="applicationsTab" hidden>
+        <div class="job-purpose">
+          <strong>Your private application list</strong>
+          <p>Keep the evidence you checked, record your progress and return to the next action. Saved only in this browser.</p>
+        </div>
+        <div class="applications-toolbar">
+          <p id="applicationSummary">No applications saved in this browser.</p>
+          <div class="job-actions">
+            <button class="job-primary" id="addApplication" type="button">Check a new job</button>
+            <button class="download" id="exportApplications" type="button" hidden>Download CSV</button>
+          </div>
+        </div>
+        <div class="application-list" id="applicationList" aria-live="polite"></div>
+      </section>
+    </div>
+  </dialog>
+
+  <div class="wrap">
+  </section>
+
+  <!-- Supporting evidence and deeper tools. Deliberately below the results rather than
+       above them: every competitor opens with a pitch you have to click
+       through, and being the one site whose homepage is already the tool is
+       worth more than a feature tour. The nav serves people who look up,
+       this serves people who scroll. -->
+  <section class="capabilities">
+    <h2>Explore sponsor evidence</h2>
+    <div class="capgrid">
+      <a class="cap" href="employer/">
+        <strong>Browse by city and industry</strong>
+        <span>Every licensed employer in London, Birmingham, Leeds and nine
+          more, split again by what they do.</span>
+      </a>
+      <a class="cap" href="changes/">
+        <strong>What changed this week</strong>
+        <span>Who gained a licence, who lost one, and who was downgraded.
+          Kept as a permanent page for every week.</span>
+      </a>
+      <a class="cap" href="methodology/">
+        <strong>How we check</strong>
+        <span>Where each field comes from, how employers are matched to
+          Companies House, and how often that match is wrong.</span>
+      </a>
+      <a class="cap" href="early-warning/">
+        <strong>Early-warning evidence</strong>
+        <span>Whether company warning signs appeared before a sponsor licence
+          disappeared. See exactly how much history supports the answer.</span>
+      </a>
+      <a class="cap" href="insights/">
+        <strong>Sponsorship in numbers</strong>
+        <span>Where the sponsors are, which visa routes they hold, and which
+          industries are growing.</span>
+      </a>
+      <a class="cap" href="data-api/">
+        <strong>Use the data yourself</strong>
+        <span>Every file here as JSON, free, no key and no rate limit. Plus
+          an RSS feed of the weekly changes.</span>
+      </a>
+      <a class="cap cap-business" href="watchlist/">
+        <strong>Monitoring for business</strong>
+        <span>Tell us the employers you place people into and we tell you
+          when one of them changes.</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="alerts" id="alerts">
+    <h2>Get new sponsors in your inbox</h2>
+    <p>New employers get a licence almost every week. Leave your email and we'll send you the new ones, so you can apply before everyone else finds them.</p>
+    <!-- Submission is handled in JS; set ALERT_ENDPOINT at the top of the script. See README. -->
+    <form id="alertForm">
+      <input id="alertEmployer" name="employer" type="hidden" value="">
+      <div class="follow-scope" id="followScope" hidden>
+        Following <strong id="followName"></strong>
+        <button id="clearFollow" type="button">Choose filters instead</button>
+      </div>
+      <div class="alert-scope">
+        <label for="alertCity">Only tell me about</label>
+        <select id="alertCity" name="city"><option value="">anywhere in the UK</option></select>
+        <select id="alertIndustry" name="industry"><option value="">any industry</option></select>
+        <select id="alertRoute" name="route" aria-label="Visa route"><option value="">any visa route</option></select>
+      </div>
+      <div class="alert-row">
+        <input type="email" name="email" required placeholder="you@example.com" aria-label="Email address">
+        <button type="submit">Notify me</button>
+      </div>
+    </form>
+    <p class="done" id="alertDone" role="status">Almost there. Check your inbox and click the confirmation link to finish signing up.</p>
+    <p class="err" id="alertErr" role="alert"></p>
+    <p class="fineprint">Free. One email a week. Unsubscribe anytime. We never sell your address. <a href="privacy/">How we handle your data</a>.</p>
+  </section>
+
+  <section class="faq">
+    <h2>Common questions</h2>
+    <details>
+      <summary>What does it mean if an employer is on this list?</summary>
+      <p>They hold a current Home Office sponsor licence, so they can legally sponsor workers on the visa routes shown. It does not mean they are hiring right now, or that your application will succeed. It means sponsorship is possible there.</p>
+    </details>
+    <details>
+      <summary>Where does the data come from?</summary>
+      <p>Straight from the official GOV.UK "Register of licensed sponsors: workers" file. We download the latest version every day, tidy it up, and add industry tags so you can search it. Nothing is edited by hand.</p>
+    </details>
+    <details>
+      <summary>What does the A rating mean?</summary>
+      <p>An A rating means the employer is in good standing with the Home Office. A B rating means they have been downgraded and are working through an action plan. Employers on a B rating usually cannot issue new certificates until they get back to an A.</p>
+    </details>
+    <details>
+      <summary>What does the red warning next to an employer mean?</summary>
+      <p>It means Companies House records something about that company worth knowing before you apply. A sponsor licence is a permission, not a health check, so a company being wound up can stay on the register for months.</p>
+      <p>The warnings are not all equally serious, which is why each one says what it found. "Liquidation" or "Strike-off proposed" is grave. "Accounts overdue" is often just paperwork at a company that is trading perfectly well. Read the label, not the colour.</p>
+      <p>We match employers to Companies House by name, so a warning is not proof and an employer without one is not vetted. Where one name is held by two different companies and we cannot tell which is the employer, we show no warning at all rather than guess. Every warning links straight to the official Companies House record. Check it there before you decide anything.</p>
+    </details>
+    <details>
+      <summary>How do the industry tags work?</summary>
+      <p>The official list does not include industries, so we work them out from each employer's name. They are there to help you search, not official data. Always check the details with the employer.</p>
+    </details>
+  </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav class="browse" aria-label="Browse sponsors by industry and city">
+    <!-- BROWSE-LINKS:START -->
+    <p class="links"><strong>Browse by industry:</strong> <a href="healthcare-care/">Healthcare &amp; Care</a> <a href="hospitality-food/">Hospitality &amp; Food</a> <a href="finance-professional/">Finance &amp; Professional</a> <a href="retail-commerce/">Retail &amp; Commerce</a> <a href="tech-software/">Tech &amp; Software</a> <a href="education-research/">Education &amp; Research</a> <a href="construction-engineering/">Construction &amp; Engineering</a> <a href="media-creative/">Media &amp; Creative</a></p>
+    <p class="links"><strong>Browse by city:</strong> <a href="london/">London</a> <a href="birmingham/">Birmingham</a> <a href="manchester/">Manchester</a> <a href="leicester/">Leicester</a> <a href="glasgow/">Glasgow</a> <a href="bristol/">Bristol</a> <a href="edinburgh/">Edinburgh</a> <a href="leeds/">Leeds</a> <a href="nottingham/">Nottingham</a> <a href="ilford/">Ilford</a> <a href="reading/">Reading</a> <a href="coventry/">Coventry</a></p>
+    <!-- BROWSE-LINKS:END -->
+    <p><a href="changes/">Sponsors added and removed this week</a>. Who gained a licence, and who lost one.</p>
+    <p><a href="insights/">UK visa sponsorship in numbers</a>. Where the sponsors are and which routes they hold.</p>
+    <p><a href="data-api/">Use the data yourself</a>. Everything here as JSON, plus an <a href="feed.xml">RSS feed</a> of the weekly changes.</p>
+    <p><a href="methodology/">How this data is built</a>. Where it comes from, and which parts are guesses that can be wrong.</p>
+    <p><a href="early-warning/">Early-warning evidence</a>. What we can—and cannot yet—measure about the gap before sponsor removal.</p>
+    <p><a href="employer/">Employers with their own page</a>. Chains, and the ones whose licence we watched start.</p>
+    <p><a href="watchlist/">How watchlist monitoring works</a>. What is checked, how often, and what would slip through.</p>
+    <p><a href="pricing/">What costs money, and what never will</a>. Search stays free; watchlist monitoring is the paid part.</p>
+    <p><a href="about/">About KnowYourSponsor</a>. Why it exists, how it is funded, and what it will never do.</p>
+    <!-- Must match CONTACT_EMAIL in pipeline/pages.py. index.html is the
+         source rather than a generated page, so the address is written out
+         here; a test asserts the two agree so they cannot drift. -->
+    <p>Something wrong, or need a cut of the data for your team? Email <a href="mailto:hello@knowyoursponsor.co.uk">hello@knowyoursponsor.co.uk</a>.</p>
+    </nav>
+    <p>KnowYourSponsor is an independent search tool built on open public data from GOV.UK. It is not affiliated with the Home Office and is not immigration advice.</p>
+    <p>Always confirm a sponsor's current status on the official register before making decisions.</p>
+    <p class="links"><a href="about/">About</a> <a href="methodology/">Methodology</a> <a href="privacy/">Privacy</a> <a href="terms/">Terms</a> <a href="refund-policy/">Refunds</a> <a href="data-api/">Data</a> <a href="https://x.com/KnowSponsorUK" rel="me noopener">X</a> <a href="https://www.reddit.com/user/KnowSponsorUK/" rel="me noopener">Reddit</a></p>
+  </div>
+</footer>
+
+<script src="job-title-logic.js?v=2"></script>
+<script src="job-helper.js?v=15"></script>
+<script src="job-decision.js?v=2"></script>
+<script src="product-metrics.js?v=3"></script>
+<script src="app.js?v=14"></script>
+
+<!-- GoatCounter: privacy-friendly, cookie-free analytics (no consent banner
+     needed). Loaded async and isolated from app code, so blocking it cannot
+     break the site. The same tag is emitted on the generated landing pages
+     by pipeline/pages.py — keep the two in step. -->
+<script data-goatcounter="https://sponsorsignal.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<script>(function(){var b=document.querySelector('[data-theme-toggle]');if(!b)return;var r=document.documentElement;function dark(){return r.getAttribute('data-theme')==='dark'||(!r.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);}function sync(){b.setAttribute('aria-pressed',String(dark()));}b.addEventListener('click',function(){var next=dark()?'light':'dark';r.setAttribute('data-theme',next);try{localStorage.setItem('theme',next);}catch(e){}sync();});sync();})();</script>
+</body>
+</html>

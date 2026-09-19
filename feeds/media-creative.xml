@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KnowYourSponsor: Visa sponsors added and removed in media &amp; creative</title>
+    <link>https://knowyoursponsor.co.uk/media-creative/</link>
+    <atom:link href="https://knowyoursponsor.co.uk/feeds/media-creative.xml" rel="self" type="application/rss+xml"/>
+    <description>Employers in Media &amp; Creative that gained or lost a licence to sponsor UK work visas. Rebuilt every day from the official GOV.UK register. Covers the last 7 days.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 19 Sep 2026 09:42:14 +0000</lastBuildDate>
+    <item>
+      <title>Haymarket Media Group is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/media-creative/</link>
+      <guid isPermaLink="false">kys-media-creative-removed-haymarket-media-group-twickenham</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Twickenham. Industry: Media &amp; Creative.</description>
+    </item>
+    <item>
+      <title>Image Arts Studios UK House is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/media-creative/</link>
+      <guid isPermaLink="false">kys-media-creative-removed-image-arts-studios-uk-house-westcliff-on-sea</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Westcliff-On-Sea, Essex. Industry: Media &amp; Creative.</description>
+    </item>
+    <item>
+      <title>PROXIMA SIGN &amp; PRINT LTD is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/media-creative/</link>
+      <guid isPermaLink="false">kys-media-creative-removed-proxima-sign-print-ltd-rotherham</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Rotherham. Industry: Media &amp; Creative.</description>
+    </item>
+    <item>
+      <title>EFFICIENT SIGNS AND PRINT SOLUTIONS LTD can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/media-creative/</link>
+      <guid isPermaLink="false">kys-media-creative-added-efficient-signs-and-print-solutions-ltd-london</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: London. Industry: Media &amp; Creative. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>97 Creative Limited can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/media-creative/</link>
+      <guid isPermaLink="false">kys-media-creative-added-97-creative-limited-london</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: London. Industry: Media &amp; Creative. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Brian MacEntee Architecture &amp; Design Ltd can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/media-creative/</link>
+      <guid isPermaLink="false">kys-media-creative-added-brian-macentee-architecture-design-ltd-cardiff</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Cardiff. Industry: Media &amp; Creative. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Chris Harper Productions can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/media-creative/</link>
+      <guid isPermaLink="false">kys-media-creative-added-chris-harper-productions-london</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: London. Industry: Media &amp; Creative. Visa routes: Creative Worker.</description>
+    </item>
+    <item>
+      <title>Commercial Services Design Limited can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/media-creative/</link>
+      <guid isPermaLink="false">kys-media-creative-added-commercial-services-design-limited-leeds</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Leeds, West Yorkshire. Industry: Media &amp; Creative. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Image Arts Studios UK House can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/media-creative/</link>
+      <guid isPermaLink="false">kys-media-creative-added-image-arts-studios-uk-house-london</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: London. Industry: Media &amp; Creative. Visa routes: Skilled Worker.</description>
+    </item>
+  </channel>
+</rss>

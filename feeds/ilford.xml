@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KnowYourSponsor: Visa sponsors added and removed in Ilford</title>
+    <link>https://knowyoursponsor.co.uk/ilford/</link>
+    <atom:link href="https://knowyoursponsor.co.uk/feeds/ilford.xml" rel="self" type="application/rss+xml"/>
+    <description>Employers in Ilford that gained or lost a licence to sponsor UK work visas. Rebuilt every day from the official GOV.UK register. Covers the last 7 days.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 19 Sep 2026 09:42:14 +0000</lastBuildDate>
+    <item>
+      <title>Azue Groups Ltd is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/ilford/</link>
+      <guid isPermaLink="false">kys-ilford-removed-azue-groups-ltd-ilford</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Ilford, England. Industry: Other.</description>
+    </item>
+    <item>
+      <title>I G ARENA LTD is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/ilford/</link>
+      <guid isPermaLink="false">kys-ilford-removed-i-g-arena-ltd-ilford</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Ilford, Essex. Industry: Other.</description>
+    </item>
+    <item>
+      <title>SKVP Diner (Ilford) Ltd is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/ilford/</link>
+      <guid isPermaLink="false">kys-ilford-removed-skvp-diner-ilford-ltd-ilford</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Ilford. Industry: Other.</description>
+    </item>
+    <item>
+      <title>Allied Law Chambers Solicitors Ltd can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/ilford/</link>
+      <guid isPermaLink="false">kys-ilford-added-allied-law-chambers-solicitors-ltd-ilford</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Ilford. Industry: Finance &amp; Professional. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>MOBIHIVE LABS LTD can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/ilford/</link>
+      <guid isPermaLink="false">kys-ilford-added-mobihive-labs-ltd-ilford</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Ilford. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>TAQI GLOBAL LIMITED can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/ilford/</link>
+      <guid isPermaLink="false">kys-ilford-added-taqi-global-limited-ilford</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Ilford, London. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+  </channel>
+</rss>

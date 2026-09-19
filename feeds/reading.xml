@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KnowYourSponsor: Visa sponsors added and removed in Reading</title>
+    <link>https://knowyoursponsor.co.uk/reading/</link>
+    <atom:link href="https://knowyoursponsor.co.uk/feeds/reading.xml" rel="self" type="application/rss+xml"/>
+    <description>Employers in Reading that gained or lost a licence to sponsor UK work visas. Rebuilt every day from the official GOV.UK register. Covers the last 7 days.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 19 Sep 2026 09:42:14 +0000</lastBuildDate>
+    <item>
+      <title>Broad Visions Technologies Ltd is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/reading/</link>
+      <guid isPermaLink="false">kys-reading-removed-broad-visions-technologies-ltd-reading</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Reading. Industry: Tech &amp; Software.</description>
+    </item>
+    <item>
+      <title>HIYA ADVISORY LIMITED is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/reading/</link>
+      <guid isPermaLink="false">kys-reading-removed-hiya-advisory-limited-reading</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Reading. Industry: Finance &amp; Professional.</description>
+    </item>
+    <item>
+      <title>Onebite Limited is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/reading/</link>
+      <guid isPermaLink="false">kys-reading-removed-onebite-limited-reading</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Reading, Berkshire. Industry: Other.</description>
+    </item>
+  </channel>
+</rss>

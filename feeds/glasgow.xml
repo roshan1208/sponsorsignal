@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KnowYourSponsor: Visa sponsors added and removed in Glasgow</title>
+    <link>https://knowyoursponsor.co.uk/glasgow/</link>
+    <atom:link href="https://knowyoursponsor.co.uk/feeds/glasgow.xml" rel="self" type="application/rss+xml"/>
+    <description>Employers in Glasgow that gained or lost a licence to sponsor UK work visas. Rebuilt every day from the official GOV.UK register. Covers the last 7 days.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 19 Sep 2026 09:42:14 +0000</lastBuildDate>
+    <item>
+      <title>Enhance Healthcare Holdings Ltd is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-removed-enhance-healthcare-holdings-ltd-glasgow</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Glasgow. Industry: Healthcare &amp; Care.</description>
+    </item>
+    <item>
+      <title>ProsperoHub Consulting Limited is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-removed-prosperohub-consulting-limited-glasgow</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Glasgow. Industry: Finance &amp; Professional.</description>
+    </item>
+    <item>
+      <title>Scottish Sirens Ltd is no longer a licensed sponsor</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-removed-scottish-sirens-ltd-glasgow</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>removed</category>
+      <description>Removed from the official register. It cannot sponsor anyone now, and an application there is unlikely to lead anywhere. Location: Glasgow. Industry: Other.</description>
+    </item>
+    <item>
+      <title>AARIJTRADERS LIMITED can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-added-aarijtraders-limited-glasgow</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Glasgow, Scotland. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Barhouse Ltd can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-added-barhouse-ltd-glasgow</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Glasgow. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>J&amp;E Group Ltd can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-added-j-e-group-ltd-glasgow</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Glasgow, Scotland. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Last Mile Infrastructure Limited can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-added-last-mile-infrastructure-limited-glasgow</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Glasgow. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>LEONARDOS WEST LIMITED can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-added-leonardos-west-limited-glasgow</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Glasgow, Lanarkshire. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Nexus Packaging Ltd can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-added-nexus-packaging-ltd-glasgow</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Glasgow, Scotland. Industry: Manufacturing &amp; Industry. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Resolute Photonics UK Ltd can now sponsor visas</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-added-resolute-photonics-uk-ltd-glasgow</guid>
+      <pubDate>Sat, 19 Sep 2026 09:42:14 +0000</pubDate>
+      <category>added</category>
+      <description>Newly licensed to sponsor work visas. Fewer applicants know it exists yet. Location: Glasgow. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+  </channel>
+</rss>
