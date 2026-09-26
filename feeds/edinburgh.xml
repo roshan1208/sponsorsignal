@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KnowYourSponsor: Visa sponsors added and removed in Edinburgh</title>
+    <link>https://knowyoursponsor.co.uk/edinburgh/</link>
+    <atom:link href="https://knowyoursponsor.co.uk/feeds/edinburgh.xml" rel="self" type="application/rss+xml"/>
+    <description>Sponsor records in Edinburgh first or no longer observed in daily comparisons. Rebuilt every day from the official GOV.UK register. Covers the last 7 days.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 26 Sep 2026 06:17:55 +0000</lastBuildDate>
+    <item>
+      <title>Abdur Rashids Sons Limited TA Eastern Spices: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/edinburgh/</link>
+      <guid isPermaLink="false">kys-edinburgh-removed-abdur-rashids-sons-limited-ta-eastern-spices-edinburgh</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Edinburgh. Industry: Hospitality &amp; Food.</description>
+    </item>
+    <item>
+      <title>SMS URBAN LTD: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/edinburgh/</link>
+      <guid isPermaLink="false">kys-edinburgh-removed-sms-urban-ltd-edinburgh</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Edinburgh. Industry: Other.</description>
+    </item>
+    <item>
+      <title>ELEMENT MATERIALS TECHNOLOGY SHARED SERVICES LIMITED: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/edinburgh/</link>
+      <guid isPermaLink="false">kys-edinburgh-added-element-materials-technology-shared-services-limited-edinburgh</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Edinburgh, Mid Lothian. Industry: Tech &amp; Software. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>GRACEGUARD SERVICES LTD [t/a] Seasoned Hands Care: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/edinburgh/</link>
+      <guid isPermaLink="false">kys-edinburgh-added-graceguard-services-ltd-t-a-seasoned-hands-care-edinburgh</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Edinburgh. Industry: Healthcare &amp; Care. Visa routes: Skilled Worker.</description>
+    </item>
+  </channel>
+</rss>

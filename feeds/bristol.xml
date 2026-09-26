@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KnowYourSponsor: Visa sponsors added and removed in Bristol</title>
+    <link>https://knowyoursponsor.co.uk/bristol/</link>
+    <atom:link href="https://knowyoursponsor.co.uk/feeds/bristol.xml" rel="self" type="application/rss+xml"/>
+    <description>Sponsor records in Bristol first or no longer observed in daily comparisons. Rebuilt every day from the official GOV.UK register. Covers the last 7 days.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 26 Sep 2026 06:17:55 +0000</lastBuildDate>
+    <item>
+      <title>Greenways Live-in Care Ltd: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/bristol/</link>
+      <guid isPermaLink="false">kys-bristol-removed-greenways-live-in-care-ltd-bristol</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Bristol. Industry: Healthcare &amp; Care.</description>
+    </item>
+    <item>
+      <title>GrowUp Farms Limited: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/bristol/</link>
+      <guid isPermaLink="false">kys-bristol-removed-growup-farms-limited-bristol</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Bristol. Industry: Agriculture &amp; Food Production.</description>
+    </item>
+    <item>
+      <title>GrowUp Group Limited: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/bristol/</link>
+      <guid isPermaLink="false">kys-bristol-removed-growup-group-limited-bristol</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Bristol. Industry: Other.</description>
+    </item>
+    <item>
+      <title>Talwar Express Ltd T/A Talwar Express: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/bristol/</link>
+      <guid isPermaLink="false">kys-bristol-removed-talwar-express-ltd-t-a-talwar-express-bristol</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Bristol. Industry: Other.</description>
+    </item>
+    <item>
+      <title>Worldwide Online Ltd: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/bristol/</link>
+      <guid isPermaLink="false">kys-bristol-removed-worldwide-online-ltd-bristol</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Bristol. Industry: Other.</description>
+    </item>
+    <item>
+      <title>Zellis Holdings Ltd: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/bristol/</link>
+      <guid isPermaLink="false">kys-bristol-removed-zellis-holdings-ltd-bristol</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Bristol. Industry: Other.</description>
+    </item>
+    <item>
+      <title>FIA TECHNOLOGY SERVICES, LLC: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/bristol/</link>
+      <guid isPermaLink="false">kys-bristol-added-fia-technology-services-llc-bristol</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Bristol. Industry: Tech &amp; Software. Visa routes: Global Business Mobility: Senior or Specialist Worker, Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Soul Perform Ltd: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/bristol/</link>
+      <guid isPermaLink="false">kys-bristol-added-soul-perform-ltd-bristol</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Bristol. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+  </channel>
+</rss>

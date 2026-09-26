@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UK sponsor register movement over time | KnowYourSponsor</title><meta name="description" content="Dated additions, removals and rating changes calculated from KnowYourSponsor&#x27;s verified daily snapshots of the official register.">
+<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://knowyoursponsor.co.uk/trends/">
+<meta property="og:type" content="article"><meta property="og:url" content="https://knowyoursponsor.co.uk/trends/">
+<meta property="og:title" content="UK sponsor register movement over time"><meta property="og:description" content="Dated additions, removals and rating changes calculated from KnowYourSponsor&#x27;s verified daily snapshots of the official register.">
+<meta property="og:image" content="https://knowyoursponsor.co.uk/og-image.png"><meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.png" type="image/png"><link rel="stylesheet" href="/fonts/public-sans.css"><style>
+
+  :root{
+    --ink:#17233B; --ink-soft:#4A5670;
+    --paper:#FFFFFF; --paper-dim:#F5F7FB;
+    --cobalt:#2145C9; --cobalt-dark:#17348F; --on-cobalt:#FFFFFF;
+    --signal:#FFC933; --on-signal:#17233B;
+    --line:#D9DFEA; --good:#0E7B4F; --bad:#B3261E;
+    --warn-bg:#FDF1F0; --warn-bg-2:#FBE3E1; --warn-border:#E7B4AE;
+    --warn-ink:#8A1E18; --warn-solid:#B3261E;
+    --mark-bg:#17233B; --mark-fg:#FFFFFF;
+    --note-bg:#FFF6DC; --note-border:#EAD48A; --note-ink:#6B4E00;
+    --shadow:rgba(23,35,59,.10);
+    /* Three-step radius scale, shared with index.html. Corners
+       that almost match are what makes an interface feel cheap.
+       50% stays literal for circles. */
+    --r-sm:6px; --r-md:10px; --r-pill:999px;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ink:#E8ECF3; --ink-soft:#A3AEC2;
+      --paper:#10151F; --paper-dim:#1A2230;
+      --cobalt:#6B93F5; --cobalt-dark:#8FADF8; --on-cobalt:#10151F;
+      --signal:#FFC933; --on-signal:#17233B;
+      --line:#2A3444; --good:#4FBF8B; --bad:#F08A82;
+      --warn-bg:#2A1A19; --warn-bg-2:#3A1F1D; --warn-border:#6B2B26;
+      --warn-ink:#F5B5AE; --warn-solid:#B3261E;
+      --mark-bg:#E8ECF3; --mark-fg:#10151F;
+      --note-bg:#2A2412; --note-border:#5A4A1E; --note-ink:#F0D28A;
+      --shadow:rgba(0,0,0,.45);
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#E8ECF3; --ink-soft:#A3AEC2;
+    --paper:#10151F; --paper-dim:#1A2230;
+    --cobalt:#6B93F5; --cobalt-dark:#8FADF8; --on-cobalt:#10151F;
+    --signal:#FFC933; --on-signal:#17233B;
+    --line:#2A3444; --good:#4FBF8B; --bad:#F08A82;
+    --warn-bg:#2A1A19; --warn-bg-2:#3A1F1D; --warn-border:#6B2B26;
+    --warn-ink:#F5B5AE; --warn-solid:#B3261E;
+    --mark-bg:#E8ECF3; --mark-fg:#10151F;
+    --note-bg:#2A2412; --note-border:#5A4A1E; --note-ink:#F0D28A;
+    --shadow:rgba(0,0,0,.45);
+    color-scheme:dark;
+  }
+
+*{box-sizing:border-box}body{margin:0;font-family:'Public Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55}
+.wrap{max-width:980px;margin:auto;padding:0 20px}a{color:var(--cobalt)}h1{font-size:clamp(2rem,7vw,3.7rem);line-height:1.02;letter-spacing:-.04em;max-width:18ch;margin:48px 0 14px}h2{font-size:1.35rem;margin:0 0 6px}.lead{font-size:1.05rem;color:var(--ink-soft);max-width:65ch}.updated{font-size:.85rem;color:var(--ink-soft)}
+.gate{margin:32px 0;padding:20px;border:2px solid var(--ink);border-left:7px solid var(--cobalt);border-radius:var(--r-md);background:var(--paper-dim)}.gate.collecting{border-left-color:var(--note-border)}.eyebrow{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--cobalt)}.gate p{margin:4px 0 0;max-width:72ch;color:var(--ink-soft)}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:26px 0}.tile{border:1.5px solid var(--line);border-radius:var(--r-md);padding:15px}.tile b{display:block;font-size:1.8rem;line-height:1.1}.tile span{font-size:.78rem;color:var(--ink-soft)}
+.block{margin:48px 0}.sub{color:var(--ink-soft);max-width:70ch;margin:0 0 18px}.legend{display:flex;gap:18px;font-size:.82rem;color:var(--ink-soft)}.legend i{display:inline-block;width:11px;height:11px;margin-right:5px;background:var(--cobalt)}.legend i.removed{background:var(--ink-soft)}
+.daily-chart{height:260px;display:flex;align-items:stretch;gap:4px;border-bottom:2px solid var(--ink);padding-top:22px;margin-top:10px;overflow-x:auto}.day{min-width:24px;flex:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 32px;align-items:end;gap:2px;height:100%}.day span{min-height:1px;grid-row:1}.day .up{background:var(--cobalt)}.day .down{background:var(--ink-soft)}.day b{grid-row:2;grid-column:1/-1;justify-self:center;align-self:center;font-size:.56rem;white-space:nowrap;color:var(--ink-soft);font-weight:600;writing-mode:vertical-rl;transform:rotate(180deg)}
+.table-twin{margin-top:46px}summary{cursor:pointer;color:var(--cobalt);font-weight:700}table{width:100%;border-collapse:collapse;margin-top:12px;font-size:.88rem}th{text-align:left;border-bottom:2px solid var(--ink);padding:7px}td{border-bottom:1px solid var(--line);padding:8px 7px;font-variant-numeric:tabular-nums}.method{padding:18px;border:1.5px solid var(--line);border-radius:var(--r-md);background:var(--paper-dim)}.method li+li{margin-top:7px}
+footer{margin-top:56px;border-top:3px solid var(--ink);padding:24px 0 40px;color:var(--ink-soft);font-size:.85rem}:is(a,summary):focus-visible{outline:3px solid var(--cobalt);outline-offset:3px}
+
+  .header-inner{display:flex;align-items:center;justify-content:space-between;
+                gap:16px;flex-wrap:wrap;min-width:0}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:800;
+         font-size:1.1rem;letter-spacing:-.01em;color:inherit;
+         text-decoration:none}
+  .brand .mark{display:block;flex:0 0 auto;border-radius:var(--r-sm)}
+  .brand .dot{color:var(--cobalt)}
+  .topnav{display:flex;gap:18px;font-size:.9rem;font-weight:600}
+  /* "For business" is two words and wrapped at 375px, which pushed the
+     header from 73px to 86px. nowrap keeps it on one line and costs nothing:
+     measured 29px nav either way. .header-inner already wraps, so on a
+     genuinely narrow screen the nav drops to its own line rather than
+     overflowing. */
+  .topnav a{text-decoration:none;white-space:nowrap}
+  .topnav a:hover{text-decoration:underline}
+  .topnav [aria-current]{color:var(--ink-soft)}
+  .business-short{display:none}
+  @media (max-width:520px){
+    .header-inner{gap:10px}
+    .topnav{display:flex;width:100%;max-width:100%;min-width:0;align-items:center;
+            justify-content:flex-start;gap:16px;padding-bottom:2px;overflow-x:auto;
+            overscroll-behavior-inline:contain;scrollbar-width:none;
+            -webkit-overflow-scrolling:touch;font-size:.8rem}
+    .topnav::-webkit-scrollbar{display:none}
+    .topnav>*{flex:0 0 auto}
+    .business-full{display:none}
+    .business-short{display:inline}
+    .themebtn{padding:5px 8px}
+  }
+  @media (max-width:350px){.topnav .badge{display:none}}
+
+  .themebtn{
+    font:inherit;font-size:1rem;line-height:1;cursor:pointer;
+    background:transparent;border:1.5px solid var(--line);border-radius:var(--r-pill);
+    color:var(--ink-soft);padding:5px 10px;
+  }
+  .themebtn:hover{border-color:var(--ink-soft);color:var(--ink)}
+
+@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr}.daily-chart{height:235px}table{font-size:.78rem}th,td{padding:7px 4px}}@media(max-width:380px){.tiles{grid-template-columns:1fr}}
+</style><script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script></head><body><header><div class="wrap header-inner"><a class="brand" href="../" aria-label="KnowYourSponsor home"><svg class="mark" width="28" height="28" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="14" fill="var(--mark-bg)"/><text x="30" y="47" text-anchor="middle" font-family="'Public Sans',system-ui,sans-serif" font-size="42" font-weight="800" fill="var(--mark-fg)">K</text><circle cx="48" cy="44" r="5" fill="var(--signal)"/></svg><span class="wordmark">KnowYourSponsor<span class="dot">.</span></span></a><nav class="topnav" aria-label="Sections"><a href="../employer/">Employers</a><a href="../changes/">Changes</a><a href="../check-a-job/">Job tools</a><a href="../pricing/" aria-label="For business"><span class="business-full">For business</span><span class="business-short" aria-hidden="true">Business</span></a><button class="themebtn" type="button" data-theme-toggle aria-label="Switch between light and dark theme"><span aria-hidden="true">&#9789;</span></button></nav></div></header>
+<main class="wrap"><h1>UK sponsor register movement over time</h1><p class="lead">The official register is a current list. It does not publish a trend series. We preserve each checked comparison so movement can be seen without inventing a reason for it.</p>
+<p class="updated">Last rebuilt 26 Sep 2026 at 06:17 UTC. Source: daily comparisons of the GOV.UK Register of Licensed Sponsors (Workers).</p>
+<section class="gate collecting"><span class="eyebrow">Collecting history</span><h2>Useful movement, not a mature trend yet</h2><p>We have observed 27 of 27 calendar days from 2026-08-31 to 2026-09-26. We will label the series established after at least 28 observed days with 90% calendar coverage. Until then, read each dated movement rather than treating the period as representative.</p></section>
+<div class="tiles"><div class="tile"><b>127,688</b><span>current sponsor records</span></div><div class="tile"><b>1,163</b><span>records appeared in this observed period</span></div><div class="tile"><b>1,049</b><span>records no longer appeared</span></div><div class="tile"><b>+114</b><span>net record movement</span></div></div>
+<section class="block"><h2>Daily register movement</h2><p class="sub">A record may appear or disappear because of licensing, a name or address change, or a correction. The source does not publish the reason.</p><p class="legend"><span><i></i>Appeared</span><span><i class="removed"></i>No longer appeared</span></p><div class="daily-chart" role="img" aria-label="Daily sponsor-register records that appeared and no longer appeared"><div class="day" title="31 Aug: 0 appeared, 0 no longer appeared"><span class="up" style="height:0.0%"></span><span class="down" style="height:0.0%"></span><b>31 Aug</b></div><div class="day" title="01 Sep: 124 appeared, 42 no longer appeared"><span class="up" style="height:89.86%"></span><span class="down" style="height:30.43%"></span><b>01 Sep</b></div><div class="day" title="02 Sep: 34 appeared, 38 no longer appeared"><span class="up" style="height:24.64%"></span><span class="down" style="height:27.54%"></span><b>02 Sep</b></div><div class="day" title="03 Sep: 41 appeared, 40 no longer appeared"><span class="up" style="height:29.71%"></span><span class="down" style="height:28.99%"></span><b>03 Sep</b></div><div class="day" title="04 Sep: 43 appeared, 35 no longer appeared"><span class="up" style="height:31.16%"></span><span class="down" style="height:25.36%"></span><b>04 Sep</b></div><div class="day" title="05 Sep: 0 appeared, 0 no longer appeared"><span class="up" style="height:0.0%"></span><span class="down" style="height:0.0%"></span><b>05 Sep</b></div><div class="day" title="06 Sep: 0 appeared, 0 no longer appeared"><span class="up" style="height:0.0%"></span><span class="down" style="height:0.0%"></span><b>06 Sep</b></div><div class="day" title="07 Sep: 0 appeared, 0 no longer appeared"><span class="up" style="height:0.0%"></span><span class="down" style="height:0.0%"></span><b>07 Sep</b></div><div class="day" title="08 Sep: 138 appeared, 86 no longer appeared"><span class="up" style="height:100.0%"></span><span class="down" style="height:62.32%"></span><b>08 Sep</b></div><div class="day" title="09 Sep: 46 appeared, 43 no longer appeared"><span class="up" style="height:33.33%"></span><span class="down" style="height:31.16%"></span><b>09 Sep</b></div><div class="day" title="10 Sep: 59 appeared, 58 no longer appeared"><span class="up" style="height:42.75%"></span><span class="down" style="height:42.03%"></span><b>10 Sep</b></div><div class="day" title="11 Sep: 49 appeared, 65 no longer appeared"><span class="up" style="height:35.51%"></span><span class="down" style="height:47.1%"></span><b>11 Sep</b></div><div class="day" title="12 Sep: 0 appeared, 0 no longer appeared"><span class="up" style="height:0.0%"></span><span class="down" style="height:0.0%"></span><b>12 Sep</b></div><div class="day" title="13 Sep: 0 appeared, 0 no longer appeared"><span class="up" style="height:0.0%"></span><span class="down" style="height:0.0%"></span><b>13 Sep</b></div><div class="day" title="14 Sep: 86 appeared, 69 no longer appeared"><span class="up" style="height:62.32%"></span><span class="down" style="height:50.0%"></span><b>14 Sep</b></div><div class="day" title="15 Sep: 62 appeared, 66 no longer appeared"><span class="up" style="height:44.93%"></span><span class="down" style="height:47.83%"></span><b>15 Sep</b></div><div class="day" title="16 Sep: 71 appeared, 57 no longer appeared"><span class="up" style="height:51.45%"></span><span class="down" style="height:41.3%"></span><b>16 Sep</b></div><div class="day" title="17 Sep: 58 appeared, 51 no longer appeared"><span class="up" style="height:42.03%"></span><span class="down" style="height:36.96%"></span><b>17 Sep</b></div><div class="day" title="18 Sep: 55 appeared, 57 no longer appeared"><span class="up" style="height:39.86%"></span><span class="down" style="height:41.3%"></span><b>18 Sep</b></div><div class="day" title="19 Sep: 0 appeared, 0 no longer appeared"><span class="up" style="height:0.0%"></span><span class="down" style="height:0.0%"></span><b>19 Sep</b></div><div class="day" title="20 Sep: 0 appeared, 0 no longer appeared"><span class="up" style="height:0.0%"></span><span class="down" style="height:0.0%"></span><b>20 Sep</b></div><div class="day" title="21 Sep: 87 appeared, 90 no longer appeared"><span class="up" style="height:63.04%"></span><span class="down" style="height:65.22%"></span><b>21 Sep</b></div><div class="day" title="22 Sep: 46 appeared, 68 no longer appeared"><span class="up" style="height:33.33%"></span><span class="down" style="height:49.28%"></span><b>22 Sep</b></div><div class="day" title="23 Sep: 54 appeared, 58 no longer appeared"><span class="up" style="height:39.13%"></span><span class="down" style="height:42.03%"></span><b>23 Sep</b></div><div class="day" title="24 Sep: 58 appeared, 70 no longer appeared"><span class="up" style="height:42.03%"></span><span class="down" style="height:50.72%"></span><b>24 Sep</b></div><div class="day" title="25 Sep: 0 appeared, 0 no longer appeared"><span class="up" style="height:0.0%"></span><span class="down" style="height:0.0%"></span><b>25 Sep</b></div><div class="day" title="26 Sep: 52 appeared, 56 no longer appeared"><span class="up" style="height:37.68%"></span><span class="down" style="height:40.58%"></span><b>26 Sep</b></div></div><details class="table-twin"><summary>See every observed day as a table</summary><table><thead><tr><th>Date</th><th>Appeared</th><th>No longer appeared</th><th>Net</th><th>Records after comparison</th></tr></thead><tbody><tr><td>26 Sep 2026</td><td>52</td><td>56</td><td>-4</td><td>127,688</td></tr><tr><td>25 Sep 2026</td><td>0</td><td>0</td><td>+0</td><td>127,692</td></tr><tr><td>24 Sep 2026</td><td>58</td><td>70</td><td>-12</td><td>127,692</td></tr><tr><td>23 Sep 2026</td><td>54</td><td>58</td><td>-4</td><td>127,704</td></tr><tr><td>22 Sep 2026</td><td>46</td><td>68</td><td>-22</td><td>127,708</td></tr><tr><td>21 Sep 2026</td><td>87</td><td>90</td><td>-3</td><td>127,730</td></tr><tr><td>20 Sep 2026</td><td>0</td><td>0</td><td>+0</td><td>127,733</td></tr><tr><td>19 Sep 2026</td><td>0</td><td>0</td><td>+0</td><td>127,733</td></tr><tr><td>18 Sep 2026</td><td>55</td><td>57</td><td>-2</td><td>127,733</td></tr><tr><td>17 Sep 2026</td><td>58</td><td>51</td><td>+7</td><td>127,735</td></tr><tr><td>16 Sep 2026</td><td>71</td><td>57</td><td>+14</td><td>127,728</td></tr><tr><td>15 Sep 2026</td><td>62</td><td>66</td><td>-4</td><td>127,714</td></tr><tr><td>14 Sep 2026</td><td>86</td><td>69</td><td>+17</td><td>127,718</td></tr><tr><td>13 Sep 2026</td><td>0</td><td>0</td><td>+0</td><td>127,701</td></tr><tr><td>12 Sep 2026</td><td>0</td><td>0</td><td>+0</td><td>127,701</td></tr><tr><td>11 Sep 2026</td><td>49</td><td>65</td><td>-16</td><td>127,701</td></tr><tr><td>10 Sep 2026</td><td>59</td><td>58</td><td>+1</td><td>127,717</td></tr><tr><td>09 Sep 2026</td><td>46</td><td>43</td><td>+3</td><td>127,716</td></tr><tr><td>08 Sep 2026</td><td>138</td><td>86</td><td>+52</td><td>127,713</td></tr><tr><td>07 Sep 2026</td><td>0</td><td>0</td><td>+0</td><td>127,661</td></tr><tr><td>06 Sep 2026</td><td>0</td><td>0</td><td>+0</td><td>127,661</td></tr><tr><td>05 Sep 2026</td><td>0</td><td>0</td><td>+0</td><td>127,661</td></tr><tr><td>04 Sep 2026</td><td>43</td><td>35</td><td>+8</td><td>127,661</td></tr><tr><td>03 Sep 2026</td><td>41</td><td>40</td><td>+1</td><td>127,653</td></tr><tr><td>02 Sep 2026</td><td>34</td><td>38</td><td>-4</td><td>127,652</td></tr><tr><td>01 Sep 2026</td><td>124</td><td>42</td><td>+82</td><td>127,656</td></tr><tr><td>31 Aug 2026</td><td>0</td><td>0</td><td>+0</td><td>127,574</td></tr></tbody></table></details></section>
+<section class="block"><h2>Movement by inferred industry</h2><p class="sub">Industry is not supplied by the Home Office. These groups are KnowYourSponsor classifications used for navigation. “Other” means there was not enough evidence to classify the name safely.</p><table class="sector-table"><thead><tr><th>Inferred industry</th><th>Appeared</th><th>No longer appeared</th><th>Net</th></tr></thead><tbody><tr><td>Other</td><td>634</td><td>523</td><td>+111</td></tr><tr><td>Healthcare &amp; Care</td><td>157</td><td>170</td><td>-13</td></tr><tr><td>Hospitality &amp; Food</td><td>50</td><td>81</td><td>-31</td></tr><tr><td>Finance &amp; Professional</td><td>63</td><td>46</td><td>+17</td></tr><tr><td>Tech &amp; Software</td><td>50</td><td>34</td><td>+16</td></tr><tr><td>Construction &amp; Engineering</td><td>32</td><td>32</td><td>+0</td></tr><tr><td>Retail &amp; Commerce</td><td>26</td><td>33</td><td>-7</td></tr><tr><td>Education &amp; Research</td><td>34</td><td>22</td><td>+12</td></tr><tr><td>Media &amp; Creative</td><td>20</td><td>14</td><td>+6</td></tr><tr><td>Property &amp; Real Estate</td><td>20</td><td>8</td><td>+12</td></tr></tbody></table></section>
+<section class="block method"><h2>How to read this</h2><ul><li>Every calendar day in this interval was observed, including quiet days.</li><li>Additions and removals describe register records, not vacancies, workers, visa grants or sponsorship willingness.</li><li>Net movement is additions minus removals inside the observed period. It is not an economic growth rate.</li><li>Rating changes are preserved separately: 27 downgrades and 0 upgrades in this period.</li><li>The public JSON contains aggregate counts only. Employer-level history stays in the private evidence archive.</li></ul><p><a href="../data/market_trends.json">Download the aggregate evidence JSON</a> · <a href="../changes/">Review named recent changes</a></p></section>
+</main><footer><div class="wrap"><p>KnowYourSponsor is independent, is not affiliated with the Home Office and does not provide immigration advice.</p><p><a href="../">Search current sponsors</a> · <a href="../methodology/">Read the methodology</a></p></div></footer>
+<script data-goatcounter="https://sponsorsignal.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script><script>(function(){var b=document.querySelector('[data-theme-toggle]');if(!b)return;var r=document.documentElement;function dark(){return r.getAttribute('data-theme')==='dark'||(!r.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);}function sync(){b.setAttribute('aria-pressed',String(dark()));}b.addEventListener('click',function(){var next=dark()?'light':'dark';r.setAttribute('data-theme',next);try{localStorage.setItem('theme',next);}catch(e){}sync();});sync();})();</script></body></html>

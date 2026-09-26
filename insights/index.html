@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UK visa sponsorship in numbers | KnowYourSponsor</title>
+<meta name="description" content="127,688 sponsor name-and-town records appear in the current register. Explore their source locations, inferred industries and visa routes. One legal employer can appear more than once.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://knowyoursponsor.co.uk/insights/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowyoursponsor.co.uk/insights/">
+<meta property="og:title" content="UK visa sponsorship in numbers">
+<meta property="og:description" content="127,688 sponsor name-and-town records appear in the current register. Explore their source locations, inferred industries and visa routes. One legal employer can appear more than once.">
+<meta property="og:image" content="https://knowyoursponsor.co.uk/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.png" type="image/png">
+<link rel="stylesheet" href="/fonts/public-sans.css">
+<style>
+
+  :root{
+    --ink:#17233B; --ink-soft:#4A5670;
+    --paper:#FFFFFF; --paper-dim:#F5F7FB;
+    --cobalt:#2145C9; --cobalt-dark:#17348F; --on-cobalt:#FFFFFF;
+    --signal:#FFC933; --on-signal:#17233B;
+    --line:#D9DFEA; --good:#0E7B4F; --bad:#B3261E;
+    --warn-bg:#FDF1F0; --warn-bg-2:#FBE3E1; --warn-border:#E7B4AE;
+    --warn-ink:#8A1E18; --warn-solid:#B3261E;
+    --mark-bg:#17233B; --mark-fg:#FFFFFF;
+    --note-bg:#FFF6DC; --note-border:#EAD48A; --note-ink:#6B4E00;
+    --shadow:rgba(23,35,59,.10);
+    /* Three-step radius scale, shared with index.html. Corners
+       that almost match are what makes an interface feel cheap.
+       50% stays literal for circles. */
+    --r-sm:6px; --r-md:10px; --r-pill:999px;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ink:#E8ECF3; --ink-soft:#A3AEC2;
+      --paper:#10151F; --paper-dim:#1A2230;
+      --cobalt:#6B93F5; --cobalt-dark:#8FADF8; --on-cobalt:#10151F;
+      --signal:#FFC933; --on-signal:#17233B;
+      --line:#2A3444; --good:#4FBF8B; --bad:#F08A82;
+      --warn-bg:#2A1A19; --warn-bg-2:#3A1F1D; --warn-border:#6B2B26;
+      --warn-ink:#F5B5AE; --warn-solid:#B3261E;
+      --mark-bg:#E8ECF3; --mark-fg:#10151F;
+      --note-bg:#2A2412; --note-border:#5A4A1E; --note-ink:#F0D28A;
+      --shadow:rgba(0,0,0,.45);
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#E8ECF3; --ink-soft:#A3AEC2;
+    --paper:#10151F; --paper-dim:#1A2230;
+    --cobalt:#6B93F5; --cobalt-dark:#8FADF8; --on-cobalt:#10151F;
+    --signal:#FFC933; --on-signal:#17233B;
+    --line:#2A3444; --good:#4FBF8B; --bad:#F08A82;
+    --warn-bg:#2A1A19; --warn-bg-2:#3A1F1D; --warn-border:#6B2B26;
+    --warn-ink:#F5B5AE; --warn-solid:#B3261E;
+    --mark-bg:#E8ECF3; --mark-fg:#10151F;
+    --note-bg:#2A2412; --note-border:#5A4A1E; --note-ink:#F0D28A;
+    --shadow:rgba(0,0,0,.45);
+    color-scheme:dark;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Public Sans',system-ui,sans-serif;color:var(--ink);
+       line-height:1.55;background:var(--paper)}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  a{color:var(--cobalt)}
+  header{border-bottom:3px solid var(--ink);padding:14px 0}
+  .brand{font-weight:800;font-size:1.1rem}
+  .brand a{color:inherit;text-decoration:none}
+  .brand .dot{color:var(--cobalt)}
+
+  h1{font-size:clamp(1.6rem,4.5vw,2.4rem);font-weight:800;letter-spacing:-0.02em;
+     margin:36px 0 10px;text-wrap:balance;max-width:18ch}
+  .lead{color:var(--ink-soft);max-width:60ch;text-wrap:pretty}
+  .updated{margin-top:8px;font-size:.85rem;color:var(--ink-soft)}
+
+  /* the one number the page leads with */
+  .hero{margin:34px 0 6px;font-size:clamp(2.6rem,9vw,4rem);font-weight:800;
+        letter-spacing:-0.03em;line-height:1}
+  .hero-label{color:var(--ink-soft);max-width:46ch;text-wrap:pretty}
+
+  .tiles{display:grid;gap:12px;margin:28px 0 8px;
+         grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+  .tile{border:1.5px solid var(--line);border-radius:var(--r-md);padding:14px 16px}
+  .tile .label{display:block;font-size:.82rem;color:var(--ink-soft)}
+  .tile .value{display:block;font-size:1.7rem;font-weight:600;letter-spacing:-0.02em;
+               margin-top:2px}
+  .tile .note{display:block;font-size:.78rem;color:var(--ink-soft);margin-top:2px;
+              text-wrap:pretty}
+
+  section.block{margin:52px 0}
+  h2{font-size:1.25rem;font-weight:800;letter-spacing:-0.01em;text-wrap:balance}
+  .sub{color:var(--ink-soft);font-size:.92rem;margin-top:4px;max-width:62ch;
+       text-wrap:pretty}
+
+  /* the pulled-out leader: stated, not squeezed into the bars */
+  .lead-figure{display:flex;align-items:baseline;gap:10px;margin-top:16px;
+               padding:12px 14px;border-radius:var(--r-sm);background:var(--paper-dim);
+               border-left:4px solid var(--cobalt)}
+  .lead-figure .n{font-size:1.6rem;font-weight:600;letter-spacing:-0.02em}
+  .lead-figure .who{color:var(--ink-soft)}
+
+  .chart{width:100%;height:auto;margin-top:18px;overflow:visible}
+  .chart .cat{font-size:13px;fill:var(--ink)}
+  .chart .val{font-size:13px;fill:var(--ink-soft);font-variant-numeric:tabular-nums}
+  .chart path{fill:var(--cobalt)}
+  /* opacity only: a compositor property, so hover cannot cause layout work */
+  .chart .bar{opacity:1;transition:opacity .12s ease-out}
+  .chart:hover .bar{opacity:.55}
+  .chart .bar:hover{opacity:1}
+  @media (prefers-reduced-motion:reduce){.chart .bar{transition:none}}
+
+  /* Routes out of the charts, matching the browse hub's chips. */
+  .chips{display:flex;flex-wrap:wrap;gap:7px;align-items:center;
+         margin-top:16px}
+  .chiplead{font-size:.8rem;font-weight:700;letter-spacing:.04em;
+            text-transform:uppercase;color:var(--ink-soft);margin-right:2px}
+  .chips a{display:inline-block;border:1.5px solid var(--line);
+           border-radius:var(--r-pill);padding:5px 12px;text-decoration:none;
+           font-weight:600;font-size:.88rem;color:var(--ink);
+           background:var(--paper)}
+  .chips a:hover{border-color:var(--cobalt);background:var(--paper-dim)}
+  .twin{margin-top:16px;font-size:.9rem}
+  .twin summary{cursor:pointer;color:var(--cobalt);font-weight:600}
+  .twin table{width:100%;border-collapse:collapse;margin-top:10px}
+  .twin th{text-align:left;font-size:.8rem;color:var(--ink-soft);
+           border-bottom:2px solid var(--ink);padding:6px 8px}
+  .twin td{padding:7px 8px;border-bottom:1px solid var(--line);
+           font-variant-numeric:tabular-nums}
+  .twin td:first-child{font-variant-numeric:normal}
+
+  .caveat{margin-top:14px;padding:12px 14px;border-radius:var(--r-sm);
+          background:var(--paper-dim);border:1.5px solid var(--line);
+          font-size:.88rem;color:var(--ink-soft);max-width:62ch;text-wrap:pretty}
+  .caveat strong{color:var(--ink)}
+
+  .cta{margin:56px 0;border:2px solid var(--ink);border-radius:var(--r-md);
+       background:var(--paper-dim);padding:24px}
+  .cta h2{font-size:1.2rem}
+  .cta p{color:var(--ink-soft);margin-top:6px;max-width:52ch;text-wrap:pretty}
+  .cta a.btn{display:inline-block;margin-top:14px;background:var(--cobalt);
+             color:var(--on-cobalt);text-decoration:none;font-weight:600;padding:11px 22px;
+             border-radius:var(--r-sm)}
+  :is(a,summary,button):focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
+
+  footer{margin-top:48px;border-top:3px solid var(--ink);padding:22px 0 40px;
+         font-size:.85rem;color:var(--ink-soft)}
+  footer p+p{margin-top:6px}
+  
+  .header-inner{display:flex;align-items:center;justify-content:space-between;
+                gap:16px;flex-wrap:wrap;min-width:0}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:800;
+         font-size:1.1rem;letter-spacing:-.01em;color:inherit;
+         text-decoration:none}
+  .brand .mark{display:block;flex:0 0 auto;border-radius:var(--r-sm)}
+  .brand .dot{color:var(--cobalt)}
+  .topnav{display:flex;gap:18px;font-size:.9rem;font-weight:600}
+  /* "For business" is two words and wrapped at 375px, which pushed the
+     header from 73px to 86px. nowrap keeps it on one line and costs nothing:
+     measured 29px nav either way. .header-inner already wraps, so on a
+     genuinely narrow screen the nav drops to its own line rather than
+     overflowing. */
+  .topnav a{text-decoration:none;white-space:nowrap}
+  .topnav a:hover{text-decoration:underline}
+  .topnav [aria-current]{color:var(--ink-soft)}
+  .business-short{display:none}
+  @media (max-width:520px){
+    .header-inner{gap:10px}
+    .topnav{display:flex;width:100%;max-width:100%;min-width:0;align-items:center;
+            justify-content:flex-start;gap:16px;padding-bottom:2px;overflow-x:auto;
+            overscroll-behavior-inline:contain;scrollbar-width:none;
+            -webkit-overflow-scrolling:touch;font-size:.8rem}
+    .topnav::-webkit-scrollbar{display:none}
+    .topnav>*{flex:0 0 auto}
+    .business-full{display:none}
+    .business-short{display:inline}
+    .themebtn{padding:5px 8px}
+  }
+  @media (max-width:350px){.topnav .badge{display:none}}
+
+  .themebtn{
+    font:inherit;font-size:1rem;line-height:1;cursor:pointer;
+    background:transparent;border:1.5px solid var(--line);border-radius:var(--r-pill);
+    color:var(--ink-soft);padding:5px 10px;
+  }
+  .themebtn:hover{border-color:var(--ink-soft);color:var(--ink)}
+
+  @media (max-width:640px){ .chart .cat{font-size:11px} .chart .val{font-size:11px} }
+</style>
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+</head>
+<body>
+<header><div class="wrap header-inner"><a class="brand" href="../" aria-label="KnowYourSponsor home"><svg class="mark" width="28" height="28" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="14" fill="var(--mark-bg)"/><text x="30" y="47" text-anchor="middle" font-family="'Public Sans',system-ui,sans-serif" font-size="42" font-weight="800" fill="var(--mark-fg)">K</text><circle cx="48" cy="44" r="5" fill="var(--signal)"/></svg><span class="wordmark">KnowYourSponsor<span class="dot">.</span></span></a><nav class="topnav" aria-label="Sections"><a href="../employer/">Employers</a><a href="../changes/">Changes</a><a href="../check-a-job/">Job tools</a><a href="../pricing/" aria-label="For business"><span class="business-full">For business</span><span class="business-short" aria-hidden="true">Business</span></a><button class="themebtn" type="button" data-theme-toggle aria-label="Switch between light and dark theme"><span aria-hidden="true">&#9789;</span></button></nav></div></header>
+
+<main class="wrap">
+  <h1>UK visa sponsorship in numbers</h1>
+  <p class="lead">This page counts sponsor name-and-town records in the
+     official register. One legal employer can appear in more than one record.</p>
+  <p class="updated">From the GOV.UK Register of Licensed Sponsors, updated 26 Sep 2026 at 06:17 UTC.</p>
+
+  <p class="hero">127,688</p>
+  <p class="hero-label">current sponsor name-and-town records are published.
+     One legal organisation may appear in more than one record.</p>
+
+  <div class="tiles">
+    <div class="tile"><span class="label">Records first observed in the last 7 days</span><span class="value">297</span><span class="note">exact sponsor name-and-town rows</span></div>
+    <div class="tile"><span class="label">Records no longer observed</span><span class="value">342</span><span class="note">exact name-and-town rows in the last 7 days</span></div>
+    <div class="tile"><span class="label">On a B rating</span><span class="value">83</span><span class="note">usually cannot issue new certificates</span></div>
+    <div class="tile"><span class="label">Source location values</span><span class="value">6,335</span><span class="note">distinct Town/City entries</span></div>
+  </div>
+
+  <section class="block">
+    <h2>Where the sponsors are</h2>
+    <p class="sub">London is not a tie-breaker, it is the whole race.
+       London alone has 36,535 of them, more than the next 14 cities put together (18,584). It is left out of the chart below so the rest can be compared with each other.</p>
+    <p class="lead-figure"><span class="n">36,535</span><span class="who">in London</span></p>
+    <svg class="chart" viewBox="0 0 720 456" role="img" aria-labelledby="cities-t" preserveAspectRatio="xMinYMin meet">
+<title id="cities-t">Sponsor records by source Town/City value, outside the largest</title>
+<g class="bar"><title>Birmingham: 3,074 records</title><text class="cat" x="0" y="19">Birmingham</text><path d="M232,4 H628.0 Q632.0,4 632.0,8 V20 Q632.0,24 628.0,24 H232 Z"/><text class="val" x="640.0" y="19">3,074</text></g>
+<g class="bar"><title>Manchester: 2,872 records</title><text class="cat" x="0" y="51">Manchester</text><path d="M232,36 H601.7 Q605.7,36 605.7,40 V52 Q605.7,56 601.7,56 H232 Z"/><text class="val" x="613.7" y="51">2,872</text></g>
+<g class="bar"><title>Leicester: 1,413 records</title><text class="cat" x="0" y="83">Leicester</text><path d="M232,68 H411.9 Q415.9,68 415.9,72 V84 Q415.9,88 411.9,88 H232 Z"/><text class="val" x="423.9" y="83">1,413</text></g>
+<g class="bar"><title>Glasgow: 1,367 records</title><text class="cat" x="0" y="115">Glasgow</text><path d="M232,100 H405.9 Q409.9,100 409.9,104 V116 Q409.9,120 405.9,120 H232 Z"/><text class="val" x="417.9" y="115">1,367</text></g>
+<g class="bar"><title>Bristol: 1,294 records</title><text class="cat" x="0" y="147">Bristol</text><path d="M232,132 H396.4 Q400.4,132 400.4,136 V148 Q400.4,152 396.4,152 H232 Z"/><text class="val" x="408.4" y="147">1,294</text></g>
+<g class="bar"><title>Edinburgh: 1,175 records</title><text class="cat" x="0" y="179">Edinburgh</text><path d="M232,164 H380.9 Q384.9,164 384.9,168 V180 Q384.9,184 380.9,184 H232 Z"/><text class="val" x="392.9" y="179">1,175</text></g>
+<g class="bar"><title>Leeds: 1,079 records</title><text class="cat" x="0" y="211">Leeds</text><path d="M232,196 H368.4 Q372.4,196 372.4,200 V212 Q372.4,216 368.4,216 H232 Z"/><text class="val" x="380.4" y="211">1,079</text></g>
+<g class="bar"><title>Nottingham: 1,042 records</title><text class="cat" x="0" y="243">Nottingham</text><path d="M232,228 H363.6 Q367.6,228 367.6,232 V244 Q367.6,248 363.6,248 H232 Z"/><text class="val" x="375.6" y="243">1,042</text></g>
+<g class="bar"><title>Ilford: 922 records</title><text class="cat" x="0" y="275">Ilford</text><path d="M232,260 H348.0 Q352.0,260 352.0,264 V276 Q352.0,280 348.0,280 H232 Z"/><text class="val" x="360.0" y="275">922</text></g>
+<g class="bar"><title>Reading: 908 records</title><text class="cat" x="0" y="307">Reading</text><path d="M232,292 H346.2 Q350.2,292 350.2,296 V308 Q350.2,312 346.2,312 H232 Z"/><text class="val" x="358.2" y="307">908</text></g>
+<g class="bar"><title>Coventry: 903 records</title><text class="cat" x="0" y="339">Coventry</text><path d="M232,324 H345.5 Q349.5,324 349.5,328 V340 Q349.5,344 345.5,344 H232 Z"/><text class="val" x="357.5" y="339">903</text></g>
+<g class="bar"><title>Slough: 855 records</title><text class="cat" x="0" y="371">Slough</text><path d="M232,356 H339.3 Q343.3,356 343.3,360 V372 Q343.3,376 339.3,376 H232 Z"/><text class="val" x="351.3" y="371">855</text></g>
+<g class="bar"><title>Cambridge: 841 records</title><text class="cat" x="0" y="403">Cambridge</text><path d="M232,388 H337.4 Q341.4,388 341.4,392 V404 Q341.4,408 337.4,408 H232 Z"/><text class="val" x="349.4" y="403">841</text></g>
+<g class="bar"><title>Milton Keynes: 839 records</title><text class="cat" x="0" y="435">Milton Keynes</text><path d="M232,420 H337.2 Q341.2,420 341.2,424 V436 Q341.2,440 337.2,440 H232 Z"/><text class="val" x="349.2" y="435">839</text></g>
+</svg>
+    <details class="twin"><summary>See these numbers as a table, including London</summary><table><thead><tr><th>Town or city</th><th>Records</th><th>Share</th></tr></thead><tbody><tr><td>London</td><td>36,535</td><td>28.6%</td></tr><tr><td>Birmingham</td><td>3,074</td><td>2.4%</td></tr><tr><td>Manchester</td><td>2,872</td><td>2.2%</td></tr><tr><td>Leicester</td><td>1,413</td><td>1.1%</td></tr><tr><td>Glasgow</td><td>1,367</td><td>1.1%</td></tr><tr><td>Bristol</td><td>1,294</td><td>1.0%</td></tr><tr><td>Edinburgh</td><td>1,175</td><td>0.9%</td></tr><tr><td>Leeds</td><td>1,079</td><td>0.8%</td></tr><tr><td>Nottingham</td><td>1,042</td><td>0.8%</td></tr><tr><td>Ilford</td><td>922</td><td>0.7%</td></tr><tr><td>Reading</td><td>908</td><td>0.7%</td></tr><tr><td>Coventry</td><td>903</td><td>0.7%</td></tr><tr><td>Slough</td><td>855</td><td>0.7%</td></tr><tr><td>Cambridge</td><td>841</td><td>0.7%</td></tr><tr><td>Milton Keynes</td><td>839</td><td>0.7%</td></tr></tbody></table></details>
+    <div class="chips"><span class="chiplead">Go to a page:</span><a href="../london/">London</a><a href="../birmingham/">Birmingham</a><a href="../manchester/">Manchester</a><a href="../leicester/">Leicester</a><a href="../glasgow/">Glasgow</a><a href="../bristol/">Bristol</a><a href="../edinburgh/">Edinburgh</a><a href="../leeds/">Leeds</a><a href="../nottingham/">Nottingham</a><a href="../ilford/">Ilford</a><a href="../reading/">Reading</a><a href="../coventry/">Coventry</a></div>
+  </section>
+
+  <section class="block">
+    <h2>Which visa routes they can use</h2>
+    <p class="sub">Each register record lists one or more routes. These are
+       record-route associations, not distinct legal employers. Skilled Worker alone has 122,308 of them, more than the next 7 routes put together (18,961). It is left out of the chart below so the rest can be compared with each other.</p>
+    <p class="lead-figure"><span class="n">122,308</span><span class="who">in Skilled Worker</span></p>
+    <svg class="chart" viewBox="0 0 720 232" role="img" aria-labelledby="routes-t" preserveAspectRatio="xMinYMin meet">
+<title id="routes-t">Sponsor records listing each visa route, excluding the most common</title>
+<g class="bar"><title>Global Business Mobility: Senior or Specialist Worker: 10,375 records</title><text class="cat" x="0" y="19">GBM: Senior or Specialist Worker</text><path d="M232,4 H628.0 Q632.0,4 632.0,8 V20 Q632.0,24 628.0,24 H232 Z"/><text class="val" x="640.0" y="19">10,375</text></g>
+<g class="bar"><title>Tier 2 Ministers of Religion: 1,959 records</title><text class="cat" x="0" y="51">Tier 2 Ministers of Religion</text><path d="M232,36 H303.5 Q307.5,36 307.5,40 V52 Q307.5,56 303.5,56 H232 Z"/><text class="val" x="315.5" y="51">1,959</text></g>
+<g class="bar"><title>Creative Worker: 1,581 records</title><text class="cat" x="0" y="83">Creative Worker</text><path d="M232,68 H289.0 Q293.0,68 293.0,72 V84 Q293.0,88 289.0,88 H232 Z"/><text class="val" x="301.0" y="83">1,581</text></g>
+<g class="bar"><title>Charity Worker: 1,530 records</title><text class="cat" x="0" y="115">Charity Worker</text><path d="M232,100 H287.0 Q291.0,100 291.0,104 V116 Q291.0,120 287.0,120 H232 Z"/><text class="val" x="299.0" y="115">1,530</text></g>
+<g class="bar"><title>International Sportsperson: 1,461 records</title><text class="cat" x="0" y="147">International Sportsperson</text><path d="M232,132 H284.3 Q288.3,132 288.3,136 V148 Q288.3,152 284.3,152 H232 Z"/><text class="val" x="296.3" y="147">1,461</text></g>
+<g class="bar"><title>Religious Worker: 1,433 records</title><text class="cat" x="0" y="179">Religious Worker</text><path d="M232,164 H283.2 Q287.2,164 287.2,168 V180 Q287.2,184 283.2,184 H232 Z"/><text class="val" x="295.2" y="179">1,433</text></g>
+<g class="bar"><title>Global Business Mobility: Graduate Trainee: 622 records</title><text class="cat" x="0" y="211">GBM: Graduate Trainee</text><path d="M232,196 H252.0 Q256.0,196 256.0,200 V212 Q256.0,216 252.0,216 H232 Z"/><text class="val" x="264.0" y="211">622</text></g>
+</svg>
+    <details class="twin"><summary>See these numbers as a table, including Skilled Worker</summary><table><thead><tr><th>Visa route</th><th>Records</th></tr></thead><tbody><tr><td>Skilled Worker</td><td>122,308</td></tr><tr><td>Global Business Mobility: Senior or Specialist Worker</td><td>10,375</td></tr><tr><td>Tier 2 Ministers of Religion</td><td>1,959</td></tr><tr><td>Creative Worker</td><td>1,581</td></tr><tr><td>Charity Worker</td><td>1,530</td></tr><tr><td>International Sportsperson</td><td>1,461</td></tr><tr><td>Religious Worker</td><td>1,433</td></tr><tr><td>Global Business Mobility: Graduate Trainee</td><td>622</td></tr></tbody></table></details>
+    <p class="caveat">One record can list several routes, so these add up to
+       more than 127,688.</p>
+  </section>
+
+  <section class="block">
+    <h2>What they do</h2>
+    <p class="sub">Industries are not in the official register. We work them
+       out from each sponsor name, which only succeeds when the name says
+       what the business does.</p>
+    <svg class="chart" viewBox="0 0 720 680" role="img" aria-labelledby="industries-t" preserveAspectRatio="xMinYMin meet">
+<title id="industries-t">Sponsor records by inferred industry</title>
+<g class="bar"><title>Retail &amp; Commerce: 19,766 records</title><text class="cat" x="0" y="19">Retail &amp; Commerce</text><path d="M232,4 H628.0 Q632.0,4 632.0,8 V20 Q632.0,24 628.0,24 H232 Z"/><text class="val" x="640.0" y="19">19,766</text></g>
+<g class="bar"><title>Hospitality &amp; Food: 14,320 records</title><text class="cat" x="0" y="51">Hospitality &amp; Food</text><path d="M232,36 H517.8 Q521.8,36 521.8,40 V52 Q521.8,56 517.8,56 H232 Z"/><text class="val" x="529.8" y="51">14,320</text></g>
+<g class="bar"><title>Healthcare &amp; Care: 13,804 records</title><text class="cat" x="0" y="83">Healthcare &amp; Care</text><path d="M232,68 H507.3 Q511.3,68 511.3,72 V84 Q511.3,88 507.3,88 H232 Z"/><text class="val" x="519.3" y="83">13,804</text></g>
+<g class="bar"><title>Tech &amp; Software: 11,318 records</title><text class="cat" x="0" y="115">Tech &amp; Software</text><path d="M232,100 H457.0 Q461.0,100 461.0,104 V116 Q461.0,120 457.0,120 H232 Z"/><text class="val" x="469.0" y="115">11,318</text></g>
+<g class="bar"><title>Finance &amp; Professional: 10,711 records</title><text class="cat" x="0" y="147">Finance &amp; Professional</text><path d="M232,132 H444.8 Q448.8,132 448.8,136 V148 Q448.8,152 444.8,152 H232 Z"/><text class="val" x="456.8" y="147">10,711</text></g>
+<g class="bar"><title>Construction &amp; Engineering: 7,770 records</title><text class="cat" x="0" y="179">Construction &amp; Engineering</text><path d="M232,164 H385.2 Q389.2,164 389.2,168 V180 Q389.2,184 385.2,184 H232 Z"/><text class="val" x="397.2" y="179">7,770</text></g>
+<g class="bar"><title>Media &amp; Creative: 6,072 records</title><text class="cat" x="0" y="211">Media &amp; Creative</text><path d="M232,196 H350.9 Q354.9,196 354.9,200 V212 Q354.9,216 350.9,216 H232 Z"/><text class="val" x="362.9" y="211">6,072</text></g>
+<g class="bar"><title>Manufacturing &amp; Industry: 5,820 records</title><text class="cat" x="0" y="243">Manufacturing &amp; Industry</text><path d="M232,228 H345.8 Q349.8,228 349.8,232 V244 Q349.8,248 345.8,248 H232 Z"/><text class="val" x="357.8" y="243">5,820</text></g>
+<g class="bar"><title>Education &amp; Research: 4,980 records</title><text class="cat" x="0" y="275">Education &amp; Research</text><path d="M232,260 H328.8 Q332.8,260 332.8,264 V276 Q332.8,280 328.8,280 H232 Z"/><text class="val" x="340.8" y="275">4,980</text></g>
+<g class="bar"><title>Logistics &amp; Transport: 2,535 records</title><text class="cat" x="0" y="307">Logistics &amp; Transport</text><path d="M232,292 H279.3 Q283.3,292 283.3,296 V308 Q283.3,312 279.3,312 H232 Z"/><text class="val" x="291.3" y="307">2,535</text></g>
+<g class="bar"><title>Motor &amp; Automotive: 2,394 records</title><text class="cat" x="0" y="339">Motor &amp; Automotive</text><path d="M232,324 H276.4 Q280.4,324 280.4,328 V340 Q280.4,344 276.4,344 H232 Z"/><text class="val" x="288.4" y="339">2,394</text></g>
+<g class="bar"><title>Property &amp; Real Estate: 2,278 records</title><text class="cat" x="0" y="371">Property &amp; Real Estate</text><path d="M232,356 H274.1 Q278.1,356 278.1,360 V372 Q278.1,376 274.1,376 H232 Z"/><text class="val" x="286.1" y="371">2,278</text></g>
+<g class="bar"><title>Agriculture &amp; Food Production: 1,853 records</title><text class="cat" x="0" y="403">Agriculture &amp; Food Production</text><path d="M232,388 H265.5 Q269.5,388 269.5,392 V404 Q269.5,408 265.5,408 H232 Z"/><text class="val" x="277.5" y="403">1,853</text></g>
+<g class="bar"><title>Charity &amp; Faith: 1,795 records</title><text class="cat" x="0" y="435">Charity &amp; Faith</text><path d="M232,420 H264.3 Q268.3,420 268.3,424 V436 Q268.3,440 264.3,440 H232 Z"/><text class="val" x="276.3" y="435">1,795</text></g>
+<g class="bar"><title>Sport &amp; Leisure: 1,648 records</title><text class="cat" x="0" y="467">Sport &amp; Leisure</text><path d="M232,452 H261.4 Q265.4,452 265.4,456 V468 Q265.4,472 261.4,472 H232 Z"/><text class="val" x="273.4" y="467">1,648</text></g>
+<g class="bar"><title>Recruitment &amp; Staffing: 1,587 records</title><text class="cat" x="0" y="499">Recruitment &amp; Staffing</text><path d="M232,484 H260.1 Q264.1,484 264.1,488 V500 Q264.1,504 260.1,504 H232 Z"/><text class="val" x="272.1" y="499">1,587</text></g>
+<g class="bar"><title>Beauty &amp; Wellbeing: 1,068 records</title><text class="cat" x="0" y="531">Beauty &amp; Wellbeing</text><path d="M232,516 H249.6 Q253.6,516 253.6,520 V532 Q253.6,536 249.6,536 H232 Z"/><text class="val" x="261.6" y="531">1,068</text></g>
+<g class="bar"><title>Energy &amp; Utilities: 925 records</title><text class="cat" x="0" y="563">Energy &amp; Utilities</text><path d="M232,548 H246.7 Q250.7,548 250.7,552 V564 Q250.7,568 246.7,568 H232 Z"/><text class="val" x="258.7" y="563">925</text></g>
+<g class="bar"><title>Security &amp; Facilities: 887 records</title><text class="cat" x="0" y="595">Security &amp; Facilities</text><path d="M232,580 H246.0 Q250.0,580 250.0,584 V596 Q250.0,600 246.0,600 H232 Z"/><text class="val" x="258.0" y="595">887</text></g>
+<g class="bar"><title>Public Sector: 765 records</title><text class="cat" x="0" y="627">Public Sector</text><path d="M232,612 H243.5 Q247.5,612 247.5,616 V628 Q247.5,632 243.5,632 H232 Z"/><text class="val" x="255.5" y="627">765</text></g>
+<g class="bar"><title>Travel &amp; Tourism: 525 records</title><text class="cat" x="0" y="659">Travel &amp; Tourism</text><path d="M232,644 H238.6 Q242.6,644 242.6,648 V660 Q242.6,664 238.6,664 H232 Z"/><text class="val" x="250.6" y="659">525</text></g>
+</svg>
+    <details class="twin"><summary>See these numbers as a table</summary><table><thead><tr><th>Industry</th><th>Records</th><th>Share</th></tr></thead><tbody><tr><td>Retail &amp; Commerce</td><td>19,766</td><td>17.5%</td></tr><tr><td>Hospitality &amp; Food</td><td>14,320</td><td>12.7%</td></tr><tr><td>Healthcare &amp; Care</td><td>13,804</td><td>12.2%</td></tr><tr><td>Tech &amp; Software</td><td>11,318</td><td>10.0%</td></tr><tr><td>Finance &amp; Professional</td><td>10,711</td><td>9.5%</td></tr><tr><td>Construction &amp; Engineering</td><td>7,770</td><td>6.9%</td></tr><tr><td>Media &amp; Creative</td><td>6,072</td><td>5.4%</td></tr><tr><td>Manufacturing &amp; Industry</td><td>5,820</td><td>5.2%</td></tr><tr><td>Education &amp; Research</td><td>4,980</td><td>4.4%</td></tr><tr><td>Logistics &amp; Transport</td><td>2,535</td><td>2.2%</td></tr><tr><td>Motor &amp; Automotive</td><td>2,394</td><td>2.1%</td></tr><tr><td>Property &amp; Real Estate</td><td>2,278</td><td>2.0%</td></tr><tr><td>Agriculture &amp; Food Production</td><td>1,853</td><td>1.6%</td></tr><tr><td>Charity &amp; Faith</td><td>1,795</td><td>1.6%</td></tr><tr><td>Sport &amp; Leisure</td><td>1,648</td><td>1.5%</td></tr><tr><td>Recruitment &amp; Staffing</td><td>1,587</td><td>1.4%</td></tr><tr><td>Beauty &amp; Wellbeing</td><td>1,068</td><td>0.9%</td></tr><tr><td>Energy &amp; Utilities</td><td>925</td><td>0.8%</td></tr><tr><td>Security &amp; Facilities</td><td>887</td><td>0.8%</td></tr><tr><td>Public Sector</td><td>765</td><td>0.7%</td></tr><tr><td>Travel &amp; Tourism</td><td>525</td><td>0.5%</td></tr></tbody></table></details>
+    <div class="chips"><span class="chiplead">Go to a page:</span><a href="../retail-commerce/">Retail &amp; Commerce</a><a href="../hospitality-food/">Hospitality &amp; Food</a><a href="../healthcare-care/">Healthcare &amp; Care</a><a href="../tech-software/">Tech &amp; Software</a><a href="../finance-professional/">Finance &amp; Professional</a><a href="../construction-engineering/">Construction &amp; Engineering</a><a href="../media-creative/">Media &amp; Creative</a><a href="../manufacturing-industry/">Manufacturing &amp; Industry</a></div>
+    <p class="caveat"><strong>Read this before quoting these figures.</strong>
+       They cover the 112,821 records whose industry we could
+       work out. The other 14,867,
+       12% of the register, have names that do not say what
+       the business does, so they are not counted here. This is a limit of our
+       own guesswork, not of the register.</p>
+  </section>
+
+  <section class="cta">
+    <h2>See movement over time</h2>
+    <p>The current register is one snapshot. Our dated comparison series keeps
+       additions, removals, rating changes and its own coverage gaps visible.</p>
+    <a class="btn" href="../trends/">Open register movement trends</a>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  <p>Built on the official GOV.UK Register of Licensed Sponsors (Workers).
+     KnowYourSponsor is an independent search tool built on open public data.
+     It is not affiliated with the Home Office and is not immigration advice.</p>
+  <p><a href="../">Search the full list</a></p>
+</div></footer>
+<script data-goatcounter="https://sponsorsignal.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>(function(){var b=document.querySelector('[data-theme-toggle]');if(!b)return;var r=document.documentElement;function dark(){return r.getAttribute('data-theme')==='dark'||(!r.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);}function sync(){b.setAttribute('aria-pressed',String(dark()));}b.addEventListener('click',function(){var next=dark()?'light':'dark';r.setAttribute('data-theme',next);try{localStorage.setItem('theme',next);}catch(e){}sync();});sync();})();</script>
+</body>
+</html>

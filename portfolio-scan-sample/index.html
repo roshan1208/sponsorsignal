@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-GB"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="robots" content="noindex,follow">
+<title>Sample portfolio evidence report | KnowYourSponsor</title>
+<link rel="icon" href="../favicon.png" type="image/png">
+<link rel="stylesheet" href="/fonts/public-sans.css"><style>
+  :root{
+    --ink:#17233B; --ink-soft:#4A5670;
+    --paper:#FFFFFF; --paper-dim:#F5F7FB;
+    --cobalt:#2145C9; --cobalt-dark:#17348F; --on-cobalt:#FFFFFF;
+    --signal:#FFC933; --on-signal:#17233B;
+    --line:#D9DFEA; --good:#0E7B4F; --bad:#B3261E;
+    --warn-bg:#FDF1F0; --warn-bg-2:#FBE3E1; --warn-border:#E7B4AE;
+    --warn-ink:#8A1E18; --warn-solid:#B3261E;
+    --mark-bg:#17233B; --mark-fg:#FFFFFF;
+    --note-bg:#FFF6DC; --note-border:#EAD48A; --note-ink:#6B4E00;
+    --shadow:rgba(23,35,59,.10);
+    /* Three-step radius scale, shared with index.html. Corners
+       that almost match are what makes an interface feel cheap.
+       50% stays literal for circles. */
+    --r-sm:6px; --r-md:10px; --r-pill:999px;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ink:#E8ECF3; --ink-soft:#A3AEC2;
+      --paper:#10151F; --paper-dim:#1A2230;
+      --cobalt:#6B93F5; --cobalt-dark:#8FADF8; --on-cobalt:#10151F;
+      --signal:#FFC933; --on-signal:#17233B;
+      --line:#2A3444; --good:#4FBF8B; --bad:#F08A82;
+      --warn-bg:#2A1A19; --warn-bg-2:#3A1F1D; --warn-border:#6B2B26;
+      --warn-ink:#F5B5AE; --warn-solid:#B3261E;
+      --mark-bg:#E8ECF3; --mark-fg:#10151F;
+      --note-bg:#2A2412; --note-border:#5A4A1E; --note-ink:#F0D28A;
+      --shadow:rgba(0,0,0,.45);
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#E8ECF3; --ink-soft:#A3AEC2;
+    --paper:#10151F; --paper-dim:#1A2230;
+    --cobalt:#6B93F5; --cobalt-dark:#8FADF8; --on-cobalt:#10151F;
+    --signal:#FFC933; --on-signal:#17233B;
+    --line:#2A3444; --good:#4FBF8B; --bad:#F08A82;
+    --warn-bg:#2A1A19; --warn-bg-2:#3A1F1D; --warn-border:#6B2B26;
+    --warn-ink:#F5B5AE; --warn-solid:#B3261E;
+    --mark-bg:#E8ECF3; --mark-fg:#10151F;
+    --note-bg:#2A2412; --note-border:#5A4A1E; --note-ink:#F0D28A;
+    --shadow:rgba(0,0,0,.45);
+    color-scheme:dark;
+  }
+
+*{box-sizing:border-box}body{margin:0;background:var(--paper-dim);color:var(--ink);font-family:'Public Sans',system-ui,sans-serif;line-height:1.55}
+.page{max-width:1040px;margin:24px auto;padding:34px;background:var(--paper);border:1.5px solid var(--line);border-top:3px solid var(--ink);border-radius:var(--r-md)}
+a{color:var(--cobalt)}.brand{font-size:1.05rem;font-weight:800}.brand span{color:var(--signal)}
+h1{max-width:18ch;margin:30px 0 8px;font-size:clamp(2rem,5vw,3rem);line-height:1.05;letter-spacing:-.04em}
+.lead,.muted{color:var(--ink-soft)}.lead{max-width:65ch;font-size:1.05rem}.sample{display:inline-block;margin-top:18px;padding:5px 9px;border:1px solid var(--line);border-radius:99px;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:24px;background:var(--ink);border:1px solid var(--ink);border-radius:var(--r-sm);overflow:hidden}.metric{padding:16px;background:var(--paper)}.metric strong,.metric span{display:block}.metric strong{font-size:1.7rem}.metric span{color:var(--ink-soft);font-size:.78rem}
+.receipt{margin:20px 0;padding:15px 17px;border-left:4px solid var(--cobalt);background:var(--paper-dim)}h2{margin:30px 0 8px;font-size:1.2rem}table{width:100%;border-collapse:collapse;border:1px solid var(--line)}th,td{padding:11px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}th{background:var(--paper-dim);font-size:.82rem}tr:last-child td{border-bottom:0}.limits{display:grid;grid-template-columns:1fr 1fr;gap:12px}.limit{padding:15px;border:1px solid var(--line);border-radius:var(--r-sm)}.limit p{margin:5px 0 0;color:var(--ink-soft);font-size:.86rem}.actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:28px}.button{display:inline-block;padding:11px 17px;border-radius:var(--r-sm);background:var(--cobalt);color:var(--on-cobalt);font-weight:800;text-decoration:none}
+@media(max-width:700px){body{background:var(--paper)}.page{margin:0;padding:20px;border-left:0;border-right:0;border-radius:0}.metrics,.limits{grid-template-columns:1fr}table{display:block;overflow-x:auto}}@media print{body{background:#fff}.page{max-width:none;margin:0;padding:0;border:0}.actions{display:none}tr,.receipt,.metric,.limit{break-inside:avoid}}</style></head>
+<body><main class="page"><div class="brand">KnowYourSponsor<span>.</span></div>
+<span class="sample">Demonstration report</span><h1>Portfolio evidence baseline</h1>
+<p class="lead">This example uses current public sponsor-register movements to show the structure of a customer report. It contains no customer or candidate data.</p>
+<div class="metrics"><div class="metric"><strong>12</strong><span>Example employers checked</span></div><div class="metric"><strong>5</strong><span>Register movements shown</span></div><div class="metric"><strong>0</strong><span>Claims made without a source</span></div></div>
+<p class="receipt"><strong>Evidence receipt.</strong> Generated 26 Sep 2026 at 06:17 UTC from the current GOV.UK sponsor register and the dated comparison held by KnowYourSponsor. This example does not assert complete Companies House coverage.</p>
+<h2>Current exceptions</h2><p class="muted">Only a movement or evidence limitation belongs in this table. Absence from the table is not an all-clear.</p>
+<table><thead><tr><th>Employer</th><th>Observed movement</th><th>Published detail</th><th>Evidence</th></tr></thead><tbody><tr><td><strong>3RD RAIL RESOURCE LTD</strong></td><td>Sponsor name no longer appears</td><td>No additional detail published</td><td><a href="https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers">Official source</a></td></tr><tr><td><strong>A &amp; G Mobile (Repairs) Ltd</strong></td><td>Sponsor name no longer appears</td><td>No additional detail published</td><td><a href="https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers">Official source</a></td></tr><tr><td><strong>ALI HALAL BUTCHERS</strong></td><td>Sponsor name no longer appears</td><td>No additional detail published</td><td><a href="https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers">Official source</a></td></tr><tr><td><strong>AM2PM Quality Care Limited</strong></td><td>Downgraded to a B rating</td><td>A to B on 2026-09-26</td><td><a href="https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers">Official source</a></td></tr><tr><td><strong>Normanton Lodge Care Ltd t/as Normanton Lodge Care Home</strong></td><td>Downgraded to a B rating</td><td>A to B on 2026-09-24</td><td><a href="https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers">Official source</a></td></tr></tbody></table>
+<h2>How to read this report</h2><div class="limits"><div class="limit"><strong>Confirmed</strong><p>A dated official record or exact comparison supports the statement.</p></div><div class="limit"><strong>Needs review</strong><p>An uncertain employer or legal-company identity is withheld until a person confirms it.</p></div><div class="limit"><strong>Coverage gap</strong><p>No safe secondary-source link was available. Missing evidence is never presented as healthy.</p></div><div class="limit"><strong>Not a verdict</strong><p>This report does not decide immigration eligibility, employer safety or whether a vacancy offers sponsorship.</p></div></div>
+<div class="actions"><a class="button" href="../start/?scope=scan">Run a portfolio evidence scan</a><a href="../pricing/">See monitoring plans</a></div>
+</main></body></html>

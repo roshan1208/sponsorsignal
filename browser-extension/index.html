@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chrome extension for checking UK sponsor evidence | KnowYourSponsor</title>
+<meta name="description" content="Review vacancy details and open dated UK sponsor evidence from a public job advert with the free Check with KnowYourSponsor Chrome extension.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://knowyoursponsor.co.uk/browser-extension/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowyoursponsor.co.uk/browser-extension/">
+<meta property="og:title" content="Check a vacancy without retyping it">
+<meta property="og:description" content="A click-to-run Chrome extension that prepares reviewable vacancy details before opening KnowYourSponsor evidence.">
+<meta property="og:image" content="https://knowyoursponsor.co.uk/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.png" type="image/png">
+<link rel="stylesheet" href="/fonts/public-sans.css">
+<style>
+
+  :root{
+    --ink:#17233B; --ink-soft:#4A5670;
+    --paper:#FFFFFF; --paper-dim:#F5F7FB;
+    --cobalt:#2145C9; --cobalt-dark:#17348F; --on-cobalt:#FFFFFF;
+    --signal:#FFC933; --on-signal:#17233B;
+    --line:#D9DFEA; --good:#0E7B4F; --bad:#B3261E;
+    --warn-bg:#FDF1F0; --warn-bg-2:#FBE3E1; --warn-border:#E7B4AE;
+    --warn-ink:#8A1E18; --warn-solid:#B3261E;
+    --mark-bg:#17233B; --mark-fg:#FFFFFF;
+    --note-bg:#FFF6DC; --note-border:#EAD48A; --note-ink:#6B4E00;
+    --shadow:rgba(23,35,59,.10);
+    /* Three-step radius scale, shared with index.html. Corners
+       that almost match are what makes an interface feel cheap.
+       50% stays literal for circles. */
+    --r-sm:6px; --r-md:10px; --r-pill:999px;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ink:#E8ECF3; --ink-soft:#A3AEC2;
+      --paper:#10151F; --paper-dim:#1A2230;
+      --cobalt:#6B93F5; --cobalt-dark:#8FADF8; --on-cobalt:#10151F;
+      --signal:#FFC933; --on-signal:#17233B;
+      --line:#2A3444; --good:#4FBF8B; --bad:#F08A82;
+      --warn-bg:#2A1A19; --warn-bg-2:#3A1F1D; --warn-border:#6B2B26;
+      --warn-ink:#F5B5AE; --warn-solid:#B3261E;
+      --mark-bg:#E8ECF3; --mark-fg:#10151F;
+      --note-bg:#2A2412; --note-border:#5A4A1E; --note-ink:#F0D28A;
+      --shadow:rgba(0,0,0,.45);
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#E8ECF3; --ink-soft:#A3AEC2;
+    --paper:#10151F; --paper-dim:#1A2230;
+    --cobalt:#6B93F5; --cobalt-dark:#8FADF8; --on-cobalt:#10151F;
+    --signal:#FFC933; --on-signal:#17233B;
+    --line:#2A3444; --good:#4FBF8B; --bad:#F08A82;
+    --warn-bg:#2A1A19; --warn-bg-2:#3A1F1D; --warn-border:#6B2B26;
+    --warn-ink:#F5B5AE; --warn-solid:#B3261E;
+    --mark-bg:#E8ECF3; --mark-fg:#10151F;
+    --note-bg:#2A2412; --note-border:#5A4A1E; --note-ink:#F0D28A;
+    --shadow:rgba(0,0,0,.45);
+    color-scheme:dark;
+  }
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Public Sans',system-ui,sans-serif;color:var(--ink);line-height:1.55;background:var(--paper)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+a{color:var(--cobalt)}
+main{padding:52px 0 72px}
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);gap:44px;align-items:center}
+.eyebrow{font-size:.76rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--cobalt)}
+h1{margin-top:10px;font-size:clamp(2.5rem,6vw,4.5rem);line-height:.98;letter-spacing:-.055em;max-width:11ch}
+.lead{margin-top:20px;max-width:58ch;font-size:1.12rem;color:var(--ink-soft)}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:26px}
+.button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 18px;border-radius:var(--r-sm);background:var(--cobalt);color:var(--on-cobalt);font-weight:800;text-decoration:none}
+.button:hover{filter:brightness(.92)}
+.quiet-link{font-weight:750}
+.privacy-line{display:flex;align-items:flex-start;gap:9px;margin-top:18px;font-size:.88rem;color:var(--ink-soft)}
+.privacy-line::before{content:'✓';display:grid;place-items:center;flex:0 0 22px;height:22px;border-radius:50%;background:var(--good-bg);color:var(--good-ink);font-weight:900}
+.browser-shot{border:1.5px solid var(--line);border-radius:18px;padding:14px;background:var(--paper-dim);box-shadow:0 22px 55px rgba(17,31,58,.12)}
+.browser-shot img{display:block;width:100%;height:auto;border-radius:9px;border:1px solid var(--line)}
+.browser-label{display:flex;justify-content:space-between;gap:14px;padding:0 2px 10px;font-size:.78rem;font-weight:800;color:var(--ink-soft)}
+.proof{display:grid;grid-template-columns:repeat(3,1fr);margin:54px 0 0;border:1.5px solid var(--line);border-radius:var(--r-md);overflow:hidden}
+.proof article{padding:22px}
+.proof article+article{border-left:1px solid var(--line)}
+.proof strong{display:block;font-size:1rem}
+.proof p{margin-top:5px;color:var(--ink-soft);font-size:.88rem}
+.section{margin-top:72px}
+.section-head{max-width:700px}
+.section h2{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.08;letter-spacing:-.035em}
+.section-head p{margin-top:10px;color:var(--ink-soft)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;counter-reset:step}
+.step{position:relative;border:1.5px solid var(--line);border-radius:var(--r-md);padding:24px;background:var(--paper);counter-increment:step}
+.step::before{content:counter(step);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--paper);font-weight:850}
+.step h3{margin-top:22px;font-size:1.1rem}
+.step p{margin-top:7px;color:var(--ink-soft);font-size:.9rem}
+.evidence-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;margin-top:28px}
+.evidence-card{border:1.5px solid var(--line);border-radius:var(--r-md);padding:26px;background:var(--paper-dim)}
+.evidence-card h3{font-size:1.18rem}
+.evidence-card ul{margin-top:14px;padding-left:20px}
+.evidence-card li+li{margin-top:9px}
+.evidence-card.warn{border-top:4px solid var(--signal)}
+.screens{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px}
+.screen figure{border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;background:var(--paper-dim)}
+.screen img{display:block;width:100%;height:auto}
+.screen figcaption{padding:14px 16px;color:var(--ink-soft);font-size:.86rem}
+.permission{margin-top:72px;padding:30px;border:2px solid var(--ink);border-radius:var(--r-md);display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.7fr);gap:32px}
+.permission p{margin-top:9px;color:var(--ink-soft)}
+.permission dl{display:grid;grid-template-columns:auto 1fr;gap:10px 16px;font-size:.88rem}
+.permission dt{font-weight:800}
+.permission dd{color:var(--ink-soft)}
+.final{margin-top:72px;padding:38px;border-radius:var(--r-md);background:var(--ink);color:var(--paper)}
+.final h2{max-width:18ch}
+.final p{margin-top:10px;max-width:60ch;color:#cbd5e5}
+.final .button{background:#6f96ff;color:#08152d}
+footer{border-top:3px solid var(--ink);padding:24px 0 42px;color:var(--ink-soft);font-size:.84rem}
+footer p+p{margin-top:7px}
+@media(max-width:800px){.hero,.permission{grid-template-columns:1fr}.hero{gap:32px}.steps,.proof{grid-template-columns:1fr}.proof article+article{border-left:0;border-top:1px solid var(--line)}}
+@media(max-width:620px){main{padding-top:34px}.screens,.evidence-grid{grid-template-columns:1fr}.section{margin-top:54px}.final{padding:28px 22px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+
+  .header-inner{display:flex;align-items:center;justify-content:space-between;
+                gap:16px;flex-wrap:wrap;min-width:0}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:800;
+         font-size:1.1rem;letter-spacing:-.01em;color:inherit;
+         text-decoration:none}
+  .brand .mark{display:block;flex:0 0 auto;border-radius:var(--r-sm)}
+  .brand .dot{color:var(--cobalt)}
+  .topnav{display:flex;gap:18px;font-size:.9rem;font-weight:600}
+  /* "For business" is two words and wrapped at 375px, which pushed the
+     header from 73px to 86px. nowrap keeps it on one line and costs nothing:
+     measured 29px nav either way. .header-inner already wraps, so on a
+     genuinely narrow screen the nav drops to its own line rather than
+     overflowing. */
+  .topnav a{text-decoration:none;white-space:nowrap}
+  .topnav a:hover{text-decoration:underline}
+  .topnav [aria-current]{color:var(--ink-soft)}
+  .business-short{display:none}
+  @media (max-width:520px){
+    .header-inner{gap:10px}
+    .topnav{display:flex;width:100%;max-width:100%;min-width:0;align-items:center;
+            justify-content:flex-start;gap:16px;padding-bottom:2px;overflow-x:auto;
+            overscroll-behavior-inline:contain;scrollbar-width:none;
+            -webkit-overflow-scrolling:touch;font-size:.8rem}
+    .topnav::-webkit-scrollbar{display:none}
+    .topnav>*{flex:0 0 auto}
+    .business-full{display:none}
+    .business-short{display:inline}
+    .themebtn{padding:5px 8px}
+  }
+  @media (max-width:350px){.topnav .badge{display:none}}
+
+  .themebtn{
+    font:inherit;font-size:1rem;line-height:1;cursor:pointer;
+    background:transparent;border:1.5px solid var(--line);border-radius:var(--r-pill);
+    color:var(--ink-soft);padding:5px 10px;
+  }
+  .themebtn:hover{border-color:var(--ink-soft);color:var(--ink)}
+
+</style>
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Check with KnowYourSponsor","applicationCategory":"BrowserApplication","operatingSystem":"Chrome","url":"https://knowyoursponsor.co.uk/browser-extension/","downloadUrl":"https://chromewebstore.google.com/detail/check-with-knowyoursponso/jkfcpmifhfnhcacbipekeegkamlgffei","isAccessibleForFree":true,"description":"A click-to-run browser extension that suggests reviewable vacancy details before opening KnowYourSponsor evidence."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://knowyoursponsor.co.uk/"},{"@type":"ListItem","position":2,"name":"Browser extension","item":"https://knowyoursponsor.co.uk/browser-extension/"}]}</script>
+</head>
+<body>
+<header><div class="wrap header-inner"><a class="brand" href="../" aria-label="KnowYourSponsor home"><svg class="mark" width="28" height="28" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="14" fill="var(--mark-bg)"/><text x="30" y="47" text-anchor="middle" font-family="'Public Sans',system-ui,sans-serif" font-size="42" font-weight="800" fill="var(--mark-fg)">K</text><circle cx="48" cy="44" r="5" fill="var(--signal)"/></svg><span class="wordmark">KnowYourSponsor<span class="dot">.</span></span></a><nav class="topnav" aria-label="Sections"><a href="../employer/">Employers</a><a href="../changes/">Changes</a><a href="../check-a-job/">Job tools</a><a href="../pricing/" aria-label="For business"><span class="business-full">For business</span><span class="business-short" aria-hidden="true">Business</span></a><button class="themebtn" type="button" data-theme-toggle aria-label="Switch between light and dark theme"><span aria-hidden="true">&#9789;</span></button></nav></div></header>
+<main>
+  <section class="hero wrap">
+    <div>
+      <p class="eyebrow">Free Chrome extension</p>
+      <h1>Check a vacancy without retyping it.</h1>
+      <p class="lead">Open a public job advert, click the extension and review the suggested employer, role, location and salary before opening the evidence checker.</p>
+      <div class="actions">
+        <a class="button" data-product-event="extension_chrome_link_guide" href="https://chromewebstore.google.com/detail/check-with-knowyoursponso/jkfcpmifhfnhcacbipekeegkamlgffei" rel="noopener">Add to Chrome</a>
+        <a class="quiet-link" href="/check-a-job/">Use the checker without the extension</a>
+      </div>
+      <p class="privacy-line">Runs only when you click it. No permanent access to job websites and no browsing-history collection.</p>
+    </div>
+    <div class="browser-shot">
+      <div class="browser-label"><span>Review before continuing</span><span>Nothing sent automatically</span></div>
+      <img src="review-vacancy.png" width="1280" height="800" alt="The extension showing vacancy fields for the user to review before opening KnowYourSponsor">
+    </div>
+  </section>
+
+  <section class="proof wrap" aria-label="Extension safeguards">
+    <article><strong>Click to run</strong><p>It reads the current tab only after you choose the extension.</p></article>
+    <article><strong>You approve the fields</strong><p>Suggested details remain editable; weak or missing facts stay visible.</p></article>
+    <article><strong>Evidence stays qualified</strong><p>A register match is never presented as proof that a vacancy offers sponsorship.</p></article>
+  </section>
+
+  <section class="section wrap" aria-labelledby="steps-title">
+    <div class="section-head"><p class="eyebrow">Three clear steps</p><h2 id="steps-title">From vacancy advert to evidence review</h2><p>The shortcut removes copying and retyping. It does not remove your review or make a sponsorship decision for you.</p></div>
+    <div class="steps">
+      <article class="step"><h3>Open the public advert</h3><p>Visit the vacancy page you want to assess, then choose Check with KnowYourSponsor from Chrome.</p></article>
+      <article class="step"><h3>Review every suggestion</h3><p>Confirm or edit the employer, full job title, location and pay. Empty fields remain empty rather than being guessed.</p></article>
+      <article class="step"><h3>Open dated evidence</h3><p>Continue to KnowYourSponsor to compare the vacancy with the current sponsor register and role evidence.</p></article>
+    </div>
+  </section>
+
+  <section class="section wrap" aria-labelledby="scope-title">
+    <div class="section-head"><p class="eyebrow">Know what it can prove</p><h2 id="scope-title">A faster route to the same careful evidence</h2></div>
+    <div class="evidence-grid">
+      <article class="evidence-card"><h3>What it helps with</h3><ul><li>Transfers reviewable vacancy facts without repeated typing.</li><li>Previews whether a named employer appears in the current register.</li><li>Keeps the source date and unresolved questions visible.</li><li>Opens the full checker for occupation and salary evidence.</li></ul></article>
+      <article class="evidence-card warn"><h3>What it does not establish</h3><ul><li>That the vacancy definitely offers sponsorship.</li><li>That an employer will sponsor a particular applicant.</li><li>The correct occupation code when the advert is vague.</li><li>Eligibility or immigration advice.</li></ul></article>
+    </div>
+  </section>
+
+  <section class="section wrap" aria-labelledby="screens-title">
+    <div class="section-head"><p class="eyebrow">See the workflow</p><h2 id="screens-title">No hidden automatic decision</h2><p>The interface shows both the extracted vacancy details and the evidence limitations before you continue.</p></div>
+    <div class="screens">
+      <div class="screen"><figure><img src="review-vacancy.png" width="1280" height="800" loading="lazy" alt="Reviewable employer, job title, location and salary fields in the extension"><figcaption>Review each suggested field before opening the checker.</figcaption></figure></div>
+      <div class="screen"><figure><img src="evidence-summary.png" width="1280" height="800" loading="lazy" alt="The extension showing a dated sponsor-register evidence summary and its limitations"><figcaption>See the dated register signal without turning it into a sponsorship promise.</figcaption></figure></div>
+    </div>
+  </section>
+
+  <section class="permission wrap" aria-labelledby="privacy-title">
+    <div><p class="eyebrow">Privacy by scope</p><h2 id="privacy-title">Access is requested only when the feature needs it</h2><p>The extension does not monitor tabs in the background. Vacancy facts are shown for review and transferred only when you choose to continue.</p><p><a href="/privacy/#browser-extension">Read the browser-extension privacy detail</a></p></div>
+    <dl><dt>Current tab</dt><dd>Read only after your click.</dd><dt>Browsing history</dt><dd>Not requested or collected.</dd><dt>Account</dt><dd>Not required.</dd><dt>Vacancy text</dt><dd>Not stored by the extension.</dd></dl>
+  </section>
+
+  <section class="final wrap">
+    <p class="eyebrow">Optional shortcut</p><h2>Spend less time copying. Keep the review.</h2><p>Install the extension for public vacancy pages, or continue using the web checker directly. Both routes keep suggested facts and confirmed evidence separate.</p>
+    <div class="actions"><a class="button" data-product-event="extension_chrome_link_guide" href="https://chromewebstore.google.com/detail/check-with-knowyoursponso/jkfcpmifhfnhcacbipekeegkamlgffei" rel="noopener">Add to Chrome</a><a class="quiet-link" href="mailto:hello@knowyoursponsor.co.uk" style="color:#fff">Report a problem</a></div>
+  </section>
+</main>
+<footer><div class="wrap"><p><strong>KnowYourSponsor</strong> is independent of the Home Office. Confirm current details against the official source before acting.</p><p><a href="/check-a-job/">Check a job</a> · <a href="/methodology/">Methodology</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></p></div></footer>
+<script>(function(){var b=document.querySelector('[data-theme-toggle]');if(!b)return;var r=document.documentElement;function dark(){return r.getAttribute('data-theme')==='dark'||(!r.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);}function sync(){b.setAttribute('aria-pressed',String(dark()));}b.addEventListener('click',function(){var next=dark()?'light':'dark';r.setAttribute('data-theme',next);try{localStorage.setItem('theme',next);}catch(e){}sync();});sync();})();</script>
+<script src="/product-metrics.js?v=5"></script>
+<script data-goatcounter="https://sponsorsignal.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

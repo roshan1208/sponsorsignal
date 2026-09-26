@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "policy": "append-only",
+  "rulesets": [
+    {
+      "id": "skilled-worker-standard-2025-07-22",
+      "version": "2025.07.22.1",
+      "sourceUpdated": "22 July 2025",
+      "checkedAt": "2026-09-21",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "effectiveDateStatus": "not established from the downloaded source metadata",
+      "generalThreshold": 41700,
+      "hoursBasis": 37.5,
+      "sources": {
+        "rules": "https://www.gov.uk/skilled-worker-visa/your-job",
+        "rates": "https://www.gov.uk/government/publications/skilled-worker-visa-going-rates-for-eligible-occupations/skilled-worker-visa-going-rates-for-eligible-occupation-codes",
+        "occupations": "https://www.gov.uk/government/publications/skilled-worker-visa-eligible-occupations/skilled-worker-visa-eligible-occupations-and-codes"
+      },
+      "lists": {
+        "immigrationSalaryList": {"status": "not_pinned", "effectiveFrom": null, "expiresAt": null},
+        "temporaryShortageList": {"status": "not_pinned", "effectiveFrom": null, "expiresAt": null}
+      },
+      "governedExceptions": {
+        "lowerSalaryAndNewEntrant": "requires applicant-specific evidence; not inferred",
+        "transitional": "requires qualifying dates and immigration history; not inferred",
+        "immigrationSalaryList": "membership and validity dates are not pinned in this ruleset",
+        "temporaryShortageList": "membership and validity dates are not pinned in this ruleset",
+        "healthEducationPayScale": "requires official national pay-scale evidence; not inferred",
+        "careRoleCqc": "only relevant to governed England care-role cases; employer/provider identity is not inferred"
+      }
+    }
+  ]
+}

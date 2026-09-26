@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KnowYourSponsor: Visa sponsors added and removed in Glasgow</title>
+    <link>https://knowyoursponsor.co.uk/glasgow/</link>
+    <atom:link href="https://knowyoursponsor.co.uk/feeds/glasgow.xml" rel="self" type="application/rss+xml"/>
+    <description>Sponsor records in Glasgow first or no longer observed in daily comparisons. Rebuilt every day from the official GOV.UK register. Covers the last 7 days.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 26 Sep 2026 06:17:55 +0000</lastBuildDate>
+    <item>
+      <title>OMG (HAMILTON) LTD: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-removed-omg-hamilton-ltd-glasgow</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Glasgow, South Lanarkshire,. Industry: Other.</description>
+    </item>
+    <item>
+      <title>U.Z.A.K TRADING LIMITED: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-removed-u-z-a-k-trading-limited-glasgow</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Glasgow. Industry: Retail &amp; Commerce.</description>
+    </item>
+    <item>
+      <title>LENNOX EXECUTIVE TRAVEL LTD: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-added-lennox-executive-travel-ltd-glasgow</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Glasgow. Industry: Travel &amp; Tourism. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Newhills Medical Practice: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-added-newhills-medical-practice-glasgow</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Glasgow. Industry: Healthcare &amp; Care. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Smart Metering Systems Limited: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-added-smart-metering-systems-limited-glasgow</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Glasgow. Industry: Tech &amp; Software. Visa routes: Skilled Worker.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KnowYourSponsor: Visa sponsors added and removed in Reading</title>
+    <link>https://knowyoursponsor.co.uk/reading/</link>
+    <atom:link href="https://knowyoursponsor.co.uk/feeds/reading.xml" rel="self" type="application/rss+xml"/>
+    <description>Sponsor records in Reading first or no longer observed in daily comparisons. Rebuilt every day from the official GOV.UK register. Covers the last 7 days.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 26 Sep 2026 06:17:55 +0000</lastBuildDate>
+    <item>
+      <title>JACHUBSERVICES LTD: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/reading/</link>
+      <guid isPermaLink="false">kys-reading-removed-jachubservices-ltd-reading</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Reading, England. Industry: Other.</description>
+    </item>
+    <item>
+      <title>SAN INT TRADING LTD T/A Farmhouse Pizza: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/reading/</link>
+      <guid isPermaLink="false">kys-reading-removed-san-int-trading-ltd-t-a-farmhouse-pizza-reading</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Reading. Industry: Hospitality &amp; Food.</description>
+    </item>
+  </channel>
+</rss>

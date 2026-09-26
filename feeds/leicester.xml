@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KnowYourSponsor: Visa sponsors added and removed in Leicester</title>
+    <link>https://knowyoursponsor.co.uk/leicester/</link>
+    <atom:link href="https://knowyoursponsor.co.uk/feeds/leicester.xml" rel="self" type="application/rss+xml"/>
+    <description>Sponsor records in Leicester first or no longer observed in daily comparisons. Rebuilt every day from the official GOV.UK register. Covers the last 7 days.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 26 Sep 2026 06:17:55 +0000</lastBuildDate>
+    <item>
+      <title>ISHIV 1 LTD: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/leicester/</link>
+      <guid isPermaLink="false">kys-leicester-removed-ishiv-1-ltd-leicester</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Leicester, Leicestershire. Industry: Other.</description>
+    </item>
+    <item>
+      <title>PR ACCURATE CARE: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/leicester/</link>
+      <guid isPermaLink="false">kys-leicester-removed-pr-accurate-care-leicester</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Leicester, Leicestershire. Industry: Healthcare &amp; Care.</description>
+    </item>
+    <item>
+      <title>PRIME SECURITY MIDLANDS LTD: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/leicester/</link>
+      <guid isPermaLink="false">kys-leicester-removed-prime-security-midlands-ltd-leicester</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Leicester. Industry: Security &amp; Facilities.</description>
+    </item>
+    <item>
+      <title>Secure Security and Services Ltd: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/leicester/</link>
+      <guid isPermaLink="false">kys-leicester-added-secure-security-and-services-ltd-leicester</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Leicester. Industry: Security &amp; Facilities. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>SNEH RAJJ LTD: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/leicester/</link>
+      <guid isPermaLink="false">kys-leicester-added-sneh-rajj-ltd-leicester</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Leicester. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+  </channel>
+</rss>

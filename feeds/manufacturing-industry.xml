@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KnowYourSponsor: Visa sponsors added and removed in manufacturing &amp; industry</title>
+    <link>https://knowyoursponsor.co.uk/manufacturing-industry/</link>
+    <atom:link href="https://knowyoursponsor.co.uk/feeds/manufacturing-industry.xml" rel="self" type="application/rss+xml"/>
+    <description>Sponsor records in Manufacturing &amp; Industry first or no longer observed in daily comparisons. Rebuilt every day from the official GOV.UK register. Covers the last 7 days.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 26 Sep 2026 06:17:55 +0000</lastBuildDate>
+    <item>
+      <title>Taha Plastics Trading Limited: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/manufacturing-industry/</link>
+      <guid isPermaLink="false">kys-manufacturing-industry-removed-taha-plastics-trading-limited-england</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: England. Industry: Manufacturing &amp; Industry.</description>
+    </item>
+    <item>
+      <title>Speedy glass works ltd: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/manufacturing-industry/</link>
+      <guid isPermaLink="false">kys-manufacturing-industry-removed-speedy-glass-works-ltd-harlow</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Harlow. Industry: Manufacturing &amp; Industry.</description>
+    </item>
+    <item>
+      <title>U.K. Implant Manufacturing Co. Limited: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/manufacturing-industry/</link>
+      <guid isPermaLink="false">kys-manufacturing-industry-removed-u-k-implant-manufacturing-co-limited-dunstable</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Dunstable, Bedfordshire. Industry: Manufacturing &amp; Industry.</description>
+    </item>
+    <item>
+      <title>Evolution Bottling and Packaging Solutions Ltd: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/manufacturing-industry/</link>
+      <guid isPermaLink="false">kys-manufacturing-industry-removed-evolution-bottling-and-packaging-solutions-ltd-peebles</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Peebles. Industry: Manufacturing &amp; Industry.</description>
+    </item>
+    <item>
+      <title>Steel Guard Ltd: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/manufacturing-industry/</link>
+      <guid isPermaLink="false">kys-manufacturing-industry-added-steel-guard-ltd-cambridge</guid>
+      <pubDate>Sat, 26 Sep 2026 06:17:55 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Cambridge. Industry: Manufacturing &amp; Industry. Visa routes: Skilled Worker.</description>
+    </item>
+  </channel>
+</rss>
