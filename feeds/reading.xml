@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KnowYourSponsor: Visa sponsors added and removed in Reading</title>
+    <link>https://knowyoursponsor.co.uk/reading/</link>
+    <atom:link href="https://knowyoursponsor.co.uk/feeds/reading.xml" rel="self" type="application/rss+xml"/>
+    <description>Sponsor records in Reading first or no longer observed in daily comparisons. Rebuilt every day from the official GOV.UK register. Covers the last 7 days.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 03 Oct 2026 10:34:01 +0000</lastBuildDate>
+    <item>
+      <title>SAN INT TRADING LTD T/A Farmhouse Pizza: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/reading/</link>
+      <guid isPermaLink="false">kys-reading-removed-san-int-trading-ltd-t-a-farmhouse-pizza-reading</guid>
+      <pubDate>Sat, 03 Oct 2026 10:34:01 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Reading. Industry: Hospitality &amp; Food.</description>
+    </item>
+    <item>
+      <title>Speed Services Ltd: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/reading/</link>
+      <guid isPermaLink="false">kys-reading-removed-speed-services-ltd-reading</guid>
+      <pubDate>Sat, 03 Oct 2026 10:34:01 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Reading. Industry: Logistics &amp; Transport.</description>
+    </item>
+    <item>
+      <title>DAS Fire: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/reading/</link>
+      <guid isPermaLink="false">kys-reading-added-das-fire-reading</guid>
+      <pubDate>Sat, 03 Oct 2026 10:34:01 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Reading, Hampshire. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Grace Church Caversham: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/reading/</link>
+      <guid isPermaLink="false">kys-reading-added-grace-church-caversham-reading</guid>
+      <pubDate>Sat, 03 Oct 2026 10:34:01 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Reading. Industry: Charity &amp; Faith. Visa routes: Tier 2 Ministers of Religion.</description>
+    </item>
+    <item>
+      <title>Thinkproject UK Limited: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/reading/</link>
+      <guid isPermaLink="false">kys-reading-added-thinkproject-uk-limited-reading</guid>
+      <pubDate>Sat, 03 Oct 2026 10:34:01 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Reading. Industry: Tech &amp; Software. Visa routes: Skilled Worker.</description>
+    </item>
+  </channel>
+</rss>

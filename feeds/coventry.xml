@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KnowYourSponsor: Visa sponsors added and removed in Coventry</title>
+    <link>https://knowyoursponsor.co.uk/coventry/</link>
+    <atom:link href="https://knowyoursponsor.co.uk/feeds/coventry.xml" rel="self" type="application/rss+xml"/>
+    <description>Sponsor records in Coventry first or no longer observed in daily comparisons. Rebuilt every day from the official GOV.UK register. Covers the last 7 days.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 03 Oct 2026 10:34:01 +0000</lastBuildDate>
+    <item>
+      <title>City College Limited: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/coventry/</link>
+      <guid isPermaLink="false">kys-coventry-added-city-college-limited-coventry</guid>
+      <pubDate>Sat, 03 Oct 2026 10:34:01 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Coventry. Industry: Education &amp; Research. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>PENTAGON GROUP U.K LTD: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/coventry/</link>
+      <guid isPermaLink="false">kys-coventry-added-pentagon-group-u-k-ltd-coventry</guid>
+      <pubDate>Sat, 03 Oct 2026 10:34:01 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Coventry. Industry: Property &amp; Real Estate. Visa routes: Skilled Worker.</description>
+    </item>
+  </channel>
+</rss>
