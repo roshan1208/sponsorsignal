@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KnowYourSponsor: Visa sponsors added and removed in Leeds</title>
+    <link>https://knowyoursponsor.co.uk/leeds/</link>
+    <atom:link href="https://knowyoursponsor.co.uk/feeds/leeds.xml" rel="self" type="application/rss+xml"/>
+    <description>Sponsor records in Leeds first or no longer observed in daily comparisons. Rebuilt every day from the official GOV.UK register. Covers the last 7 days.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 10 Oct 2026 06:17:20 +0000</lastBuildDate>
+    <item>
+      <title>FDS Systems Limited: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/leeds/</link>
+      <guid isPermaLink="false">kys-leeds-removed-fds-systems-limited-leeds</guid>
+      <pubDate>Sat, 10 Oct 2026 06:17:20 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Leeds. Industry: Tech &amp; Software.</description>
+    </item>
+    <item>
+      <title>Lupton Fawcett LLP: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/leeds/</link>
+      <guid isPermaLink="false">kys-leeds-removed-lupton-fawcett-llp-leeds</guid>
+      <pubDate>Sat, 10 Oct 2026 06:17:20 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Leeds, West Yorkshire. Industry: Other.</description>
+    </item>
+    <item>
+      <title>Rapinder Singh &amp; Palvinder Singh T/As Post Office &amp; Store: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/leeds/</link>
+      <guid isPermaLink="false">kys-leeds-removed-rapinder-singh-palvinder-singh-t-as-post-office-store-leeds</guid>
+      <pubDate>Sat, 10 Oct 2026 06:17:20 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Leeds. Industry: Retail &amp; Commerce.</description>
+    </item>
+    <item>
+      <title>Braime Pressings Ltd: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/leeds/</link>
+      <guid isPermaLink="false">kys-leeds-added-braime-pressings-ltd-leeds</guid>
+      <pubDate>Sat, 10 Oct 2026 06:17:20 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Leeds, West Yorkshire. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>KHAN PHARMA (LEEDS) LIMITED: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/leeds/</link>
+      <guid isPermaLink="false">kys-leeds-added-khan-pharma-leeds-limited-leeds</guid>
+      <pubDate>Sat, 10 Oct 2026 06:17:20 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Leeds, West Yorkshire. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>PAMA RETAIL LIMITED: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/leeds/</link>
+      <guid isPermaLink="false">kys-leeds-added-pama-retail-limited-leeds</guid>
+      <pubDate>Sat, 10 Oct 2026 06:17:20 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Leeds. Industry: Retail &amp; Commerce. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>SANDM Fuel Limited: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/leeds/</link>
+      <guid isPermaLink="false">kys-leeds-added-sandm-fuel-limited-leeds</guid>
+      <pubDate>Sat, 10 Oct 2026 06:17:20 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Leeds. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Tracsis PLC: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/leeds/</link>
+      <guid isPermaLink="false">kys-leeds-added-tracsis-plc-leeds</guid>
+      <pubDate>Sat, 10 Oct 2026 06:17:20 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Leeds. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+  </channel>
+</rss>

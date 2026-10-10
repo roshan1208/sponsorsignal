@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KnowYourSponsor: Visa sponsors added and removed in Ilford</title>
+    <link>https://knowyoursponsor.co.uk/ilford/</link>
+    <atom:link href="https://knowyoursponsor.co.uk/feeds/ilford.xml" rel="self" type="application/rss+xml"/>
+    <description>Sponsor records in Ilford first or no longer observed in daily comparisons. Rebuilt every day from the official GOV.UK register. Covers the last 7 days.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 10 Oct 2026 06:17:20 +0000</lastBuildDate>
+    <item>
+      <title>Eastwood Investment (UK) Ltd T/A JRC Global Buffet: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/ilford/</link>
+      <guid isPermaLink="false">kys-ilford-removed-eastwood-investment-uk-ltd-t-a-jrc-global-buffet-ilford</guid>
+      <pubDate>Sat, 10 Oct 2026 06:17:20 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Ilford. Industry: Hospitality &amp; Food.</description>
+    </item>
+    <item>
+      <title>KARMA RECRUITMENT LTD: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/ilford/</link>
+      <guid isPermaLink="false">kys-ilford-removed-karma-recruitment-ltd-ilford</guid>
+      <pubDate>Sat, 10 Oct 2026 06:17:20 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Ilford, Essex. Industry: Recruitment &amp; Staffing.</description>
+    </item>
+    <item>
+      <title>MANI CONTRACTS LTD: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/ilford/</link>
+      <guid isPermaLink="false">kys-ilford-removed-mani-contracts-ltd-ilford</guid>
+      <pubDate>Sat, 10 Oct 2026 06:17:20 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Ilford. Industry: Construction &amp; Engineering.</description>
+    </item>
+    <item>
+      <title>S &amp; S Support Services: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/ilford/</link>
+      <guid isPermaLink="false">kys-ilford-removed-s-s-support-services-ilford</guid>
+      <pubDate>Sat, 10 Oct 2026 06:17:20 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Ilford, Essex. Industry: Other.</description>
+    </item>
+    <item>
+      <title>ZAKCO LIMITED: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/ilford/</link>
+      <guid isPermaLink="false">kys-ilford-removed-zakco-limited-ilford</guid>
+      <pubDate>Sat, 10 Oct 2026 06:17:20 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Ilford. Industry: Hospitality &amp; Food.</description>
+    </item>
+    <item>
+      <title>BRITSK9 LTD: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/ilford/</link>
+      <guid isPermaLink="false">kys-ilford-added-britsk9-ltd-ilford</guid>
+      <pubDate>Sat, 10 Oct 2026 06:17:20 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Ilford. Industry: Security &amp; Facilities. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Maz and Co Ltd: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/ilford/</link>
+      <guid isPermaLink="false">kys-ilford-added-maz-and-co-ltd-ilford</guid>
+      <pubDate>Sat, 10 Oct 2026 06:17:20 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Ilford. Industry: Finance &amp; Professional. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>SAFEX SERVICES LTD: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/ilford/</link>
+      <guid isPermaLink="false">kys-ilford-added-safex-services-ltd-ilford</guid>
+      <pubDate>Sat, 10 Oct 2026 06:17:20 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Ilford. Industry: Logistics &amp; Transport. Visa routes: Skilled Worker.</description>
+    </item>
+  </channel>
+</rss>

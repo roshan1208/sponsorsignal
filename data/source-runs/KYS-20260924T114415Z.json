@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "runId": "KYS-20260924T114415Z",
+  "status": "verified",
+  "publishedAt": "2026-09-24 11:08 UTC",
+  "retrievedAt": "2026-09-24 11:44 UTC",
+  "effectiveAt": "",
+  "effectiveAtStatus": "not published separately by the source",
+  "source": {
+    "name": "Home Office Register of Licensed Sponsors (Workers)",
+    "url": "https://assets.publishing.service.gov.uk/media/6ab50422997a4b2950ccee7a/SP_-_Worker_and_Temporary_Worker_Web_Register_-_2026-09-24.csv",
+    "mediaType": "text/csv",
+    "sha256": "a1c7bc76e9d6769687caf93d4f339e7773ce06963bda18ac1df7aed7c2a71e73",
+    "bytes": 10953119,
+    "licence": "Open Government Licence v3.0",
+    "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+  },
+  "pipeline": {
+    "parserVersion": "sponsor-register-parser/1",
+    "normalizerVersion": "sponsor-register-normalizer/1",
+    "outputSchemaVersion": "sponsor-register-output/1"
+  },
+  "input": {
+    "header": [
+      "Organisation Name",
+      "Town/City",
+      "County",
+      "Type & Rating",
+      "Route"
+    ],
+    "sourceRows": 143130,
+    "validRows": 143130,
+    "blankNameRows": 0,
+    "malformedRows": 0,
+    "exactDuplicateRows": 457
+  },
+  "output": {
+    "sponsorRecords": 127692,
+    "distinctSponsorNames": 127404,
+    "files": {
+      "data/sponsors.json": "652f9ee21251084d030cc8ae1520ed99b0111d1a829bfcb6076a7882eaaf5533",
+      "data/changes.json": "e4da8dd35902ce18a3a32639788fc75e3188a93454d69421a24f895c50961c03",
+      "data/meta.json": "218d9c88dab69bdb4d0a7ce3e75b1fd2fcce0fa83d4f144dcbe70feb5cc4865d"
+    }
+  },
+  "events": {
+    "recordFirstObserved": 0,
+    "recordNoLongerObserved": 0,
+    "ratingChanged": 0
+  },
+  "quality": {
+    "schemaValidated": true,
+    "rowCountValidated": true,
+    "guardOverridden": false
+  },
+  "previousManifestSha256": "f238644f4ca83084452f12647a1158f04b509eaf278e535ccc092701efe202e4",
+  "manifestSha256": "d65cb7c907923908bcd0ba79651bb06887933363698580e88861279abd268ef7"
+}

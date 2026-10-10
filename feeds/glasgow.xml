@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KnowYourSponsor: Visa sponsors added and removed in Glasgow</title>
+    <link>https://knowyoursponsor.co.uk/glasgow/</link>
+    <atom:link href="https://knowyoursponsor.co.uk/feeds/glasgow.xml" rel="self" type="application/rss+xml"/>
+    <description>Sponsor records in Glasgow first or no longer observed in daily comparisons. Rebuilt every day from the official GOV.UK register. Covers the last 7 days.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Sat, 10 Oct 2026 06:17:20 +0000</lastBuildDate>
+    <item>
+      <title>BB Accounting Solution Ltd: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-removed-bb-accounting-solution-ltd-glasgow</guid>
+      <pubDate>Sat, 10 Oct 2026 06:17:20 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Glasgow. Industry: Finance &amp; Professional.</description>
+    </item>
+    <item>
+      <title>Kingdom Technologies Ltd: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-removed-kingdom-technologies-ltd-glasgow</guid>
+      <pubDate>Sat, 10 Oct 2026 06:17:20 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Glasgow. Industry: Manufacturing &amp; Industry.</description>
+    </item>
+    <item>
+      <title>Kwik Klik Limited: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-removed-kwik-klik-limited-glasgow</guid>
+      <pubDate>Sat, 10 Oct 2026 06:17:20 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Glasgow. Industry: Retail &amp; Commerce.</description>
+    </item>
+    <item>
+      <title>A&amp;JSB Ltd: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-added-a-jsb-ltd-glasgow</guid>
+      <pubDate>Sat, 10 Oct 2026 06:17:20 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Glasgow. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Air Charter Scotland Limited: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-added-air-charter-scotland-limited-glasgow</guid>
+      <pubDate>Sat, 10 Oct 2026 06:17:20 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Glasgow. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Anand Nand Ltd. T/A Mister Singh&#x27;s India: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-added-anand-nand-ltd-t-a-mister-singh-s-india-glasgow</guid>
+      <pubDate>Sat, 10 Oct 2026 06:17:20 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Glasgow. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>BB Accounting Solutions Ltd: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-added-bb-accounting-solutions-ltd-glasgow</guid>
+      <pubDate>Sat, 10 Oct 2026 06:17:20 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Glasgow. Industry: Finance &amp; Professional. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>DAININ BC LIMITED: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-added-dainin-bc-limited-glasgow</guid>
+      <pubDate>Sat, 10 Oct 2026 06:17:20 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Glasgow, Scotland. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Filament SD LTD: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-added-filament-sd-ltd-glasgow</guid>
+      <pubDate>Sat, 10 Oct 2026 06:17:20 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Glasgow, Scotland. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+  </channel>
+</rss>

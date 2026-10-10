@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "runId": "KYS-20261008T061741Z",
+  "status": "verified",
+  "publishedAt": "2026-10-07 09:10 UTC",
+  "retrievedAt": "2026-10-08 06:17 UTC",
+  "effectiveAt": "",
+  "effectiveAtStatus": "not published separately by the source",
+  "source": {
+    "name": "Home Office Register of Licensed Sponsors (Workers)",
+    "url": "https://assets.publishing.service.gov.uk/media/6ac60ad235adbc27761df954/SP_-_Worker_and_Temporary_Worker_Web_Register_-_2026-10-07.csv",
+    "mediaType": "text/csv",
+    "sha256": "56ff9906fe14a4840c19ac46a5d9e7f58898a71832f042b00e77970788a5ab13",
+    "bytes": 10955538,
+    "licence": "Open Government Licence v3.0",
+    "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+  },
+  "pipeline": {
+    "parserVersion": "sponsor-register-parser/1",
+    "normalizerVersion": "sponsor-register-normalizer/1",
+    "outputSchemaVersion": "sponsor-register-output/1"
+  },
+  "input": {
+    "header": [
+      "Organisation Name",
+      "Town/City",
+      "County",
+      "Type & Rating",
+      "Route"
+    ],
+    "sourceRows": 143176,
+    "validRows": 143176,
+    "blankNameRows": 0,
+    "malformedRows": 0,
+    "exactDuplicateRows": 447
+  },
+  "output": {
+    "sponsorRecords": 127758,
+    "distinctSponsorNames": 127477,
+    "files": {
+      "data/sponsors.json": "708ae2c833f621a8c7519a81e008b13f7b3b066351b3aec9b78b92929cfdb54e",
+      "data/changes.json": "c798d532f9e29ff644178e42007cf8f47baf3204e8d5075b139db8eca2de4441",
+      "data/meta.json": "965fc99468a233071d494bbabaf8dabdc38eca7441401250c327d4abfee6214f"
+    }
+  },
+  "events": {
+    "recordFirstObserved": 69,
+    "recordNoLongerObserved": 53,
+    "ratingChanged": 1
+  },
+  "quality": {
+    "schemaValidated": true,
+    "rowCountValidated": true,
+    "guardOverridden": false
+  },
+  "previousManifestSha256": "08420e7e54ea5519022ffdf9c2a324283a0e81a9ce1d9e5dbee7ffa74b374428",
+  "manifestSha256": "98221b0da8c78136571c5118b7cd5ae757d30f1a712b252c0ed3273cea170890"
+}
