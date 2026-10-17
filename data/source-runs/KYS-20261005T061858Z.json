@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "runId": "KYS-20261005T061858Z",
+  "status": "verified",
+  "publishedAt": "2026-10-02 08:05 UTC",
+  "retrievedAt": "2026-10-05 06:18 UTC",
+  "effectiveAt": "",
+  "effectiveAtStatus": "not published separately by the source",
+  "source": {
+    "name": "Home Office Register of Licensed Sponsors (Workers)",
+    "url": "https://assets.publishing.service.gov.uk/media/6abf628355bc01d752a7f28a/SP_-_Worker_and_Temporary_Worker_Web_Register_-_2026-10-02.csv",
+    "mediaType": "text/csv",
+    "sha256": "67a7bcb01f31570fa906584ee429ed4d5a5fabf17e5b914b9bc42656c8743ac1",
+    "bytes": 10953698,
+    "licence": "Open Government Licence v3.0",
+    "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+  },
+  "pipeline": {
+    "parserVersion": "sponsor-register-parser/1",
+    "normalizerVersion": "sponsor-register-normalizer/1",
+    "outputSchemaVersion": "sponsor-register-output/1"
+  },
+  "input": {
+    "header": [
+      "Organisation Name",
+      "Town/City",
+      "County",
+      "Type & Rating",
+      "Route"
+    ],
+    "sourceRows": 143138,
+    "validRows": 143138,
+    "blankNameRows": 0,
+    "malformedRows": 0,
+    "exactDuplicateRows": 452
+  },
+  "output": {
+    "sponsorRecords": 127709,
+    "distinctSponsorNames": 127424,
+    "files": {
+      "data/sponsors.json": "61e4a35d17035124cb188758617290259def3f741c8c5391ee1ca407c79be66d",
+      "data/changes.json": "f2e7b868dc7a4de35b4e918ad354f63ca22c8a6493f7f03e8477eee0419a4eba",
+      "data/meta.json": "d4bfc88132a41b412ea05d0b28d23a04090ffca1f03e70a0778c98275d60cd4a"
+    }
+  },
+  "events": {
+    "recordFirstObserved": 0,
+    "recordNoLongerObserved": 0,
+    "ratingChanged": 0
+  },
+  "quality": {
+    "schemaValidated": true,
+    "rowCountValidated": true,
+    "guardOverridden": false
+  },
+  "previousManifestSha256": "eed5b8661a2701696eeb0190a31d61bf39dce2a2a7c4c052fad99060d2ff746e",
+  "manifestSha256": "d08761cfe2943c75ce82d230a70f12f17a12efc7663e430dfc01c6f65282c66f"
+}

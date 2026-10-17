@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "runId": "KYS-20260924T113151Z",
+  "status": "verified",
+  "publishedAt": "2026-09-24 11:08 UTC",
+  "retrievedAt": "2026-09-24 11:31 UTC",
+  "effectiveAt": "",
+  "effectiveAtStatus": "not published separately by the source",
+  "source": {
+    "name": "Home Office Register of Licensed Sponsors (Workers)",
+    "url": "https://assets.publishing.service.gov.uk/media/6ab50422997a4b2950ccee7a/SP_-_Worker_and_Temporary_Worker_Web_Register_-_2026-09-24.csv",
+    "mediaType": "text/csv",
+    "sha256": "a1c7bc76e9d6769687caf93d4f339e7773ce06963bda18ac1df7aed7c2a71e73",
+    "bytes": 10953119,
+    "licence": "Open Government Licence v3.0",
+    "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+  },
+  "pipeline": {
+    "parserVersion": "sponsor-register-parser/1",
+    "normalizerVersion": "sponsor-register-normalizer/1",
+    "outputSchemaVersion": "sponsor-register-output/1"
+  },
+  "input": {
+    "header": [
+      "Organisation Name",
+      "Town/City",
+      "County",
+      "Type & Rating",
+      "Route"
+    ],
+    "sourceRows": 143130,
+    "validRows": 143130,
+    "blankNameRows": 0,
+    "malformedRows": 0,
+    "exactDuplicateRows": 457
+  },
+  "output": {
+    "sponsorRecords": 127692,
+    "distinctSponsorNames": 127404,
+    "files": {
+      "data/sponsors.json": "8091ad6fb2ea8270add710e4d6939aa8479b8bba52be97aded2681266f94e5e8",
+      "data/changes.json": "1814d3c9c079a9c4bee9602961bfb6d1711434b663fd0a9711555040e4ce720a",
+      "data/meta.json": "3fc0f763904ebc9b59a9d68952fc4f594ed2af3c664bf1df0f0d7d0b006c82b9"
+    }
+  },
+  "events": {
+    "recordFirstObserved": 58,
+    "recordNoLongerObserved": 70,
+    "ratingChanged": 1
+  },
+  "quality": {
+    "schemaValidated": true,
+    "rowCountValidated": true,
+    "guardOverridden": false
+  },
+  "previousManifestSha256": "73a35e4dedbe67eedd3d6ab2334cdf4a91d258063640585e4f5fd8392353a92b",
+  "manifestSha256": "f238644f4ca83084452f12647a1158f04b509eaf278e535ccc092701efe202e4"
+}

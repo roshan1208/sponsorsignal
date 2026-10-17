@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "runId": "KYS-20261002T061728Z",
+  "status": "verified",
+  "publishedAt": "2026-10-01 10:30 UTC",
+  "retrievedAt": "2026-10-02 06:17 UTC",
+  "effectiveAt": "",
+  "effectiveAtStatus": "not published separately by the source",
+  "source": {
+    "name": "Home Office Register of Licensed Sponsors (Workers)",
+    "url": "https://assets.publishing.service.gov.uk/media/6abe33d2efad0f1df6722889/SP_-_Worker_and_Temporary_Worker_Web_Register_-_2026-10-01.csv",
+    "mediaType": "text/csv",
+    "sha256": "54ef48b62c56a86d479a63a0b6b15c2fcdc02e9afbe6a6596550a57dbb764267",
+    "bytes": 10953636,
+    "licence": "Open Government Licence v3.0",
+    "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+  },
+  "pipeline": {
+    "parserVersion": "sponsor-register-parser/1",
+    "normalizerVersion": "sponsor-register-normalizer/1",
+    "outputSchemaVersion": "sponsor-register-output/1"
+  },
+  "input": {
+    "header": [
+      "Organisation Name",
+      "Town/City",
+      "County",
+      "Type & Rating",
+      "Route"
+    ],
+    "sourceRows": 143138,
+    "validRows": 143138,
+    "blankNameRows": 0,
+    "malformedRows": 0,
+    "exactDuplicateRows": 451
+  },
+  "output": {
+    "sponsorRecords": 127710,
+    "distinctSponsorNames": 127424,
+    "files": {
+      "data/sponsors.json": "a8d8b02b64e9b72703109244056b8cd86d2ded93593b5432a2bd2b7d588b8151",
+      "data/changes.json": "ff7ef20f9ab1be429e1e36a45c92c97ac51297ff8fb548fed34c5cb9a6282da3",
+      "data/meta.json": "e36182644409cb227d8027706a251f2428904525c11a021e8e3c787af5dfd7db"
+    }
+  },
+  "events": {
+    "recordFirstObserved": 68,
+    "recordNoLongerObserved": 60,
+    "ratingChanged": 0
+  },
+  "quality": {
+    "schemaValidated": true,
+    "rowCountValidated": true,
+    "guardOverridden": false
+  },
+  "previousManifestSha256": "dea9277aa88d61d056c5890a82b491eac3ca8463dffee2737a47e92b5db05bfe",
+  "manifestSha256": "2df94536728542eaff34ef6a100e07628a28c2c025d6bd34dee1e3f61c91a737"
+}
