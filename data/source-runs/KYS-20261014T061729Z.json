@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "runId": "KYS-20261014T061729Z",
+  "status": "verified",
+  "publishedAt": "2026-10-13 08:40 UTC",
+  "retrievedAt": "2026-10-14 06:17 UTC",
+  "effectiveAt": "",
+  "effectiveAtStatus": "not published separately by the source",
+  "source": {
+    "name": "Home Office Register of Licensed Sponsors (Workers)",
+    "url": "https://assets.publishing.service.gov.uk/media/6acdecb2a57ddfe32196ab6b/SP_-_Worker_and_Temporary_Worker_Web_Register_-_2026-10-13.csv",
+    "mediaType": "text/csv",
+    "sha256": "7c32ede5895dead1ebb314972115133a928f653d3a93309f88887e70fe7c9aef",
+    "bytes": 10957995,
+    "licence": "Open Government Licence v3.0",
+    "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+  },
+  "pipeline": {
+    "parserVersion": "sponsor-register-parser/1",
+    "normalizerVersion": "sponsor-register-normalizer/1",
+    "outputSchemaVersion": "sponsor-register-output/1"
+  },
+  "input": {
+    "header": [
+      "Organisation Name",
+      "Town/City",
+      "County",
+      "Type & Rating",
+      "Route"
+    ],
+    "sourceRows": 143218,
+    "validRows": 143218,
+    "blankNameRows": 0,
+    "malformedRows": 0,
+    "exactDuplicateRows": 442
+  },
+  "output": {
+    "sponsorRecords": 127815,
+    "distinctSponsorNames": 127533,
+    "files": {
+      "data/sponsors.json": "feb6e4a9800c106423256135c561e0d6f6b9c9d484481b617b877195c60b4271",
+      "data/changes.json": "a7611159352b8081b192033d83b36c3d2ed99bb55ed1ae1674bb9608b85edb86",
+      "data/meta.json": "ac593c63eec141345b67b628f452db4ad877531c9996dadaa4d57d694312b879"
+    }
+  },
+  "events": {
+    "recordFirstObserved": 57,
+    "recordNoLongerObserved": 35,
+    "ratingChanged": 1
+  },
+  "quality": {
+    "schemaValidated": true,
+    "rowCountValidated": true,
+    "guardOverridden": false
+  },
+  "previousManifestSha256": "621149bd99c5752c348f1dc772f419c1b292bc99c8128f32397b53caa5a7f5d7",
+  "manifestSha256": "82552277e58992e24bf0bc0479103b676b8766be6df2cbb3f01488a0fcab3a19"
+}

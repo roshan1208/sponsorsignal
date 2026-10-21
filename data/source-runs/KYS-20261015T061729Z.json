@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "runId": "KYS-20261015T061729Z",
+  "status": "verified",
+  "publishedAt": "2026-10-14 10:57 UTC",
+  "retrievedAt": "2026-10-15 06:17 UTC",
+  "effectiveAt": "",
+  "effectiveAtStatus": "not published separately by the source",
+  "source": {
+    "name": "Home Office Register of Licensed Sponsors (Workers)",
+    "url": "https://assets.publishing.service.gov.uk/media/6acf5ba471dbe79328fd44d4/SP_-_Worker_and_Temporary_Worker_Web_Register_-_2026-10-14.csv",
+    "mediaType": "text/csv",
+    "sha256": "90441a4dfdc0ff51b505e3725f0eb345d204acd765d8313709726e9ba6550368",
+    "bytes": 10958833,
+    "licence": "Open Government Licence v3.0",
+    "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+  },
+  "pipeline": {
+    "parserVersion": "sponsor-register-parser/1",
+    "normalizerVersion": "sponsor-register-normalizer/1",
+    "outputSchemaVersion": "sponsor-register-output/1"
+  },
+  "input": {
+    "header": [
+      "Organisation Name",
+      "Town/City",
+      "County",
+      "Type & Rating",
+      "Route"
+    ],
+    "sourceRows": 143229,
+    "validRows": 143229,
+    "blankNameRows": 0,
+    "malformedRows": 0,
+    "exactDuplicateRows": 438
+  },
+  "output": {
+    "sponsorRecords": 127830,
+    "distinctSponsorNames": 127548,
+    "files": {
+      "data/sponsors.json": "c73d4ceef43757a60070c8cacd3036dcec1165cc773a1729fe612db4021b0049",
+      "data/changes.json": "57af3a1d5c1bcc14d0e1923e709880f2bc24b1c2fa24215d96445e131f97dc28",
+      "data/meta.json": "7220cc83566b48101363f4d9ed8d63f5bacdedb6f3c26c6d74732b3b277c7673"
+    }
+  },
+  "events": {
+    "recordFirstObserved": 57,
+    "recordNoLongerObserved": 42,
+    "ratingChanged": 2
+  },
+  "quality": {
+    "schemaValidated": true,
+    "rowCountValidated": true,
+    "guardOverridden": false
+  },
+  "previousManifestSha256": "82552277e58992e24bf0bc0479103b676b8766be6df2cbb3f01488a0fcab3a19",
+  "manifestSha256": "b1460dd9d06c8a12ee23f67791349aa10ecb247111ef620a0d53b317187da889"
+}

@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "runId": "KYS-20261021T155240Z",
+  "status": "verified",
+  "publishedAt": "2026-10-21 08:19 UTC",
+  "retrievedAt": "2026-10-21 15:52 UTC",
+  "effectiveAt": "",
+  "effectiveAtStatus": "not published separately by the source",
+  "source": {
+    "name": "Home Office Register of Licensed Sponsors (Workers)",
+    "url": "https://assets.publishing.service.gov.uk/media/6ad871b15eadc3d6e8a10870/SP_-_Worker_and_Temporary_Worker_Web_Register_-_2026-10-21.csv",
+    "mediaType": "text/csv",
+    "sha256": "4214285ef3e32c5f397af4c4f72746f67b8ab047462454885e01986924f920a0",
+    "bytes": 10955032,
+    "licence": "Open Government Licence v3.0",
+    "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+  },
+  "pipeline": {
+    "parserVersion": "sponsor-register-parser/1",
+    "normalizerVersion": "sponsor-register-normalizer/1",
+    "outputSchemaVersion": "sponsor-register-output/1"
+  },
+  "input": {
+    "header": [
+      "Organisation Name",
+      "Town/City",
+      "County",
+      "Type & Rating",
+      "Route"
+    ],
+    "sourceRows": 143184,
+    "validRows": 143184,
+    "blankNameRows": 0,
+    "malformedRows": 0,
+    "exactDuplicateRows": 427
+  },
+  "output": {
+    "sponsorRecords": 127816,
+    "distinctSponsorNames": 127537,
+    "files": {
+      "data/sponsors.json": "9b247c96abf56f4d17b35f58de9e7b71ba678a66271c6e12aa3ddb8a25edd7f9",
+      "data/changes.json": "a37455aafb2dfb16ceb5c7b22b0745a6bc2c483939564de98e626b4076210ddf",
+      "data/meta.json": "191431367754865f7900cc0c98bf8f90c713ada24f30dd2e80430ea391914385"
+    }
+  },
+  "events": {
+    "recordFirstObserved": 218,
+    "recordNoLongerObserved": 224,
+    "ratingChanged": 1
+  },
+  "quality": {
+    "schemaValidated": true,
+    "rowCountValidated": true,
+    "guardOverridden": false
+  },
+  "previousManifestSha256": "9d7fbfe24e493e1a58acd8069ad8a91e128a8a2dd8fc8dfad94937ba9413ec17",
+  "manifestSha256": "d5fb7889b21d659f3c7f69d3d9e3401ed5846f0d38f7252ef9f6563afd139b82"
+}

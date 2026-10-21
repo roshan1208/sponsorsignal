@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "runId": "KYS-20260923T094800Z",
+  "status": "verified",
+  "publishedAt": "2026-09-23 09:18 UTC",
+  "retrievedAt": "2026-09-23 09:48 UTC",
+  "effectiveAt": "",
+  "effectiveAtStatus": "not published separately by the source",
+  "source": {
+    "name": "Home Office Register of Licensed Sponsors (Workers)",
+    "url": "https://assets.publishing.service.gov.uk/media/6ab3900f8cb3c0580e501018/SP_-_Worker_and_Temporary_Worker_Web_Register_-_2026-09-23.csv",
+    "mediaType": "text/csv",
+    "sha256": "634deb34b761562d51235fa7e2b4ff8c5c5f79a944e79bf5cb5ff27b21fc66a8",
+    "bytes": 10953637,
+    "licence": "Open Government Licence v3.0",
+    "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+  },
+  "pipeline": {
+    "parserVersion": "sponsor-register-parser/1",
+    "normalizerVersion": "sponsor-register-normalizer/1",
+    "outputSchemaVersion": "sponsor-register-output/1"
+  },
+  "input": {
+    "header": [
+      "Organisation Name",
+      "Town/City",
+      "County",
+      "Type & Rating",
+      "Route"
+    ],
+    "sourceRows": 143139,
+    "validRows": 143139,
+    "blankNameRows": 0,
+    "malformedRows": 0,
+    "exactDuplicateRows": 460
+  },
+  "output": {
+    "sponsorRecords": 127704,
+    "distinctSponsorNames": 127415,
+    "files": {
+      "data/sponsors.json": "5daa030cda3c6d4a4c79274013fbb3a9a5626f35a08fdc0c07931a3b8b621552",
+      "data/changes.json": "91941d83b32a0cd080e98f8a35e0e3ccce100c2e932c7b455b203ac35ed69631",
+      "data/meta.json": "40e6779d71d30081bf2bb64159dd46a429da9129e03490dd59631ce3041fe039"
+    }
+  },
+  "events": {
+    "recordFirstObserved": 54,
+    "recordNoLongerObserved": 58,
+    "ratingChanged": 1
+  },
+  "quality": {
+    "schemaValidated": true,
+    "rowCountValidated": true,
+    "guardOverridden": false
+  },
+  "previousManifestSha256": "",
+  "manifestSha256": "2e740302b32c3ddc9bd440ab35648a9396f6b3e0ea01099aae608d2b6890346d"
+}

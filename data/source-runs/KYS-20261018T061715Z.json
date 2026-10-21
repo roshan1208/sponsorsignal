@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "runId": "KYS-20261018T061715Z",
+  "status": "verified",
+  "publishedAt": "2026-10-16 08:14 UTC",
+  "retrievedAt": "2026-10-18 06:17 UTC",
+  "effectiveAt": "",
+  "effectiveAtStatus": "not published separately by the source",
+  "source": {
+    "name": "Home Office Register of Licensed Sponsors (Workers)",
+    "url": "https://assets.publishing.service.gov.uk/media/6ad1d58449ba86d6c953ca9d/SP_-_Worker_and_Temporary_Worker_Web_Register_-_2026-10-16.csv",
+    "mediaType": "text/csv",
+    "sha256": "2f67056f79c94002ab953cb8436467f85f9243de2d5ea098462d3fa650c7b75f",
+    "bytes": 10957677,
+    "licence": "Open Government Licence v3.0",
+    "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+  },
+  "pipeline": {
+    "parserVersion": "sponsor-register-parser/1",
+    "normalizerVersion": "sponsor-register-normalizer/1",
+    "outputSchemaVersion": "sponsor-register-output/1"
+  },
+  "input": {
+    "header": [
+      "Organisation Name",
+      "Town/City",
+      "County",
+      "Type & Rating",
+      "Route"
+    ],
+    "sourceRows": 143211,
+    "validRows": 143211,
+    "blankNameRows": 0,
+    "malformedRows": 0,
+    "exactDuplicateRows": 434
+  },
+  "output": {
+    "sponsorRecords": 127822,
+    "distinctSponsorNames": 127540,
+    "files": {
+      "data/sponsors.json": "bee138b08756025be24a760280420215b905c9344f42476087e2ae4e5d7f3cc2",
+      "data/changes.json": "c5ba4c5e5e98afbd9a9885ddb128090840e402ed6b17030eede392ed17801d42",
+      "data/meta.json": "38086049653ba47ab7472d5fba225aa53a17404cf197eae52ec08a07332d619d"
+    }
+  },
+  "events": {
+    "recordFirstObserved": 0,
+    "recordNoLongerObserved": 0,
+    "ratingChanged": 0
+  },
+  "quality": {
+    "schemaValidated": true,
+    "rowCountValidated": true,
+    "guardOverridden": false
+  },
+  "previousManifestSha256": "5cad9dbd2907f0e930ffbc23f7521b4ccff430ae45ce4929bbae2037a10cccb6",
+  "manifestSha256": "9d7fbfe24e493e1a58acd8069ad8a91e128a8a2dd8fc8dfad94937ba9413ec17"
+}
