@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KnowYourSponsor: Visa sponsors added and removed in Glasgow</title>
+    <link>https://knowyoursponsor.co.uk/glasgow/</link>
+    <atom:link href="https://knowyoursponsor.co.uk/feeds/glasgow.xml" rel="self" type="application/rss+xml"/>
+    <description>Sponsor records in Glasgow first or no longer observed in daily comparisons. Rebuilt every day from the official GOV.UK register. Covers the last 7 days.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Mon, 26 Oct 2026 07:05:37 +0000</lastBuildDate>
+    <item>
+      <title>CRANBERRYS BAR AND KITCHEN LTD t/a Cranberry&#x27;s: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-added-cranberrys-bar-and-kitchen-ltd-t-a-cranberry-s-glasgow</guid>
+      <pubDate>Mon, 26 Oct 2026 07:05:37 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Glasgow. Industry: Hospitality &amp; Food. Visa routes: Skilled Worker.</description>
+    </item>
+  </channel>
+</rss>

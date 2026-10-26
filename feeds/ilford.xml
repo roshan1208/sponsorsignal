@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KnowYourSponsor: Visa sponsors added and removed in Ilford</title>
+    <link>https://knowyoursponsor.co.uk/ilford/</link>
+    <atom:link href="https://knowyoursponsor.co.uk/feeds/ilford.xml" rel="self" type="application/rss+xml"/>
+    <description>Sponsor records in Ilford first or no longer observed in daily comparisons. Rebuilt every day from the official GOV.UK register. Covers the last 7 days.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Mon, 26 Oct 2026 07:05:37 +0000</lastBuildDate>
+    <item>
+      <title>A &amp; Z Enterprise Ltd: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/ilford/</link>
+      <guid isPermaLink="false">kys-ilford-removed-a-z-enterprise-ltd-ilford</guid>
+      <pubDate>Mon, 26 Oct 2026 07:05:37 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Ilford. Industry: Property &amp; Real Estate.</description>
+    </item>
+    <item>
+      <title>MEGA PROJECT SECURITY AND SERVICES LTD: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/ilford/</link>
+      <guid isPermaLink="false">kys-ilford-removed-mega-project-security-and-services-ltd-ilford</guid>
+      <pubDate>Mon, 26 Oct 2026 07:05:37 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Ilford. Industry: Finance &amp; Professional.</description>
+    </item>
+    <item>
+      <title>ROMFORD SECURITY SERVICES LIMITED: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/ilford/</link>
+      <guid isPermaLink="false">kys-ilford-removed-romford-security-services-limited-ilford</guid>
+      <pubDate>Mon, 26 Oct 2026 07:05:37 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Ilford. Industry: Security &amp; Facilities.</description>
+    </item>
+    <item>
+      <title>ABA ASSOCIATES (GB) LTD: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/ilford/</link>
+      <guid isPermaLink="false">kys-ilford-added-aba-associates-gb-ltd-ilford</guid>
+      <pubDate>Mon, 26 Oct 2026 07:05:37 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Ilford. Industry: Finance &amp; Professional. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>AL FALAH HM LTD: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/ilford/</link>
+      <guid isPermaLink="false">kys-ilford-added-al-falah-hm-ltd-ilford</guid>
+      <pubDate>Mon, 26 Oct 2026 07:05:37 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Ilford. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>GVA LONDON LTD: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/ilford/</link>
+      <guid isPermaLink="false">kys-ilford-added-gva-london-ltd-ilford</guid>
+      <pubDate>Mon, 26 Oct 2026 07:05:37 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Ilford. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+  </channel>
+</rss>
