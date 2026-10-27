@@ -6,14 +6,54 @@
     <atom:link href="https://knowyoursponsor.co.uk/feeds/glasgow.xml" rel="self" type="application/rss+xml"/>
     <description>Sponsor records in Glasgow first or no longer observed in daily comparisons. Rebuilt every day from the official GOV.UK register. Covers the last 7 days.</description>
     <language>en-GB</language>
-    <lastBuildDate>Mon, 26 Oct 2026 07:05:37 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 13:46:47 +0000</lastBuildDate>
+    <item>
+      <title>Recruitment Solutions Alba Ltd: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-removed-recruitment-solutions-alba-ltd-glasgow</guid>
+      <pubDate>Tue, 27 Oct 2026 13:46:47 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Glasgow. Industry: Recruitment &amp; Staffing.</description>
+    </item>
+    <item>
+      <title>WEEE (Scotland) Limited: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-removed-weee-scotland-limited-glasgow</guid>
+      <pubDate>Tue, 27 Oct 2026 13:46:47 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Glasgow, Glasgow City. Industry: Manufacturing &amp; Industry.</description>
+    </item>
+    <item>
+      <title>Circulus CRM Limited: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-added-circulus-crm-limited-glasgow</guid>
+      <pubDate>Tue, 27 Oct 2026 13:46:47 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Glasgow, Glasgow City. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
     <item>
       <title>CRANBERRYS BAR AND KITCHEN LTD t/a Cranberry&#x27;s: sponsor record first observed</title>
       <link>https://knowyoursponsor.co.uk/glasgow/</link>
       <guid isPermaLink="false">kys-glasgow-added-cranberrys-bar-and-kitchen-ltd-t-a-cranberry-s-glasgow</guid>
-      <pubDate>Mon, 26 Oct 2026 07:05:37 +0000</pubDate>
+      <pubDate>Tue, 27 Oct 2026 13:46:47 +0000</pubDate>
       <category>added</category>
       <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Glasgow. Industry: Hospitality &amp; Food. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Glasgow Film Theatre (GFT): sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-added-glasgow-film-theatre-gft-glasgow</guid>
+      <pubDate>Tue, 27 Oct 2026 13:46:47 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Glasgow. Industry: Media &amp; Creative. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>WHOLESALE BATHROOMS LTD: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/glasgow/</link>
+      <guid isPermaLink="false">kys-glasgow-added-wholesale-bathrooms-ltd-glasgow</guid>
+      <pubDate>Tue, 27 Oct 2026 13:46:47 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Glasgow, South Lanarkshire. Industry: Retail &amp; Commerce. Visa routes: Skilled Worker.</description>
     </item>
   </channel>
 </rss>

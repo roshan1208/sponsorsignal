@@ -6,20 +6,36 @@
     <atom:link href="https://knowyoursponsor.co.uk/feeds/reading.xml" rel="self" type="application/rss+xml"/>
     <description>Sponsor records in Reading first or no longer observed in daily comparisons. Rebuilt every day from the official GOV.UK register. Covers the last 7 days.</description>
     <language>en-GB</language>
-    <lastBuildDate>Mon, 26 Oct 2026 07:05:37 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 13:46:47 +0000</lastBuildDate>
+    <item>
+      <title>H &amp; J Builders Ltd: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/reading/</link>
+      <guid isPermaLink="false">kys-reading-removed-h-j-builders-ltd-reading</guid>
+      <pubDate>Tue, 27 Oct 2026 13:46:47 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Reading. Industry: Construction &amp; Engineering.</description>
+    </item>
     <item>
       <title>Nodes Technologies Limited: sponsor record no longer observed</title>
       <link>https://knowyoursponsor.co.uk/reading/</link>
       <guid isPermaLink="false">kys-reading-removed-nodes-technologies-limited-reading</guid>
-      <pubDate>Mon, 26 Oct 2026 07:05:37 +0000</pubDate>
+      <pubDate>Tue, 27 Oct 2026 13:46:47 +0000</pubDate>
       <category>removed</category>
       <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Reading. Industry: Tech &amp; Software.</description>
+    </item>
+    <item>
+      <title>Technosurge Limited: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/reading/</link>
+      <guid isPermaLink="false">kys-reading-removed-technosurge-limited-reading</guid>
+      <pubDate>Tue, 27 Oct 2026 13:46:47 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Reading, Berkshire. Industry: Tech &amp; Software.</description>
     </item>
     <item>
       <title>Ternary Technology Ltd: sponsor record no longer observed</title>
       <link>https://knowyoursponsor.co.uk/reading/</link>
       <guid isPermaLink="false">kys-reading-removed-ternary-technology-ltd-reading</guid>
-      <pubDate>Mon, 26 Oct 2026 07:05:37 +0000</pubDate>
+      <pubDate>Tue, 27 Oct 2026 13:46:47 +0000</pubDate>
       <category>removed</category>
       <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Reading. Industry: Tech &amp; Software.</description>
     </item>
@@ -27,7 +43,7 @@
       <title>Timeline Television Ltd: sponsor record no longer observed</title>
       <link>https://knowyoursponsor.co.uk/reading/</link>
       <guid isPermaLink="false">kys-reading-removed-timeline-television-ltd-reading</guid>
-      <pubDate>Mon, 26 Oct 2026 07:05:37 +0000</pubDate>
+      <pubDate>Tue, 27 Oct 2026 13:46:47 +0000</pubDate>
       <category>removed</category>
       <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Reading. Industry: Media &amp; Creative.</description>
     </item>
@@ -35,15 +51,23 @@
       <title>Ericsson Enterprise Wireless Solutions UK Ltd: sponsor record first observed</title>
       <link>https://knowyoursponsor.co.uk/reading/</link>
       <guid isPermaLink="false">kys-reading-added-ericsson-enterprise-wireless-solutions-uk-ltd-reading</guid>
-      <pubDate>Mon, 26 Oct 2026 07:05:37 +0000</pubDate>
+      <pubDate>Tue, 27 Oct 2026 13:46:47 +0000</pubDate>
       <category>added</category>
       <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Reading. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Field Seymour Parkes: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/reading/</link>
+      <guid isPermaLink="false">kys-reading-added-field-seymour-parkes-reading</guid>
+      <pubDate>Tue, 27 Oct 2026 13:46:47 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Reading, Berkshire. Industry: Other. Visa routes: Skilled Worker.</description>
     </item>
     <item>
       <title>Pink Samurais Limited: sponsor record first observed</title>
       <link>https://knowyoursponsor.co.uk/reading/</link>
       <guid isPermaLink="false">kys-reading-added-pink-samurais-limited-reading</guid>
-      <pubDate>Mon, 26 Oct 2026 07:05:37 +0000</pubDate>
+      <pubDate>Tue, 27 Oct 2026 13:46:47 +0000</pubDate>
       <category>added</category>
       <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Reading. Industry: Tech &amp; Software. Visa routes: Skilled Worker.</description>
     </item>
