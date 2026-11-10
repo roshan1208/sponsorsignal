@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "runId": "KYS-20260929T061807Z",
+  "status": "verified",
+  "publishedAt": "2026-09-28 08:30 UTC",
+  "retrievedAt": "2026-09-29 06:18 UTC",
+  "effectiveAt": "",
+  "effectiveAtStatus": "not published separately by the source",
+  "source": {
+    "name": "Home Office Register of Licensed Sponsors (Workers)",
+    "url": "https://assets.publishing.service.gov.uk/media/6aba23f4734e2435f202f12a/SP_-_Worker_and_Temporary_Worker_Web_Register_-_2026-09-28.csv",
+    "mediaType": "text/csv",
+    "sha256": "b949b13e8c162abe4e4f46c0f5c2157310006adbe17bcbb0a62980bd4d04352c",
+    "bytes": 10952123,
+    "licence": "Open Government Licence v3.0",
+    "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+  },
+  "pipeline": {
+    "parserVersion": "sponsor-register-parser/1",
+    "normalizerVersion": "sponsor-register-normalizer/1",
+    "outputSchemaVersion": "sponsor-register-output/1"
+  },
+  "input": {
+    "header": [
+      "Organisation Name",
+      "Town/City",
+      "County",
+      "Type & Rating",
+      "Route"
+    ],
+    "sourceRows": 143116,
+    "validRows": 143116,
+    "blankNameRows": 0,
+    "malformedRows": 0,
+    "exactDuplicateRows": 455
+  },
+  "output": {
+    "sponsorRecords": 127677,
+    "distinctSponsorNames": 127389,
+    "files": {
+      "data/sponsors.json": "035ccd2492ad84416591f33db104983b08d1fcd628f0062ed4b431d3ce423760",
+      "data/changes.json": "df399d6711f71dc196c6c78e4f6892416a8c0498a226e113decb5dfc0715257d",
+      "data/meta.json": "ca658767dcc03b85f9678dcfe084592313429118cc2d4b6127b8812e53e05950"
+    }
+  },
+  "events": {
+    "recordFirstObserved": 11,
+    "recordNoLongerObserved": 22,
+    "ratingChanged": 1
+  },
+  "quality": {
+    "schemaValidated": true,
+    "rowCountValidated": true,
+    "guardOverridden": false
+  },
+  "previousManifestSha256": "9f6ce8165fb2b2ff21adc5846b11547847daba66d12ff59512f9ea639cfcec78",
+  "manifestSha256": "b9f8a0dc8bc400b54ff5290f9d314fcc2ecc3a8992cc3b330f352d0ec21e57d7"
+}

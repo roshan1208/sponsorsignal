@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "runId": "KYS-20261003T103401Z",
+  "status": "verified",
+  "publishedAt": "2026-10-02 08:05 UTC",
+  "retrievedAt": "2026-10-03 10:34 UTC",
+  "effectiveAt": "",
+  "effectiveAtStatus": "not published separately by the source",
+  "source": {
+    "name": "Home Office Register of Licensed Sponsors (Workers)",
+    "url": "https://assets.publishing.service.gov.uk/media/6abf628355bc01d752a7f28a/SP_-_Worker_and_Temporary_Worker_Web_Register_-_2026-10-02.csv",
+    "mediaType": "text/csv",
+    "sha256": "67a7bcb01f31570fa906584ee429ed4d5a5fabf17e5b914b9bc42656c8743ac1",
+    "bytes": 10953698,
+    "licence": "Open Government Licence v3.0",
+    "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+  },
+  "pipeline": {
+    "parserVersion": "sponsor-register-parser/1",
+    "normalizerVersion": "sponsor-register-normalizer/1",
+    "outputSchemaVersion": "sponsor-register-output/1"
+  },
+  "input": {
+    "header": [
+      "Organisation Name",
+      "Town/City",
+      "County",
+      "Type & Rating",
+      "Route"
+    ],
+    "sourceRows": 143138,
+    "validRows": 143138,
+    "blankNameRows": 0,
+    "malformedRows": 0,
+    "exactDuplicateRows": 452
+  },
+  "output": {
+    "sponsorRecords": 127709,
+    "distinctSponsorNames": 127424,
+    "files": {
+      "data/sponsors.json": "e185dfa3faf83256653e95e93c31d9ff59fa183fead82da7df48d9b2c9480fbd",
+      "data/changes.json": "5b69e70aeb24be5b1c6871a78926ba3db18628623ae0aa4f787117a8202b4995",
+      "data/meta.json": "74d5f0a461e255ce8ea244d03f1606bd544507168fe6f3c78c700870c8e9a932"
+    }
+  },
+  "events": {
+    "recordFirstObserved": 55,
+    "recordNoLongerObserved": 56,
+    "ratingChanged": 2
+  },
+  "quality": {
+    "schemaValidated": true,
+    "rowCountValidated": true,
+    "guardOverridden": false
+  },
+  "previousManifestSha256": "2df94536728542eaff34ef6a100e07628a28c2c025d6bd34dee1e3f61c91a737",
+  "manifestSha256": "21df6f7594213dc0b606799a19a9cd89d5efd77c2427038117d8db4984b70242"
+}

@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "runId": "KYS-20261011T061703Z",
+  "status": "verified",
+  "publishedAt": "2026-10-09 09:40 UTC",
+  "retrievedAt": "2026-10-11 06:17 UTC",
+  "effectiveAt": "",
+  "effectiveAtStatus": "not published separately by the source",
+  "source": {
+    "name": "Home Office Register of Licensed Sponsors (Workers)",
+    "url": "https://assets.publishing.service.gov.uk/media/6ac8b5bfab368efeb4c93428/SP_-_Worker_and_Temporary_Worker_Web_Register_-_2026-10-09.csv",
+    "mediaType": "text/csv",
+    "sha256": "956b7f0ec014756b6a3221be652e8878416ca87bff2629f00b94fc475df16569",
+    "bytes": 10957360,
+    "licence": "Open Government Licence v3.0",
+    "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+  },
+  "pipeline": {
+    "parserVersion": "sponsor-register-parser/1",
+    "normalizerVersion": "sponsor-register-normalizer/1",
+    "outputSchemaVersion": "sponsor-register-output/1"
+  },
+  "input": {
+    "header": [
+      "Organisation Name",
+      "Town/City",
+      "County",
+      "Type & Rating",
+      "Route"
+    ],
+    "sourceRows": 143206,
+    "validRows": 143206,
+    "blankNameRows": 0,
+    "malformedRows": 0,
+    "exactDuplicateRows": 442
+  },
+  "output": {
+    "sponsorRecords": 127791,
+    "distinctSponsorNames": 127507,
+    "files": {
+      "data/sponsors.json": "a803b97d3ca070f56b12401da99ab93d02fd8691c937980960c18d7b725bc4c1",
+      "data/changes.json": "50463b38b8b6a779f9a53e3d4c1e9080a1ea4fa4a58b34feab0e5e25b6691c76",
+      "data/meta.json": "914a807fc68f1a2d246a13eda274582d383affd36bdeb65c6eb2b56cac31eb5f"
+    }
+  },
+  "events": {
+    "recordFirstObserved": 0,
+    "recordNoLongerObserved": 0,
+    "ratingChanged": 0
+  },
+  "quality": {
+    "schemaValidated": true,
+    "rowCountValidated": true,
+    "guardOverridden": false
+  },
+  "previousManifestSha256": "a6cbf31c6fab5b92b59571f9a7b4bfb1792aa23cfd90ecd6fa5a41ab14bc9527",
+  "manifestSha256": "8205b203a8e7a626a4ae3b6322d2aef0be334d1d0d9b408c540e2fdc5ac1d353"
+}

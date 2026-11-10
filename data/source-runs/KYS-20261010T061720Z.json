@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "runId": "KYS-20261010T061720Z",
+  "status": "verified",
+  "publishedAt": "2026-10-09 09:40 UTC",
+  "retrievedAt": "2026-10-10 06:17 UTC",
+  "effectiveAt": "",
+  "effectiveAtStatus": "not published separately by the source",
+  "source": {
+    "name": "Home Office Register of Licensed Sponsors (Workers)",
+    "url": "https://assets.publishing.service.gov.uk/media/6ac8b5bfab368efeb4c93428/SP_-_Worker_and_Temporary_Worker_Web_Register_-_2026-10-09.csv",
+    "mediaType": "text/csv",
+    "sha256": "956b7f0ec014756b6a3221be652e8878416ca87bff2629f00b94fc475df16569",
+    "bytes": 10957360,
+    "licence": "Open Government Licence v3.0",
+    "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+  },
+  "pipeline": {
+    "parserVersion": "sponsor-register-parser/1",
+    "normalizerVersion": "sponsor-register-normalizer/1",
+    "outputSchemaVersion": "sponsor-register-output/1"
+  },
+  "input": {
+    "header": [
+      "Organisation Name",
+      "Town/City",
+      "County",
+      "Type & Rating",
+      "Route"
+    ],
+    "sourceRows": 143206,
+    "validRows": 143206,
+    "blankNameRows": 0,
+    "malformedRows": 0,
+    "exactDuplicateRows": 442
+  },
+  "output": {
+    "sponsorRecords": 127791,
+    "distinctSponsorNames": 127507,
+    "files": {
+      "data/sponsors.json": "09e718dc87f8f1f89fdadb13c68b516830801a4f640dbca46bbda0eaa95b9f49",
+      "data/changes.json": "3f782063467dd47f71c1635d4f6965aca58b6629597b3c231ee9e19573f0200f",
+      "data/meta.json": "285f27df7eb908266960e78f1b8f86e3a94d2e07af92c4f8bdbe8c78fca6c96d"
+    }
+  },
+  "events": {
+    "recordFirstObserved": 69,
+    "recordNoLongerObserved": 48,
+    "ratingChanged": 0
+  },
+  "quality": {
+    "schemaValidated": true,
+    "rowCountValidated": true,
+    "guardOverridden": false
+  },
+  "previousManifestSha256": "4dd7ba53afe4bc4327e475ea2b65fa98574887736e1415fc926f92e1e7d2eb71",
+  "manifestSha256": "a6cbf31c6fab5b92b59571f9a7b4bfb1792aa23cfd90ecd6fa5a41ab14bc9527"
+}

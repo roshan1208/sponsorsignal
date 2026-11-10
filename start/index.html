@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Check an employer portfolio | KnowYourSponsor</title>
+<meta name="description" content="Check up to 20 employers against current UK sponsor and safely linked company evidence. No account, email or candidate data.">
+<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://knowyoursponsor.co.uk/start/">
+<meta property="og:type" content="website"><meta property="og:url" content="https://knowyoursponsor.co.uk/start/">
+<meta property="og:title" content="Check an employer portfolio">
+<meta property="og:description" content="See exact sponsor records, company links and names that need review before monitoring begins.">
+<meta property="og:image" content="https://knowyoursponsor.co.uk/og-image.png"><meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.png" type="image/png"><link rel="stylesheet" href="/fonts/public-sans.css">
+<style>
+
+  :root{
+    --ink:#17233B; --ink-soft:#4A5670;
+    --paper:#FFFFFF; --paper-dim:#F5F7FB;
+    --cobalt:#2145C9; --cobalt-dark:#17348F; --on-cobalt:#FFFFFF;
+    --signal:#FFC933; --on-signal:#17233B;
+    --line:#D9DFEA; --good:#0E7B4F; --bad:#B3261E;
+    --warn-bg:#FDF1F0; --warn-bg-2:#FBE3E1; --warn-border:#E7B4AE;
+    --warn-ink:#8A1E18; --warn-solid:#B3261E;
+    --mark-bg:#17233B; --mark-fg:#FFFFFF;
+    --note-bg:#FFF6DC; --note-border:#EAD48A; --note-ink:#6B4E00;
+    --shadow:rgba(23,35,59,.10);
+    /* Three-step radius scale, shared with index.html. Corners
+       that almost match are what makes an interface feel cheap.
+       50% stays literal for circles. */
+    --r-sm:6px; --r-md:10px; --r-pill:999px;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ink:#E8ECF3; --ink-soft:#A3AEC2;
+      --paper:#10151F; --paper-dim:#1A2230;
+      --cobalt:#6B93F5; --cobalt-dark:#8FADF8; --on-cobalt:#10151F;
+      --signal:#FFC933; --on-signal:#17233B;
+      --line:#2A3444; --good:#4FBF8B; --bad:#F08A82;
+      --warn-bg:#2A1A19; --warn-bg-2:#3A1F1D; --warn-border:#6B2B26;
+      --warn-ink:#F5B5AE; --warn-solid:#B3261E;
+      --mark-bg:#E8ECF3; --mark-fg:#10151F;
+      --note-bg:#2A2412; --note-border:#5A4A1E; --note-ink:#F0D28A;
+      --shadow:rgba(0,0,0,.45);
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#E8ECF3; --ink-soft:#A3AEC2;
+    --paper:#10151F; --paper-dim:#1A2230;
+    --cobalt:#6B93F5; --cobalt-dark:#8FADF8; --on-cobalt:#10151F;
+    --signal:#FFC933; --on-signal:#17233B;
+    --line:#2A3444; --good:#4FBF8B; --bad:#F08A82;
+    --warn-bg:#2A1A19; --warn-bg-2:#3A1F1D; --warn-border:#6B2B26;
+    --warn-ink:#F5B5AE; --warn-solid:#B3261E;
+    --mark-bg:#E8ECF3; --mark-fg:#10151F;
+    --note-bg:#2A2412; --note-border:#5A4A1E; --note-ink:#F0D28A;
+    --shadow:rgba(0,0,0,.45);
+    color-scheme:dark;
+  }
+
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Public Sans',system-ui,sans-serif;color:var(--ink);line-height:1.55;background:var(--paper)}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}a{color:var(--cobalt)}header{border-bottom:3px solid var(--ink);padding:14px 0}main{padding:42px 0 72px}
+.eyebrow{text-transform:uppercase;letter-spacing:.09em;font-size:.76rem;font-weight:800;color:var(--cobalt)}h1{font-size:clamp(2.15rem,5.5vw,3.65rem);line-height:1.02;letter-spacing:-.045em;max-width:18ch;margin-top:8px}.lead{margin-top:15px;max-width:68ch;color:var(--ink-soft);font-size:1.08rem}
+.proof-strip{display:grid;grid-template-columns:repeat(3,1fr);border:1.5px solid var(--line);border-radius:var(--r-md);margin:28px 0;overflow:hidden;background:var(--paper)}.proof-strip div{padding:15px 18px}.proof-strip div+div{border-left:1px solid var(--line)}.proof-strip strong{display:block}.proof-strip span{font-size:.82rem;color:var(--ink-soft)}
+.layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(270px,.65fr);gap:24px;align-items:start}.panel{border:1.5px solid var(--line);border-radius:var(--r-md);background:var(--paper);overflow:visible}.panel-head{padding:18px 20px;border-bottom:2px solid var(--ink);background:var(--paper-dim);border-radius:var(--r-md) var(--r-md) 0 0}.panel-head h2{font-size:1.2rem}.panel-head p{font-size:.88rem;color:var(--ink-soft);margin-top:3px}.form-body{padding:20px}
+.picker{position:relative;margin-bottom:18px}label{display:block;font-size:.88rem;font-weight:800;margin-bottom:6px}input,textarea{width:100%;border:1.5px solid var(--line);border-radius:var(--r-sm);background:var(--paper);color:var(--ink);font:inherit;padding:11px 12px}textarea{min-height:174px;resize:vertical}input:focus-visible,textarea:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px;border-color:var(--cobalt)}
+.hint,.count{font-size:.8rem;color:var(--ink-soft);margin-top:6px}.count{text-align:right}.count.over{color:var(--bad);font-weight:800}.picker-results{position:absolute;z-index:8;top:calc(100% - 1px);left:0;right:0;max-height:300px;overflow:auto;list-style:none;border:1.5px solid var(--ink);border-radius:0 0 var(--r-sm) var(--r-sm);background:var(--paper);box-shadow:0 10px 24px rgba(17,31,58,.14)}.picker-results[hidden],[hidden]{display:none!important}.picker-option{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:3px 12px;padding:10px 12px;border-top:1px solid var(--line);cursor:pointer}.picker-option:first-child{border-top:0}.picker-option:hover,.picker-option.active{background:var(--paper-dim)}.picker-name{font-weight:800}.picker-place,.picker-industry{font-size:.76rem;color:var(--ink-soft)}.picker-industry{text-align:right}
+.divider{display:flex;align-items:center;gap:10px;margin:2px 0 12px;color:var(--ink-soft);font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em}.divider:before,.divider:after{content:'';height:1px;flex:1;background:var(--line)}.privacy-note{border-left:3px solid var(--good);background:var(--paper-dim);padding:10px 12px;margin-top:15px;font-size:.84rem}
+.actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:18px 20px;border-top:2px solid var(--ink);background:var(--paper-dim);border-radius:0 0 var(--r-md) var(--r-md)}button,.button{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:var(--r-sm);background:var(--cobalt);color:var(--on-cobalt);font:inherit;font-weight:800;padding:12px 17px;cursor:pointer;text-decoration:none}button.secondary{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}button[disabled]{opacity:.55;cursor:wait}.status{min-height:1.35em;font-size:.86rem;font-weight:700}.status.bad{color:var(--bad)}.status.good{color:var(--good)}
+.explain{position:sticky;top:20px}.explain section{padding:18px 20px}.explain section+section{border-top:1px solid var(--line)}.explain h2{font-size:1.02rem;margin-bottom:8px}.explain p,.explain li{font-size:.86rem;color:var(--ink-soft)}.explain ol{padding-left:20px}.explain li+li{margin-top:9px}.explain strong{color:var(--ink)}
+.results{margin-top:34px;scroll-margin-top:20px;border:2px solid var(--ink);border-radius:var(--r-md);overflow:hidden;background:var(--paper)}.results-header{display:flex;justify-content:space-between;gap:20px;align-items:start;padding:20px;border-bottom:2px solid var(--ink);background:var(--paper-dim)}.results-header h2{font-size:1.45rem}.results-header p{font-size:.86rem;color:var(--ink-soft);margin-top:4px}.result-actions{display:flex;gap:8px;flex-wrap:wrap}
+.metrics{display:grid;grid-template-columns:repeat(5,1fr);border-bottom:1px solid var(--line)}.metric{padding:14px 16px}.metric+.metric{border-left:1px solid var(--line)}.metric strong{display:block;font-size:1.65rem;line-height:1}.metric span{display:block;margin-top:5px;font-size:.75rem;color:var(--ink-soft)}.result-summary{padding:14px 20px;border-bottom:1px solid var(--line);font-weight:700}.baseline-list{display:grid}.evidence-row{padding:17px 20px;border-top:1px solid var(--line);border-left:5px solid var(--line)}.evidence-row:first-child{border-top:0}.state-confirmed{border-left-color:var(--good)}.state-review{border-left-color:var(--signal)}.state-not-found{border-left-color:var(--bad)}
+.evidence-head{display:flex;justify-content:space-between;gap:12px;align-items:start}.input-name{font-size:1.03rem}.state-label{border:1px solid currentColor;border-radius:999px;padding:3px 8px;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.state-confirmed .state-label{color:var(--good)}.state-review .state-label{color:var(--note-ink)}.state-not-found .state-label{color:var(--bad)}.sponsor-name{display:inline-block;font-weight:800;margin-top:8px}.evidence-meta,.evidence-reason,.company-line{font-size:.84rem;margin-top:4px;color:var(--ink-soft)}.company-serious{color:var(--bad)}.official-link{display:inline-block;font-size:.8rem;margin-top:7px}.candidate-list{padding-left:20px;margin-top:8px;font-size:.82rem}.candidate-list li+li{margin-top:5px}
+.next-step{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;padding:20px;border-top:2px solid var(--ink);background:var(--paper-dim)}.next-step h3{font-size:1.05rem}.next-step p{font-size:.84rem;color:var(--ink-soft);margin-top:4px}.updated{margin-top:24px;color:var(--ink-soft);font-size:.8rem}footer{border-top:3px solid var(--ink);padding:22px 0 40px;color:var(--ink-soft);font-size:.82rem}footer p+p{margin-top:6px}
+@media(max-width:780px){.proof-strip{grid-template-columns:1fr}.proof-strip div+div{border-left:0;border-top:1px solid var(--line)}.layout{grid-template-columns:1fr}.explain{position:static}.metrics{grid-template-columns:repeat(2,1fr)}.metric+.metric{border-top:0;border-left:1px solid var(--line)}.metric:nth-child(odd){border-left:0}.metric:nth-child(n+3){border-top:1px solid var(--line)}.metric:last-child:nth-child(odd){grid-column:1/-1}.results-header,.next-step{grid-template-columns:1fr;display:grid}.result-actions{justify-content:start}}
+@media(max-width:520px){main{padding-top:28px}.wrap{padding:0 14px}.form-body,.panel-head,.actions,.explain section,.results-header,.result-summary,.evidence-row,.next-step{padding-left:15px;padding-right:15px}.evidence-head{display:block}.state-label{display:inline-block;margin-top:7px}.button,button{width:100%}}@media print{header,footer,.proof-strip,.layout,.result-actions,.next-step,.updated{display:none!important}main{padding:0}.results{margin:0;border:0}.results-header{background:#fff}.evidence-row{break-inside:avoid}.wrap{max-width:none}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+
+  .header-inner{display:flex;align-items:center;justify-content:space-between;
+                gap:16px;flex-wrap:wrap;min-width:0}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:800;
+         font-size:1.1rem;letter-spacing:-.01em;color:inherit;
+         text-decoration:none}
+  .brand .mark{display:block;flex:0 0 auto;border-radius:var(--r-sm)}
+  .brand .dot{color:var(--cobalt)}
+  .topnav{display:flex;gap:18px;font-size:.9rem;font-weight:600}
+  /* "For business" is two words and wrapped at 375px, which pushed the
+     header from 73px to 86px. nowrap keeps it on one line and costs nothing:
+     measured 29px nav either way. .header-inner already wraps, so on a
+     genuinely narrow screen the nav drops to its own line rather than
+     overflowing. */
+  .topnav a{text-decoration:none;white-space:nowrap}
+  .topnav a:hover{text-decoration:underline}
+  .topnav [aria-current]{color:var(--ink-soft)}
+  .business-short{display:none}
+  @media (max-width:520px){
+    .header-inner{gap:10px}
+    .topnav{display:flex;width:100%;max-width:100%;min-width:0;align-items:center;
+            justify-content:flex-start;gap:16px;padding-bottom:2px;overflow-x:auto;
+            overscroll-behavior-inline:contain;scrollbar-width:none;
+            -webkit-overflow-scrolling:touch;font-size:.8rem}
+    .topnav::-webkit-scrollbar{display:none}
+    .topnav>*{flex:0 0 auto}
+    .business-full{display:none}
+    .business-short{display:inline}
+    .themebtn{padding:5px 8px}
+  }
+  @media (max-width:350px){.topnav .badge{display:none}}
+
+  .themebtn{
+    font:inherit;font-size:1rem;line-height:1;cursor:pointer;
+    background:transparent;border:1.5px solid var(--line);border-radius:var(--r-pill);
+    color:var(--ink-soft);padding:5px 10px;
+  }
+  .themebtn:hover{border-color:var(--ink-soft);color:var(--ink)}
+
+</style><script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script></head>
+<body><header><div class="wrap header-inner"><a class="brand" href="../" aria-label="KnowYourSponsor home"><svg class="mark" width="28" height="28" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="14" fill="var(--mark-bg)"/><text x="30" y="47" text-anchor="middle" font-family="'Public Sans',system-ui,sans-serif" font-size="42" font-weight="800" fill="var(--mark-fg)">K</text><circle cx="48" cy="44" r="5" fill="var(--signal)"/></svg><span class="wordmark">KnowYourSponsor<span class="dot">.</span></span></a><nav class="topnav" aria-label="Sections"><a href="../employer/">Employers</a><a href="../changes/">Changes</a><a href="../check-a-job/">Job tools</a><span aria-current="page" aria-label="For business"><span class="business-full">For business</span><span class="business-short" aria-hidden="true">Business</span></span><button class="themebtn" type="button" data-theme-toggle aria-label="Switch between light and dark theme"><span aria-hidden="true">&#9789;</span></button></nav></div></header>
+<main class="wrap">
+<p class="eyebrow">Free employer portfolio baseline</p><h1>Check a portfolio before you monitor it</h1>
+<p class="lead">Paste up to 20 employer names. See which exact sponsor records are current, which company identities are safely linked and which names still need review.</p>
+<div class="proof-strip" aria-label="How this check works"><div><strong>Evidence first</strong><span>See a useful result before sharing contact details</span></div><div><strong>No silent merging</strong><span>Ambiguous names remain clearly marked for review</span></div><div><strong>Private by default</strong><span>Employer names stay in this browser</span></div></div>
+<div class="layout">
+<form class="panel" id="portfolio-form" novalidate><div class="panel-head"><h2>Add the employers that matter</h2><p>Use current legal or sponsor names where possible.</p></div><div class="form-body">
+<div class="picker"><label for="employer-search">Find a current sponsor</label><input id="employer-search" type="search" autocomplete="off" placeholder="Start typing an employer name" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="employer-results" aria-describedby="picker-help picker-status"><p class="hint" id="picker-help">Type at least three characters, then choose a result.</p><p class="status" id="picker-status" role="status" aria-live="polite"></p><ul class="picker-results" id="employer-results" role="listbox" aria-label="Matching employers" hidden></ul></div>
+<p class="divider"><span>Or paste a list</span></p><label for="employers">One employer per line</label><textarea id="employers" name="employers" required placeholder="Example Care Limited&#10;Example NHS Trust&#10;Example University" aria-describedby="employer-help employer-count"></textarea><p class="hint" id="employer-help">Add a town after a comma when the same name appears in more than one place.</p><p class="count" id="employer-count" aria-live="polite">0 of 20 employers</p><div class="privacy-note"><strong>Employer names only.</strong> Do not include candidate names, visa details, case notes or other personal data.</div></div>
+<div class="actions"><button type="submit">Build my evidence baseline</button><p class="status" id="scan-status" role="status" aria-live="polite"></p></div></form>
+<aside class="panel explain" aria-label="How to read the result"><section><p class="eyebrow">What you will see</p><h2>Facts, joins and gaps kept separate</h2><p>The baseline uses the current sponsor register plus company evidence only where the legal identity is safely linked.</p></section><section><ol><li><strong>Exact current record</strong> means one sponsor record matched the supplied name and place.</li><li><strong>Needs review</strong> means more than one record or a source-backed alias could fit.</li><li><strong>Not found exactly</strong> means the check did not force a weak match.</li></ol></section><section><p>This is evidence triage, not immigration advice, a hiring signal or confirmation that a vacancy offers sponsorship.</p></section></aside></div>
+<section class="results" id="baseline-results" aria-labelledby="baseline-title" hidden><div class="results-header"><div><p class="eyebrow">Your evidence receipt</p><h2 id="baseline-title">Portfolio baseline</h2><p id="baseline-date">Current evidence loaded.</p></div><div class="result-actions"><button class="secondary" id="print-baseline" type="button">Print or save PDF</button><button class="secondary" id="check-another" type="button">Edit list</button></div></div>
+<div class="metrics" aria-label="Baseline totals"><div class="metric"><strong id="metric-total">0</strong><span>names checked</span></div><div class="metric"><strong id="metric-confirmed">0</strong><span>exact current records</span></div><div class="metric"><strong id="metric-review">0</strong><span>need review</span></div><div class="metric"><strong id="metric-companies">0</strong><span>safe company links</span></div><div class="metric"><strong id="metric-warnings">0</strong><span>company warnings</span></div></div><p class="result-summary" id="baseline-summary"></p><div class="baseline-list" id="baseline-list"></div><div class="next-step"><div><h3>Want this evidence kept current?</h3><p>Start a 30-day Monitor pilot. You will see the scope and price before any checkout.</p></div><a class="button" id="start-pilot" href="https://app.knowyoursponsor.co.uk/?plan=monitor&amp;source=portfolio-baseline">Monitor this portfolio</a></div></section>
+<p class="updated">Page checked 9 Nov 2026 at 19:28 UTC.</p></main>
+<footer><div class="wrap"><p>KnowYourSponsor is independent of the Home Office and does not provide immigration advice.</p><p><a href="../pricing/">Pricing</a> · <a href="../watchlist/">How monitoring works</a> · <a href="../methodology/">Methodology</a> · <a href="../privacy/">Privacy</a> · <a href="../terms/">Terms</a></p></div></footer>
+<script src="../product-metrics.js?v=4"></script><script src="../portfolio-baseline.js?v=1"></script><script data-goatcounter="https://sponsorsignal.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script><script>(function(){var b=document.querySelector('[data-theme-toggle]');if(!b)return;var r=document.documentElement;function dark(){return r.getAttribute('data-theme')==='dark'||(!r.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);}function sync(){b.setAttribute('aria-pressed',String(dark()));}b.addEventListener('click',function(){var next=dark()?'light':'dark';r.setAttribute('data-theme',next);try{localStorage.setItem('theme',next);}catch(e){}sync();});sync();})();</script></body></html>

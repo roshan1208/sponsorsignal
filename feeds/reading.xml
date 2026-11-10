@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KnowYourSponsor: Visa sponsors added and removed in Reading</title>
+    <link>https://knowyoursponsor.co.uk/reading/</link>
+    <atom:link href="https://knowyoursponsor.co.uk/feeds/reading.xml" rel="self" type="application/rss+xml"/>
+    <description>Sponsor records in Reading first or no longer observed in daily comparisons. Rebuilt every day from the official GOV.UK register. Covers the last 7 days.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Mon, 09 Nov 2026 19:28:11 +0000</lastBuildDate>
+    <item>
+      <title>Emtalent Digital Limited: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/reading/</link>
+      <guid isPermaLink="false">kys-reading-removed-emtalent-digital-limited-reading</guid>
+      <pubDate>Mon, 09 Nov 2026 19:28:11 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Reading, Berkshire. Industry: Tech &amp; Software.</description>
+    </item>
+    <item>
+      <title>Entrust (Europe) Limited: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/reading/</link>
+      <guid isPermaLink="false">kys-reading-removed-entrust-europe-limited-reading</guid>
+      <pubDate>Mon, 09 Nov 2026 19:28:11 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Reading, Berkshire. Industry: Media &amp; Creative.</description>
+    </item>
+    <item>
+      <title>PREZIEN SOLUTIONS LTD: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/reading/</link>
+      <guid isPermaLink="false">kys-reading-removed-prezien-solutions-ltd-reading</guid>
+      <pubDate>Mon, 09 Nov 2026 19:28:11 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Reading. Industry: Media &amp; Creative.</description>
+    </item>
+    <item>
+      <title>Spicy Hyderabad Ltd: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/reading/</link>
+      <guid isPermaLink="false">kys-reading-removed-spicy-hyderabad-ltd-reading</guid>
+      <pubDate>Mon, 09 Nov 2026 19:28:11 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Reading, Berkshire. Industry: Hospitality &amp; Food.</description>
+    </item>
+    <item>
+      <title>BOLINDA UK LIMITED: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/reading/</link>
+      <guid isPermaLink="false">kys-reading-added-bolinda-uk-limited-reading</guid>
+      <pubDate>Mon, 09 Nov 2026 19:28:11 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Reading. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Jesus family church: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/reading/</link>
+      <guid isPermaLink="false">kys-reading-added-jesus-family-church-reading</guid>
+      <pubDate>Mon, 09 Nov 2026 19:28:11 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Reading, United Kingdom. Industry: Charity &amp; Faith. Visa routes: Tier 2 Ministers of Religion.</description>
+    </item>
+  </channel>
+</rss>

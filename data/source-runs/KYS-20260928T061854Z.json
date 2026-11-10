@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "runId": "KYS-20260928T061854Z",
+  "status": "verified",
+  "publishedAt": "2026-09-25 09:53 UTC",
+  "retrievedAt": "2026-09-28 06:18 UTC",
+  "effectiveAt": "",
+  "effectiveAtStatus": "not published separately by the source",
+  "source": {
+    "name": "Home Office Register of Licensed Sponsors (Workers)",
+    "url": "https://assets.publishing.service.gov.uk/media/6ab641b78cb3c0580e5011d9/SP_-_Worker_and_Temporary_Worker_Web_Register_-_2026-09-25.csv",
+    "mediaType": "text/csv",
+    "sha256": "ced98f5d374b6ad34212b66418cf68dd54bb410b2ac3316c5ad90d96b221f492",
+    "bytes": 10952912,
+    "licence": "Open Government Licence v3.0",
+    "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+  },
+  "pipeline": {
+    "parserVersion": "sponsor-register-parser/1",
+    "normalizerVersion": "sponsor-register-normalizer/1",
+    "outputSchemaVersion": "sponsor-register-output/1"
+  },
+  "input": {
+    "header": [
+      "Organisation Name",
+      "Town/City",
+      "County",
+      "Type & Rating",
+      "Route"
+    ],
+    "sourceRows": 143127,
+    "validRows": 143127,
+    "blankNameRows": 0,
+    "malformedRows": 0,
+    "exactDuplicateRows": 455
+  },
+  "output": {
+    "sponsorRecords": 127688,
+    "distinctSponsorNames": 127400,
+    "files": {
+      "data/sponsors.json": "c7e870678e38117faf0080222e81f92e1c389d7a63591eabd7c4d664c896c4c7",
+      "data/changes.json": "960ac00025cab3064d5b087e8d8407ba8a3bf965b52080609e3039acba7b6598",
+      "data/meta.json": "31fdb57f1b0978ac8ecaa1761122a0bf53ffb2dc37b909f38bda81952c18a1fa"
+    }
+  },
+  "events": {
+    "recordFirstObserved": 0,
+    "recordNoLongerObserved": 0,
+    "ratingChanged": 0
+  },
+  "quality": {
+    "schemaValidated": true,
+    "rowCountValidated": true,
+    "guardOverridden": false
+  },
+  "previousManifestSha256": "5206eb6a97f4f8067552fad0494cfbb35e6faadb5f665959c7ee92c20e0f7b03",
+  "manifestSha256": "9f6ce8165fb2b2ff21adc5846b11547847daba66d12ff59512f9ea639cfcec78"
+}

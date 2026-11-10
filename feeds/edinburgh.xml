@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KnowYourSponsor: Visa sponsors added and removed in Edinburgh</title>
+    <link>https://knowyoursponsor.co.uk/edinburgh/</link>
+    <atom:link href="https://knowyoursponsor.co.uk/feeds/edinburgh.xml" rel="self" type="application/rss+xml"/>
+    <description>Sponsor records in Edinburgh first or no longer observed in daily comparisons. Rebuilt every day from the official GOV.UK register. Covers the last 7 days.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Mon, 09 Nov 2026 19:28:11 +0000</lastBuildDate>
+    <item>
+      <title>Mercy Corps Europe: sponsor record no longer observed</title>
+      <link>https://knowyoursponsor.co.uk/edinburgh/</link>
+      <guid isPermaLink="false">kys-edinburgh-removed-mercy-corps-europe-edinburgh</guid>
+      <pubDate>Mon, 09 Nov 2026 19:28:11 +0000</pubDate>
+      <category>removed</category>
+      <description>This exact name-and-town record no longer appears. The same sponsor name may remain elsewhere; the register gives no reason. Location: Edinburgh. Industry: Healthcare &amp; Care.</description>
+    </item>
+    <item>
+      <title>Arrol Ltd: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/edinburgh/</link>
+      <guid isPermaLink="false">kys-edinburgh-added-arrol-ltd-edinburgh</guid>
+      <pubDate>Mon, 09 Nov 2026 19:28:11 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Edinburgh, Scotland. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Kitchens International Retail Ltd: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/edinburgh/</link>
+      <guid isPermaLink="false">kys-edinburgh-added-kitchens-international-retail-ltd-edinburgh</guid>
+      <pubDate>Mon, 09 Nov 2026 19:28:11 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Edinburgh. Industry: Hospitality &amp; Food. Visa routes: Skilled Worker.</description>
+    </item>
+    <item>
+      <title>NUE OFFSHORE RESOURCES UK LIMITED: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/edinburgh/</link>
+      <guid isPermaLink="false">kys-edinburgh-added-nue-offshore-resources-uk-limited-edinburgh</guid>
+      <pubDate>Mon, 09 Nov 2026 19:28:11 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Edinburgh, Scotland. Industry: Retail &amp; Commerce. Visa routes: Global Business Mobility: Senior or Specialist Worker.</description>
+    </item>
+    <item>
+      <title>Prosper Global (UK): sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/edinburgh/</link>
+      <guid isPermaLink="false">kys-edinburgh-added-prosper-global-uk-edinburgh</guid>
+      <pubDate>Mon, 09 Nov 2026 19:28:11 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Edinburgh. Industry: Other. Visa routes: Global Business Mobility: Senior or Specialist Worker, Skilled Worker.</description>
+    </item>
+    <item>
+      <title>Zudu Ltd: sponsor record first observed</title>
+      <link>https://knowyoursponsor.co.uk/edinburgh/</link>
+      <guid isPermaLink="false">kys-edinburgh-added-zudu-ltd-edinburgh</guid>
+      <pubDate>Mon, 09 Nov 2026 19:28:11 +0000</pubDate>
+      <category>added</category>
+      <description>This exact name-and-town record first appeared in our comparison. That does not establish the licence grant date. Location: Edinburgh. Industry: Other. Visa routes: Skilled Worker.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "runId": "KYS-20261006T061749Z",
+  "status": "verified",
+  "publishedAt": "2026-10-05 09:29 UTC",
+  "retrievedAt": "2026-10-06 06:17 UTC",
+  "effectiveAt": "",
+  "effectiveAtStatus": "not published separately by the source",
+  "source": {
+    "name": "Home Office Register of Licensed Sponsors (Workers)",
+    "url": "https://assets.publishing.service.gov.uk/media/6ac36b2111ed58342ad8e45e/SP_-_Worker_and_Temporary_Worker_Web_Register_-_2026-10-05.csv",
+    "mediaType": "text/csv",
+    "sha256": "b8e14402c52ba7561390d8f237e703c95b91e7eb3b5a085be2b6ab13fca4754f",
+    "bytes": 10954719,
+    "licence": "Open Government Licence v3.0",
+    "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+  },
+  "pipeline": {
+    "parserVersion": "sponsor-register-parser/1",
+    "normalizerVersion": "sponsor-register-normalizer/1",
+    "outputSchemaVersion": "sponsor-register-output/1"
+  },
+  "input": {
+    "header": [
+      "Organisation Name",
+      "Town/City",
+      "County",
+      "Type & Rating",
+      "Route"
+    ],
+    "sourceRows": 143159,
+    "validRows": 143159,
+    "blankNameRows": 0,
+    "malformedRows": 0,
+    "exactDuplicateRows": 449
+  },
+  "output": {
+    "sponsorRecords": 127732,
+    "distinctSponsorNames": 127447,
+    "files": {
+      "data/sponsors.json": "28ca60cf99bfe77c1453680b4402b0dfcce64d891288cbdcb213c2b07b593834",
+      "data/changes.json": "446228268e085fe664f52a5cd0a24518718f53764df682143e025244a04835ad",
+      "data/meta.json": "8c9f0fa51aba0c258830ae8e62e9409aa845a9ed51a002726d8fd7537ffe4efb"
+    }
+  },
+  "events": {
+    "recordFirstObserved": 109,
+    "recordNoLongerObserved": 86,
+    "ratingChanged": 1
+  },
+  "quality": {
+    "schemaValidated": true,
+    "rowCountValidated": true,
+    "guardOverridden": false
+  },
+  "previousManifestSha256": "d08761cfe2943c75ce82d230a70f12f17a12efc7663e430dfc01c6f65282c66f",
+  "manifestSha256": "82ce30aa27d0a5262e45f0fdcf0540a32fce97c6cad22881802fd2ce71ee81b3"
+}

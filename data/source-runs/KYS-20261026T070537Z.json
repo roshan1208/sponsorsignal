@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "runId": "KYS-20261026T070537Z",
+  "status": "verified",
+  "publishedAt": "2026-10-23 08:32 UTC",
+  "retrievedAt": "2026-10-26 07:05 UTC",
+  "effectiveAt": "",
+  "effectiveAtStatus": "not published separately by the source",
+  "source": {
+    "name": "Home Office Register of Licensed Sponsors (Workers)",
+    "url": "https://assets.publishing.service.gov.uk/media/6adb1b5ab62d80a107bc5c29/SP_-_Worker_and_Temporary_Worker_Web_Register_-_2026-10-23.csv",
+    "mediaType": "text/csv",
+    "sha256": "cb286db26372b9f5908acfc91c7de5ef6044489fc6416ba204d8e4678761da6d",
+    "bytes": 10956777,
+    "licence": "Open Government Licence v3.0",
+    "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+  },
+  "pipeline": {
+    "parserVersion": "sponsor-register-parser/1",
+    "normalizerVersion": "sponsor-register-normalizer/1",
+    "outputSchemaVersion": "sponsor-register-output/1"
+  },
+  "input": {
+    "header": [
+      "Organisation Name",
+      "Town/City",
+      "County",
+      "Type & Rating",
+      "Route"
+    ],
+    "sourceRows": 143205,
+    "validRows": 143205,
+    "blankNameRows": 0,
+    "malformedRows": 0,
+    "exactDuplicateRows": 420
+  },
+  "output": {
+    "sponsorRecords": 127840,
+    "distinctSponsorNames": 127563,
+    "files": {
+      "data/sponsors.json": "daccf44cfc67809b53784cf20b2f3e5304055381f55be75036e611f7f6f6f1a3",
+      "data/changes.json": "8afdf383355551e5b46869bcf5cc963b05f4a65178a20d2966603beef2739993",
+      "data/meta.json": "5486627bea2bd374687d50cc3c3c806e3619ad67a8e612d7ffe29968ad26db55"
+    }
+  },
+  "events": {
+    "recordFirstObserved": 137,
+    "recordNoLongerObserved": 113,
+    "ratingChanged": 1
+  },
+  "quality": {
+    "schemaValidated": true,
+    "rowCountValidated": true,
+    "guardOverridden": false
+  },
+  "previousManifestSha256": "d5fb7889b21d659f3c7f69d3d9e3401ed5846f0d38f7252ef9f6563afd139b82",
+  "manifestSha256": "49c321a8fc74847fd150462c36904a1b622afc98a3aad5f6d16d2f3f6657ac60"
+}

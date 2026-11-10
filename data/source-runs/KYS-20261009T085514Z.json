@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "runId": "KYS-20261009T085514Z",
+  "status": "verified",
+  "publishedAt": "2026-10-08 09:31 UTC",
+  "retrievedAt": "2026-10-09 08:55 UTC",
+  "effectiveAt": "",
+  "effectiveAtStatus": "not published separately by the source",
+  "source": {
+    "name": "Home Office Register of Licensed Sponsors (Workers)",
+    "url": "https://assets.publishing.service.gov.uk/media/6ac755faec9d3aba1e013a1d/SP_-_Worker_and_Temporary_Worker_Web_Register_-_2026-10-08.csv",
+    "mediaType": "text/csv",
+    "sha256": "438d0f70c4473ccb67ed5f725856d62f2450a5b06f972ef348600e0ca9e4ed4b",
+    "bytes": 10956001,
+    "licence": "Open Government Licence v3.0",
+    "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+  },
+  "pipeline": {
+    "parserVersion": "sponsor-register-parser/1",
+    "normalizerVersion": "sponsor-register-normalizer/1",
+    "outputSchemaVersion": "sponsor-register-output/1"
+  },
+  "input": {
+    "header": [
+      "Organisation Name",
+      "Town/City",
+      "County",
+      "Type & Rating",
+      "Route"
+    ],
+    "sourceRows": 143186,
+    "validRows": 143186,
+    "blankNameRows": 0,
+    "malformedRows": 0,
+    "exactDuplicateRows": 444
+  },
+  "output": {
+    "sponsorRecords": 127770,
+    "distinctSponsorNames": 127487,
+    "files": {
+      "data/sponsors.json": "4c253ab8d5e01b1229272b74b50f177a260ccb228dda2cb30e70392dc7c51b32",
+      "data/changes.json": "ad63f3a48c14d73c6ee863c374288ca6b1e1a7d616f3137c0ef9e6b9746205c1",
+      "data/meta.json": "bd131b8e8b0a7c9106bad3088de89d20edd137c5e9ba405808d24694c1469752"
+    }
+  },
+  "events": {
+    "recordFirstObserved": 0,
+    "recordNoLongerObserved": 0,
+    "ratingChanged": 0
+  },
+  "quality": {
+    "schemaValidated": true,
+    "rowCountValidated": true,
+    "guardOverridden": false
+  },
+  "previousManifestSha256": "5542c5154f3e658bd3da1c5c51a51faa74540ff12b23c411dfb891d8978ca5b1",
+  "manifestSha256": "4dd7ba53afe4bc4327e475ea2b65fa98574887736e1415fc926f92e1e7d2eb71"
+}

@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "runId": "KYS-20261013T061709Z",
+  "status": "verified",
+  "publishedAt": "2026-10-12 09:08 UTC",
+  "retrievedAt": "2026-10-13 06:17 UTC",
+  "effectiveAt": "",
+  "effectiveAtStatus": "not published separately by the source",
+  "source": {
+    "name": "Home Office Register of Licensed Sponsors (Workers)",
+    "url": "https://assets.publishing.service.gov.uk/media/6acca34fb016250bca013baf/SP_-_Worker_and_Temporary_Worker_Web_Register_-_2026-10-12.csv",
+    "mediaType": "text/csv",
+    "sha256": "8d18b0a4bac5bc992e4b107ab7813990cd4de21009758c6dea6b4a13ba9b5c3b",
+    "bytes": 10956670,
+    "licence": "Open Government Licence v3.0",
+    "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+  },
+  "pipeline": {
+    "parserVersion": "sponsor-register-parser/1",
+    "normalizerVersion": "sponsor-register-normalizer/1",
+    "outputSchemaVersion": "sponsor-register-output/1"
+  },
+  "input": {
+    "header": [
+      "Organisation Name",
+      "Town/City",
+      "County",
+      "Type & Rating",
+      "Route"
+    ],
+    "sourceRows": 143198,
+    "validRows": 143198,
+    "blankNameRows": 0,
+    "malformedRows": 0,
+    "exactDuplicateRows": 441
+  },
+  "output": {
+    "sponsorRecords": 127793,
+    "distinctSponsorNames": 127510,
+    "files": {
+      "data/sponsors.json": "2b77fa7837a2680d6f7e02e0c0615fc1a7c2efe0be17d2cf867d04beb83af841",
+      "data/changes.json": "45c9e7991388b33f46e23e0607943b02cf0d3eb8e168006df05109892bcafb9d",
+      "data/meta.json": "1e84deaaf240d1e9d5a5390b045bcc579bec6a9cbb8f9f387fb7dec4b5a5ec90"
+    }
+  },
+  "events": {
+    "recordFirstObserved": 101,
+    "recordNoLongerObserved": 99,
+    "ratingChanged": 0
+  },
+  "quality": {
+    "schemaValidated": true,
+    "rowCountValidated": true,
+    "guardOverridden": false
+  },
+  "previousManifestSha256": "e9efefa5fefa56d556e3c90cf00ddcdf2cd31c2d2fdf37b826c6e659845ca93c",
+  "manifestSha256": "621149bd99c5752c348f1dc772f419c1b292bc99c8128f32397b53caa5a7f5d7"
+}
